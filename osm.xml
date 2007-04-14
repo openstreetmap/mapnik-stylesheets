@@ -1,0 +1,1498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map>
+<Map bgcolor="#b5d0d0" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+    <Style name="mapnik:selection">
+      <Rule>
+        <Filter>[mapnik:geometry] = 1</Filter> 
+        <PointSymbolizer/>
+      </Rule>
+      <Rule>
+        <Filter>[mapnik:geometry] = 2</Filter> 
+        <LineSymbolizer>
+          <CssParameter name="stroke">red</CssParameter>
+          <CssParameter name="stroke-width">6</CssParameter>
+          <CssParameter name="stroke-opacity">0.5</CssParameter>
+        </LineSymbolizer>
+        <LineSymbolizer>
+          <CssParameter name="stroke">yellow</CssParameter>
+          <CssParameter name="stroke-width">2</CssParameter>
+          <CssParameter name="stroke-opacity">1.0</CssParameter>
+        </LineSymbolizer>
+      </Rule>
+      <Rule>
+        <Filter>[mapnik:geometry] = 3</Filter> 
+        <PolygonSymbolizer>
+          <CssParameter name="fill">red</CssParameter>
+          <CssParameter name="fill-opacity">0.5</CssParameter>
+        </PolygonSymbolizer>
+      </Rule>
+    </Style>
+
+   <Style name="world-1">
+    <Rule>
+      <MaxScaleDenominator>250000000000</MaxScaleDenominator>
+      <MinScaleDenominator>6000000</MinScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f2efe9</CssParameter>
+      </PolygonSymbolizer>
+       <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+	<CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+  </Style>
+  <Style name="world">
+    <Rule>
+      <MaxScaleDenominator>6000000</MaxScaleDenominator>
+      <MinScaleDenominator>600000</MinScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f2efe9</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+  </Style>
+
+  <Style name="coast-poly">
+    <Rule>
+      <MaxScaleDenominator>600000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f2efe9</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+  </Style>
+
+  <Style name="coast-line">
+    <Rule>
+      <MaxScaleDenominator>600000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">skyblue</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+  </Style>
+  
+  <!-- BUILTUP VMAP0 -->
+  <!-- level 7-9-->
+  <Style name="builtup">
+    <Rule>
+      <MaxScaleDenominator>2500000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ddd</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+  </Style>
+  
+  <Style name="places">
+    <Rule>
+      <MaxScaleDenominator>50000000</MaxScaleDenominator>
+      <MinScaleDenominator>10000000</MinScaleDenominator>
+      <TextSymbolizer name="place_name" face_name="DejaVu Sans Book" size="10" fill="#444" halo_radius="1" wrap_width="0"/>
+    </Rule>
+  </Style>
+  
+  <Style name="amenity">
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='post_box'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/post_box.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='post_office'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/post_office.png" type="png" width="16" height="16" />
+    </Rule>
+    
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <Filter>[railway]='station'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/station.png" type="png" width="9" height="9" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[railway]='station'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="12" fill="#000" dy="-14" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='pub'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/pub.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[natural]='peak'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/peak.png" type="png" width="8" height="8" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[man_made]='mast'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/tower.png" type="png" width="32" height="32" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='recycling'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/recycling.png" type="png" width="20" height="20" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='bus_stop'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/bus_stop.png" type="png" width="30" height="12" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='parking'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/place_of_worship.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='airport'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/airport.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+  </Style>
+  
+  <Style name="leisure">
+    <Rule>
+      <Filter>[tourism] = 'attraction'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f2caea</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[landuse] = 'cemetery'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aacbaf</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[landuse] = 'residential'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">lightgrey</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    
+     <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[landuse] = 'cemetery'</Filter>
+      <PolygonPatternSymbolizer file="/Users/artem/symbols/grave_yard.png" type="png" width="16" height="16"/>
+    </Rule>
+    
+     <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <Filter>[landuse] = 'meadow' or [landuse] = 'wood' or [landuse] = 'forest'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aed1a0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'park'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aed1a0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[leisure] = 'common'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'garden'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'golf_course'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#7ccd7c</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <!--Rule>
+      <Filter>[leisure] = 'pitch'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#7ccd7c</CssParameter>
+     </PolygonSymbolizer>
+    </Rule-->
+    <Rule>
+      <Filter>[landuse] = 'allotments'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ae7535</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'forrest'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'recreation_ground'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'village_green'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#cfeca8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'retail'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f1dada</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+  
+     <Rule>
+      <Filter>[natural] = 'wood'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aed1a0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[natural] = 'heath'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ffffc0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[amenity] = 'university' or [amenity] = 'school'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f0f0d8</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'university' or [amenity] = 'school'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">brown</CssParameter>
+	<CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[amenity] = 'parking'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+         <CssParameter name="fill">#f7efb7</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='parking'</Filter>
+      <PointSymbolizer file="/Users/artem/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
+    </Rule>
+    
+    <Rule>
+      <Filter>[railway] = 'station' or [building] = 'station'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+         <CssParameter name="fill">#fff68f</CssParameter>
+	 <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[building] = 'supermarket'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">pink</CssParameter>
+	 <CssParameter name="fill-opacity">0.5</CssParameter> 
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'place_of_worship'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">lightgrey</CssParameter>
+	 <CssParameter name="fill-opacity">0.5</CssParameter> 
+      </PolygonSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[leisure] = 'pitch' or [leisure] = 'sports_centre' or [leisure]='stadium' or [leisure]='track'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#8ad3af</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <!--Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">lightgrey</CssParameter>
+     </PolygonSymbolizer>
+    </Rule-->
+  </Style>
+   
+  <Style name="text">
+    <Rule>
+      <Filter>[place] = 'city'</Filter>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'city'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#000" dy="0" halo_radius="2" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'town'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="000" halo_radius="2" wrap_width="20"/>
+    </Rule>
+     <Rule>
+      <Filter>[place] = 'village'</Filter>
+      <MaxScaleDenominator>250000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="2" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'hamlet'</Filter>
+      <MaxScaleDenominator>125000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'pub'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="brown" dy="16" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    
+    <Rule>
+      <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' or [natural] &lt;&gt; ''</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" halo_radius="2" wrap_width="10"/>
+    </Rule>
+    
+  </Style>
+  
+   <Style name="water">
+    <Rule>
+      <Filter>[landuse] = 'reservoir' or [landuse] = 'water'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#b5d0d0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[natural] = 'lake' or [natural] = 'water'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#b5d0d0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='river'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="white" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='canal'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="white" placement="line"/>
+    </Rule>
+    <Rule>
+      <ElseFilter/> <!--[waterway]='stream'</Filter>-->
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="white" placement="line"/>
+    </Rule>
+  </Style>
+
+  <Style name="minor-roads-casing">
+
+     <Rule>
+      <Filter>[highway] = 'motorway' or [highway]='motorway_link'</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+      
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway]='motorway_link'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway]='motorway_link'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>        
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway]='motorway_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>        
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+   <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+  
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+      <Filter>[highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule-->
+    
+    <Rule>
+     <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>        
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+     <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>        
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>      
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">12</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>      
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>     
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">12</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>      
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">16</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'service'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'service'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+  </Style>
+  
+  <Style name="minor-roads">
+    <!-- level 10 -->
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    
+    <!-- level 11 ...-->
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">12</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#7fc97f</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#7fc97f</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+     
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#7fc97f</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+   
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#e46d71</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#e46d71</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#e46d71</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <!-- level 11 ..-->
+   <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>    
+    <!-- -->
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway] = 'rail'</Filter>
+      <LinePatternSymbolizer file="/Users/artem/symbols/rail.png" type="png" width="20" height="3" />
+    </Rule>
+
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway]='subway'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ccc</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>15000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">9.4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+
+    <Rule>
+      <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+   <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke-width">9.4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'service'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+       
+    <Rule>
+      <Filter>[highway] = 'service'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+
+   <Rule>
+      <Filter>[highway] = 'bridleway'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">green</CssParameter>
+        <CssParameter name="stroke-width">2.0</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'footway'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">salmon</CssParameter>
+        <CssParameter name="stroke-width">2.0</CssParameter>
+        <CssParameter name="stroke-dasharray">1,3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'cycleway' or [highway] = 'track'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">salmon</CssParameter>
+        <CssParameter name="stroke-width">2.0</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#c1ffc1</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'unsurfaced' or [highway] = 'byway'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffc000</CssParameter>
+        <CssParameter name="stroke-width">2.0</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[route] = 'ferry'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">navy</CssParameter>
+        <CssParameter name="stroke-width">0.8</CssParameter>
+        <CssParameter name="stroke-dasharray">6,6</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'runway'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">lightgrey</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!--Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>1500000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+	<CssParameter name="stroke-dasharray">4,4</CssParameter>
+      </LineSymbolizer>
+    </Rule-->
+  </Style>
+ 
+  <Style name="roads">
+    <!-- MOTORWAY-->
+    <!-- level 4-5 -->
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>25000000</MaxScaleDenominator>
+      <MinScaleDenominator>5000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!-- level 6-8 -->
+    <Rule>
+      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>1000000</MinScaleDenominator>
+      <LineSymbolizer>
+       <CssParameter name="stroke">#809bc0</CssParameter>
+       <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!-- level 9 -->
+   <Rule>
+     <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+      <CssParameter name="stroke">#809bc0</CssParameter>
+      <CssParameter name="stroke-width">3</CssParameter>
+    </LineSymbolizer>
+   </Rule>
+    
+    <!-- TRUNK -->
+    <!--level 4-6-->
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>25000000</MaxScaleDenominator>
+      <MinScaleDenominator>2500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#7fc97f</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!-- level 7-9 -->
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>2500000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#7fc97f</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!-- level 10-->
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#7fc97f</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+   <!-- PRIMARY-->
+   <!-- level 5-6-->
+   <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#e46d71</CssParameter>
+        <CssParameter name="stroke-width">0.7</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!-- level 7-9-->
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#e46d71</CssParameter>
+        <CssParameter name="stroke-width">2.0</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <!-- level 10 -->    
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#e46d71</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    
+    <!-- SECONDARY -->
+    <!-- level 7-9 -->
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <!-- RAIL -->
+     <Rule>
+      <MaxScaleDenominator>2500000</MaxScaleDenominator>
+      <MinScaleDenominator>1000000</MinScaleDenominator>
+      <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail'</Filter>
+       <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail'</Filter>
+       <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+  </Style>
+
+  
+  <!-- ROADS TEXT -->
+  <Style name="roads-text">
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 2</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/Users/artem/symbols/motorway_shield.png" type="png" width="24" height="17"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 3</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/Users/artem/symbols/motorway_shield2.png" type="png" width="31" height="17"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'primary' or [highway] = 'secondary'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="black" halo_radius="0" placement="line"/>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'primary' or [highway] = 'secondary'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="black" halo_radius="0" placement="line"/>
+    </Rule>
+    
+    <Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="1"  placement="line" />
+    </Rule>
+
+    <Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="1"  placement="line" />
+    </Rule>
+   
+  </Style>
+
+  <Layer name="world-1" status="on" srs="+proj=merc +datum=WGS84 +over">
+    <StyleName>world-1</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/Users/artem/world_boundaries/world_boundaries_m</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="world" status="on" srs="+proj=merc +datum=WGS84 +over">
+    <StyleName>world</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/Users/artem/world_boundaries/world_bnd_m</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="coast-poly" status="on" srs="+proj=merc +datum=WGS84 +over">
+    <StyleName>coast-poly</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/Users/artem/world_boundaries/shoreline_a</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="coast-line" status="on" srs="+proj=merc +datum=WGS84 +over">
+    <StyleName>coast-line</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/Users/artem/world_boundaries/shoreline_l</Parameter>
+    </Datasource>
+  </Layer>
+  
+
+  <Layer name="builtup" status="on" srs="+proj=merc +datum=WGS84 +over">
+    <StyleName>builtup</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/Users/artem/world_boundaries/builtup_area</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="leisure" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+    <StyleName>leisure</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>     
+      <Parameter name="user">artem</Parameter>
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon) as leisure</Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+    </Datasource>
+  </Layer>
+  <Layer name="water" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+    <StyleName>water</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">artem</Parameter>
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water') as water</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="waterway" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+    <StyleName>water</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">artem</Parameter>
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water') as water</Parameter>
+    </Datasource>
+  </Layer>
+
+  <Layer name="minor-roads" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+    <StyleName>minor-roads-casing</StyleName>
+    <StyleName>minor-roads</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>     
+      <Parameter name="user">artem</Parameter>
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="table">
+      (select * from planet_osm_line order by z_order) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="roads" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+    <!--StyleName>roads-casing</StyleName-->
+    <StyleName>roads</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>     
+      <Parameter name="user">artem</Parameter>
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="table">
+      (select * from planet_osm_roads order by z_order) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+    </Datasource>
+   </Layer>
+    
+   <Layer name="amenity" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+    <StyleName>amenity</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>	   
+      <Parameter name="user">artem</Parameter>	   
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL) as amenity</Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+    </Datasource>
+   </Layer>
+  
+   <Layer name="planet roads text osm" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+     <StyleName>roads-text</StyleName>
+     <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">artem</Parameter>
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="table">
+      (select way,highway,landuse,"natural",man_made,waterway,tourism,learning,amenity,place,name,char_length(name) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="text" status="on" srs="+proj=latlong +ellps=GRS80 +no_defs">
+    <StyleName>text</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>     
+      <Parameter name="user">artem</Parameter>
+      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="table">planet_osm_point</Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+    </Datasource>
+  </Layer>
+  
+  <Layer name="places" status="on">
+    <StyleName>places</StyleName>
+    <Datasource>
+      <Parameter name="type">shape</Parameter>
+      <Parameter name="file">/Users/artem/world_boundaries/places</Parameter>
+    </Datasource>
+  </Layer>
+</Map>

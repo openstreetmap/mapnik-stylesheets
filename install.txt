@@ -1,0 +1,123 @@
+# This is a start for an (almost) cut'n past installation description for mapnik-osm-renderer
+
+# ------ Install some stuff
+  sudo apt-get install \
+                build-essential libfreetype6-dev libltdl3-dev \
+                libpng12-dev  libtiff4-dev libboost-thread-dev\
+                libboost-filesystem-dev \
+                libboost-serialization-dev libboost-regex-dev\
+                libboost-python-dev  proj python-imaging scons \
+                libboost-program-options-dev postgresql-doc-8.1 \
+                postgresql-8.1 postgresql-8.1-plruby \
+                postgresql-client-8.1 postgresql-contrib-8.1\
+                postgresql-plperl-8.1 postgresql-plpython-8.1 \
+                postgresql-server-dev-8.1 postgresql-8.1-postgis \
+                libboost-python-dev python2.4-dev \
+                libwww-perl libxml-parser-perl libfile-slurp-perl \
+                libtimedate-perl libdate-manip-perl imagemagick \
+		libavl-dev
+  sudo apt-get install \
+                ttf-arabeyes \
+                ttf-arphic-ukai \
+                ttf-arphic-uming \
+                ttf-thai-tlwg \
+                ttf-devanagari-fonts
+  sudo apt-get install \
+                ttf-dejavu
+
+# ---- get software from OSM-SVN and compile
+  cd
+  svn co http://svn.openstreetmap.org/
+
+  # compile UTF8sanitize
+  ( cd ~/svn.openstreetmap.org/utils/planet.osm/C; make)
+  # compile osmsql
+  (cd ~/svn.openstreetmap.org/utils/osm2pgsql/; make)
+
+# ---- Install mapnik
+  cd ~/svn.openstreetmap.org/utils/mapnik.berlios
+  python scons/scons.py
+  sudo python scons/scons.py install
+  sudo python scons/scons.py PGSQL_INCLUDES=/usr/include/postgresql \
+       PGSQL_LIBS=/usr/lib/postgresql/8.1/lib install
+
+
+# ----------- Create Database and Grant rights
+
+  export user_name=`whoami`
+  # or with a different user. 'steve' is the example user here ;-)
+  export user_name="steve"
+  export user_name="mapnik"
+  sudo -u postgres createdb -Upostgres  -EUTF8 mapnik
+  sudo -u postgres createuser -Upostgres -S -D -R $user_name
+  echo "GRANT ALL ON SCHEMA PUBLIC TO $user_name;" | sudo -u postgres psql -Upostgres mapnik
+  sudo -u postgres createlang plpgsql mapnik
+  sudo -u postgres psql -Upostgres mapnik </usr/share/postgresql-8.1-postgis/lwpostgis.sql \
+     2>&1 | grep -v -e 'FEHLER:  aktuelle Transaktion' \
+     -e 'ERROR:  current transaction is aborted' \
+     -e 'CREATE FUNCTION' -e OPERATOR
+
+
+  echo "GRANT ALL on geometry_columns TO $user_name;" | sudo -u postgres psql -Upostgres mapnik
+  echo "GRANT ALL on spatial_ref_sys TO $user_name;" | sudo -u postgres psql -Upostgres mapnik
+  echo "DROP TABLE planet_osm ;" | sudo -u postgres psql -Upostgres mapnik
+  echo "CREATE TABLE planet_osm (   osm_type    char(1),
+       osm_id      bigint,   name        text,   place       text,   landuse     text,
+       leisure     text,   waterway    text,   highway     text,   amenity     text,
+       tourism     text,   learning    text);" | sudo -u postgres psql -Upostgres mapnik
+  echo "SELECT AddGeometryColumn('planet_osm', 'way', 4326, 'GEOMETRY', 2);" | sudo -u postgres psql -Upostgres mapnik
+  echo "ALTER TABLE planet_osm ADD CONSTRAINT pk__planet_osm PRIMARY KEY (osm_type, osm_id);" | sudo -u postgres psql -Upostgres mapnik
+  echo "CREATE INDEX planet_spatial_idx ON planet_osm USING gist (way GIST_GEOMETRY_OPS);" | sudo -u postgres psql -Upostgres mapnik
+  echo "GRANT ALL ON SCHEMA PUBLIC TO $user_name;" | sudo -u postgres psql -Upostgres mapnik
+  echo "GRANT ALL ON TABLE planet_osm TO $user_name;" | sudo -u postgres psql -Upostgres mapnik
+
+  
+# ---- Install and run planet-mirror --> planet.sql
+  # Get newest planet.osm. This will takes some time
+  ~/svn.openstreetmap.org/utils/planet-mirror/planet-mirror.pl -v
+  bunzip2 --keep `~/svn.openstreetmap.org/utils/planet-mirror/planet-mirror.pl -print-filename`
+  export planet_name=`~/svn.openstreetmap.org/utils/planet-mirror/planet-mirror.pl -print-filename`
+  echo "export planet_name='$planet_name'"
+  # convert osm --> sql. takes about 10 minutes on a 3GHz (2GB-Ram) Machine
+  date; time ~/svn.openstreetmap.org/utils/osm2pgsql/osm2pgsql $planet_name > $planet_name.sql
+
+  # Now we need the result from the osm2pgsql command
+  export planet_name=`~/svn.openstreetmap.org/utils/planet-mirror/planet-mirror.pl -print-filename`
+  date;time sudo -u postgres psql -Upostgres mapnik  <${planet_name}.sql |\
+		 grep -v 'INSERT 0 1' | tee ~/insert.log
+  # takes about 10 minutes on a 3GHz  (2GB-Ram) machine
+
+  # Test if you can read the Database
+  echo "SELECT * from planet_osm LIMIT 5;" |  psql  mapnik -h /var/run/postgresql -p 5433
+
+
+# From here on the cut'n paste part stops
+
+vi ~/svn.openstreetmap.org/utils/mapnik/generate_tiles.py
+vi ~/svn.openstreetmap.org/utils/mapnik/osm.xml
+and change the path to your installation:
+ /home/mapnik/
+
+vi ~/svn.openstreetmap.org/utils/mapnik/osm.xml
+   replace with your username:
+      <Parameter name="user">steve</Parameter>
+   replace /home/mapnik/ with your home-directory
+
+   set the host connection to your local machine:
+      <Parameter name="host">/var/run/postgresql</Parameter>
+
+   remove this for local connections:
+#      <Parameter name="port">5432</Parameter>
+
+
+vi ~/svn.openstreetmap.org/utils/mapnik/generate_tiles.py
+    replace with your area
+    bbox = (-2, 50.0,1.0,52.0)
+
+
+# ---------- And now, we start the rendering
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+python ~/svn.openstreetmap.org/utils/mapnik/generate_tiles.py
+
+# ---------- Upload the tiles-output to dev.openstreetmap.org or  mail a tar file to steve
+rsync --size-only -r -e ssh ~/osm/tiles dev.openstreetmap.org:
