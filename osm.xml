@@ -93,18 +93,30 @@
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='post_box'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/post_box.png" type="png" width="16" height="16" />
+      <PointSymbolizer file="/home/steve/symbols/post_box.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='post_office'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/post_office.png" type="png" width="16" height="16" />
+      <PointSymbolizer file="/home/steve/symbols/post_office.png" type="png" width="16" height="16" />
     </Rule>
     
     <Rule>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MaxScaleDenominator>250000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator> 
       <Filter>[railway]='station'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/station.png" type="png" width="9" height="9" />
+      <PointSymbolizer file="/home/steve/symbols/station_small.png" type="png" width="5" height="5" />
+    </Rule>
+     <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[railway]='station'</Filter>
+      <PointSymbolizer file="/home/steve/symbols/station.png" type="png" width="9" height="9" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator> 
+      <Filter>[railway]='station'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#000" dy="-8" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -113,44 +125,44 @@
     </Rule>
     
     <Rule>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[amenity]='pub'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/pub.png" type="png" width="16" height="16" />
+      <PointSymbolizer file="/home/steve/symbols/pub.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[natural]='peak'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/peak.png" type="png" width="8" height="8" />
+      <PointSymbolizer file="/home/steve/symbols/peak.png" type="png" width="8" height="8" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[man_made]='mast'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/tower.png" type="png" width="32" height="32" />
+      <PointSymbolizer file="/home/steve/symbols/tower.png" type="png" width="32" height="32" />
     </Rule>
     <Rule>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[amenity]='recycling'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/recycling.png" type="png" width="20" height="20" />
+      <PointSymbolizer file="/home/steve/symbols/recycling.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='bus_stop'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/bus_stop.png" type="png" width="30" height="12" />
+      <PointSymbolizer file="/home/steve/symbols/bus_stop.png" type="png" width="30" height="12" />
     </Rule>
     <Rule>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <Filter>[amenity]='parking'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
+      <PointSymbolizer file="/home/steve/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
     <Rule>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[amenity]='place_of_worship'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/place_of_worship.png" type="png" width="16" height="16" allow_overlap="false"/>
+      <PointSymbolizer file="/home/steve/symbols/place_of_worship.png" type="png" width="16" height="16" allow_overlap="false"/>
      </Rule>
     <Rule>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[amenity]='airport'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/airport.png" type="png" width="16" height="16" allow_overlap="false"/>
+      <PointSymbolizer file="/home/steve/symbols/airport.png" type="png" width="16" height="16" allow_overlap="false"/>
      </Rule>
   </Style>
   
@@ -180,9 +192,9 @@
     </Rule>
     
      <Rule>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
       <Filter>[landuse] = 'cemetery'</Filter>
-      <PolygonPatternSymbolizer file="/Users/artem/symbols/grave_yard.png" type="png" width="16" height="16"/>
+      <PolygonPatternSymbolizer file="/home/steve/symbols/grave_yard.png" type="png" width="16" height="16"/>
     </Rule>
     
      <Rule>
@@ -196,7 +208,7 @@
       <Filter>[leisure] = 'park'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
-        <CssParameter name="fill">#aed1a0</CssParameter>
+        <CssParameter name="fill">#b6fdb6</CssParameter>
      </PolygonSymbolizer>
     </Rule>
 
@@ -263,7 +275,15 @@
         <CssParameter name="fill">#f1dada</CssParameter>
      </PolygonSymbolizer>
     </Rule>
-  
+    
+    <Rule>
+      <Filter>[landuse] = 'industrial'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f1a0a0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    
      <Rule>
       <Filter>[natural] = 'wood'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -303,9 +323,9 @@
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <Filter>[amenity]='parking'</Filter>
-      <PointSymbolizer file="/Users/artem/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
+      <PointSymbolizer file="/home/steve/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
     
     <Rule>
@@ -364,7 +384,7 @@
     </Rule>
     <Rule>
       <Filter>[place] = 'town'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="000" halo_radius="2" wrap_width="20"/>
     </Rule>
      <Rule>
@@ -377,6 +397,7 @@
       <MaxScaleDenominator>125000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="1" wrap_width="0"/>
     </Rule>
+    
     <Rule>
       <Filter>[amenity] = 'pub'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -410,10 +431,21 @@
 
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>250000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='river'</Filter>
+      <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -432,11 +464,23 @@
     </Rule>
     <Rule>
       <Filter>[waterway]='canal'</Filter>
+      <MaxScaleDenominator>250000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="white" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='canal'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">5</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -455,7 +499,6 @@
   </Style>
 
   <Style name="minor-roads-casing">
-
      <Rule>
       <Filter>[highway] = 'motorway' or [highway]='motorway_link'</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
@@ -652,9 +695,21 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
 
     <Rule>
-      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -666,7 +721,19 @@
     </Rule>
 
     <Rule>
-      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -897,7 +964,7 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway] = 'rail'</Filter>
-      <LinePatternSymbolizer file="/Users/artem/symbols/rail.png" type="png" width="20" height="3" />
+      <LinePatternSymbolizer file="/home/steve/symbols/rail.png" type="png" width="20" height="3" />
     </Rule>
 
     <Rule>
@@ -975,7 +1042,7 @@
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffcc</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -987,7 +1054,7 @@
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffcc</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1094,11 +1161,11 @@
       <Filter>[highway] = 'pedestrian'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
-        <CssParameter name="stroke">#c1ffc1</CssParameter>
+        <CssParameter name="stroke">#ededed</CssParameter>
         <CssParameter name="stroke-width">4</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1298,13 +1365,13 @@
       <Filter>[highway] = 'motorway' and [length] = 2</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/Users/artem/symbols/motorway_shield.png" type="png" width="24" height="17"/>
+      <ShieldSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield.png" type="png" width="24" height="17"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 3</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/Users/artem/symbols/motorway_shield2.png" type="png" width="31" height="17"/>
+      <ShieldSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield2.png" type="png" width="31" height="17"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary' or [highway] = 'secondary'</Filter>
@@ -1340,7 +1407,7 @@
     <StyleName>world-1</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/Users/artem/world_boundaries/world_boundaries_m</Parameter>
+      <Parameter name="file">/home/steve/world_boundaries/world_boundaries_m</Parameter>
     </Datasource>
   </Layer>
   
@@ -1348,7 +1415,7 @@
     <StyleName>world</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/Users/artem/world_boundaries/world_bnd_m</Parameter>
+      <Parameter name="file">/home/steve/world_boundaries/world_bnd_m</Parameter>
     </Datasource>
   </Layer>
   
@@ -1356,7 +1423,7 @@
     <StyleName>coast-poly</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/Users/artem/world_boundaries/shoreline_a</Parameter>
+      <Parameter name="file">/home/steve/world_boundaries/shoreline_a</Parameter>
     </Datasource>
   </Layer>
   
@@ -1364,7 +1431,7 @@
     <StyleName>coast-line</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/Users/artem/world_boundaries/shoreline_l</Parameter>
+      <Parameter name="file">/home/steve/world_boundaries/shoreline_l</Parameter>
     </Datasource>
   </Layer>
   
@@ -1373,7 +1440,7 @@
     <StyleName>builtup</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/Users/artem/world_boundaries/builtup_area</Parameter>
+      <Parameter name="file">/home/steve/world_boundaries/builtup_area</Parameter>
     </Datasource>
   </Layer>
   
@@ -1381,10 +1448,10 @@
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>     
-      <Parameter name="user">artem</Parameter>
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>     
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon) as leisure</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
@@ -1393,10 +1460,10 @@
     <StyleName>water</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>
-      <Parameter name="user">artem</Parameter>
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water') as water</Parameter>
     </Datasource>
@@ -1406,10 +1473,10 @@
     <StyleName>water</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>
-      <Parameter name="user">artem</Parameter>
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
       <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water') as water</Parameter>
     </Datasource>
@@ -1420,10 +1487,10 @@
     <StyleName>minor-roads</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>     
-      <Parameter name="user">artem</Parameter>
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>     
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="table">
       (select * from planet_osm_line order by z_order) as roads
       </Parameter>
@@ -1436,10 +1503,10 @@
     <StyleName>roads</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>     
-      <Parameter name="user">artem</Parameter>
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>     
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="table">
       (select * from planet_osm_roads order by z_order) as roads
       </Parameter>
@@ -1451,10 +1518,10 @@
     <StyleName>amenity</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>	   
-      <Parameter name="user">artem</Parameter>	   
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>	   
+      <Parameter name="user">steve</Parameter>	   
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
@@ -1464,10 +1531,10 @@
      <StyleName>roads-text</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>
-      <Parameter name="user">artem</Parameter>
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="table">
       (select way,highway,landuse,"natural",man_made,waterway,tourism,learning,amenity,place,name,char_length(name) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
       </Parameter>
@@ -1479,10 +1546,10 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>     
-      <Parameter name="user">artem</Parameter>
-      <Parameter name="dbname">planet_osm</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>     
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
       <Parameter name="table">planet_osm_point</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
@@ -1492,7 +1559,7 @@
     <StyleName>places</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">/Users/artem/world_boundaries/places</Parameter>
+      <Parameter name="file">/home/steve/world_boundaries/places</Parameter>
     </Datasource>
   </Layer>
 </Map>
