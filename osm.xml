@@ -1197,13 +1197,14 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'runway'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <Filter>[aeroway] = 'runway' or [aeroway] = 'taxiway'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">lightgrey</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke">#bbc</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
       </LineSymbolizer>
     </Rule>
+
     <!--Rule>
       <ElseFilter/>
       <MaxScaleDenominator>1500000</MaxScaleDenominator>
