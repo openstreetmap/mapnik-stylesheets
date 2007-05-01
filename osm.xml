@@ -317,7 +317,7 @@
     </Rule>
     <Rule>
       <Filter>[amenity] = 'university' or [amenity] = 'school'</Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MaxScaleDenominator>250000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">brown</CssParameter>
 	<CssParameter name="stroke-width">0.3</CssParameter>
