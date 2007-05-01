@@ -322,11 +322,6 @@
          <CssParameter name="fill">#f7efb7</CssParameter>
       </PolygonSymbolizer>
     </Rule>
-    <Rule>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <Filter>[amenity]='parking'</Filter>
-      <PointSymbolizer file="/home/steve/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
-    </Rule>
     
     <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
