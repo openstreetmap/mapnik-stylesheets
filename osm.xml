@@ -144,16 +144,25 @@
       <Filter>[amenity]='recycling'</Filter>
       <PointSymbolizer file="/home/steve/symbols/recycling.png" type="png" width="20" height="20" />
     </Rule>
+    
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='hospital'</Filter>
+      <PointSymbolizer file="/home/steve/symbols/hospital.png" type="png" width="20" height="20" />
+    </Rule>
+    
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='bus_stop'</Filter>
       <PointSymbolizer file="/home/steve/symbols/bus_stop.png" type="png" width="30" height="12" />
     </Rule>
+    
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <Filter>[amenity]='parking'</Filter>
       <PointSymbolizer file="/home/steve/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
+    
     <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[amenity]='place_of_worship'</Filter>
