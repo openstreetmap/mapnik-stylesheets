@@ -970,16 +970,6 @@
       <Filter>[railway] = 'rail'</Filter>
       <LinePatternSymbolizer file="/home/steve/symbols/rail.png" type="png" width="20" height="3" />
     </Rule>
-
-    <Rule>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway]='subway'</Filter>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
     
     <Rule>
       <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified'</Filter>
@@ -1348,7 +1338,7 @@
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail'</Filter>
        <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1357,7 +1347,7 @@
       <MinScaleDenominator>100000</MinScaleDenominator>
       <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail'</Filter>
        <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
