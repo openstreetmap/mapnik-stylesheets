@@ -971,6 +971,16 @@
       <LinePatternSymbolizer file="/home/steve/symbols/rail.png" type="png" width="20" height="3" />
     </Rule>
     
+     <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway]='subway'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#aaa</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+     
     <Rule>
       <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -1351,6 +1361,7 @@
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
+    
   </Style>
 
   
