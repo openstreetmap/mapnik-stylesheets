@@ -1,0 +1,39 @@
+#!/bin/sed -f
+#
+# This is a helper script which can be run to apply local customisations
+# to the SVN osm.xml file without having to manually merge local
+# paths, database params etc each time the file is updated
+#
+# First customize this file with your local details, then:
+#
+# $ ./convert osm.xml > osm-local.xml
+#
+#
+
+#      <Parameter name="host">dev.openstreetmap.org</Parameter>
+s/dev\.openstreetmap\.org/localhost/
+
+#      <Parameter name="port">5433</Parameter>     
+/<Parameter name="port">5433<\/Parameter>/d
+/<Parameter name="port">5432<\/Parameter>/d
+
+#      <Parameter name="user">steve</Parameter>
+s/"user">steve/"user">jburgess/
+s/"user">artem/"user">jburgess/
+
+#      <Parameter name="dbname">mapnik</Parameter>
+s/"dbname">mapnik/"dbname">gis/
+s/"dbname">planet_osm/"dbname">gis/
+s/"dbname">steve/"dbname">gis/
+
+
+#       <Parameter name="file">/Users/artem/world_boundaries/places</Parameter>
+s|/Users/artem/world_boundaries/|/home/jburgess/osm/data/world_boundaries/|
+s|/home/steve/world_boundaries/|/home/jburgess/osm/data/world_boundaries/|
+
+# PointSymbolizer file="/Users/artem/symbols/recycling.png" type="png" width="20" height="20" />
+s|/Users/artem/symbols/|/home/jburgess/osm/svn.openstreetmap.org/applications/rendering/mapnik/symbols/|
+s|/home/steve/symbols/|/home/jburgess/osm/svn.openstreetmap.org/applications/rendering/mapnik/symbols/|
+
+# bold font fails for me, use this instead
+s/DejaVu Sans Bold/DejaVu Sans Book/
