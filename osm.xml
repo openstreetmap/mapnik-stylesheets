@@ -1144,7 +1144,25 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'cycleway' or [highway] = 'track'</Filter>
+      <Filter>[highway] = 'cycleway'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">green</CssParameter>
+        <CssParameter name="stroke-width">2.0</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'track'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
