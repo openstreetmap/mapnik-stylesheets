@@ -242,13 +242,7 @@
         <CssParameter name="fill">#7ccd7c</CssParameter>
      </PolygonSymbolizer>
     </Rule>
-    <!--Rule>
-      <Filter>[leisure] = 'pitch'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#7ccd7c</CssParameter>
-     </PolygonSymbolizer>
-    </Rule-->
+
     <Rule>
       <Filter>[landuse] = 'allotments'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -292,7 +286,15 @@
         <CssParameter name="fill">#f1a0a0</CssParameter>
      </PolygonSymbolizer>
     </Rule>
-    
+
+    <Rule>
+      <Filter>[landuse] = 'commercial'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#efc8c8</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+
      <Rule>
       <Filter>[natural] = 'wood'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
