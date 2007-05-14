@@ -1478,7 +1478,7 @@
       <Parameter name="port">5433</Parameter>     
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon) as leisure</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon order by z_order) as leisure</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
   </Layer>
@@ -1491,7 +1491,7 @@
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water') as water</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' order by z_order) as water</Parameter>
     </Datasource>
   </Layer>
   
@@ -1504,7 +1504,7 @@
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
-      <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water') as water</Parameter>
+      <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' order by z_order) as water</Parameter>
     </Datasource>
   </Layer>
 
