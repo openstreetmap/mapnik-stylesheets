@@ -976,13 +976,25 @@
      <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway]='subway'</Filter>
+      <Filter>[railway] = 'tram' or [railway] = 'light_rail'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
      
+
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway]='subway'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#777</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+	<CssParameter name="stroke-dasharray">8,8</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
     <Rule>
       <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -1435,6 +1447,20 @@
    
   </Style>
 
+  
+  <Style name="directions">        
+    <Rule>
+      <Filter>[oneway] = 'yes' or [oneway] = 'true'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LinePatternSymbolizer file="/home/steve/symbols/arrow.png" type="png" width="80" height="8" />
+    </Rule>
+    <Rule>
+      <Filter>[oneway] = '-1'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <LinePatternSymbolizer file="/home/steve/symbols/arrow_back.png" type="png" width="80" height="8" />
+    </Rule>
+ </Style>
+
   <Layer name="world-1" status="on" srs="+proj=merc +datum=WGS84 +over">
     <StyleName>world-1</StyleName>
     <Datasource>
@@ -1560,6 +1586,7 @@
    </Layer>
   
    <Layer name="planet roads text osm" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+     <StyleName>directions</StyleName>
      <StyleName>roads-text</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
