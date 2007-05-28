@@ -1580,7 +1580,7 @@
       <Parameter name="port">5433</Parameter>	   
       <Parameter name="user">steve</Parameter>	   
       <Parameter name="dbname">steve</Parameter>
-      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
    </Layer>
