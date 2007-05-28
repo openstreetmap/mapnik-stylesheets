@@ -1595,7 +1595,7 @@
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
       <Parameter name="table">
-      (select way,highway,landuse,"natural",man_made,waterway,tourism,learning,amenity,place,name,ref,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
+      (select way,highway,landuse,"natural",man_made,waterway,tourism,learning,amenity,place,name,ref,oneway,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
       </Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
