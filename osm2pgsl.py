@@ -62,8 +62,7 @@ class osm2sql (ContentHandler):
                 values = ",".join(values)
                 #values = values.encode("UTF-8")
                 wkt = 'POINT(%s %s)' % (self.node[osm_id])
-                sql = "insert into %s (osm_id,%s,way) values (%s,%s,GeomFromText('%s',4326));" % (table_name,fields,osm_id,values,w
-kt)
+                sql = "insert into %s (osm_id,%s,way) values (%s,%s,GeomFromText('%s',4326));" % (table_name,fields,osm_id,values,wkt)
                 print sql.encode("UTF-8")
                 
         elif name == 'tag':
@@ -89,8 +88,7 @@ kt)
 
             wkt,status = self.WKT(way,polygon)
             if status :
-                sql = "insert into %s (osm_id,%s,way) values (%s,%s,GeomFromText('%s',4326));" % (table_name,fields,osm_id,values,w
-kt)
+                sql = "insert into %s (osm_id,%s,way) values (%s,%s,GeomFromText('%s',4326));" % (table_name,fields,osm_id,values,wkt)
                 print sql.encode("UTF-8")
             else:
                 for s in way['segs']:
