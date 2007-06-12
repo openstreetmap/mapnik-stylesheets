@@ -40,11 +40,6 @@ class GoogleProjection:
          h = RAD_TO_DEG * ( 2 * atan(exp(g)) - 0.5 * pi)
          return (f,h)
 
-
-import os
-from PIL.Image import fromstring, new
-from PIL.ImageDraw import Draw
-from StringIO import StringIO
 from mapnik import *
 
 def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
@@ -96,13 +91,10 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
                 else:
                     im = Image(512, 512)
                     render(m, im)
-                    im = fromstring('RGBA', (512, 512), rawdata(im))
-                    im = im.crop((128,128,512-128,512-128))
-                    fh = open(tile_uri,'w+b')
-                    im.save(fh, 'PNG', quality=100)
+                    view = im.view(128,128,256,256) # x,y,width,height
+                    save_to_file(tile_uri,'png',view)
                     command = "convert  -colors 255 %s %s" % (tile_uri,tile_uri)
                     call(command, shell=True)
-
 
                 bytes=os.stat(tile_uri)[6]
 		empty= ''
