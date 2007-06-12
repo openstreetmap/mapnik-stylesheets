@@ -36,18 +36,15 @@
   # or with a different user. 'steve' is the example user here ;-)
   export user_name="steve"
   sudo -u postgres createdb -Upostgres  -EUTF8 gis
-  sudo -u postgres createuser -Upostgres -S -D -R $user_name
+  sudo -u postgres createuser -Upostgres -S -D -R \"$user_name\"
   echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
   sudo -u postgres createlang plpgsql gis
   sudo -u postgres psql -Upostgres gis </usr/share/postgresql-8.1-postgis/lwpostgis.sql \
      2>&1 | grep -v -e 'FEHLER:  aktuelle Transaktion' \
      -e 'ERROR:  current transaction is aborted' \
      -e 'CREATE FUNCTION' -e OPERATOR
-
-
-  echo "GRANT ALL on geometry_columns TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
+   echo "GRANT ALL on geometry_columns TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
   echo "GRANT ALL on spatial_ref_sys TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
-
   echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
 
   
@@ -58,8 +55,12 @@
   echo "export planet_name='$planet_name'"
 
   # convert osm --> sql and import. takes about 45 minutes on a 2GHz (0.5GB-Ram) Machine
+  # Processing: Node(11420k)
+  # Processing: Segment(12080k)
+  # Processing: Way(726k)
   # for Writing way(663k)
-  ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/osm2pgsql/osm2pgsql $planet_name.gz
+
+  ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/osm2pgsql $planet_name.gz
 
 
   # Test if you can read the Database
@@ -93,6 +94,8 @@
 vi ~/svn.openstreetmap.org/applications/rendering/mapnik/generate_tiles.py
     replace with your area
     bbox = (-2, 50.0,1.0,52.0)
+
+   mkdir -p ~/osm/tiles
 
 # ---------- And now, we start the rendering
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
