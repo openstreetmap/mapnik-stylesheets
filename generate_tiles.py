@@ -106,7 +106,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
 if __name__ == "__main__":
     bbox = (-2, 50.0,1.0,52.0)
     home = os.environ['HOME']
-    mapfile = home + "/svn.openstreetmap.org/utils/mapnik/osm.xml"
+    mapfile = home + "/svn.openstreetmap.org/applications/rendering/mapnik/osm.xml"
     tile_dir = home + "/osm/tiles/"
 
     minZoom = 10
