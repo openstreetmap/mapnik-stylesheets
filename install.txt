@@ -14,17 +14,6 @@
                 postgresql-server-dev-8.1 postgresql-8.1-postgis \
                 libboost-python-dev python2.4-dev \
                 libwww-perl libxml-parser-perl libfile-slurp-perl \
-                libtimedate-perl libdate-manip-perl imagemagick \
-		libavl-dev \
-                ttf-dejavu \
-       	        libmapnik-dev libmapnik1d mapnik-plugins mapnik-utils \
-	        python-imaging python-mapnik libxml2-dev g++-4.1 libzzip-dev libzvt-dev \
-		libwbxml2-dev lib64bz2-dev libxml-dev libxml2-dev
-
-
-# ---- get software from OSM-SVN and compile
-  cd
-  svn co http://svn.openstreetmap.org/
 
   # compile osmsql
   (cd ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/; make)
@@ -47,20 +36,32 @@
   echo "GRANT ALL on spatial_ref_sys TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
   echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
 
-  
+
+ 
+ # ------- Get World Boundaries
+ # Download is (600MB)
+ # unpacking is an additional 1.2GB
+ wget http://artem.dev.openstreetmap.org/files/world_boundaries.tar.bz2 -O /tmp/world_boundaries.tar.bz2
+ mkdir -p /usr/share/mapnik
+ cd /usr/local/mapnik
+ tar -xvjf /tmp/world_boundaries.tar.bz2
+ 
 # ---- Install and run planet-mirror --> planet.sql
   # Get newest planet.osm. This will takes some time
   ~/svn.openstreetmap.org/applications/utils/planet-mirror/planet-mirror.pl -v -d 
   export planet_name=`~/svn.openstreetmap.org/applications/utils/planet-mirror/planet-mirror.pl -print-filename`
   echo "export planet_name='$planet_name'"
 
+#  ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/osm2pgsql $planet_name.gz
+
+  ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/osm2pgsql ~/osm/planet/planet-*.osm
+
   # convert osm --> sql and import. takes about 45 minutes on a 2GHz (0.5GB-Ram) Machine
+  #                                             23 minutes on a 3GHz (2 GB-Ram) Machine
   # Processing: Node(11420k)
   # Processing: Segment(12080k)
   # Processing: Way(726k)
   # for Writing way(663k)
-
-  ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/osm2pgsql $planet_name.gz
 
 
   # Test if you can read the Database
