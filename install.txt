@@ -15,6 +15,9 @@
                 libboost-python-dev python2.4-dev \
                 libwww-perl libxml-parser-perl libfile-slurp-perl \
 
+# ---- get software from OSM-SVN and compile
+  cd
+  svn co http://svn.openstreetmap.org/
   # compile osmsql
   (cd ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/; make)
 
