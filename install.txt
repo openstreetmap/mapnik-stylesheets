@@ -28,7 +28,7 @@
   # or with a different user. 'steve' is the example user here ;-)
   export user_name="steve"
   sudo -u postgres createdb -Upostgres  -EUTF8 gis
-  sudo -u postgres createuser -Upostgres -S -D -R \"$user_name\"
+  sudo -u postgres createuser -Upostgres -S -D -R "$user_name"
   echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
   sudo -u postgres createlang plpgsql gis
   sudo -u postgres psql -Upostgres gis </usr/share/postgresql-8.1-postgis/lwpostgis.sql \
@@ -45,9 +45,9 @@
  # Download is (600MB)
  # unpacking is an additional 1.2GB
  wget http://artem.dev.openstreetmap.org/files/world_boundaries.tar.bz2 -O /tmp/world_boundaries.tar.bz2
- mkdir -p /usr/share/mapnik
- cd /usr/local/mapnik
- tar -xvjf /tmp/world_boundaries.tar.bz2
+ sudo mkdir -p /usr/share/mapnik
+ cd /usr/share/mapnik
+ sudo tar -xvjf /tmp/world_boundaries.tar.bz2
  
 # ---- Install and run planet-mirror --> planet.sql
   # Get newest planet.osm. This will takes some time
