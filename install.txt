@@ -28,6 +28,9 @@
   # or with a different user. 'steve' is the example user here ;-)
   export user_name="steve"
   sudo -u postgres createdb -Upostgres  -EUTF8 gis
+
+
+# if you want to do it yourself ....
   sudo -u postgres createuser -Upostgres -S -D -R "$user_name"
   echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
   sudo -u postgres createlang plpgsql gis
@@ -39,6 +42,11 @@
   echo "GRANT ALL on spatial_ref_sys TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
   echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" | sudo -u postgres psql -Upostgres gis
 
+ # else 
+  wget http://www.gpsdrive.de/osm/mapnik-osm-gis.sql.gz -O \
+          ~/osm/mapnik-osm-gis.sql.gz
+  sed "s/tweety/$user_name/g" < ~/osm/mapnik-osm-gis.sql.gz | \
+	  sudo -u postgres psql -Upostgres gis	 
 
  
  # ------- Get World Boundaries
