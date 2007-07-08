@@ -14,6 +14,7 @@
                 postgresql-server-dev-8.1 postgresql-8.1-postgis \
                 libboost-python-dev python2.4-dev \
                 libwww-perl libxml-parser-perl libfile-slurp-perl \
+		libgeos-dev
 
 # ---- get software from OSM-SVN and compile
   cd
