@@ -1,0 +1,14 @@
+Source: osm-data-mapnik
+Section: utils
+Priority: optional
+Maintainer: Joerg Ostertag <osm-data-mapnik@ostertag.name>
+Build-Depends: debhelper (>> 3.7.2), pkg-config
+Standards-Version: 3.6.1
+
+Package: osm-data-mapnik
+Architecture: any
+Depends: ${misc:Depends}, postgis
+Recommends: gpsd, gpsdrive
+Suggests: 
+Description: Osm-Data-Mapnik is the postgis Data for the Mapnik
+ Database used by the renderern Mapnik for OpenStreetMap
