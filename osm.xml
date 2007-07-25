@@ -1133,7 +1133,7 @@
 
    <Rule>
       <Filter>[highway] = 'bridleway'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -1149,7 +1149,7 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'footway'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -1167,7 +1167,7 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'cycleway'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -1185,7 +1185,7 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'track'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -1215,7 +1215,7 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'unsurfaced' or [highway] = 'byway'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -1399,6 +1399,15 @@
        <LineSymbolizer>
         <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <Filter>[railway] = 'preserved'</Filter>
+       <LineSymbolizer>
+        <CssParameter name="stroke">#777</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
       </LineSymbolizer>
     </Rule>
     
