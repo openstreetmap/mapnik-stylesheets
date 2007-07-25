@@ -436,6 +436,14 @@
     </Rule>
 
     <Rule>
+      <Filter>[natural] = 'land'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#f2efe9</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+
+    <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>250000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1523,7 +1531,7 @@
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' order by z_order) as water</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' or "natural"='land' order by z_order) as water</Parameter>
     </Datasource>
   </Layer>
   
