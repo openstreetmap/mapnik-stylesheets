@@ -1,13 +1,13 @@
-This package was debianized by Frank Kirschner <kirfrank@debian.org> on
-Wed Apr 17 18:35:19 CEST 2002.
+This package was debianized by Jörg Ostertag <debian@ostertag.name> on
+Wed 25 Jul 18:35:19 CEST 2007.
 
-It was downloaded from http://www.ostertag.name/osm-data-mapnik/osm-data-mapnik-2.10pre3-cvs-version.tar.gz
+It was downloaded from http://planet.openstreetmap.org/planet-070725.osm.7z
 
-Homepage: http://www.osm-data-mapnik.cc/, http://www.ostertag.name/osm-data-mapnik/
-Project Page: http://freshmeat.net/projects/osm-data-mapnik/
+Homepage: http://www.openstreetmap.org/, http://www.ostertag.name/, http://www.mapnik.org/
+Project Page: http://www.openstreetmap.org/
 
-Upstream Author: Fritz Ganter <ganter@ganter.at>
+Upstream Author: Openstreetmap Contributors
 
 Copyright:
 
-Osm-Data-Mapnik is released under CC-by-SA under the terms and conditions of the GNU
+Osm-Data-Mapnik is released under CC-by-SA 

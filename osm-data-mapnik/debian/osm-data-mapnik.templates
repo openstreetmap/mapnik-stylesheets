@@ -5,9 +5,6 @@ Description: Create and initialize the mysql-table?
  Do you want to run 
        geoinfo.pl --create-db --create-defaults
  to initialize your database and add defaults into it.
-       WARNING: This will created a user gast with password gast
-       WARNING: this might be a security issue if you have your mysql 
-       WARNING: database accessible from outside of your computer
 
 Template: osm-data-mapnik/import_osm
 Type: boolean
@@ -20,10 +17,3 @@ Description: Download and import osm Data
 	  For this to work your Computer should 
 	  at least have 2GB RAM and more than 2GHz
 	  or equivalent.	  
-
-Template: osm-data-mapnik/import_osm_area
-Type: string
-Default: germany
-Description: Area to restrict osm import
- Since the osm import is pretty memory intensive you 
- have to restrict the import to a certain region.
