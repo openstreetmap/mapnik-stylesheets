@@ -10,10 +10,18 @@ case "$1" in
 
         . /usr/share/debconf/confmodule
 
-	export user_name="osm"
+	db_get osm-data-mapnik/initdb || true
+	INIT_DB=$RET
 
-	/usr/bin/install-db-osm-data-mapnik
+	db_get osm-data-mapnik/grant_user || true
+	GRANT_USER=$RET
 
+	#echo "# Default settings for osm-data-mapnik" > /etc/default/osm-data-mapnik
+	#echo "GRANT_USER='$GRANT_USER' " >> /etc/default/osm-data-mapnik
+	#echo "INIT_DB='$INIT_DB' " >> /etc/default/osm-data-mapnik
+
+	/usr/bin/install-db-osm-data-mapnik || true
+	true
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

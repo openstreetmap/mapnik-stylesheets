@@ -7,8 +7,10 @@ Standards-Version: 3.6.1
 
 Package: osm-data-mapnik
 Architecture: any
-Depends: ${misc:Depends}, postgis
+Depends: ${misc:Depends}, postgis, libmapnik1d
 Recommends: gpsd, gpsdrive
 Suggests: 
 Description: Osm-Data-Mapnik is the postgis Data for the Mapnik
  Database used by the renderern Mapnik for OpenStreetMap
+ this data will be installed into the 
+ postgress database named 'gis'
