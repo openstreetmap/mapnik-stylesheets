@@ -6,7 +6,7 @@ Build-Depends: debhelper (>> 3.7.2), pkg-config
 Standards-Version: 3.6.1
 
 Package: osm-data-mapnik
-Architecture: any
+Architecture: all
 Depends: ${misc:Depends}, postgis, libmapnik1d
 Recommends: gpsd, gpsdrive
 Suggests: 
