@@ -130,7 +130,7 @@
       <PointSymbolizer file="/home/steve/symbols/pub.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
       <Filter>[natural]='peak'</Filter>
       <PointSymbolizer file="/home/steve/symbols/peak.png" type="png" width="8" height="8" />
     </Rule>
@@ -417,13 +417,26 @@
     <Rule>
       <Filter>[place] = 'town'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="000" halo_radius="2" wrap_width="20"/>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="2" wrap_width="20"/>
     </Rule>
-     <Rule>
+    <Rule>
+      <Filter>[place] = 'town'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#777777" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
       <Filter>[place] = 'village'</Filter>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="2" wrap_width="0"/>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="2" wrap_width="0"/>
     </Rule>
+    <Rule>
+      <Filter>[place] = 'village'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="777777" halo_radius="1" wrap_width="0"/>
+    </Rule>
+
     <Rule>
       <Filter>[place] = 'hamlet'</Filter>
       <MaxScaleDenominator>125000</MaxScaleDenominator>
@@ -442,10 +455,26 @@
     </Rule>
 
     <Rule>
-      <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' or [natural] &lt;&gt; ''</Filter>
+      <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' </Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" halo_radius="2" wrap_width="10"/>
     </Rule>
+    <Rule>
+      <Filter>[natural] = 'wood'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" halo_radius="2" wrap_width="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'peak'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="brown" dy="6" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'water' or [natural] = 'lake'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="6699cc" halo_radius="1" wrap_width="20"/>
+    </Rule>
+
     <Rule>
       <Filter>[tourism] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
@@ -520,7 +549,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="white" placement="line"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
       <Filter>[waterway]='canal'</Filter>
@@ -532,7 +561,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="white" placement="line"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
       <Filter>[waterway]='canal'</Filter>
@@ -544,7 +573,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="white" placement="line"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="7" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
       <ElseFilter/> <!--[waterway]='stream'</Filter>-->
@@ -1044,7 +1073,7 @@
       <Filter>[railway]='subway'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#777</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
 	<CssParameter name="stroke-dasharray">6,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1298,9 +1327,18 @@
     <Rule>
       <Filter>[aeroway] = 'runway'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>200000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#bbc</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'runway'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbc</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
