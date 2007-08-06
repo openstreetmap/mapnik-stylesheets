@@ -41,11 +41,7 @@ install: build
 
 	# get Database Content with Dump
 	mkdir -p ${destdir}/var/tmp
-	# old
-	# pg_dump -U tweety -cif ${destdir}/var/tmp/mapnik-osm-gis.sql gis
-	# New
 	pg_dump -U tweety --create gis | gzip >${destdir}/var/tmp/mapnik-osm-gis.sql.gz
-
 
 # Build architecture-independent files here.
 binary-indep: build install

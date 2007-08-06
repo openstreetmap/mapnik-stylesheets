@@ -15,7 +15,7 @@ GRANT_USER=$RET
 
 cat <<EOF > /etc/default/openstreetmap-mapnik-data
 # Default settings for openstreetmap-mapnik-data
-GRANT_USER="$GRANT_USER"
 INIT_DB="$INIT_DB"
+GRANT_USER="$GRANT_USER"
 EOF
 

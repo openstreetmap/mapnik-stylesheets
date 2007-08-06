@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Include gpsd defaults if available
-if [ -f /etc/default/osm-data-mapnik ] ; then
-    . /etc/default/osm-data-mapnik
+if [ -f /etc/default/openstreetmap-mapnik-data ] ; then
+    . /etc/default/openstreetmap-mapnik-data
 else
     echo "No Config for osm-data-mapnik found"
 fi
@@ -73,7 +73,8 @@ if [ "x$INIT_DB" = "xtrue" ] ; then
 	-e '^CREATE SCHEMA$' \
 	-e '^ALTER SCHEMA$' \
 	-e '^COMMENT$' \
-	-e '^CREATE LANGUAGE$'
+	-e '^CREATE LANGUAGE$' \
+	-e 'already exists with same argument types'
 
 else
     echo "Let the Database alone"
