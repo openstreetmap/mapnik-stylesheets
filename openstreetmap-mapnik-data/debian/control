@@ -8,7 +8,7 @@ Standards-Version: 3.6.1
 Package: openstreetmap-mapnik-data
 Architecture: all
 Depends: ${misc:Depends}, postgis, libmapnik1d, postgresql-8.2-postgis
-Recommends: gpsd, gpsdrive
+Recommends: gpsd, gpsdrive, openstreetmap-mapnik-world-boundaries
 Replaces: osm-data-mapnik
 Suggests: 
 Description: Openstreetmap-Mapnik-Data is the postgis Data for the Mapnik
