@@ -1558,19 +1558,19 @@
       <Filter>[highway] = 'motorway' and [length] = 2</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield.png" type="png" width="24" height="17"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 3</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield2.png" type="png" width="31" height="17"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield2.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 4</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield3.png" type="png" width="38" height="17"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/motorway_shield3.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary' or [highway] = 'secondary'</Filter>
