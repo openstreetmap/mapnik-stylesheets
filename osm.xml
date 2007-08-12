@@ -1546,7 +1546,7 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway] = 'preserved'</Filter>
-      <LinePatternSymbolizer file="/home/steve/symbols/preserved.png" type="png" width="20" height="3" />
+      <LinePatternSymbolizer file="/home/steve/symbols/rail_preserved.png" type="png" width="20" height="3" />
     </Rule>
     
   </Style>
