@@ -1389,6 +1389,21 @@
         <CssParameter name="stroke-width">6</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'terminal'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#cc99ff</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'terminal'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">330066</CssParameter>
+	<CssParameter name="stroke-width">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
 
     <!--Rule>
       <ElseFilter/>
