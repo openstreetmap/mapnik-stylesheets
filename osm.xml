@@ -100,7 +100,7 @@
       <Filter>[amenity]='post_office'</Filter>
       <PointSymbolizer file="/home/steve/symbols/post_office.png" type="png" width="16" height="16" />
     </Rule>
-    
+
     <Rule>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator> 
@@ -153,7 +153,7 @@
     
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <Filter>[amenity]='bus_stop'</Filter>
+      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>      
       <PointSymbolizer file="/home/steve/symbols/bus_stop.png" type="png" width="30" height="12" />
     </Rule>
     
@@ -367,6 +367,12 @@
       <PolygonSymbolizer>
          <CssParameter name="fill">pink</CssParameter>
 	 <CssParameter name="fill-opacity">0.5</CssParameter> 
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#d79047</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
@@ -1400,7 +1406,7 @@
       <Filter>[aeroway] = 'terminal'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">330066</CssParameter>
+        <CssParameter name="stroke">#330066</CssParameter>
 	<CssParameter name="stroke-width">0.2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1750,7 +1756,7 @@
       <Parameter name="port">5433</Parameter>	   
       <Parameter name="user">steve</Parameter>	   
       <Parameter name="dbname">steve</Parameter>
-      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
    </Layer>
