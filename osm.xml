@@ -372,7 +372,7 @@
     <Rule>
       <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
       <PolygonSymbolizer>
-         <CssParameter name="fill">#d79047</CssParameter>
+         <CssParameter name="fill">#cc9999</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
