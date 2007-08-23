@@ -1686,7 +1686,7 @@
       <Parameter name="port">5433</Parameter>     
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon order by z_order) as leisure</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
       <Parameter name="estimate_extent">true</Parameter>
     </Datasource>
   </Layer>
