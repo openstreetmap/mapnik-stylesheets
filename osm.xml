@@ -371,6 +371,7 @@
     </Rule>
     <Rule>
       <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">#cc9999</CssParameter>
       </PolygonSymbolizer>
