@@ -346,7 +346,7 @@
       <Filter>[amenity] = 'parking'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">eeeed1</CssParameter>
+        <CssParameter name="stroke">#eeeed1</CssParameter>
 	<CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
