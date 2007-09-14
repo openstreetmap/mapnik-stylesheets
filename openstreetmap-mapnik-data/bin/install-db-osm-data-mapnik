@@ -55,7 +55,7 @@ if [ "x$INIT_DB" = "xtrue" ] ; then
 	-e "^CREATE OPERATOR CLASS$" \
 	-e "^CREATE OPERATOR$" \
 	-e "^CREATE TABLE$" \
-	-e "^CREATE TYPE$"
+	-e "^CREATE TYPE$" \
 	-e "^DROP FUNCTION$" \
 	-e "^SET$" \
 	-e '^ALTER AGGREGATE$' \
