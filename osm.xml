@@ -130,7 +130,7 @@
       <PointSymbolizer file="/home/steve/symbols/pub.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
       <Filter>[natural]='peak'</Filter>
       <PointSymbolizer file="/home/steve/symbols/peak.png" type="png" width="8" height="8" />
     </Rule>
@@ -1093,7 +1093,7 @@
      <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'tram' or [railway] = 'light_rail'</Filter>
+      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -1549,7 +1549,7 @@
     <Rule>
       <MaxScaleDenominator>2500000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail'</Filter>
+      <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -1558,7 +1558,7 @@
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail'</Filter>
+      <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
