@@ -37,9 +37,9 @@ install: build
 
 	#./debian/update_svn_revision.sh
 
-	mkdir -p debian/openstreetmap-mapnik-world-boundaries/usr/share/mapnik
+	mkdir -p debian/openstreetmap-mapnik-world-boundaries/usr/share/mapnik/world_boundaries
 	cp /usr/share/mapnik/world_boundaries/* \
-		debian/openstreetmap-mapnik-world-boundaries/usr/share/mapnik/
+		debian/openstreetmap-mapnik-world-boundaries/usr/share/mapnik/world_boundaries/
 
 # Build architecture-independent files here.
 binary-indep: build install
