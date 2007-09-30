@@ -32,6 +32,7 @@ if ! sudo -u "$user_name" osm-planet-mirror -v -v --planet-dir=$planet_dir ; the
 fi
 
 echo "------- Drop complete Database '$database_name'"
+echo "CHECKPOINT" | sudo -u postgres psql -q
 sudo -u postgres dropdb -Upostgres   "$database_name"
 sudo -u postgres dropuser -Upostgres "$user_name"
 
