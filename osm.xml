@@ -517,7 +517,7 @@
   
    <Style name="water">
     <Rule>
-      <Filter>[landuse] = 'reservoir' or [landuse] = 'water'</Filter>
+      <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
