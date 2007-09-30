@@ -1652,7 +1652,7 @@
   
   <Style name="directions">        
     <Rule>
-      <Filter>[oneway] = 'yes' or [oneway] = 'true'</Filter>
+      <Filter>[oneway] = 'yes' or [oneway] = 'true' or [oneway] = '1'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <LinePatternSymbolizer file="/home/steve/symbols/arrow.png" type="png" width="80" height="8" />
     </Rule>
