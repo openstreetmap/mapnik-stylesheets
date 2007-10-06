@@ -1624,75 +1624,75 @@
       <Filter>[highway] = 'trunk' and [length] = 2</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/trunk_shield.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#7fc97f" placement="line" file="/home/steve/symbols/trunk_shield.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 3</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/trunk_shield2.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#7fc97f" placement="line" file="/home/steve/symbols/trunk_shield2.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 4</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/trunk_shield3.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#7fc97f" placement="line" file="/home/steve/symbols/trunk_shield3.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 5</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/trunk_shield4.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#7fc97f" placement="line" file="/home/steve/symbols/trunk_shield4.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 2</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/primary_shield.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#e46d71" placement="line" file="/home/steve/symbols/primary_shield.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 3</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/primary_shield2.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#e46d71" placement="line" file="/home/steve/symbols/primary_shield2.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 4</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/primary_shield3.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#e46d71" placement="line" file="/home/steve/symbols/primary_shield3.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 5</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/primary_shield4.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#e46d71" placement="line" file="/home/steve/symbols/primary_shield4.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 2</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/secondary_shield.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#fdbf6f" placement="line" file="/home/steve/symbols/secondary_shield.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 3</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/secondary_shield2.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#fdbf6f" placement="line" file="/home/steve/symbols/secondary_shield2.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 4</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/secondary_shield3.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#fdbf6f" placement="line" file="/home/steve/symbols/secondary_shield3.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 5</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file="/home/steve/symbols/secondary_shield4.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#fdbf6f" placement="line" file="/home/steve/symbols/secondary_shield4.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
