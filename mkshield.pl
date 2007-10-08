@@ -5,24 +5,28 @@ use warnings;
 
 use GD;
 
-mkshield("motorway_shield", 24, 17, 128, 155, 192);
-mkshield("motorway_shield2", 31, 17, 128, 155, 192);
-mkshield("motorway_shield3", 38, 17, 128, 155, 192);
+mkshield("motorway_shield1", 17, 17, 128, 155, 192);
+mkshield("motorway_shield2", 24, 17, 128, 155, 192);
+mkshield("motorway_shield3", 31, 17, 128, 155, 192);
+mkshield("motorway_shield4", 38, 17, 128, 155, 192);
 
-mkshield("trunk_shield", 24, 17, 127, 201, 127);
-mkshield("trunk_shield2", 31, 17, 127, 201, 127);
-mkshield("trunk_shield3", 38, 17, 127, 201, 127);
-mkshield("trunk_shield4", 45, 17, 127, 201, 127);
+mkshield("trunk_shield1", 17, 17, 127, 201, 127);
+mkshield("trunk_shield2", 24, 17, 127, 201, 127);
+mkshield("trunk_shield3", 31, 17, 127, 201, 127);
+mkshield("trunk_shield4", 38, 17, 127, 201, 127);
+mkshield("trunk_shield5", 45, 17, 127, 201, 127);
 
-mkshield("primary_shield", 24, 17, 228, 109, 113);
-mkshield("primary_shield2", 31, 17, 228, 109, 113);
-mkshield("primary_shield3", 38, 17, 228, 109, 113);
-mkshield("primary_shield4", 45, 17, 228, 109, 113);
+mkshield("primary_shield1", 17, 17, 228, 109, 113);
+mkshield("primary_shield2", 24, 17, 228, 109, 113);
+mkshield("primary_shield3", 31, 17, 228, 109, 113);
+mkshield("primary_shield4", 38, 17, 228, 109, 113);
+mkshield("primary_shield5", 45, 17, 228, 109, 113);
 
-mkshield("secondary_shield", 24, 17, 253, 191, 111);
-mkshield("secondary_shield2", 31, 17, 253, 191, 111);
-mkshield("secondary_shield3", 38, 17, 253, 191, 111);
-mkshield("secondary_shield3", 45, 17, 253, 191, 111);
+mkshield("secondary_shield1", 17, 17, 253, 191, 111);
+mkshield("secondary_shield2", 24, 17, 253, 191, 111);
+mkshield("secondary_shield3", 31, 17, 253, 191, 111);
+mkshield("secondary_shield4", 38, 17, 253, 191, 111);
+mkshield("secondary_shield5", 45, 17, 253, 191, 111);
 
 exit 0;
 
