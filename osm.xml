@@ -421,6 +421,27 @@
         <CssParameter name="fill">lightgrey</CssParameter>
      </PolygonSymbolizer>
     </Rule-->
+
+    <Rule>
+      <Filter>[way_area] &gt;= 200000</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[way_area] &gt;= 100000 and [way_area] &lt; 200000</Filter>
+      <MaxScaleDenominator>12500</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[way_area] &gt;= 20000 and [way_area] &lt; 100000</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[way_area] &lt; 20000</Filter>
+      <MaxScaleDenominator>2500</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+    </Rule>
   </Style>
    
   <Style name="text">
