@@ -320,14 +320,14 @@
     </Rule>
     
     <Rule>
-      <Filter>[amenity] = 'university' or [amenity] = 'school'</Filter>
+      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#f0f0d8</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'university' or [amenity] = 'school'</Filter>
+      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school'</Filter>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">brown</CssParameter>
@@ -503,7 +503,7 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#660033" halo_radius="2" wrap_width="10"/>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'school' or [amenity] = 'university'</Filter>
+      <Filter>[amenity] = 'school' or [amenity] = 'college' or [amenity] = 'university'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000033" halo_radius="2" wrap_width="12"/>
     </Rule>
