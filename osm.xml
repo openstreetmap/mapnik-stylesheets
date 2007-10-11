@@ -1750,12 +1750,12 @@
     <Rule>
       <Filter>[oneway] = 'yes' or [oneway] = 'true' or [oneway] = '1'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <LinePatternSymbolizer file="/home/steve/symbols/arrow.png" type="png" width="80" height="8" />
+      <LinePatternSymbolizer file="/home/steve/symbols/arrow.png" type="png" width="74" height="8" />
     </Rule>
     <Rule>
       <Filter>[oneway] = '-1'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <LinePatternSymbolizer file="/home/steve/symbols/arrow_back.png" type="png" width="80" height="8" />
+      <LinePatternSymbolizer file="/home/steve/symbols/arrow_back.png" type="png" width="74" height="8" />
     </Rule>
  </Style>
 
