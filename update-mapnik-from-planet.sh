@@ -1,9 +1,10 @@
 #!/bin/bash
 
-export user_name="osm"
+export osm_username="osm"
 export database_name="gis"
-export planet_dir="/home/$user_name/osm/planet"
+export planet_dir="/home/$osm_username/osm/planet"
 export planet_file="$planet_dir/planet.osm.bz2"
+export sql_dump="$planet_dir/planet.osm.sql.bz2"
 
 test -n "$1" || help=1
 quiet=" -q "
@@ -12,7 +13,7 @@ verbose=1
 for arg in "$@" ; do
     case $arg in
 	--all-planet) #		Do all the creation steps listed below from planet file
-	    create_user=1
+	    create_osm_user=1
 	    mirror=1
 	    drop=1
 	    create_db=1
@@ -22,8 +23,29 @@ for arg in "$@" ; do
 	    create_db_users=${create_db_users:-*}
 	    ;;
 
-	--create_user) #	create the user needed
-	    create_user=1
+	--all-from-dump) #	Do all the creation steps listed below from planet-dump file
+			# all-from-dump is not completely tested yet
+	    create_osm_user=1
+	    mirror_dump=1
+	    drop=1
+	    create_db=1
+	    create_db_user=1
+	    grant_all_rights_to_user_osm=1
+	    create_db_users=${create_db_users:-*}
+	    fill_from_dump="$sql_dump"
+	    ;;
+
+	--all-create) #		Do all the creation steps listed below only no data import
+	    create_osm_user=1
+	    drop=1
+	    create_db=1
+	    create_db_user=1
+	    grant_all_rights_to_user_osm=1
+	    create_db_users=${create_db_users:-*}
+	    ;;
+
+	--create_osm_user) #	create the user needed
+	    create_osm_user=1
 	    ;;
 	
 	--mirror) #		mirror the planet File
@@ -57,6 +79,14 @@ for arg in "$@" ; do
 
 	--planet_fill) #	fill database from planet File
 	    planet_fill=1
+	    ;;
+
+	--mirror_dump) #	mirror the planet.sql dump File
+	    mirror_dump=1
+	    ;;
+
+	--fill_from_dump=*) #	fill database from Dump File
+	    fill_from_dump=${arg#*=}
 	    ;;
 
 	--postgis_mapnik_dump=*) #	Dump Content of Mapnik postgis Database to a file File (*.sql or *.sql.bz)
@@ -105,9 +135,13 @@ for arg in "$@" ; do
 	    planet_file=${arg#*=}
 	    ;;
 	
-	--user_name=*) #	Define username to use for DB creation
-	    user_name=${arg#*=}
-	    planet_dir="/home/$user_name/osm/planet"
+	--osm_username=*) #	Define username to use for DB creation and planet download
+			#You shouldn't use your username as the download and install user. 
+			#This username is the download and install user. (normally osm) 
+			#The osm-user normally only should have the planet files in his
+			#home directory and nothing else. By default the osm-username is 'osm'
+	    osm_username=${arg#*=}
+	    planet_dir="/home/$osm_username/osm/planet"
 	    planet_file="$planet_dir/planet.osm.bz2"
 	    ;;
 	
@@ -131,6 +165,7 @@ if [ -n "$help" ] ; then
 !!! Warning: This Script is for now a quick hack to make setting up
 !!! Warning: My databases easier. Please check if it really works for you!!
 !!! Warning: Especially when using different Database names or username, ...
+!!! Warning: not every combination of changing values from the default is tested.
 
     This script tries to install the mapnik database.
     For this it first creates a new user osm on the system
@@ -146,17 +181,24 @@ fi
 ############################################
 # Create a user on the system
 ############################################
-if [ -n "$create_user" ] ; then
-    test -n "$verbose" && echo "----- Check if we already have an user '$user_name'"
+if [ -n "$create_osm_user" ] ; then
+    test -n "$verbose" && echo "----- Check if we already have an user '$osm_username'"
     
-    if ! id "$user_name" >/dev/null; then
-	echo "create '$user_name' User"
-	useradd "$user_name"
+    if ! id "$osm_username" >/dev/null; then
+	echo "create '$osm_username' User"
+	useradd "$osm_username"
     fi
     
-    mkdir -p "/home/$user_name/osm/planet"
-    chown -R "$user_name" "/home/$user_name"
-    chmod -R +rwX "/home/$user_name"
+    mkdir -p "/home/$osm_username/osm/planet"
+    # The user itself should be allowed to read/write all his own files
+    # in the ~/osm/ Directory
+    chown "$osm_username" "/home/$osm_username"
+    chown -R "$osm_username" "/home/$osm_username/osm"
+    chmod +rwX "/home/$osm_username"
+    chmod -R +rwX "/home/$osm_username/osm"
+
+    # Everyone on the system is allowed to read the planet.osm Files
+    chmod -R a+rX "/home/$osm_username/osm"
 fi
 
 
@@ -165,7 +207,7 @@ fi
 ############################################
 if [ -n "$mirror" ] ; then
     test -n "$verbose" && echo "----- Mirroring planet File"
-    if ! sudo -u "$user_name" osm-planet-mirror -v -v --planet-dir=$planet_dir ; then 
+    if ! sudo -u "$osm_username" osm-planet-mirror -v -v --planet-dir=$planet_dir ; then 
 	echo "Cannot Mirror Planet File"
 	exit
     fi
@@ -175,10 +217,10 @@ fi
 # Drop the old Database and Database-user
 ############################################
 if [ -n "$drop" ] ; then
-    test -n "$verbose" && echo "----- Drop complete Database '$database_name' and user '$user_name'"
+    test -n "$verbose" && echo "----- Drop complete Database '$database_name' and user '$osm_username'"
     echo "CHECKPOINT" | sudo -u postgres psql $quiet
     sudo -u postgres dropdb $quiet -Upostgres   "$database_name"
-    sudo -u postgres dropuser $quiet -Upostgres "$user_name"
+    sudo -u postgres dropuser $quiet -Upostgres "$osm_username"
 fi
 
 ############################################
@@ -196,18 +238,18 @@ fi
 # Create db-user
 ############################################
 if [ -n "$create_db_user" ] ; then
-    test -n "$verbose" && echo "----- Create Database-user '$user_name'"
-    sudo -u postgres createuser -Upostgres  $quiet -S -D -R "$user_name"  || exit -1 
+    test -n "$verbose" && echo "----- Create Database-user '$osm_username'"
+    sudo -u postgres createuser -Upostgres  $quiet -S -D -R "$osm_username"  || exit -1 
 fi
 
 if [ -n "$grant_all_rights_to_user_osm" ] ; then
     test -n "$verbose" && echo 
-    test -n "$verbose" && echo "----- Grant rights on Database '$database_name' for '$user_name'"
+    test -n "$verbose" && echo "----- Grant rights on Database '$database_name' for '$osm_username'"
     (
-	echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" 
-	echo "GRANT ALL on geometry_columns TO \"$user_name\";"
-	echo "GRANT ALL on spatial_ref_sys TO \"$user_name\";" 
-	echo "GRANT ALL ON SCHEMA PUBLIC TO \"$user_name\";" 
+	echo "GRANT ALL ON SCHEMA PUBLIC TO \"$osm_username\";" 
+	echo "GRANT ALL on geometry_columns TO \"$osm_username\";"
+	echo "GRANT ALL on spatial_ref_sys TO \"$osm_username\";" 
+	echo "GRANT ALL ON SCHEMA PUBLIC TO \"$osm_username\";" 
     ) | sudo -u postgres psql $quiet -Upostgres "$database_name"
 fi
 
@@ -263,7 +305,7 @@ fi
 if [ -n "$db_table_create" ] ; then
     echo ""
     echo "--------- Unpack and import $planet_file"
-    sudo -u "$user_name" osm2pgsql --create "$database_name"
+    sudo -u "$osm_username" osm2pgsql --create "$database_name"
 fi
 
 ############################################
@@ -272,7 +314,7 @@ fi
 if [ -n "$planet_fill" ] ; then
     echo ""
     echo "--------- Unpack and import $planet_file"
-    sudo -u "$user_name" osm2pgsql --database "$database_name" $planet_file
+    sudo -u "$osm_username" osm2pgsql --database "$database_name" $planet_file
 fi
 
 
@@ -285,10 +327,38 @@ if [ -n "$postgis_mapnik_dump" ] ; then
 	mkdir -p "$postgis_mapnik_dump_dir"
 	case "$postgis_mapnik_dump" in
 	    *.gz)
-		sudo -u "$user_name" pg_dump -U "$user_name" "$database_name" | gzip >"$postgis_mapnik_dump"
+		sudo -u "$osm_username" pg_dump --data-only -U "$osm_username" "$database_name" | gzip >"$postgis_mapnik_dump"
 		;;
 	    *)
-		sudo -u "$user_name" pg_dump -U "$user_name" "$database_name" >"$postgis_mapnik_dump"
+		sudo -u "$osm_username" pg_dump --data-only -U "$osm_username" "$database_name" >"$postgis_mapnik_dump"
+		;;
+	esac
+fi
+
+############################################
+# Mirror the planet-dump File from planet.openstreetmap.de
+############################################
+if [ -n "$mirror_dump" ] ; then
+    test -n "$verbose" && echo "----- Mirroring planet-dump File"
+    wget -v --mirror http://planet.openstreetmap.de/planet.osm.sql.bz2 \
+	--no-directories --directory-prefix=$planet_dir/
+fi
+
+
+############################################
+# Fill Database from Dump File
+############################################
+if [ -n "$fill_from_dump" ] ; then
+    echo ""
+    echo "--------- Import from Dump '$fill_from_dump'"
+	case "$fill_from_dump" in
+	    *.gz)
+		test -n "$verbose" && echo "Uncompress File ..."
+		gzip -dc "$fill_from_dump" | sudo -u "$osm_username" psql $quiet "$database_name"
+		;;
+	    *)
+		test -n "$verbose" && echo "Import uncompressed File ..."
+		sudo -u "$osm_username" psql $quiet "$database_name" <"$fill_from_dump"
 		;;
 	esac
 fi
