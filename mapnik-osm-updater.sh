@@ -5,6 +5,8 @@ export database_name="gis"
 export planet_dir="/home/$osm_username/osm/planet"
 export planet_file="$planet_dir/planet.osm.bz2"
 export sql_dump="$planet_dir/planet.osm.sql.bz2"
+export osm2pgsql_cmd=`which osm2pgsql`
+test -x "$osm2pgsql_cmd" || osm2pgsql_cmd="$HOME/svn.openstreetmap.org/applications/utils/export/osm2pgsql/osm2pgsql"
 
 test -n "$1" || help=1
 quiet=" -q "
@@ -24,7 +26,7 @@ for arg in "$@" ; do
 	    ;;
 
 	--all-from-dump) #	Do all the creation steps listed below from planet-dump file
-			# all-from-dump is not completely tested yet
+		#	!!! all-from-dump is not completely tested yet
 	    create_osm_user=1
 	    mirror_dump=1
 	    drop=1
@@ -36,6 +38,7 @@ for arg in "$@" ; do
 	    ;;
 
 	--all-create) #		Do all the creation steps listed below only no data import
+		      #	and no planet mirroring
 	    create_osm_user=1
 	    drop=1
 	    create_db=1
@@ -44,27 +47,30 @@ for arg in "$@" ; do
 	    create_db_users=${create_db_users:-*}
 	    ;;
 
-	--create_osm_user) #	create the user needed
+	--create_osm_user) #	create the osm-user needed
+		#	This means creating a user 'osm' and his home directory
+		#	with useradd, mkdir, chmod and chown
 	    create_osm_user=1
 	    ;;
 	
-	--mirror) #		mirror the planet File
+	--mirror) #		mirror the planet File from http://planet.openstreetmap.org/
 	    mirror=1
 	    ;;
 
-	--drop) #		drop the old Database and Database-user
+	--drop) #		drop the old Database (gis) and Database-user (osm)
 	    drop=1
 	    ;;
 
-	--create_db) #		create the database and db-user
+	--create_db) #		create the database (gis)
+		     #	with this command only the database is created, but no tables inside it
 	    create_db=1
 	    ;;
 	
-	--create_db_user) #	create the database and db-user
+	--create_db_user) #	create the database-user (osm)
 	    create_db_user=1
 	    ;;
 	
-	--grant_all_rights_to_user_osm) #	grant all rights to the osm User	
+	--grant_all2osm_user) #	grant all rights for the database to the DB-User osm
 	    grant_all_rights_to_user_osm=1
 	    ;;
 
@@ -74,6 +80,7 @@ for arg in "$@" ; do
 	    ;;
 	
 	--grant_db_users=*) #	Grant database-users all rights (including write, ...) to the gis Database
+		    #	!!! This has to be changed in the future, normally only the osm user needs update rights
 	    grant_db_users=${arg#*=}
 	    ;;
 
@@ -96,7 +103,11 @@ for arg in "$@" ; do
 	--db_table_create) #	Create tables in Database with osm2pgsql
 	    db_table_create=1
 	    ;;
-	
+
+	--count_db) # Count entries in Database
+	    count_db=1
+	    ;;
+
 	-h)
 	    help=1
 	    ;;
@@ -131,26 +142,39 @@ for arg in "$@" ; do
 	    planet_file="$planet_dir/planet.osm.bz2"
 	    ;;
 
-	--planet_file=*) #	define Directory for Planet-File
+	--planet_file=*) #	define Planet-File including Directory
 	    planet_file=${arg#*=}
 	    ;;
 	
 	--osm_username=*) #	Define username to use for DB creation and planet download
-			#You shouldn't use your username as the download and install user. 
-			#This username is the download and install user. (normally osm) 
-			#The osm-user normally only should have the planet files in his
-			#home directory and nothing else. By default the osm-username is 'osm'
+		#	You shouldn't use your username as the download and install user. 
+		#	This username is the download and install user. (normally osm) 
+		#	The osm-user normally only should have the planet files in his
+		#	home directory and nothing else. By default the osm-username is 'osm'
 	    osm_username=${arg#*=}
 	    planet_dir="/home/$osm_username/osm/planet"
 	    planet_file="$planet_dir/planet.osm.bz2"
 	    ;;
 	
-	--database_name=*) #	use this name for the database
+	--osm2pgsql_cmd=*) #	The path to the osm2pgsql command
+	    	#	It can be found at svn.openstreetmap.org/applications/utils/export/osm2pgsql/
+	    	#	and has to be compiled. Alternatively you can install the Debian Package
+	    	#	openstreetmap-utils
+	    osm2pgsql_cmd=${arg#*=}
+		if ! [ -x "$osm2pgsql_cmd" ]; then
+		    echo "Cannot execute '$osm2pgsql_cmd'"
+		    exit -1
+		fi
+		;;
+
+	--database_name=*) #	use this name for the database default is 'gis'
 	    database_name=${arg#*=}
 	    ;;
 
 	*)
-	    echo "Unknown option $arg"
+	    echo ""
+	    echo "!!!!!!!!! Unknown option $arg"
+	    echo ""
 	    help=1
 	    ;;
     esac
@@ -172,6 +196,9 @@ if [ -n "$help" ] ; then
     and mirrors the current planet to his home directory.
     Then this planet is imported into the postgis Database from a 
     newly created user named osm
+
+    This script uses sudo. So you either have to have sudo right or you'll 
+    have to start the script as root. The users needed will be postgres and osm
     "
     # extract options + description from case commands above
     grep -E  -e esac -e '--.*\).*#' -e '^[\t\s 	]*#' $0 | grep -v /bin/bash | sed '/esac/,$d;s/.*--/  --/;s/=\*)/=val/;s/)//;s/#//;' 
@@ -303,18 +330,26 @@ fi
 # Create Database tables with osm2pgsql
 ############################################
 if [ -n "$db_table_create" ] ; then
+    if ! [ -x "$osm2pgsql_cmd" ]; then
+	echo "Cannot execute '$osm2pgsql_cmd'"
+	exit -1
+    fi
     echo ""
     echo "--------- Unpack and import $planet_file"
-    sudo -u "$osm_username" osm2pgsql --create "$database_name"
+    sudo -u "$osm_username" $osm2pgsql_cmd --create "$database_name"
 fi
 
 ############################################
 # Fill Database from planet File
 ############################################
 if [ -n "$planet_fill" ] ; then
+    if ! [ -x "$osm2pgsql_cmd" ]; then
+	echo "Cannot execute '$osm2pgsql_cmd'"
+	exit -1
+    fi
     echo ""
     echo "--------- Unpack and import $planet_file"
-    sudo -u "$osm_username" osm2pgsql --database "$database_name" $planet_file
+    sudo -u "$osm_username" $osm2pgsql_cmd --database "$database_name" $planet_file
 fi
 
 
@@ -362,3 +397,24 @@ if [ -n "$fill_from_dump" ] ; then
 		;;
 	esac
 fi
+
+
+############################################
+# Check number of entries in Database
+############################################
+if [ -n "$count_db" ] ; then
+    echo ""
+    echo "--------- Check Number of lines in Database"
+
+    # Get the Table names
+    table_names=`echo "SELECT tablename from pg_catalog.pg_tables where schemaname = 'public' AND tableowner ='$osm_username';" | \
+	  sudo -u "$osm_username" psql  gis -h /var/run/postgresql | grep -E -e '^ planet'`
+
+    # Count entries in all Tables
+    for table in $table_names; do 
+	echo -n "SELECT COUNT(*) from $table;	= "
+	echo "SELECT COUNT(*) from $table;" | \
+	    sudo -u "$osm_username" psql  gis -h /var/run/postgresql | grep -v -e count -e '------' -e '1 row' | head -1
+    done
+fi
+
