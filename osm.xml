@@ -419,6 +419,11 @@
 	<CssParameter name="stroke-width">0.2</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[natural] = 'beach'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/steve/symbols/beach.png" type="png" width="10" height="10"/>
+    </Rule>
 
     <!--Rule>
       <ElseFilter/>
@@ -555,7 +560,7 @@
     
     <Rule>
       <Filter>[natural] = 'lake' or [natural] = 'water'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
      </PolygonSymbolizer>
@@ -1130,7 +1135,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
       <LineSymbolizer>
-        <CssParameter name="stroke">#aaa</CssParameter>
+        <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1657,7 +1662,7 @@
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
        <LineSymbolizer>
-        <CssParameter name="stroke">#666</CssParameter>
+        <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1666,7 +1671,7 @@
       <MinScaleDenominator>100000</MinScaleDenominator>
       <Filter>[railway] = 'rail' or [railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
        <LineSymbolizer>
-        <CssParameter name="stroke">#666</CssParameter>
+        <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
