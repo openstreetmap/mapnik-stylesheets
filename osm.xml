@@ -1503,17 +1503,6 @@
     </Rule>
     <Rule>
       <Filter>[boundary] = 'administrative'</Filter>
-      <MaxScaleDenominator>10000000</MaxScaleDenominator>
-      <MinScaleDenominator>1000000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-	  <CssParameter name="stroke-dasharray">8,3,2,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[boundary] = 'administrative'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
