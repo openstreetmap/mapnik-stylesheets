@@ -257,7 +257,7 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[landuse] = 'forrest'</Filter>
+      <Filter>[landuse] = 'forest'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#cfeca8</CssParameter>
