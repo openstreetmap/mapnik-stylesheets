@@ -1132,7 +1132,26 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='tram' or [railway]='narrow_gauge'</Filter>
+      <Filter>[railway]='narrow_gauge'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+	  <CssParameter name="stroke-dasharray">5,3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway]='tram' and not [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
