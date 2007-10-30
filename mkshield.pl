@@ -28,6 +28,12 @@ mkshield("secondary_shield3", 31, 17, 253, 191, 111);
 mkshield("secondary_shield4", 38, 17, 253, 191, 111);
 mkshield("secondary_shield5", 45, 17, 253, 191, 111);
 
+mkshield("tertiary_shield1", 17, 17, 255, 255, 204);
+mkshield("tertiary_shield2", 24, 17, 255, 255, 204);
+mkshield("tertiary_shield3", 31, 17, 255, 255, 204);
+mkshield("tertiary_shield4", 38, 17, 255, 255, 204);
+mkshield("tertiary_shield5", 45, 17, 255, 255, 204);
+
 exit 0;
 
 sub mkshield
