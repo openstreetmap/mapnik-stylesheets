@@ -264,6 +264,13 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
+      <Filter>[landuse] = 'farm'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ece560</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>[landuse] = 'recreation_ground'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
