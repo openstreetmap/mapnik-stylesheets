@@ -28,11 +28,11 @@ mkshield("secondary_shield3", 31, 17, 253, 191, 111);
 mkshield("secondary_shield4", 38, 17, 253, 191, 111);
 mkshield("secondary_shield5", 45, 17, 253, 191, 111);
 
-mkshield("tertiary_shield1", 17, 17, 255, 255, 102);
-mkshield("tertiary_shield2", 24, 17, 255, 255, 102);
-mkshield("tertiary_shield3", 31, 17, 255, 255, 102);
-mkshield("tertiary_shield4", 38, 17, 255, 255, 102);
-mkshield("tertiary_shield5", 45, 17, 255, 255, 102);
+mkshield("tertiary_shield1", 17, 17, 153, 153, 153);
+mkshield("tertiary_shield2", 24, 17, 153, 153, 153);
+mkshield("tertiary_shield3", 31, 17, 153, 153, 153);
+mkshield("tertiary_shield4", 38, 17, 153, 153, 153);
+mkshield("tertiary_shield5", 45, 17, 153, 153, 153);
 
 exit 0;
 
