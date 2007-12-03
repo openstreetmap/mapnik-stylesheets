@@ -638,7 +638,22 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal'</Filter>
+      <Filter>[waterway]='canal' and [tunnel] = 'yes'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+       <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='canal' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -649,6 +664,7 @@
       </LineSymbolizer>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
+
     <Rule>
       <ElseFilter/> <!--[waterway]='stream'</Filter>-->
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -866,7 +882,7 @@
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -890,7 +906,7 @@
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">9</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1269,7 +1285,7 @@
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffcc</CssParameter>
-        <CssParameter name="stroke-width">5</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1281,7 +1297,7 @@
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffcc</CssParameter>
-        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1868,31 +1884,31 @@
       <Filter>[highway] = 'tertiary' and [length] = 1</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#ffff66" placement="line" file="/home/steve/symbols/tertiary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#999" placement="line" file="/home/steve/symbols/tertiary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 2</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#ffff66" placement="line" file="/home/steve/symbols/tertiary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#999" placement="line" file="/home/steve/symbols/tertiary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 3</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#ffff66" placement="line" file="/home/steve/symbols/tertiary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#999" placement="line" file="/home/steve/symbols/tertiary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 4</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#ffff66" placement="line" file="/home/steve/symbols/tertiary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#999" placement="line" file="/home/steve/symbols/tertiary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 5</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#ffff66" placement="line" file="/home/steve/symbols/tertiary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#999" placement="line" file="/home/steve/symbols/tertiary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
