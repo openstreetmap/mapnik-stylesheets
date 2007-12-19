@@ -2213,7 +2213,7 @@
     </Datasource>
   </Layer>
   
-  <Layer name="places" status="on">
+  <Layer name="places" status="on" srs="+init=epsg:4269">
     <StyleName>places</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
