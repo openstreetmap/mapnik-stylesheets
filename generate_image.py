@@ -14,11 +14,15 @@
 # pixel size so will appear smaller on a large image.
 
 from mapnik import *
+import sys, os
 
 if __name__ == "__main__":
-    mapfile = "osm.xml"
-    tile_uri = "image.png"
-    ll = (-6.5,  49.5,   2.1,59)
+    try:
+        mapfile = os.environ['MAPNIK_MAP_FILE']
+    except KeyError:
+        mapfile = "osm.xml"
+    map_uri = "image.png"
+    ll = (-6.5,  49.5,  2.1, 59)
     z = 10
     imgx = 500 * z
     imgy = 1000 * z
@@ -33,4 +37,4 @@ if __name__ == "__main__":
     im = Image(imgx,imgy)
     render(m, im)
     view = im.view(0,0,imgx,imgy) # x,y,width,height
-    save_to_file(tile_uri,'png',view)
+    save_to_file(map_uri,'png',view)

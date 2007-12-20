@@ -1,0 +1,112 @@
+
+Rendering OpenStreetMap-Maps with Mapnik
+----------------------------------------
+
+In this directory you'll find most of the things you need to render OSM
+data into nice maps using the Mapnik renderer.
+
+Note that this is not the code used to generate the "official" OSM tiles
+on tile.openstreetmap.org, see
+svn.openstreetmap.org/sites/tile.openstreetmap.org for that.
+
+
+Customzing Files
+----------------
+
+If you want to use Mapnik to render OSM data you'll have to do the following:
+
+1. Install or compile Mapnik and osm2pgsl, set up PostGIS and download the
+   world_boundaries file as described on
+   http://wiki.openstreetmap.org/index.php/Mapnik
+
+2. Edit 'set-mapnik-env'. Change all the MAPNIK_* environment variable
+   definitions to fit your file locations and database parameters.
+
+3. Create a local copy of the Mapnik Map file:
+   source ./set-mapnik-env
+   ./customize-mapnik-map >$MAPNIK_MAP_FILE
+
+You can now call
+
+  ./generate_tiles.py
+
+or 
+
+  ./generate_image.py
+
+to generate maps.
+
+
+Files and Directories
+---------------------
+
+all_tiles
+    ??
+
+convert
+    OBSOLETE. Use customize-mapnik-map instead.
+
+customize-mapnik-map
+    Run this script to convert osm-template.xml into osm.xml with your
+    settings.
+
+generate_image.py
+    A script to generate a map image from OSM data using Mapnik. Will
+    read mapping instructions from $MAPNIK_MAP_FILE (or 'osm.xml') and
+    write the finished map to 'image.png'. You have to change the script
+    to change the bounding box or image size.
+
+generate_tiles.py
+    A script to generate map tiles from OSM data using Mapnik. Will
+    read mapping instructions from $MAPNIK_MAP_FILE (or 'osm.xml') and
+    write the finished maps to the $MAPNIK_TILE_DIR directory. You have
+    to change the script to change the bounding boxes or zoom levels
+    for which tiles are created.
+
+install.txt
+    An almost cut-and-paste documentation on how to use all this.
+
+mkshield.pl
+    Perl script to generate highway shield images. You normally don't
+    have to run this because prerendered images are already stored in
+    the 'symbols' directory.
+
+openstreetmap-mapnik-data
+openstreetmap-mapnik-world-boundaries
+    These directories contain the things needed to create Debian packages
+    for OSM Mapnik stuff.
+
+osm-template.xml
+    A template for the osm.xml file which contains the rules on how
+    Mapnik should render data.
+
+osm.xml
+    The file which contains the rules on how Mapnik should render data.
+    You should generate your own version from the osm-template.xml file.
+
+osm2pgsl.py
+    Older script to read OSM data into a PostgreSQL/PostGIS database. Use
+    the newer C version in ../../utils/export/osm2pgsql instead!
+
+set-mapnik-env
+    Used to customize the environment needed by the other Mapnik OSM
+    scripts.
+
+setup_z_order.sql
+    SQL commands to set up Z order for rendering. This is included in
+    the C version of osm2pgsql in ../../utils/export/osm2pgsql, so you
+    don't need this any more.
+
+symbols
+    Directory with icons and highway shield images.
+
+
+More Information
+----------------
+
+Mapnik: www.mapnik.org
+
+OSM maps with Mapnik: http://wiki.openstreetmap.org/index.php/Mapnik
+
+osm2pgsql: ../../utils/export/osm2pgsql
+

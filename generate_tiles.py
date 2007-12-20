@@ -105,8 +105,14 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
 
 if __name__ == "__main__":
     home = os.environ['HOME']
-    mapfile = home + "/svn.openstreetmap.org/applications/rendering/mapnik/osm-local.xml"
-    tile_dir = home + "/osm/tiles/"
+    try:
+        mapfile = os.environ['MAPNIK_MAP_FILE']
+    except KeyError:
+        mapfile = home + "/svn.openstreetmap.org/applications/rendering/mapnik/osm-local.xml"
+    try:
+        tile_dir = os.environ['MAPNIK_TILE_DIR']
+    except KeyError:
+        tile_dir = home + "/osm/tiles/"
 
     # Start with an overview
     # World

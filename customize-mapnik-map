@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+#
+#  customize-mapnik-map
+#
+
+open(IN, '<', 'osm-template.xml');
+
+while(<IN>) {
+    s/%SYMBOLS_DIR%/$ENV{MAPNIK_SYMBOLS_DIR}/;
+    s/%WORLD_BOUNDARIES_DIR%/$ENV{MAPNIK_WORLD_BOUNDARIES_DIR}/;
+    s/%DBHOST%/$ENV{MAPNIK_DBHOST}/;
+    s/%DBPORT%/$ENV{MAPNIK_DBPORT}/;
+    s/%DBNAME%/$ENV{MAPNIK_DBNAME}/;
+    s/%DBUSER%/$ENV{MAPNIK_DBUSER}/;
+    s/%DBPASS%/$ENV{MAPNIK_DBPASS}/;
+    print;
+}
+
