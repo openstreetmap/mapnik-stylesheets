@@ -71,36 +71,28 @@
   # Test if you can read the Database
   echo "SELECT * from planet_osm_polygon LIMIT 2;" |  psql  gis -h /var/run/postgresql
 
-
 # From here on the cut'n paste part stops
   cd ~/svn.openstreetmap.org/applications/rendering/mapnik/
-  vi convert
-  # then replace jburgess to your username
+  vi set-mapnik-env
+  # edit all the stuff in there, see the comments in the file
 
-  ./convert osm.xml > osm-local.xml
+  # read in the env variables you have just defined
+  source set-mapnik-env
 
-  vi generate_tiles.py
-  vi osm.xml
-     and change the path to your installation:
-     /home/mapnik/
+  # convert osm-template.xml to local osm.xml file
+  ./customize-mapnik-map >$MAPNIK_MAP_FILE
 
-  vi osm.xml
-   replace with your username:
-      <Parameter name="user">steve</Parameter>
-   replace /home/mapnik/ with your home-directory
+  # create the directory that will hold the tiles
+  mkdir -p $MAPNIK_TILE_DIR
 
-   set the host connection to your local machine:
-      <Parameter name="host">/var/run/postgresql</Parameter>
+#------------
+# you can optionally change the bounding boxes and zoom levels you are
+# interested in in generate_tiles.py and generate_image.py
+#vi ~/svn.openstreetmap.org/applications/rendering/mapnik/generate_tiles.py
+#    replace with your area
+#    bbox = (-2, 50.0,1.0,52.0)
+#------------
 
-   remove this for local connections:
-#      <Parameter name="port">5432</Parameter>
-
-
-vi ~/svn.openstreetmap.org/applications/rendering/mapnik/generate_tiles.py
-    replace with your area
-    bbox = (-2, 50.0,1.0,52.0)
-
-   mkdir -p ~/osm/tiles
 
 # ---------- And now, we start the rendering
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
