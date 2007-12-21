@@ -316,7 +316,13 @@
         <CssParameter name="fill">#efc8c8</CssParameter>
      </PolygonSymbolizer>
     </Rule>
-
+    <Rule>
+      <Filter>[landuse] = 'brownfield'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#9d9d6c</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
      <Rule>
       <Filter>[natural] = 'wood'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -1019,7 +1025,7 @@
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke">#c5d1e2</CssParameter>
         <CssParameter name="stroke-width">2.5</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1039,7 +1045,7 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke">#c5d1e2</CssParameter>
         <CssParameter name="stroke-width">4.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1062,7 +1068,7 @@
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke">#c5d1e2</CssParameter>
         <CssParameter name="stroke-width">10</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1084,7 +1090,7 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke">#c5d1e2</CssParameter>
         <CssParameter name="stroke-width">13</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1727,7 +1733,7 @@
    </Rule>
 <Rule>
      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
-      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
       <LineSymbolizer>
       <CssParameter name="stroke">#809bc0</CssParameter>
@@ -2207,7 +2213,7 @@
     </Datasource>
   </Layer>
   
-  <Layer name="places" status="on" srs="+init=epsg:4269">
+  <Layer name="places" status="on" srs="+proj=longlat +ellps=GRS80 +datum=NAD83 +no_defs">
     <StyleName>places</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
