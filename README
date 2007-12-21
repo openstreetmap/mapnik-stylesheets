@@ -100,6 +100,10 @@ setup_z_order.sql
 symbols
     Directory with icons and highway shield images.
 
+zoom-to-scale.txt
+    Comparison between zoom levels and the scale denominator numbers needed
+    for the Mapnik Map file.
+
 
 More Information
 ----------------
