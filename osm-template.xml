@@ -2091,7 +2091,7 @@
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
     </Datasource>
   </Layer>
   <Layer name="water" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
@@ -2102,7 +2102,7 @@
       <Parameter name="port">%DBPORT%</Parameter>
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' or "natural"='land' order by z_order) as water</Parameter>
     </Datasource>
   </Layer>
@@ -2115,7 +2115,7 @@
       <Parameter name="port">%DBPORT%</Parameter>
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' order by z_order) as water</Parameter>
     </Datasource>
   </Layer>
@@ -2132,7 +2132,7 @@
       <Parameter name="table">
       (select * from planet_osm_line order by z_order) as roads
       </Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
     </Datasource>
   </Layer>
   
@@ -2148,7 +2148,7 @@
       <Parameter name="table">
       (select * from planet_osm_roads order by z_order) as roads
       </Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
     </Datasource>
    </Layer>
     
@@ -2161,7 +2161,7 @@
       <Parameter name="user">%DBUSER%</Parameter>	   
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL) as amenity</Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
     </Datasource>
    </Layer>
   
@@ -2177,7 +2177,7 @@
       <Parameter name="table">
       (select way,highway,landuse,"natural",man_made,waterway,tourism,learning,amenity,place,name,ref,oneway,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
       </Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
     </Datasource>
   </Layer>
    
@@ -2190,7 +2190,7 @@
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
     </Datasource>
   </Layer>
  
@@ -2203,7 +2203,7 @@
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">planet_osm_point</Parameter>
-      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
     </Datasource>
   </Layer>
   
