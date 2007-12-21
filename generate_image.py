@@ -22,7 +22,13 @@ if __name__ == "__main__":
     except KeyError:
         mapfile = "osm.xml"
     map_uri = "image.png"
-    ll = (-6.5,  49.5,  2.1, 59)
+
+    #---------------------------------------------------
+    #  Change this to the bounding box you want
+    #
+    ll = (-6.5, 49.5, 2.1, 59)
+    #---------------------------------------------------
+
     z = 10
     imgx = 500 * z
     imgy = 1000 * z
