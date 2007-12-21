@@ -54,7 +54,7 @@ export MAPNIK_DBHOST=""
 # This is the TCP port where the PostgreSQL server is listening. The
 # default port for PostgreSQL is 5432. Leave this empty if your database
 # is on the local machine.
-export MAPNIK_DBPORT='5432'
+export MAPNIK_DBPORT=""
 
 # This is the name of the database where the OSM data is stored.
 export MAPNIK_DBNAME='osm'

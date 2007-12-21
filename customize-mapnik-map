@@ -3,16 +3,28 @@
 #  customize-mapnik-map
 #
 
+use strict;
+
 open(IN, '<', 'osm-template.xml');
 
 while(<IN>) {
     s/%SYMBOLS_DIR%/$ENV{MAPNIK_SYMBOLS_DIR}/;
     s/%WORLD_BOUNDARIES_DIR%/$ENV{MAPNIK_WORLD_BOUNDARIES_DIR}/;
-    s/%DBHOST%/$ENV{MAPNIK_DBHOST}/;
-    s/%DBPORT%/$ENV{MAPNIK_DBPORT}/;
     s/%DBNAME%/$ENV{MAPNIK_DBNAME}/;
     s/%DBUSER%/$ENV{MAPNIK_DBUSER}/;
     s/%DBPASS%/$ENV{MAPNIK_DBPASS}/;
+
+    if ($ENV{'MAPNIK_DBHOST'} eq '') {
+        s{<Parameter name="host">%DBHOST%</Parameter>}{}
+    } else {
+        s/%DBHOST%/$ENV{MAPNIK_DBHOST}/;
+    }
+    if ($ENV{'MAPNIK_DBPORT'} eq '') {
+        s{<Parameter name="port">%DBPORT%</Parameter>}{}
+    } else {
+        s/%DBPORT%/$ENV{MAPNIK_DBPORT}/;
+    }
+
     print;
 }
 
