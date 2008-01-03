@@ -59,7 +59,16 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
     for z in range(minZoom,maxZoom + 1):
         px0 = gprj.fromLLtoPixel(ll0,z)
         px1 = gprj.fromLLtoPixel(ll1,z)
+
+        # check if we have directories in place
+        zoom = "%s" % z
+        if not os.path.isdir(tile_dir + zoom):
+            os.mkdir(tile_dir + zoom)
         for x in range(int(px0[0]/256.0),int(px1[0]/256.0)+1):
+            # check if we have directories in place
+            str_x = "%s" % x
+            if not os.path.isdir(tile_dir + zoom + '/' + str_x):
+                os.mkdir(tile_dir + zoom + '/' + str_x)
             for y in range(int(px0[1]/256.0),int(px1[1]/256.0)+1):
                 p0 = gprj.fromPixelToLL((x * 256.0, (y+1) * 256.0),z)
                 p1 = gprj.fromPixelToLL(((x+1) * 256.0, y * 256.0),z)
@@ -73,15 +82,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
                 bbox.height(bbox.height() * 2)
                 m.zoom_to_box(bbox)
                 
-                # check if we have directories in place
-                zoom = "%s" % z
-                str_x = "%s" % x
                 str_y = "%s" % y
-
-                if not os.path.isdir(tile_dir + zoom):
-                    os.mkdir(tile_dir + zoom)
-                if not os.path.isdir(tile_dir + zoom + '/' + str_x):
-                    os.mkdir(tile_dir + zoom + '/' + str_x)
 
                 tile_uri = tile_dir + zoom + '/' + str_x + '/' + str_y + '.png'
 
