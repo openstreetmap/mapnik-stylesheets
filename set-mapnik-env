@@ -62,6 +62,9 @@ export MAPNIK_DBNAME='osm'
 # This is the username we should use to log into the PostgreSQL database.
 export MAPNIK_DBUSER=`whoami`
 
+# This is the password we should use to log into the PostgreSQL database.
+export MAPNIK_DBPASS=""
+
 #-----------------------------------------------------------------------------
 # If there was any program name given on the command line, we call it now.
 $*

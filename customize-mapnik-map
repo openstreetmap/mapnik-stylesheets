@@ -18,7 +18,11 @@ while(<IN>) {
 	s/%DBUSER%/$ENV{MAPNIK_DBUSER}/;
     }
 
-    s/%DBPASS%/$ENV{MAPNIK_DBPASS}/;
+    if ($ENV{'MAPNIK_DBPASS'} eq '') {
+        next if m|<Parameter name="password">%DBPASS%</Parameter>|
+    } else {
+	s/%DBPASS%/$ENV{MAPNIK_DBPASS}/;
+    }
 
     if ($ENV{'MAPNIK_DBHOST'} eq '') {
         next if m|<Parameter name="host">%DBHOST%</Parameter>|
