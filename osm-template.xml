@@ -1510,11 +1510,33 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed5a0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed5a0</CssParameter>
         <CssParameter name="stroke-width">8</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1532,11 +1554,33 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed5a0</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fdbf6f</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed5a0</CssParameter>
         <CssParameter name="stroke-width">14</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -1573,7 +1617,6 @@
       <Filter>[railway] = 'rail' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <LinePatternSymbolizer file="%SYMBOLS_DIR%/rail_bridge.png" type="png" width="20" height="7" />
     </Rule>
-
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
@@ -1585,6 +1628,16 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+	  <CssParameter name="stroke-dasharray">5,3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
       <LineSymbolizer>
@@ -1595,6 +1648,14 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[railway]='tram' and not [tunnel]='yes'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule><Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway]='tram' and not [tunnel]='yes'</Filter>
       <LineSymbolizer>
@@ -2598,6 +2659,16 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ededed</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
 </Style>
 <Style name="noncased-ways-bridges">
      <Rule>
@@ -3056,18 +3127,34 @@
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
-
     <Rule>
-      <Filter>[highway] = 'trunk' or [highway] = 'primary' or [highway] = 'secondary'</Filter>
+      <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="black" halo_radius="0" placement="line"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk' or [highway] = 'primary' or [highway] = 'secondary'</Filter>
+      <Filter>[highway] = 'secondary'</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="black" halo_radius="1" halo_fill="#fdbf6f" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="black" halo_radius="0" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="black" halo_radius="1" halo_fill="#fdbf6f" placement="line"/>
+    </Rule><Rule>
+      <Filter>[highway] = 'secondary'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="black" halo_radius="1" halo_fill="#fdbf6f" placement="line"/>
     </Rule>
     <Rule>
       <ElseFilter/>
@@ -3082,7 +3169,6 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="1"  placement="line" />
     </Rule>
   </Style>
-
 
   <Style name="directions">
     <Rule>
@@ -3149,6 +3235,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
   <Layer name="water" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
@@ -3162,6 +3249,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon where landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' or "natural"='land' order by z_order) as water</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
 
@@ -3176,6 +3264,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' order by z_order) as water</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
 
@@ -3196,6 +3285,7 @@
       (select * from planet_osm_line order by z_order) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
 
@@ -3213,6 +3303,7 @@
       (select * from planet_osm_roads order by z_order) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
    </Layer>
 
@@ -3227,6 +3318,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
    </Layer>
 
@@ -3244,6 +3336,7 @@
       (select way,highway,landuse,"natural",man_made,waterway,tourism,learning,amenity,place,name,ref,oneway,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
 
@@ -3258,6 +3351,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
 
@@ -3272,6 +3366,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">planet_osm_point</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
 
