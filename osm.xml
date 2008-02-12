@@ -728,7 +728,9 @@
       </LineSymbolizer>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
-    <Rule>
+  </Style>
+<Style name="power">
+<Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[power]='line'</Filter>
@@ -736,8 +738,8 @@
         <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
-    </Rule>
-  </Style>
+    </Rule> 
+</Style>
 
 <Style name="minor-roads-casing">
     <Rule>
@@ -2220,16 +2222,6 @@
         <CssParameter name="stroke-width">6</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>[boundary] = 'administrative'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-	  <CssParameter name="stroke-dasharray">8,3,2,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
 
     <!--Rule>
       <ElseFilter/>
@@ -3297,6 +3289,86 @@
       <LinePatternSymbolizer file="/home/steve/symbols/arrow_back.png" type="png" width="74" height="8" />
     </Rule>
  </Style>
+<Style name="admin">
+   <Rule>
+      <Filter>[boundary] = 'administrative' and [admin_level]='2'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-opacity">0.1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[boundary] = 'administrative' and [admin_level]='3'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
+	  <CssParameter name="stroke-dasharray">4,2</CssParameter>
+        <CssParameter name="stroke-opacity">0.1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[boundary] = 'administrative' and [admin_level]='4'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+	  <CssParameter name="stroke-dasharray">4,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[boundary] = 'administrative' and [admin_level]='5'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+	  <CssParameter name="stroke-dasharray">6,3,2,3,2,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[boundary] = 'administrative' and [admin_level]='6'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+	  <CssParameter name="stroke-dasharray">6,3,2,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[boundary] = 'administrative' and ([admin_level]='8' or [admin_level]='7')</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+	  <CssParameter name="stroke-dasharray">5,2</CssParameter>
+        <CssParameter name="stroke-opacity">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[boundary] = 'administrative' and ([admin_level]='10' or [admin_level]='9')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+	  <CssParameter name="stroke-dasharray">2,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+   <Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule> 
+ </Style>
 
   <Layer name="world-1" status="on" srs="+proj=merc +datum=WGS84 +over">
     <StyleName>world-1</StyleName>
@@ -3425,7 +3497,7 @@
       <Parameter name="port">5433</Parameter>
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
-      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL or power is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -3475,7 +3547,31 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-
+  <Layer name="power" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+    <StyleName>power</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="table">(select * from planet_osm_line where "power"='line' order by z_order) as power</Parameter>
+    </Datasource>
+  </Layer>
+  <Layer name="admin" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+    <StyleName>admin</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">dev.openstreetmap.org</Parameter>
+      <Parameter name="port">5433</Parameter>
+      <Parameter name="user">steve</Parameter>
+      <Parameter name="dbname">steve</Parameter>
+      <Parameter name="table">
+      (select * from planet_osm_line where "boundary"='administrative' order by z_order) as admin</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+    </Datasource>
+  </Layer>
   <Layer name="places" status="on" srs="+proj=longlat +ellps=GRS80 +datum=NAD83 +no_defs">
     <StyleName>places</StyleName>
     <Datasource>
