@@ -3264,6 +3264,18 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="black" halo_radius="1" halo_fill="#fdbf6f" placement="line"/>
     </Rule>
     <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="1"  placement="line" />
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="1"  placement="line" />
+    </Rule>
+    <Rule>
       <ElseFilter/>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
@@ -3557,6 +3569,7 @@
       <Parameter name="dbname">steve</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="table">(select * from planet_osm_line where "power"='line' order by z_order) as power</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
   <Layer name="admin" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
@@ -3570,6 +3583,7 @@
       <Parameter name="table">
       (select * from planet_osm_line where "boundary"='administrative' order by z_order) as admin</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
   <Layer name="places" status="on" srs="+proj=longlat +ellps=GRS80 +datum=NAD83 +no_defs">
