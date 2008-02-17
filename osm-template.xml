@@ -60,15 +60,6 @@
     </Rule>
   </Style>
 
-  <Style name="coast-line">
-    <Rule>
-      <MaxScaleDenominator>600000</MaxScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">skyblue</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-  </Style>
-
   <!-- BUILTUP VMAP0 -->
   <!-- level 7-9-->
   <Style name="builtup">
@@ -3398,22 +3389,20 @@
     </Datasource>
   </Layer>
 
-  <Layer name="coast-poly" status="on" srs="+proj=merc +datum=WGS84 +over">
+  <Layer name="coast-poly" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>coast-poly</StyleName>
     <Datasource>
-      <Parameter name="type">shape</Parameter>
-      <Parameter name="file">%WORLD_BOUNDARIES_DIR%/shoreline_a</Parameter>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="table">(select way from shoreline_a) as "coast-poly"</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-
-  <Layer name="coast-line" status="on" srs="+proj=merc +datum=WGS84 +over">
-    <StyleName>coast-line</StyleName>
-    <Datasource>
-      <Parameter name="type">shape</Parameter>
-      <Parameter name="file">%WORLD_BOUNDARIES_DIR%/shoreline_l</Parameter>
-    </Datasource>
-  </Layer>
-
 
   <Layer name="builtup" status="on" srs="+proj=merc +datum=WGS84 +over">
     <StyleName>builtup</StyleName>
