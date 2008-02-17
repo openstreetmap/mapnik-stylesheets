@@ -51,7 +51,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
     gprj = GoogleProjection(maxZoom+1) 
     m = Map(2 * 256,2 * 256)
     load_map(m,mapfile)
-    prj = Projection("+proj=merc +datum=WGS84")
+    prj = Projection("+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over")
     
     ll0 = (bbox[0],bbox[3])
     ll1 = (bbox[2],bbox[1])
