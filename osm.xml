@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Map>
-<Map bgcolor="#b5d0d0" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+<Map bgcolor="#b5d0d0" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <Style name="mapnik:selection">
       <Rule>
         <Filter>[mapnik:geometry] = 1</Filter>
@@ -3423,7 +3423,7 @@
     </Datasource>
   </Layer>
 
-  <Layer name="leisure" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="leisure" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -3436,7 +3436,7 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-  <Layer name="water" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="water" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>water</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -3450,7 +3450,7 @@
     </Datasource>
   </Layer>
 
-  <Layer name="waterway" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="waterway" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>water</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -3464,7 +3464,7 @@
     </Datasource>
   </Layer>
 
-  <Layer name="minor-roads" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="minor-roads" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>minor-roads-casing</StyleName>
     <StyleName>minor-roads</StyleName>
     <StyleName>road-bridges-casing</StyleName>
@@ -3484,7 +3484,7 @@
     </Datasource>
   </Layer>
 
-  <Layer name="roads" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="roads" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <!--StyleName>roads-casing</StyleName-->
     <StyleName>roads</StyleName>
     <Datasource>
@@ -3501,7 +3501,7 @@
     </Datasource>
    </Layer>
 
-   <Layer name="amenity" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+   <Layer name="amenity" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>amenity</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -3515,7 +3515,7 @@
     </Datasource>
    </Layer>
 
-   <Layer name="planet roads text osm" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+   <Layer name="planet roads text osm" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>directions</StyleName>
      <StyleName>roads-text</StyleName>
      <Datasource>
@@ -3532,7 +3532,7 @@
     </Datasource>
   </Layer>
 
-  <Layer name="area-text" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="area-text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>area-text</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -3546,7 +3546,7 @@
     </Datasource>
   </Layer>
 
-  <Layer name="text" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -3559,7 +3559,7 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-  <Layer name="power" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="power" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>power</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -3572,7 +3572,7 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-  <Layer name="admin" status="on" srs="+proj=merc +datum=WGS84  +k=1.0 +units=m +over +no_defs">
+  <Layer name="admin" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>admin</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
