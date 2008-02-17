@@ -23,12 +23,20 @@
   (cd ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/; make)
 
  # ------- Get World Boundaries
- # Download is (600MB)
- # unpacking is an additional 1.2GB
- wget http://artem.dev.openstreetmap.org/files/world_boundaries.tar.bz2 -O /tmp/world_boundaries.tar.bz2
+ # Download is (50MB)
+ wget http://tile.openstreetmap.org/world_boundaries-spherical.tgz -O /tmp/world_boundaries-spherical.tgz
  sudo mkdir -p /usr/share/mapnik
  cd /usr/share/mapnik
- sudo tar -xvjf /tmp/world_boundaries.tar.bz2
+ sudo tar -xvzf /tmp/world_boundaries-spherical.tgz
+
+ # ------- Get new coastline data 
+ # Download is around 200MB
+ # updated every few days. To see a map of the current data visit:
+ # http://tile.openstreetmap.nl/coastlines.html
+ wget http://hypercube.telascience.org/~kleptog/processed_p.zip -O /tmp/processed_p.zip
+ cd /usr/share/mapnik
+ sudo unzip /tmp/processed_p.zip
+
 
 # ----------- Create Database and Grant rights
 
@@ -56,17 +64,33 @@
   sed "s/tweety/$user_name/g" < ~/osm/mapnik-osm-gis.sql.gz | \
 	  sudo -u postgres psql -Upostgres gis	 
 
+# --------- Import coastline data into a new PostGIS table
+
+  cd /usr/share/mapnik/processed_p
+  shp2pgsql -s 900913 -I -g way processed_p shoreline_a | sudo -u postgres psql -Upostgres gis
+  echo "ALTER TABLE shoreline_a ALTER COLUMN way SET NOT NULL;" | sudo -u postgres psql -Upostgres gis
+  echo "CLUSTER shoreline_a_way_gist ON shoreline_a;" | sudo -u postgres psql -Upostgres gis
+  echo "GRANT SELECT ON shoreline_a TO public;" | sudo -u postgres psql -Upostgres gis
+
 # ---- Install and run planet-mirror --> planet.sql
   # Get newest planet.osm. This will takes some time
   ~/svn.openstreetmap.org/applications/utils/planet-mirror/planet-mirror.pl -v -v 
 
   ~/svn.openstreetmap.org/applications/utils/export/osm2pgsql/osm2pgsql ~/osm/planet/planet.osm.bz2
-  # convert osm --> sql and import. takes about 45 minutes on a 2GHz (0.5GB-Ram) Machine
-  #                                             23 minutes on a 3GHz (2 GB-Ram) Machine
+  # convert osm --> sql and import.
+  #
+  # The planet file has grown considerably in recent months and the import
+  # will take at least a few hours even on a fast machine. The OSM tilegen
+  # machine currently takes 7 hours for the complete import.
+  # 
   # Processing: Node(13090k)
   # Processing: Segment(13090k)
   # Processing: Way(882k)
   # Writing way(882k)
+
+  # The output will appear to stop at this point while PostgreSQL adds the
+  # indexes and re-organises the data on disk. This will probably take a
+  # couple of hours of intense disk IO to complete.
 
   # Test if you can read the Database
   echo "SELECT * from planet_osm_polygon LIMIT 2;" |  psql  gis -h /var/run/postgresql
