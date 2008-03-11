@@ -93,7 +93,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
                     im = Image(512, 512)
                     render(m, im)
                     view = im.view(128,128,256,256) # x,y,width,height
-                    save_to_file(tile_uri,'png',view)
+                    view.save(tile_uri,'png')
                     command = "convert  -colors 255 %s %s" % (tile_uri,tile_uri)
                     call(command, shell=True)
 

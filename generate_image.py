@@ -43,4 +43,4 @@ if __name__ == "__main__":
     im = Image(imgx,imgy)
     render(m, im)
     view = im.view(0,0,imgx,imgy) # x,y,width,height
-    save_to_file(map_uri,'png',view)
+    view.save(map_uri,'png')
