@@ -188,6 +188,17 @@
 
   <Style name="leisure">
     <Rule>
+      <Filter>[leisure] = 'playground'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+        <CssParameter name="fill">#ccffff</CssParameter>
+     </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#666</CssParameter>
+	<CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>    
+    <Rule>
       <Filter>[tourism] = 'attraction'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
@@ -466,10 +477,23 @@
     <Rule>
       <Filter>[amenity] = 'place_of_worship'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <PolygonSymbolizer>
-         <CssParameter name="fill">lightgrey</CssParameter>
+         <CssParameter name="fill">#777</CssParameter>
 	 <CssParameter name="fill-opacity">0.5</CssParameter>
       </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'place_of_worship'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#777</CssParameter>
+	 <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#111</CssParameter>
+	<CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
     </Rule>
      <Rule>
       <Filter>[leisure] = 'sports_centre' or [leisure]='stadium' or [leisure]='track'</Filter>
@@ -645,7 +669,19 @@
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000033" dy="12" halo_radius="2" wrap_width="12"/>
     </Rule>
-
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+    </Rule>
   </Style>
 
    <Style name="water">
