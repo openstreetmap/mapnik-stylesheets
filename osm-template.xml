@@ -477,7 +477,7 @@
     <Rule>
       <Filter>[amenity] = 'place_of_worship'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">#777</CssParameter>
 	 <CssParameter name="fill-opacity">0.5</CssParameter>
