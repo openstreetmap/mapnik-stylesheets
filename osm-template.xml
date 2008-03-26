@@ -188,6 +188,17 @@
 
   <Style name="leisure">
     <Rule>
+      <Filter>[leisure] = 'playground'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+     <PolygonSymbolizer>
+        <CssParameter name="fill">#ccffff</CssParameter>
+     </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#666</CssParameter>
+	<CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+    </Rule>    
+    <Rule>
       <Filter>[tourism] = 'attraction'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
@@ -466,10 +477,23 @@
     <Rule>
       <Filter>[amenity] = 'place_of_worship'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <PolygonSymbolizer>
-         <CssParameter name="fill">lightgrey</CssParameter>
+         <CssParameter name="fill">#777</CssParameter>
 	 <CssParameter name="fill-opacity">0.5</CssParameter>
       </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'place_of_worship'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#777</CssParameter>
+	 <CssParameter name="fill-opacity">0.5</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#111</CssParameter>
+	<CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
     </Rule>
      <Rule>
       <Filter>[leisure] = 'sports_centre' or [leisure]='stadium' or [leisure]='track'</Filter>
@@ -645,7 +669,19 @@
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000033" dy="12" halo_radius="2" wrap_width="12"/>
     </Rule>
-
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+    </Rule>
   </Style>
 
    <Style name="water">
@@ -1869,7 +1905,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
+      <Filter>[railway]='tram' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -1879,30 +1915,14 @@
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
+      <Filter>[railway]='tram' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
 	  <CssParameter name="stroke-dasharray">5,3</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[railway]='tram' and not [tunnel]='yes'</Filter>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#444</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-      </LineSymbolizer>
-    </Rule><Rule>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='tram' and not [tunnel]='yes'</Filter>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#444</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
+
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
@@ -3569,6 +3589,23 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[railway]='tram' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule><Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway]='tram' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway] = 'preserved'</Filter>
       <LineSymbolizer>
@@ -3583,9 +3620,26 @@
         <CssParameter name="stroke-dasharray">0,1,8,1</CssParameter>
       </LineSymbolizer>
     </Rule>
-
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway]='monorail'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#777</CssParameter>
+        <CssParameter name="stroke-width">3.0</CssParameter>
+        <CssParameter name="stroke-dasharray">2,3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
   </Style>
-
 
   <!-- ROADS TEXT -->
   <Style name="roads-text">
@@ -3988,19 +4042,6 @@
   <Layer name="minor-roads" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>minor-roads-casing</StyleName>
     <StyleName>minor-roads-fill</StyleName>
-    <StyleName>road-bridges-casing</StyleName>
-    <StyleName>road-bridges-fill</StyleName>
-    <StyleName>noncased-ways-bridges</StyleName>
-    <StyleName>mwaybridge_layer0_casing</StyleName>
-    <StyleName>mwaybridge_layer0_fill</StyleName>
-    <StyleName>mwaybridge_layer1_casing</StyleName>
-    <StyleName>mwaybridge_layer1_fill</StyleName>
-    <StyleName>mwaybridge_layer2_casing</StyleName>
-    <StyleName>mwaybridge_layer2_fill</StyleName>
-    <StyleName>mwaybridge_layer3_casing</StyleName>
-    <StyleName>mwaybridge_layer3_fill</StyleName>
-    <StyleName>mwaybridge_layer4_casing</StyleName>
-    <StyleName>mwaybridge_layer4_fill</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
       <Parameter name="host">%DBHOST%</Parameter>
@@ -4033,7 +4074,34 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
    </Layer>
-
+   <Layer name="bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>road-bridges-casing</StyleName>
+    <StyleName>road-bridges-fill</StyleName>
+    <StyleName>noncased-ways-bridges</StyleName>
+    <StyleName>mwaybridge_layer0_casing</StyleName>
+    <StyleName>mwaybridge_layer0_fill</StyleName>
+    <StyleName>mwaybridge_layer1_casing</StyleName>
+    <StyleName>mwaybridge_layer1_fill</StyleName>
+    <StyleName>mwaybridge_layer2_casing</StyleName>
+    <StyleName>mwaybridge_layer2_fill</StyleName>
+    <StyleName>mwaybridge_layer3_casing</StyleName>
+    <StyleName>mwaybridge_layer3_fill</StyleName>
+    <StyleName>mwaybridge_layer4_casing</StyleName>
+    <StyleName>mwaybridge_layer4_fill</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+      (select * from planet_osm_line order by z_order) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+   </Layer>
    <Layer name="amenity" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>amenity</StyleName>
     <Datasource>
