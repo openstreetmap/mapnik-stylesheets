@@ -65,6 +65,10 @@ export MAPNIK_DBUSER=`whoami`
 # This is the password we should use to log into the PostgreSQL database.
 export MAPNIK_DBPASS=""
 
+# This is the prefix used in the table names. Matches the -p option in osm2pgsql
+# Unspecified defaults to "planet_osm"
+export MAPNIK_PREFIX=""
+
 #-----------------------------------------------------------------------------
 # If there was any program name given on the command line, we call it now.
 $*
