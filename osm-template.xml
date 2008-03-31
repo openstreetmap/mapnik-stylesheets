@@ -548,24 +548,24 @@
 
   <Style name="area-text">
     <Rule>
-      <Filter>[way_area] &gt;= 200000</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <Filter>[way_area] &gt;= 150000</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>[way_area] &gt;= 100000 and [way_area] &lt; 200000</Filter>
-      <MaxScaleDenominator>12500</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <Filter>[way_area] &gt;= 80000 and [way_area] &lt; 150000</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>[way_area] &gt;= 20000 and [way_area] &lt; 100000</Filter>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <Filter>[way_area] &gt;= 20000 and [way_area] &lt; 80000</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[way_area] &lt; 20000</Filter>
-      <MaxScaleDenominator>2500</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
   </Style>
 
@@ -673,15 +673,21 @@
       <Filter>[highway] = 'motorway_junction'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12"/>
-      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-3"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_junction'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#6666ff" halo_radius="1" wrap_width="12" dy="8" min_distance=10/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12"/>
-      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="8" min_distance=10/>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-3" />
     </Rule>
+
   </Style>
 
    <Style name="water">
@@ -1569,7 +1575,49 @@
     </Rule>
 
     <!-- level 11 ...-->
-    
+    <Rule>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9cc</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9cc</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">6,4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9cc</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-dasharray">8,6</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
     <Rule>
       <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3830,6 +3878,18 @@
       <Filter>[highway] = 'tertiary'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="1"  placement="line" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="1"  placement="line" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="1"  placement="line" />
     </Rule>
     <Rule>
