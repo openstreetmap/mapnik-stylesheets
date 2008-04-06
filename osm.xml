@@ -82,6 +82,19 @@
 
   <Style name="amenity">
     <Rule>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[aeroway]='aerodrome'</Filter>
+      <PointSymbolizer file = "/home/steve/symbols/airport.png" type="png" width="10" height="9" />
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#c6f" dy="-9" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[aeroway]='aerodrome'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#c6f" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='post_box'</Filter>
       <PointSymbolizer file="/home/steve/symbols/post_box.png" type="png" width="16" height="16" />
@@ -102,6 +115,22 @@
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <Filter>[railway]='station'</Filter>
       <PointSymbolizer file="/home/steve/symbols/station.png" type="png" width="9" height="9" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <Filter>[railway]='halt'</Filter>
+      <PointSymbolizer file = "/home/steve/symbols/halt.png" type="png" width="3" height="3" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <Filter>[railway]='halt'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#000" dy="-8" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[railway] ='halt'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#000" dy="-14" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -139,6 +168,16 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[man_made]='mast'</Filter>
       <PointSymbolizer file="/home/steve/symbols/tower.png" type="png" width="32" height="32" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[man_made]='power_wind'</Filter>
+      <PointSymbolizer file = "/home/steve/symbols/power_wind.png" type="png" width="16" height="26" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[man_made]='windmill'</Filter>
+      <PointSymbolizer file = "/home/steve/symbols/windmill.png" type="png" width="10" height="15" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
@@ -672,22 +711,22 @@
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>20000</MinScaleDenominator>
-      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-3"/>
+      <MinScaleDenominator>200000</MinScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#6666ff" halo_radius="1" wrap_width="12" dy="8" min_distance=10/>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-8" min_distance="20"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="8" min_distance=10/>
-      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-3" />
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-14" min_distance="20"/>
     </Rule>
-
   </Style>
 
    <Style name="water">
@@ -1581,11 +1620,11 @@
       <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#9cc</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1595,11 +1634,11 @@
       <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#9cc</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
         <CssParameter name="stroke-dasharray">6,4</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1609,15 +1648,14 @@
       <Filter>[highway] = 'proposed' or [highway]='construction'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#9cc</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-dasharray">8,6</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3025,7 +3063,42 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
+</Style>
+<Style name="waterway-bridges">
+<Rule>
+      <Filter>[waterway]='canal' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#000</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='canal' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#000</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
+    </Rule>
 </Style>
 <Style name="noncased-ways-bridges">
     <Rule>
@@ -4121,6 +4194,20 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
    </Layer>
+   <Layer name="waterway-bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>waterway-bridges</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">martyn</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' order by z_order) as water</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+   </Layer>
    <Layer name="bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>road-bridges-casing</StyleName>
     <StyleName>road-bridges-fill</StyleName>
@@ -4157,7 +4244,7 @@
       <Parameter name="port">5433</Parameter>
       <Parameter name="user">steve</Parameter>
       <Parameter name="dbname">steve</Parameter>
-      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL or power is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL or power is NOT NULL or aeroway is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
