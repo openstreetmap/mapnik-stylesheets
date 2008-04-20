@@ -4008,12 +4008,58 @@
     <Rule>
       <Filter>[oneway] = 'yes' or [oneway] = 'true' or [oneway] = '1'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <LinePatternSymbolizer file="/home/steve/symbols/arrow.png" type="png" width="174" height="8" />
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,10,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,9,153</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,18,2,154</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,18,1,155</CssParameter>
+      </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[oneway] = '-1'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <LinePatternSymbolizer file="/home/steve/symbols/arrow_back.png" type="png" width="174" height="8" />
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,12,10,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,13,9,152</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,14,2,158</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6c70d5</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">bevel</CssParameter>
+        <CssParameter name="stroke-dasharray">0,15,1,158</CssParameter>
+      </LineSymbolizer>
     </Rule>
  </Style>
 <Style name="admin">
