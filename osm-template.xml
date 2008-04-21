@@ -129,16 +129,30 @@
     <Rule>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[aeroway]='airport'</Filter>
+      <PointSymbolizer file = "%SYMBOLS_DIR%/airport.png" type="png" width="14" height="11" />
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#636" dy="-10" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[aeroway]='airport'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#636" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
       <Filter>[aeroway]='aerodrome'</Filter>
-      <PointSymbolizer file = "%SYMBOLS_DIR%/airport.png" type="png" width="10" height="9" />
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#636" dy="-9" halo_radius="1" wrap_width="0"/>
+      <PointSymbolizer file = "%SYMBOLS_DIR%/aerodrome.png" type="png" width="10" height="9" />
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="8" fill="#636" dy="-9" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <Filter>[aeroway]='aerodrome'</Filter>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#636" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="8" fill="#636" halo_radius="1" wrap_width="0"/>
     </Rule>
+
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='post_box'</Filter>
