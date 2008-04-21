@@ -84,17 +84,17 @@
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <Filter>[railway]='station'</Filter>
-      <PointSymbolizer file = "c:/mapnik/symbols/station_small.png" type="png" width="5" height="5" />
+      <PointSymbolizer file = "/home/steve/symbols/station_small.png" type="png" width="5" height="5" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <Filter>[railway]='station'</Filter>
-      <PointSymbolizer file = "c:/mapnik/symbols/station.png" type="png" width="9" height="9" />
+      <PointSymbolizer file = "/home/steve/symbols/station.png" type="png" width="9" height="9" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <Filter>[railway]='halt'</Filter>
-      <PointSymbolizer file = "c:/mapnik/symbols/halt.png" type="png" width="3" height="3" />
+      <PointSymbolizer file = "/home/steve/symbols/halt.png" type="png" width="3" height="3" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -129,16 +129,30 @@
     <Rule>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[aeroway]='airport'</Filter>
+      <PointSymbolizer file = "/home/steve/symbols/airport.png" type="png" width="14" height="11" />
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#636" dy="-10" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[aeroway]='airport'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#636" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
       <Filter>[aeroway]='aerodrome'</Filter>
-      <PointSymbolizer file = "/home/steve/symbols/airport.png" type="png" width="10" height="9" />
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" fill="#636" dy="-9" halo_radius="1" wrap_width="0"/>
+      <PointSymbolizer file = "/home/steve/symbols/aerodrome.png" type="png" width="10" height="9" />
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="8" fill="#636" dy="-9" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <Filter>[aeroway]='aerodrome'</Filter>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#636" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="8" fill="#636" halo_radius="1" wrap_width="0"/>
     </Rule>
+
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='post_box'</Filter>
