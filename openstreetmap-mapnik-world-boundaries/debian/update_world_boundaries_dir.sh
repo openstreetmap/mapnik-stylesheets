@@ -1,6 +1,6 @@
 #!/bin/bash
 
-instal_dir=debian/openstreetmap-mapnik-world-boundaries/usr/share/mapnik/world_boundaries
+install_dir=debian/openstreetmap-mapnik-world-boundaries/usr/share/mapnik
 
 # remove old files
 rm -rf debian/openstreetmap-mapnik-world-boundaries/usr/share/mapnik/world_boundaries
@@ -30,25 +30,25 @@ if ! echo "$@" | grep "no-mirror" ; then
 	http://hypercube.telascience.org/~kleptog/processed_p.zip
 fi
 
-mkdir -p ${instal_dir}/world_boundaries
+mkdir -p ${install_dir}/world_boundaries
 
 echo "Unpack world_boundaries-spherical"
 tar -xvz \
-    --directory=${instal_dir}/ \
+    --directory=${install_dir}/ \
     -f mirror/world_boundaries-spherical.tgz
 
 echo "Unpack processed_p.zip"
-unzip mirror/processed_p.zip -d ${instal_dir}/world_boundaries
+unzip mirror/processed_p.zip -d ${install_dir}/world_boundaries
 
-mv ${instal_dir}/world_boundaries/coastlines/*  ${instal_dir}/world_boundaries/
-rmdir  ${instal_dir}/world_boundaries/coastlines
+mv ${install_dir}/world_boundaries/coastlines/*  ${install_dir}/world_boundaries/
+rmdir  ${install_dir}/world_boundaries/coastlines
 
 
 echo "Add local stuff"
-cp mirror/local/world_bnd* ${instal_dir}/world_boundaries/
+cp mirror/local/world_bnd* ${install_dir}/world_boundaries/
 
 if false; then
     # Old Method copying from local installation
     cp /usr/share/mapnik/world_boundaries/* \
-	${instal_dir}/world_boundaries/
+	${install_dir}/world_boundaries/
 fi
