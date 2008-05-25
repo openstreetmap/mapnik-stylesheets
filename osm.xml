@@ -932,7 +932,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#506077</CssParameter>
-        <CssParameter name="stroke-width">5.5</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -942,7 +942,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#506077</CssParameter>
-        <CssParameter name="stroke-width">9</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -952,47 +952,47 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#506077</CssParameter>
-        <CssParameter name="stroke-width">12</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
-      <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#477147</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <MinScaleDenominator>20000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#477147</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-     <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <MinScaleDenominator>5000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#477147</CssParameter>
         <CssParameter name="stroke-width">13</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+     <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#477147</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#477147</CssParameter>
-        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1012,7 +1012,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#8d4346</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1022,7 +1022,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#8d4346</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1032,7 +1032,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#8d4346</CssParameter>
-        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1095,7 +1095,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#d6dfea</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1106,7 +1106,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#d6dfea</CssParameter>
-        <CssParameter name="stroke-width">7.5</CssParameter>
+        <CssParameter name="stroke-width">8.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1117,7 +1117,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#d6dfea</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1139,7 +1139,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#cdeacd</CssParameter>
-        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1150,7 +1150,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#cdeacd</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1161,7 +1161,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#cdeacd</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">12</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1273,7 +1273,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#506077</CssParameter>
-        <CssParameter name="stroke-width">5.5</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1283,7 +1283,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#506077</CssParameter>
-        <CssParameter name="stroke-width">9</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1293,7 +1293,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#506077</CssParameter>
-        <CssParameter name="stroke-width">12</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1313,7 +1313,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#477147</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1323,7 +1323,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#477147</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1333,7 +1333,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#477147</CssParameter>
-        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1354,7 +1354,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#8d4346</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1365,7 +1365,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>      
       <LineSymbolizer>
         <CssParameter name="stroke">#8d4346</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1376,7 +1376,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#8d4346</CssParameter>
-        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -1689,7 +1689,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1701,7 +1701,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
-        <CssParameter name="stroke-width">7.5</CssParameter>
+        <CssParameter name="stroke-width">8.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1713,7 +1713,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1737,7 +1737,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#7fc97f</CssParameter>
-        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1749,7 +1749,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#7fc97f</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1761,7 +1761,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#7fc97f</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">12</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1785,7 +1785,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#e46d71</CssParameter>
-        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1797,7 +1797,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#e46d71</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -1809,7 +1809,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#e46d71</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">12</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2601,7 +2601,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">5.5</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2610,7 +2610,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">9</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2619,7 +2619,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">12</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2637,7 +2637,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2646,7 +2646,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2655,7 +2655,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2673,7 +2673,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2682,7 +2682,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2691,7 +2691,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">17</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
       </LineSymbolizer>
     </Rule>
 <Rule>
@@ -2831,7 +2831,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-width">5.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2842,7 +2842,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
-        <CssParameter name="stroke-width">7.5</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2853,7 +2853,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">11.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2875,7 +2875,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#7fc97f</CssParameter>
-        <CssParameter name="stroke-width">8.5</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2886,7 +2886,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#7fc97f</CssParameter>
-        <CssParameter name="stroke-width">11.5</CssParameter>
+        <CssParameter name="stroke-width">9.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2897,7 +2897,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#7fc97f</CssParameter>
-        <CssParameter name="stroke-width">15</CssParameter>
+        <CssParameter name="stroke-width">12.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2919,7 +2919,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#e46d71</CssParameter>
-        <CssParameter name="stroke-width">8.5</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2930,7 +2930,7 @@
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#e46d71</CssParameter>
-        <CssParameter name="stroke-width">11.5</CssParameter>
+        <CssParameter name="stroke-width">9.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2941,7 +2941,7 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#e46d71</CssParameter>
-        <CssParameter name="stroke-width">15</CssParameter>
+        <CssParameter name="stroke-width">12.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -3971,6 +3971,12 @@
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="black" halo_radius="0" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="black" halo_radius="0" placement="line"/>
     </Rule>
@@ -4025,7 +4031,18 @@
   <Style name="cliffs">
      <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <Filter>[natural] = 'cliff' or [man_made] = 'embankment'</Filter>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[natural] = 'cliff'</Filter>       
+       <LinePatternSymbolizer file="/home/steve/symbols/cliff.png" type="png" width="10" height="4" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[natural] = 'cliff'</Filter>
+       <LinePatternSymbolizer file="/home/steve/symbols/cliff2.png" type="png" width="12" height="6" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[man_made] = 'embankment'</Filter>
        <LinePatternSymbolizer file="/home/steve/symbols/cliff.png" type="png" width="10" height="4" />
     </Rule>
   </Style>
@@ -4088,6 +4105,16 @@
     </Rule>
  </Style>
 <Style name="admin">
+   <Rule>
+      <Filter>[boundary] = 'administrative' and [admin_level]='2'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>1000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
    <Rule>
       <Filter>[boundary] = 'administrative' and [admin_level]='2'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
