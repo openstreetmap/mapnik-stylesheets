@@ -37,7 +37,7 @@
       </PolygonSymbolizer>
        <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-	<CssParameter name="stroke-width">0.5</CssParameter>
+        <CssParameter name="stroke-width">0.5</CssParameter>
       </LineSymbolizer>
     </Rule>
   </Style>
@@ -254,7 +254,7 @@
      </PolygonSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
-	<CssParameter name="stroke-width">0.3</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>    
     <Rule>
@@ -404,7 +404,7 @@
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">red</CssParameter>
-	<CssParameter name="stroke-width">0.3</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
 
@@ -432,7 +432,7 @@
      </PolygonSymbolizer>
     <LineSymbolizer>
         <CssParameter name="stroke">#555</CssParameter>
-	<CssParameter name="stroke-width">0.4</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -443,7 +443,7 @@
      </PolygonSymbolizer>
     <LineSymbolizer>
         <CssParameter name="stroke">#555</CssParameter>
-	<CssParameter name="stroke-width">0.4</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
       </LineSymbolizer>
     </Rule>
 
@@ -488,7 +488,7 @@
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">brown</CssParameter>
-	<CssParameter name="stroke-width">0.3</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
 
@@ -504,7 +504,7 @@
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#eeeed1</CssParameter>
-	<CssParameter name="stroke-width">0.3</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
 
@@ -514,7 +514,7 @@
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
      <PolygonSymbolizer>
          <CssParameter name="fill">#fff68f</CssParameter>
-	 <CssParameter name="fill-opacity">0.5</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
       </PolygonSymbolizer>
     </Rule>
 
@@ -523,7 +523,7 @@
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">pink</CssParameter>
-	 <CssParameter name="fill-opacity">0.5</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
@@ -539,7 +539,7 @@
       <MinScaleDenominator>20000</MinScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">#777</CssParameter>
-	 <CssParameter name="fill-opacity">0.5</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
@@ -547,11 +547,11 @@
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">#777</CssParameter>
-	 <CssParameter name="fill-opacity">0.5</CssParameter>
+         <CssParameter name="fill-opacity">0.5</CssParameter>
       </PolygonSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#111</CssParameter>
-	<CssParameter name="stroke-width">0.3</CssParameter>
+        <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
      <Rule>
@@ -580,7 +580,7 @@
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#330066</CssParameter>
-	<CssParameter name="stroke-width">0.2</CssParameter>
+        <CssParameter name="stroke-width">0.2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -901,7 +901,6 @@
 <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[power]='line'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -911,7 +910,6 @@
 <Style name="power_towers">
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <Filter>[power]='tower'</Filter>
       <PointSymbolizer file = "%SYMBOLS_DIR%/power_tower.png" type="png" width="7" height="7" allow_overlap="false"/>
     </Rule>
 </Style>
@@ -2022,7 +2020,7 @@
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
-	  <CssParameter name="stroke-dasharray">5,3</CssParameter>
+        <CssParameter name="stroke-dasharray">5,3</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2032,7 +2030,7 @@
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
-	  <CssParameter name="stroke-dasharray">5,3</CssParameter>
+        <CssParameter name="stroke-dasharray">5,3</CssParameter>
       </LineSymbolizer>
     </Rule>
 
@@ -2043,7 +2041,7 @@
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
-	<CssParameter name="stroke-dasharray">5,3</CssParameter>
+        <CssParameter name="stroke-dasharray">5,3</CssParameter>
       </LineSymbolizer>
     </Rule>
      <Rule>
@@ -2063,7 +2061,7 @@
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
-	<CssParameter name="stroke-dasharray">5,3</CssParameter>
+        <CssParameter name="stroke-dasharray">5,3</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2581,7 +2579,7 @@
         <CssParameter name="stroke-width">2</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
-	<CssParameter name="stroke-dasharray">4,4</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
       </LineSymbolizer>
     </Rule-->
   </Style>
@@ -4106,7 +4104,7 @@
  </Style>
 <Style name="admin">
    <Rule>
-      <Filter>[boundary] = 'administrative' and [admin_level]='2'</Filter>
+      <Filter>[admin_level]='2'</Filter>
       <MaxScaleDenominator>5000000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4116,7 +4114,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[boundary] = 'administrative' and [admin_level]='2'</Filter>
+      <Filter>[admin_level]='2'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
@@ -4125,62 +4123,62 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary] = 'administrative' and [admin_level]='3'</Filter>
+      <Filter>[admin_level]='3'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
         <CssParameter name="stroke-width">5</CssParameter>
-	  <CssParameter name="stroke-dasharray">4,2</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
         <CssParameter name="stroke-opacity">0.1</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary] = 'administrative' and [admin_level]='4'</Filter>
+      <Filter>[admin_level]='4'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
-	  <CssParameter name="stroke-dasharray">4,3</CssParameter>
+        <CssParameter name="stroke-dasharray">4,3</CssParameter>
         <CssParameter name="stroke-opacity">0.2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary] = 'administrative' and [admin_level]='5'</Filter>
+      <Filter>[admin_level]='5'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
-	  <CssParameter name="stroke-dasharray">6,3,2,3,2,3</CssParameter>
+        <CssParameter name="stroke-dasharray">6,3,2,3,2,3</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary] = 'administrative' and [admin_level]='6'</Filter>
+      <Filter>[admin_level]='6'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
-	  <CssParameter name="stroke-dasharray">6,3,2,3</CssParameter>
+        <CssParameter name="stroke-dasharray">6,3,2,3</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary] = 'administrative' and ([admin_level]='8' or [admin_level]='7')</Filter>
+      <Filter>[admin_level]='8' or [admin_level]='7'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
         <CssParameter name="stroke-width">1.5</CssParameter>
-	  <CssParameter name="stroke-dasharray">5,2</CssParameter>
+        <CssParameter name="stroke-dasharray">5,2</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary] = 'administrative' and ([admin_level]='10' or [admin_level]='9')</Filter>
+      <Filter>[admin_level]='10' or [admin_level]='9'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
-	  <CssParameter name="stroke-dasharray">2,3</CssParameter>
+        <CssParameter name="stroke-dasharray">2,3</CssParameter>
         <CssParameter name="stroke-opacity">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -4390,7 +4388,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="table">(select * from %PREFIX%_line where "power"='line' order by z_order) as power</Parameter>
+      <Parameter name="table">(select way from %PREFIX%_line where "power"='line') as power</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
@@ -4403,7 +4401,7 @@
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select * from %PREFIX%_point where power is NOT NULL) as power_towers</Parameter>
+      <Parameter name="table">(select way from %PREFIX%_point where power='tower') as power_towers</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -4482,7 +4480,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select * from %PREFIX%_line where "boundary"='administrative' order by z_order) as admin</Parameter>
+      (select way,admin_level from %PREFIX%_roads where "boundary"='administrative') as admin</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
