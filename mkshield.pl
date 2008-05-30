@@ -9,30 +9,44 @@ mkshield("motorway_shield1", 17, 17, 128, 155, 192);
 mkshield("motorway_shield2", 24, 17, 128, 155, 192);
 mkshield("motorway_shield3", 31, 17, 128, 155, 192);
 mkshield("motorway_shield4", 38, 17, 128, 155, 192);
+mkshield("motorway_shield5", 45, 17, 128, 155, 192);
+mkshield("motorway_shield6", 52, 17, 128, 155, 192);
 
 mkshield("trunk_shield1", 17, 17, 127, 201, 127);
 mkshield("trunk_shield2", 24, 17, 127, 201, 127);
 mkshield("trunk_shield3", 31, 17, 127, 201, 127);
 mkshield("trunk_shield4", 38, 17, 127, 201, 127);
 mkshield("trunk_shield5", 45, 17, 127, 201, 127);
+mkshield("trunk_shield6", 52, 17, 127, 201, 127);
+mkshield("trunk_shield7", 59, 17, 127, 201, 127);
+mkshield("trunk_shield8", 66, 17, 127, 201, 127);
 
 mkshield("primary_shield1", 17, 17, 228, 109, 113);
 mkshield("primary_shield2", 24, 17, 228, 109, 113);
 mkshield("primary_shield3", 31, 17, 228, 109, 113);
 mkshield("primary_shield4", 38, 17, 228, 109, 113);
 mkshield("primary_shield5", 45, 17, 228, 109, 113);
+mkshield("primary_shield6", 52, 17, 228, 109, 113);
+mkshield("primary_shield7", 59, 17, 228, 109, 113);
+mkshield("primary_shield8", 66, 17, 228, 109, 113);
 
 mkshield("secondary_shield1", 17, 17, 253, 191, 111);
 mkshield("secondary_shield2", 24, 17, 253, 191, 111);
 mkshield("secondary_shield3", 31, 17, 253, 191, 111);
 mkshield("secondary_shield4", 38, 17, 253, 191, 111);
 mkshield("secondary_shield5", 45, 17, 253, 191, 111);
+mkshield("secondary_shield6", 52, 17, 253, 191, 111);
+mkshield("secondary_shield7", 59, 17, 253, 191, 111);
+mkshield("secondary_shield8", 66, 17, 253, 191, 111);
 
 mkshield("tertiary_shield1", 17, 17, 153, 153, 153);
 mkshield("tertiary_shield2", 24, 17, 153, 153, 153);
 mkshield("tertiary_shield3", 31, 17, 153, 153, 153);
 mkshield("tertiary_shield4", 38, 17, 153, 153, 153);
 mkshield("tertiary_shield5", 45, 17, 153, 153, 153);
+mkshield("tertiary_shield6", 52, 17, 153, 153, 153);
+mkshield("tertiary_shield7", 59, 17, 153, 153, 153);
+mkshield("tertiary_shield8", 66, 17, 153, 153, 153);
 
 exit 0;
 
