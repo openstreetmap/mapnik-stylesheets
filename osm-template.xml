@@ -247,7 +247,7 @@
 
   <Style name="leisure">
    <Rule>
-      <Filter>[highway] = 'pedestrian' and [area]='yes'</Filter>
+      <Filter>[highway] = 'pedestrian'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#ededed</CssParameter>
