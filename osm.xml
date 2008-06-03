@@ -246,6 +246,17 @@
   </Style>
 
   <Style name="leisure">
+   <Rule>
+      <Filter>[highway] = 'pedestrian' and [area]='yes'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ededed</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+   </Rule>
     <Rule>
       <Filter>[leisure] = 'playground'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -4189,7 +4200,7 @@
  </Style>
 <Style name="admin">
    <Rule>
-      <Filter>[admin_level]='2'</Filter>
+      <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
       <MaxScaleDenominator>5000000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <LineSymbolizer>
