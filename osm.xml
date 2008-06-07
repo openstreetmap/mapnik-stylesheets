@@ -246,6 +246,17 @@
   </Style>
 
   <Style name="leisure">
+    <Rule>
+      <Filter>[man_made] = 'pier'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ededed</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.3</CssParameter>
+      </LineSymbolizer>
+   </Rule>
    <Rule>
       <Filter>[highway] = 'pedestrian'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -274,6 +285,25 @@
       <PolygonSymbolizer>
         <CssParameter name="fill">#f2caea</CssParameter>
      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'quarry'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/steve/symbols/quarry.png" type="png" width="16" height="16"/>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'quarry'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file="/home/steve/symbols/quarry2.png" type="png" width="30" height="30"/>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'nature_reserve'</Filter>
@@ -1613,7 +1643,18 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
    </Rule>
-  <Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
       <Filter>[highway] = 'pedestrian'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
@@ -2254,6 +2295,17 @@
    </Rule>
    <Rule>
       <Filter>[highway] = 'pedestrian'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ededed</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2803,6 +2855,15 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">2.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>[highway] = 'pedestrian'  and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
@@ -3074,6 +3135,17 @@
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ededed</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
