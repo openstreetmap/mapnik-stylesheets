@@ -1491,7 +1491,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1502,7 +1502,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1535,7 +1535,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1546,7 +1546,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1557,7 +1557,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1568,7 +1568,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1579,7 +1579,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1590,7 +1590,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2127,7 +2127,7 @@
     </Rule>
 
     <Rule>
-      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2136,6 +2136,54 @@
       </LineSymbolizer>
     </Rule>
 
+    <Rule>
+      <Filter>[highway] = 'road'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'road'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>15000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+    <Rule>
+      <Filter>[highway] = 'road'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">9.4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
+
+    <Rule>
+      <Filter>[highway] = 'road'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
     <Rule>
       <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -2810,7 +2858,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2819,7 +2867,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2828,7 +2876,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3084,6 +3132,40 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">3.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">9.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
