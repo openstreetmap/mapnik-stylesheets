@@ -2543,7 +2543,26 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-<Rule>
+    <Rule>
+      <Filter>[highway] = 'track'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#996600</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-dasharray">3,4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+     </Rule>    
+    <Rule>
       <Filter>[highway] = 'unsurfaced'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
@@ -2656,9 +2675,9 @@
       </LineSymbolizer>
     </Rule-->
   </Style>
-<Style name="tracks">
+<Style name="tracks-notunnel-nobridge">
     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade1' and not ([tunnel]='yes' or [bridge]='yes')</Filter>
+      <Filter>[tracktype]='grade1'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -2672,7 +2691,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade2' and not ([tunnel]='yes' or [bridge]='yes')</Filter>
+      <Filter>[tracktype]='grade2'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -2691,7 +2710,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade3' and not ([tunnel]='yes' or [bridge]='yes')</Filter>
+      <Filter>[tracktype]='grade3'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -2710,7 +2729,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade4' and not ([tunnel]='yes' or [bridge]='yes')</Filter>
+      <Filter>[tracktype]='grade4'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -2729,7 +2748,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade5' and not ([tunnel]='yes' or [bridge]='yes')</Filter>
+      <Filter>[tracktype]='grade5'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -2766,30 +2785,9 @@
       </LineSymbolizer>
      </Rule>    
 </Style>
-<Style name="track-bridges">
+<Style name="tracks-bridges">
     <Rule>
-      <Filter>[highway] = 'track' and ([bridge]='yes' or [bridge]='true')</Filter>
-     <MaxScaleDenominator>50000</MaxScaleDenominator>
-     <LineSymbolizer>
-        <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">5</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#996600</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
-        <CssParameter name="stroke-dasharray">3,4</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade1' and ([bridge]='yes' or [bridge]='true')</Filter>
+     <Filter>[tracktype]='grade1'</Filter>
      <MaxScaleDenominator>50000</MaxScaleDenominator>
      <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -2806,7 +2804,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade2' and ([bridge]='yes' or [bridge]='true')</Filter>
+     <Filter>[tracktype]='grade2'</Filter>
      <MaxScaleDenominator>50000</MaxScaleDenominator>
      <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -2828,7 +2826,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade3' and ([bridge]='yes' or [bridge]='true')</Filter>
+     <Filter>[tracktype]='grade3'</Filter>
      <MaxScaleDenominator>50000</MaxScaleDenominator>
      <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -2849,7 +2847,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade4' and ([bridge]='yes' or [bridge]='true')</Filter>
+     <Filter>[tracktype]='grade4'</Filter>
      <MaxScaleDenominator>50000</MaxScaleDenominator>
      <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -2871,7 +2869,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'track' and [tracktype]='grade5' and ([bridge]='yes' or [bridge]='true')</Filter>
+     <Filter>[tracktype]='grade5'</Filter>
      <MaxScaleDenominator>50000</MaxScaleDenominator>
      <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -2892,6 +2890,161 @@
         <CssParameter name="stroke-opacity">0.8</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#996600</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-dasharray">3,4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+     </Rule>    
+</Style>
+<Style name="tracks-tunnels">
+    <Rule>
+     <Filter>[tracktype]='grade1'</Filter>
+     <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3.5</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b37700</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+     <Filter>[tracktype]='grade2'</Filter>
+     <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a87000</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-dasharray">3,4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+     <Filter>[tracktype]='grade3'</Filter>
+     <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#996600</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+     <Filter>[tracktype]='grade4'</Filter>
+     <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#996600</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-dasharray">4,7,1,5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+     <Filter>[tracktype]='grade5'</Filter>
+     <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#996600</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-dasharray">1,5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+     <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#996600</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-dasharray">3,4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+     </Rule>    
 </Style>
 <Style name="road-bridges-casing">
      <Rule>
@@ -3681,27 +3834,6 @@
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffcc00</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
-        <CssParameter name="stroke-dasharray">3,4</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'track' and ([bridge]='yes' or [bridge]='true')</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-     <LineSymbolizer>
-        <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">5.5</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#996600</CssParameter>
         <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-dasharray">3,4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
@@ -4779,9 +4911,8 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-  <Layer name="tracks" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <StyleName>tracks</StyleName>
-    <StyleName>track-bridges</StyleName>
+  <Layer name="tracks-notunnel-nobridge" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>tracks-notunnel-nobridge</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
       <Parameter name="host">%DBHOST%</Parameter>
@@ -4790,7 +4921,39 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select * from %PREFIX%_line where highway='track') as tracks
+      (select way,tracktype from %PREFIX%_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0'))) as tracks
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+  </Layer>
+  <Layer name="tracks-bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>tracks-bridges</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+      (select way,tracktype from %PREFIX%_line where highway='track' and bridge in ('yes','true','1')) as tracks
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+  </Layer>
+  <Layer name="tracks-tunnels" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>tracks-tunnels</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+      (select way,tracktype from %PREFIX%_line where highway='track' and tunnel in ('yes','true','1')) as tracks
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
