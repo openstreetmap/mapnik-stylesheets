@@ -3083,7 +3083,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3860,7 +3860,7 @@
 </Style>
 <Style name="mwaybridge_layer0_casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3869,7 +3869,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3904,7 +3904,7 @@
 </Style>
 <Style name="mwaybridge_layer1_casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='1'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='1'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3913,7 +3913,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='1'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='1'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3957,7 +3957,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='2'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='2'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3992,7 +3992,7 @@
 </Style>
 <Style name="mwaybridge_layer3_casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='3'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='3'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4001,7 +4001,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='3'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='3'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4036,7 +4036,7 @@
 </Style>
 <Style name="mwaybridge_layer4_casing">
      <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='4'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='4'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4045,7 +4045,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='4'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='4'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4080,7 +4080,7 @@
 </Style>
 <Style name="mwaybridge_layer5_casing">
      <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='5'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='5'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4089,7 +4089,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes'or [bridge]='true') and [layer]='5'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='5'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
