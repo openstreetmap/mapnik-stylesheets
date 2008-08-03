@@ -231,7 +231,7 @@
     <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[amenity]='place_of_worship'</Filter>
-      <PointSymbolizer file="/home/steve/symbols/place_of_worship.png" type="png" width="16" height="16" allow_overlap="false"/>
+      <PointSymbolizer file="/home/steve/symbols/place_of_worship3.png" type="png" width="10" height="10" allow_overlap="false"/>
      </Rule>
     <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
@@ -739,7 +739,7 @@
      <Rule>
       <Filter>[amenity] = 'place_of_worship' or [amenity] = 'police'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" dy="12" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" dy="8" halo_radius="1" wrap_width="20"/>
     </Rule>
 
     <Rule>
