@@ -751,7 +751,7 @@
      <Rule>
       <Filter>[amenity] = 'place_of_worship' or [amenity] = 'police'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="8" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="10" halo_radius="1" wrap_width="20"/>
     </Rule>
 
     <Rule>
