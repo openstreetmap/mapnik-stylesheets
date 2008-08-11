@@ -227,10 +227,29 @@
       <Filter>[amenity]='parking'</Filter>
       <PointSymbolizer file="/home/steve/symbols/parking.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
-
     <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
-      <Filter>[amenity]='place_of_worship'</Filter>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'christian'</Filter>
+      <PointSymbolizer file="/home/steve/symbols/place_of_worship.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'muslim'</Filter>
+      <PointSymbolizer file="/home/steve/symbols/mosque.png" type="png" width="16" height="16" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'sikh'</Filter>
+      <PointSymbolizer file="/home/steve/symbols/sikh.png" type="png" width="25" height="26" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and [religion] = 'jewish'</Filter>
+      <PointSymbolizer file="/home/steve/symbols/synagogue.png" type="png" width="16" height="18" allow_overlap="false"/>
+     </Rule>
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='place_of_worship' and not [religion] = ''</Filter>
       <PointSymbolizer file="/home/steve/symbols/place_of_worship3.png" type="png" width="10" height="10" allow_overlap="false"/>
      </Rule>
     <Rule>
@@ -294,16 +313,6 @@
     <Rule>
       <Filter>[landuse] = 'quarry'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100000</MinScaleDenominator>
-      <PolygonPatternSymbolizer file="/home/steve/symbols/quarry.png" type="png" width="16" height="16"/>
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-	<CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[landuse] = 'quarry'</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <PolygonPatternSymbolizer file="/home/steve/symbols/quarry2.png" type="png" width="30" height="30"/>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
@@ -719,18 +728,17 @@
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
-
     <Rule>
-      <Filter>[place] = 'hamlet'</Filter>
-      <MaxScaleDenominator>125000</MaxScaleDenominator>
+      <Filter>[place] = 'hamlet' or or [place] = 'locality'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'locality'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#777777" halo_radius="1" wrap_width="0"/>
+      <Filter>[place] = 'hamlet' or or [place] = 'locality'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
-
     <Rule>
       <Filter>[amenity] = 'pub'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -739,7 +747,7 @@
      <Rule>
       <Filter>[amenity] = 'place_of_worship' or [amenity] = 'police'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" dy="10" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="18" fill="#000033" dy="10" halo_radius="1" wrap_width="30"/>
     </Rule>
 
     <Rule>
