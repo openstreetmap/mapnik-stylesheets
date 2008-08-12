@@ -249,7 +249,7 @@
      </Rule>
      <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
-      <Filter>[amenity]='place_of_worship' and not [religion] = ''</Filter>
+      <Filter>[amenity]='place_of_worship'</Filter>
       <PointSymbolizer file="/home/steve/symbols/place_of_worship3.png" type="png" width="10" height="10" allow_overlap="false"/>
      </Rule>
     <Rule>
@@ -729,13 +729,13 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'hamlet' or or [place] = 'locality'</Filter>
+      <Filter>[place] = 'hamlet' or [place] = 'locality'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>10000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'hamlet' or or [place] = 'locality'</Filter>
+      <Filter>[place] = 'hamlet' or [place] = 'locality'</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
