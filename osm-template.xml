@@ -282,6 +282,17 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
+      <Filter>[highway] = 'residential'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#fff</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+	<CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
       <Filter>[highway] = 'pedestrian'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <PolygonSymbolizer>
@@ -362,7 +373,21 @@
         <CssParameter name="fill">#ff8f8f</CssParameter>
       </PolygonSymbolizer>
     </Rule>
-
+    <Rule>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <Filter>[military] = 'danger_area'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">pink</CssParameter>
+        <CssParameter name="fill-opacity">0.3</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[military] = 'danger_area'</Filter>
+      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/danger.png" type="png" width="30" height="30"/>
+    </Rule>
      <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <Filter>[landuse] = 'cemetery'</Filter>
@@ -666,24 +691,29 @@
 
   <Style name="area-text">
     <Rule>
+      <Filter>[military] = 'danger_area'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
+    </Rule>
+    <Rule>
       <Filter>[way_area] &gt;= 150000</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[way_area] &gt;= 80000 and [way_area] &lt; 150000</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[way_area] &gt;= 20000 and [way_area] &lt; 80000</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[way_area] &lt; 20000</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
   </Style>
 
@@ -753,7 +783,7 @@
     <Rule>
       <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' </Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" halo_radius="2" wrap_width="10"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'wood'</Filter>
