@@ -374,7 +374,7 @@
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
       <Filter>[military] = 'danger_area'</Filter>
       <PolygonSymbolizer>
