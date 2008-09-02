@@ -33,24 +33,31 @@ s/"dbname">.*</"dbname">%DBNAME%</
 s|/Users/artem/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
 s|/home/steve/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
 s|/home/jburgess/osm/data/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
+s|/home/jburgess/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
 
 # PointSymbolizer file="/Users/artem/symbols/recycling.png" type="png" width="20" height="20" />
 s|/Users/artem/symbols/|%SYMBOLS_DIR%/|
 s|/home/steve/symbols/|%SYMBOLS_DIR%/|
 s|c:/mapnik/symbols/|%SYMBOLS_DIR%/|
 s|/home/jburgess/osm/svn.openstreetmap.org/applications/rendering/mapnik/symbols/|%SYMBOLS_DIR%/|
+s|/home/jburgess/svn.openstreetmap.org/applications/rendering/mapnik/symbols/|%SYMBOLS_DIR%/|
 
 # /home/jburges/osm/data/world_boundaries
 s|/home/jburges/osm/data/world_boundaries|%WORLD_BOUNDARIES_DIR%|
+s|/home/jburgess/new-coast/coastlines|%WORLD_BOUNDARIES_DIR%|
 
 # Add the database password prior to the name
-/<Parameter name="dbname">/ i \      <Parameter name="password">%DBPASS%</Parameter>
+#/<Parameter name="dbname">/ i \      <Parameter name="password">%DBPASS%</Parameter>
 
-#/<Parameter name="dbname">/ i \
-#      <Parameter name="host">%DBHOST%</Parameter>\
+#       <Parameter name="host">%DBHOST%</Parameter>\
 #      <Parameter name="port">%DBPORT%</Parameter>\
 #      <Parameter name="user">%DBUSER%</Parameter>\
-#      <Parameter name="password">%DBPASS%</Parameter>
+
+/<Parameter name="dbname">/ i \
+      <Parameter name="password">%DBPASS%</Parameter>
 
 # Use template for PostGIS table names
 s/planet_osm_/%PREFIX%_/g
+
+# Steve8 leaves these in the file
+/"password">martyn/d
