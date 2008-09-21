@@ -263,7 +263,7 @@
       <PointSymbolizer file="%SYMBOLS_DIR%/mini_round.png" type="png" width="9" height="9" allow_overlap="false"/>
     </Rule>
     <Rule>
-      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <Filter>[highway]='gate'</Filter>
       <PointSymbolizer file="%SYMBOLS_DIR%/gate.png" type="png" width="4" height="5" allow_overlap="false"/>
     </Rule>
@@ -856,7 +856,7 @@
 
    <Style name="water">
     <Rule>
-      <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water'</Filter>
+      <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
