@@ -82,7 +82,7 @@
   <Style name="stations">
     <Rule>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <Filter>[railway]='station'</Filter>
       <PointSymbolizer file =  "c:/mapnik/symbols/halt.png" type="png" width="4" height="4" />
     </Rule>
