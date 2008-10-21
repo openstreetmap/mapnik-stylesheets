@@ -111,19 +111,25 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
       <Filter>[railway]='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
-      <PointSymbolizer file = "%SYMBOLS_DIR%/halt.png" type="png" width="3" height="3" />
+      <PointSymbolizer file =  "%SYMBOLS_DIR%/halt.png" type="png" width="4" height="4" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[railway]='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
+      <PointSymbolizer file =  "%SYMBOLS_DIR%/station_small.png" type="png" width="6" height="6" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
-      <Filter>[railway]='halt'</Filter>
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="8" fill="#000" dy="-8" halo_radius="1" wrap_width="0"/>
+      <Filter>[railway]='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#66f" dy="-8" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <Filter>[railway] ='halt'</Filter>
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#000" dy="-14" halo_radius="1" wrap_width="0"/>
+      <Filter>[railway] ='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#66f" dy="-10" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
