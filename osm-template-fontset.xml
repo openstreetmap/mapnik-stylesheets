@@ -4482,233 +4482,233 @@
       <Filter>[highway] = 'motorway' and [length] = 1</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield1.png" type="png" width="17" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield1.png" type="png" width="17" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 2</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield2.png" type="png" width="24" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield2.png" type="png" width="24" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 3</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield3.png" type="png" width="31" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield3.png" type="png" width="31" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 4</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield4.png" type="png" width="38" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield4.png" type="png" width="38" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 5</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield5.png" type="png" width="45" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield5.png" type="png" width="45" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 6</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield6.png" type="png" width="52" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield6.png" type="png" width="52" height="17" min_distance="120"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 1</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield1.png" type="png" width="17" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield1.png" type="png" width="17" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 2</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield2.png" type="png" width="24" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield2.png" type="png" width="24" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 3</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield3.png" type="png" width="31" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield3.png" type="png" width="31" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 4</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield4.png" type="png" width="38" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield4.png" type="png" width="38" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 5</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield5.png" type="png" width="45" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield5.png" type="png" width="45" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 6</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield6.png" type="png" width="52" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield6.png" type="png" width="52" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 7</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield7.png" type="png" width="59" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield7.png" type="png" width="59" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 8</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield8.png" type="png" width="66" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield8.png" type="png" width="66" height="17" min_distance="140"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 1</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield1.png" type="png" width="17" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield1.png" type="png" width="17" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 2</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield2.png" type="png" width="24" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield2.png" type="png" width="24" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 3</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield3.png" type="png" width="31" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield3.png" type="png" width="31" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 4</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield4.png" type="png" width="38" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield4.png" type="png" width="38" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 5</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield5.png" type="png" width="45" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield5.png" type="png" width="45" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 6</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield6.png" type="png" width="52" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield6.png" type="png" width="52" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 7</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield7.png" type="png" width="59" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield7.png" type="png" width="59" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 8</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield8.png" type="png" width="66" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield8.png" type="png" width="66" height="17" min_distance="160"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 1</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 2</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 3</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 4</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 5</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 6</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 7</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 8</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 1</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 2</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 3</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 4</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 5</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 6</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 7</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 8</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
