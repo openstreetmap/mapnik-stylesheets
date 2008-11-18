@@ -112,33 +112,33 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[railway]='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
+      <Filter>[railway]='halt' or [railway]='tram_stop' or [aerialway]='station'</Filter>
       <PointSymbolizer file =  "%SYMBOLS_DIR%/halt.png" type="png" width="4" height="4" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <Filter>[railway]='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
+      <Filter>[railway]='halt' or [railway]='tram_stop' or [aerialway]='station'</Filter>
       <PointSymbolizer file =  "%SYMBOLS_DIR%/station_small.png" type="png" width="6" height="6" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
-      <Filter>[railway]='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
+      <Filter>[railway]='halt' or [railway]='tram_stop' or [aerialway]='station'</Filter>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#66f" dy="-8" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <Filter>[railway] ='halt' or [railway]='tram_stop' or [aeroway]='station'</Filter>
+      <Filter>[railway] ='halt' or [railway]='tram_stop' or [aerialway]='station'</Filter>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#66f" dy="-10" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
       <Filter>[railway]='station'</Filter>
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="9" fill="#66f" dy="-8" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <Filter>[railway]='station'</Filter>
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="11" fill="#66f" dy="-14" halo_radius="1" wrap_width="0"/>
     </Rule>
@@ -146,10 +146,11 @@
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>10000</MinScaleDenominator>
       <Filter>[railway]='level_crossing'</Filter>
-      <PointSymbolizer file = "%SYMBOLS_DIR%/level_crossing.png" type="png" width="7" height="7" />
+      <PointSymbolizer file =  "%SYMBOLS_DIR%/level_crossing.png" type="png" width="7" height="7" />
     </Rule>
   </Style>
-   <Style name="symbols">
+  
+  <Style name="symbols">
     <Rule>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
@@ -342,29 +343,7 @@
         <CssParameter name="stroke">grey</CssParameter>
 	<CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
-   </Rule>
-   <Rule>
-      <Filter>[highway] = 'residential' or [highway]='unclassified' or [highway]='service'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#fff</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#999</CssParameter>
-	<CssParameter name="stroke-width">1</CssParameter>
-      </LineSymbolizer>
-   </Rule>
-   <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ededed</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-	<CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
-   </Rule>
+    </Rule>
     <Rule>
       <Filter>[leisure] = 'playground'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -386,7 +365,7 @@
     <Rule>
       <Filter>[landuse] = 'quarry'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/quarry2.png" type="png" width="30" height="30"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/quarry2.png" type="png" width="30" height="30"/>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
 	<CssParameter name="stroke-width">0.5</CssParameter>
@@ -415,12 +394,12 @@
       <Filter>[leisure] = 'nature_reserve'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/nature_reserve.png" type="png" width="21" height="24"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/nature_reserve.png" type="png" width="21" height="24"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'nature_reserve'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/nature_reserve2.png" type="png" width="42" height="48"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/nature_reserve2.png" type="png" width="42" height="48"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -459,17 +438,17 @@
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[military] = 'danger_area'</Filter>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/danger.png" type="png" width="30" height="30"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/danger.png" type="png" width="30" height="30"/>
     </Rule>
      <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <Filter>[landuse] = 'cemetery'</Filter>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/grave_yard.png" type="png" width="16" height="16"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/grave_yard.png" type="png" width="16" height="16"/>
     </Rule>
 
      <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <Filter>[landuse] = 'meadow'</Filter>
+      <Filter>[landuse] = 'meadow' or [landuse] = 'grass'</Filter>
       <PolygonSymbolizer>
         <CssParameter name="fill">#cfeca8</CssParameter>
      </PolygonSymbolizer>
@@ -484,7 +463,7 @@
     <Rule>
       <Filter>[tourism] = 'zoo'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/zoo.png" type="png" width="21" height="24"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/zoo.png" type="png" width="21" height="24"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'common'</Filter>
@@ -526,7 +505,7 @@
     <Rule>
       <Filter>[landuse] = 'forest'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/forest.png" type="png" width="21" height="24"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/forest.png" type="png" width="21" height="24"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'farm'</Filter>
@@ -639,6 +618,7 @@
         <CssParameter name="fill">#b5d0d0</CssParameter>
      </PolygonSymbolizer>
     </Rule>
+
     <Rule>
       <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -677,7 +657,7 @@
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
      <PolygonSymbolizer>
          <CssParameter name="fill">#d4aaaa</CssParameter>
-      </PolygonSymbolizer>
+     </PolygonSymbolizer>
     </Rule>
 
     <Rule>
@@ -755,7 +735,7 @@
     <Rule>
       <Filter>[natural] = 'beach'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <PolygonPatternSymbolizer file="%SYMBOLS_DIR%/beach.png" type="png" width="10" height="10"/>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/beach.png" type="png" width="10" height="10"/>
     </Rule>
 
     <!--Rule>
@@ -773,6 +753,36 @@
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
     </Rule>
+    <Rule>
+      <Filter>([highway] = 'residential' or [highway]='unclassified') and [area]='yes'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+	<CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>([highway] = 'pedestrian' or [highway]='service') and [area]='yes'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+	<CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>([highway] = 'residential' or [highway]='unclassified' or [highway]='service') and [area]='yes'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#fff</CssParameter>
+      </PolygonSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian' and [area]='yes'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#ededed</CssParameter>
+      </PolygonSymbolizer>
+   </Rule>
     <Rule>
       <Filter>[way_area] &gt;= 150000</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -793,15 +803,8 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
-  </Style>
-
-  <Style name="text">
-    <Rule>
-      <Filter>[place] = 'island'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>20000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
+</Style>
+<Style name="city">
     <Rule>
       <Filter>[place] = 'city'</Filter>
       <MaxScaleDenominator>10000000</MaxScaleDenominator>
@@ -811,42 +814,56 @@
     <Rule>
       <Filter>[place] = 'city'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
-      <MinScaleDenominator>20000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#000" dy="0" halo_radius="2" wrap_width="0"/>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="12" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
+    <Rule>
+      <Filter>[place] = 'city'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+</Style>
+<Style name="town">
     <Rule>
       <Filter>[place] = 'town'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" halo_radius="2" wrap_width="20"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[place] = 'town'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#777777" halo_radius="1" wrap_width="20"/>
     </Rule>
+</Style>
+<Style name="suburb">
     <Rule>
       <Filter>[place] = 'suburb'</Filter>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" halo_radius="2" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[place] = 'suburb'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="13" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
+</Style>
+<Style name="village">
     <Rule>
       <Filter>[place] = 'village'</Filter>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="2" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[place] = 'village'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="12" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
+</Style>
+<Style name="hamlet">
     <Rule>
       <Filter>[place] = 'hamlet' or [place] = 'locality'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -858,6 +875,14 @@
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
+</Style>
+<Style name="text">
+    <Rule>
+      <Filter>[place] = 'island'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
     <Rule>
       <Filter>[amenity] = 'pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='bar'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -868,7 +893,6 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="16" halo_radius="1" wrap_width="30"/>
     </Rule>
-
     <Rule>
       <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' </Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
@@ -934,8 +958,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-14" min_distance="20"/>
     </Rule>
   </Style>
-
-   <Style name="water_areas">
+<Style name="water_areas">
     <Rule>
       <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -971,46 +994,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='derelict_canal' or ([waterway]='canal' and [disused]='yes')</Filter>
-      <MaxScaleDenominator>250000</MaxScaleDenominator>
-      <MinScaleDenominator>100000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#b5e4d0</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
-        <CssParameter name="stroke-dasharray">4,4</CssParameter>
-        <CssParameter name="stroke-opacity">0.5</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[waterway]='derelict_canal'</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <MinScaleDenominator>50000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#b5e4d0</CssParameter>
-        <CssParameter name="stroke-width">2.5</CssParameter>
-        <CssParameter name="stroke-dasharray">4,6</CssParameter>
-        <CssParameter name="stroke-opacity">0.5</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[waterway]='derelict_canal'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>1000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#b5e4d0</CssParameter>
-        <CssParameter name="stroke-width">4.5</CssParameter>
-        <CssParameter name="stroke-dasharray">4,8</CssParameter>
-        <CssParameter name="stroke-opacity">0.5</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[waterway]='canal'</Filter>
+      <Filter>[waterway]='canal' and not [disused]='yes'</Filter>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1021,7 +1005,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal'</Filter>
+      <Filter>[waterway]='canal' and not [disused]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1069,7 +1053,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
+      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [tunnel] ='true' or [disused]='yes')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1096,7 +1080,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
+      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [tunnel] ='true' or [disused]='yes')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1108,6 +1092,61 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
+      <Filter>[waterway]='derelict_canal' or ([waterway]='canal' and [disused]='yes')</Filter>
+      <MaxScaleDenominator>250000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5e4d0</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='derelict_canal' or ([waterway]='canal' and [disused]='yes')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5e4d0</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,6</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#80d1ae" halo_radius="1" spacing="600" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='derelict_canal' or ([waterway]='canal' and [disused]='yes')</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5e4d0</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#80d1ae" halo_radius="1" spacing="600" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>([waterway]='stream' or [waterway]='drain') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2.2</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">1.4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       <ElseFilter/> <!--[waterway]='stream'</Filter>-->
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
@@ -1117,9 +1156,10 @@
       </LineSymbolizer>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
-  </Style>
+</Style>
+ 
 <Style name="power">
-<Rule>
+    <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1131,12 +1171,12 @@
 <Style name="power_towers">
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <PointSymbolizer file = "%SYMBOLS_DIR%/power_tower.png" type="png" width="7" height="7" allow_overlap="false"/>
+      <PointSymbolizer file =  "%SYMBOLS_DIR%/power_tower.png" type="png" width="7" height="7" allow_overlap="false"/>
     </Rule>
 </Style>
 <Style name="tunnels-casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1146,7 +1186,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1156,7 +1196,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1166,7 +1206,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1176,7 +1216,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1186,7 +1226,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1196,7 +1236,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1206,7 +1246,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1216,7 +1256,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1226,7 +1266,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1236,7 +1276,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1246,7 +1286,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1256,7 +1296,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1266,7 +1306,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1276,7 +1316,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1286,7 +1326,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1298,7 +1338,7 @@
 </Style>
 <Style name="tunnels-fill">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1309,7 +1349,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1320,7 +1360,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1331,7 +1371,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link')  and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link')  and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1342,7 +1382,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1353,7 +1393,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1364,7 +1404,7 @@
       </LineSymbolizer>
     </Rule>    
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1375,7 +1415,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1386,7 +1426,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1397,40 +1437,40 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#f4c3c4</CssParameter>
-        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#f4c3c4</CssParameter>
-        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#f4c3c4</CssParameter>
-        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-width">12</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1441,7 +1481,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1452,7 +1492,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1463,7 +1503,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1477,7 +1517,7 @@
 
 <Style name="minor-roads-casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1518,7 +1558,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1559,7 +1599,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1600,7 +1640,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1640,31 +1680,31 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
+
     <Rule>
-      <Filter>[highway] = 'tertiary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'tertiary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#bbb</CssParameter>
-        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[highway] = 'tertiary' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'tertiary' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1675,7 +1715,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1686,29 +1726,29 @@
     </Rule>
 
     <Rule>
-      <Filter>[highway] = 'tertiary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'tertiary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#bbb</CssParameter>
-        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-width">7.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'tertiary' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-width">7.5</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1719,7 +1759,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1730,7 +1770,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1741,7 +1781,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1752,7 +1792,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1763,7 +1803,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1774,7 +1814,7 @@
     </Rule>
 
     <Rule>
-      <Filter>[highway] = 'service' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'service' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1785,7 +1825,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'service' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1796,7 +1836,7 @@
     </Rule>
 
     <Rule>
-      <Filter>[highway] = 'service' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'service' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1807,7 +1847,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'service' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1859,12 +1899,13 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
    </Rule>
+   
 </Style>
 
-  <Style name="minor-roads-fill">
+<Style name="minor-roads-fill">
     <!-- level 10 -->
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1917,7 +1958,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1929,7 +1970,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1941,7 +1982,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1953,7 +1994,7 @@
     </Rule>
 
    <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1965,7 +2006,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1977,7 +2018,7 @@
     </Rule>
 
    <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1989,7 +2030,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway] = 'trunk_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2001,7 +2042,7 @@
    </Rule>
 
    <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2013,7 +2054,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2025,7 +2066,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2037,7 +2078,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2050,7 +2091,7 @@
 
     <!-- level 11 ..-->
    <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2062,7 +2103,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2074,7 +2115,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2086,7 +2127,7 @@
     </Rule>
    
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2101,7 +2142,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffff</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -2148,7 +2189,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and not ([tunnel] = 'yes' or [tunnel] = 'true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -2164,7 +2205,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[railway] = 'rail' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">7</CssParameter>
@@ -2179,7 +2220,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and not ([tunnel]='yes' or [tunnel] = 'true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -2195,7 +2236,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffff</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -2242,7 +2283,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='narrow_gauge' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='narrow_gauge' and not ([tunnel]='yes' or [tunnel] = 'true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2251,7 +2292,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='narrow_gauge' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='narrow_gauge' and ([tunnel]='yes' or [tunnel] = 'true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">5</CssParameter>
@@ -2269,7 +2310,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[railway]='tram' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='tram' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -2279,7 +2320,7 @@
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='tram' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='tram' and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2290,7 +2331,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='light_rail' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='light_rail' and ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2300,7 +2341,7 @@
      <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='light_rail' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='light_rail' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2310,7 +2351,7 @@
      <Rule>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='subway' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='subway' and ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2320,7 +2361,7 @@
     <Rule>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='subway' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='subway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2472,8 +2513,8 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#ffffcc</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2484,8 +2525,8 @@
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#ffffcc</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2496,7 +2537,7 @@
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
         <CssParameter name="stroke-width">9.4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2507,7 +2548,7 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
         <CssParameter name="stroke-width">13</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2594,6 +2635,7 @@
         <CssParameter name="stroke-dasharray">2,1</CssParameter>
       </LineSymbolizer>
     </Rule>
+    
     <Rule>
       <Filter>[access] = 'private' or [access] = 'no'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
@@ -2607,7 +2649,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
@@ -2623,7 +2665,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
@@ -2646,7 +2688,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
@@ -2664,7 +2706,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
@@ -2686,46 +2728,46 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-<Rule>
-      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>  
+    <Rule>
+      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter> 
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">1.0</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-opacity">0.4</CssParameter>
-      </LineSymbolizer>       
-       <LineSymbolizer>
-        <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-        <CssParameter name="stroke-dasharray">6,3</CssParameter>	
-	<CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>         
+     </LineSymbolizer>
+     <LineSymbolizer>
+       <CssParameter name="stroke">black</CssParameter>
+       <CssParameter name="stroke-width">0.5</CssParameter>
+       <CssParameter name="stroke-dasharray">6,3</CssParameter>
+       <CssParameter name="stroke-linejoin">round</CssParameter>
+       <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
+    </Rule>
     <Rule>
       <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>  
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
         <CssParameter name="stroke-width">5.5</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>      
+      </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">1.0</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-opacity">0.4</CssParameter>
-      </LineSymbolizer>       
-       <LineSymbolizer>
-        <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-        <CssParameter name="stroke-dasharray">6,3</CssParameter>	
-	<CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
+     </LineSymbolizer>
+     <LineSymbolizer>
+       <CssParameter name="stroke">black</CssParameter>
+       <CssParameter name="stroke-width">0.5</CssParameter>
+       <CssParameter name="stroke-dasharray">6,3</CssParameter>
+       <CssParameter name="stroke-linejoin">round</CssParameter>
+       <CssParameter name="stroke-linecap">round</CssParameter>
+    </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'steps'</Filter>
@@ -2746,7 +2788,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -2764,7 +2806,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
@@ -2889,7 +2931,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'runway' and not ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[aeroway] = 'runway' and not ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#bbc</CssParameter>
@@ -2906,7 +2948,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'taxiway' and not ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[aeroway] = 'taxiway' and not ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2915,14 +2957,13 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'taxiway' and not ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[aeroway] = 'taxiway' and not ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#bbc</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <!--Rule>
       <ElseFilter/>
       <MaxScaleDenominator>1500000</MaxScaleDenominator>
@@ -2941,13 +2982,13 @@
       <Filter>[aerialway] = 'cable_car' or [aerialway]='gondola'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <LinePatternSymbolizer file="%SYMBOLS_DIR%/cable_car.png" type="png" width="28" height="3" />
+      <LinePatternSymbolizer file= "%SYMBOLS_DIR%/cable_car.png" type="png" width="28" height="3" />
     </Rule>
     <Rule>
       <Filter>[aerialway] = 'chair_lift'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <LinePatternSymbolizer file="%SYMBOLS_DIR%/chair_lift.png" type="png" width="30" height="5" />
+      <LinePatternSymbolizer file= "%SYMBOLS_DIR%/chair_lift.png" type="png" width="30" height="5" />
     </Rule>
 </Style>
 <Style name="tracks-notunnel-nobridge">
@@ -3323,7 +3364,7 @@
 </Style>
 <Style name="road-bridges-casing">
      <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3332,7 +3373,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3341,7 +3382,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3350,7 +3391,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3359,7 +3400,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3368,7 +3409,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3377,7 +3418,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3386,7 +3427,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3395,7 +3436,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3404,7 +3445,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3413,7 +3454,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3422,7 +3463,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -3431,7 +3472,7 @@
       </LineSymbolizer>
     </Rule>
 <Rule>
-      <Filter>([highway] = 'secondary' or [highway]='secondary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway]='secondary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3440,7 +3481,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway]='secondary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway]='secondary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3449,7 +3490,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway]='secondary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway]='secondary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3458,16 +3499,16 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'  and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'tertiary'  and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-width">7.5</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'  and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'tertiary'  and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3476,7 +3517,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'  and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'tertiary'  and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3485,7 +3526,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3494,7 +3535,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3503,7 +3544,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3512,7 +3553,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service'  and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'service'  and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3521,7 +3562,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service'  and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'service'  and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3530,7 +3571,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3539,7 +3580,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'pedestrian'  and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'pedestrian'  and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3569,7 +3610,7 @@
 
 <Style name="road-bridges-fill">
      <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3580,7 +3621,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3591,7 +3632,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3602,7 +3643,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3613,7 +3654,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3624,7 +3665,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3635,7 +3676,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3646,7 +3687,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3657,7 +3698,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3668,7 +3709,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3679,7 +3720,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3690,7 +3731,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'primary' or [highway]='primary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3701,7 +3742,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3713,7 +3754,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3725,7 +3766,7 @@
     </Rule>
     
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3736,40 +3777,40 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'tertiary' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'tertiary' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
         <CssParameter name="stroke-width">9.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'tertiary' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#ffffcc</CssParameter>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
         <CssParameter name="stroke-width">14</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3780,7 +3821,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3791,7 +3832,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'road' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3803,7 +3844,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3814,7 +3855,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3825,7 +3866,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3836,7 +3877,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'service' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3847,7 +3888,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'service' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3858,7 +3899,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3869,7 +3910,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'pedestrian' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3903,7 +3944,7 @@
 </Style>
 <Style name="waterway-bridges">
 <Rule>
-      <Filter>[waterway]='canal' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[waterway]='canal' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3920,7 +3961,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[waterway]='canal' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3939,7 +3980,7 @@
 </Style>
 <Style name="noncased-ways-bridges">
     <Rule>
-      <Filter>[aeroway] = 'runway' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[aeroway] = 'runway' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -3951,7 +3992,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'taxiway' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[aeroway] = 'taxiway' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3964,7 +4005,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'taxiway' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[aeroway] = 'taxiway' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -3978,7 +4019,7 @@
      <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='subway' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[railway]='subway' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">5.5</CssParameter>
@@ -3995,7 +4036,7 @@
      <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='light_rail' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[railway]='light_rail' and ([bridge]='yes' or [bridge]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#555</CssParameter>
         <CssParameter name="stroke-width">5.5</CssParameter>
@@ -4010,7 +4051,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'unsurfaced' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'unsurfaced' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4032,7 +4073,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'unsurfaced' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'unsurfaced' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -4054,7 +4095,7 @@
     </Rule>
 
     <Rule>
-      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -4073,7 +4114,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -4115,7 +4156,7 @@
       </LineSymbolizer>
     </Rule>         
     <Rule>
-      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -4136,7 +4177,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'byway' and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>[highway] = 'byway' and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -4159,7 +4200,7 @@
 </Style>
 <Style name="mwaybridge_layer0_casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4168,7 +4209,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4179,7 +4220,7 @@
 </Style>
 <Style name="mwaybridge_layer0_fill">
    <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4190,7 +4231,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1')</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4203,7 +4244,7 @@
 </Style>
 <Style name="mwaybridge_layer1_casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='1'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='1'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4212,7 +4253,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='1'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='1'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4223,7 +4264,7 @@
 </Style>
 <Style name="mwaybridge_layer1_fill">
    <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='1'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='1'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4234,7 +4275,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='1'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='1'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4247,7 +4288,7 @@
 </Style>
 <Style name="mwaybridge_layer2_casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='2'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='2'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4256,7 +4297,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='2'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='2'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4267,7 +4308,7 @@
 </Style>
 <Style name="mwaybridge_layer2_fill">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='2'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='2'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4278,7 +4319,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='2'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='2'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4291,7 +4332,7 @@
 </Style>
 <Style name="mwaybridge_layer3_casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='3'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='3'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4300,7 +4341,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='3'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='3'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4311,7 +4352,7 @@
 </Style>
 <Style name="mwaybridge_layer3_fill">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='3'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='3'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4322,7 +4363,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='3'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='3'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4335,7 +4376,7 @@
 </Style>
 <Style name="mwaybridge_layer4_casing">
      <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='4'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='4'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4344,7 +4385,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='4'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='4'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4355,7 +4396,7 @@
 </Style>
 <Style name="mwaybridge_layer4_fill">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='4'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='4'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4366,7 +4407,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='4'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='4'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4379,7 +4420,7 @@
 </Style>
 <Style name="mwaybridge_layer5_casing">
      <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='5'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='5'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4388,7 +4429,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='5'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='5'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
         <LineSymbolizer>
@@ -4399,7 +4440,7 @@
 </Style>
 <Style name="mwaybridge_layer5_fill">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='5'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='5'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4410,7 +4451,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge] = 'true' or [bridge] = '1') and [layer]='5'</Filter>
+      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true') and [layer]='5'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -4480,7 +4521,7 @@
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#a9dba9</CssParameter>
+        <CssParameter name="stroke">#97d397</CssParameter>
         <CssParameter name="stroke-width">1.7</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -4490,7 +4531,7 @@
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#a9dba9</CssParameter>
+        <CssParameter name="stroke">#97d397</CssParameter>
         <CssParameter name="stroke-width">2.5</CssParameter>
       </LineSymbolizer>
     </Rule>
@@ -4552,7 +4593,7 @@
         <Rule>
       <MaxScaleDenominator>2500000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -4561,7 +4602,7 @@
     <Rule>
       <MaxScaleDenominator>2500000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and ([tunnel]='yes' or [tunnel]='true')</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -4580,7 +4621,7 @@
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -4589,7 +4630,7 @@
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway] = 'rail' and ([tunnel]='yes' or [tunnel]='true')</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -4655,7 +4696,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[railway]='tram' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='tram' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -4663,7 +4704,7 @@
     </Rule><Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='tram' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[railway]='tram' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -4672,238 +4713,238 @@
 </Style>
 
   <!-- ROADS TEXT -->
-  <Style name="roads-text">
+<Style name="roads-text">
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 1</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield1.png" type="png" width="17" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file= "%SYMBOLS_DIR%/motorway_shield1.png" type="png" width="17" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 2</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield2.png" type="png" width="24" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file= "%SYMBOLS_DIR%/motorway_shield2.png" type="png" width="24" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 3</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield3.png" type="png" width="31" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file= "%SYMBOLS_DIR%/motorway_shield3.png" type="png" width="31" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 4</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield4.png" type="png" width="38" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file= "%SYMBOLS_DIR%/motorway_shield4.png" type="png" width="38" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 5</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield5.png" type="png" width="45" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file= "%SYMBOLS_DIR%/motorway_shield5.png" type="png" width="45" height="17" min_distance="120"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 6</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file="%SYMBOLS_DIR%/motorway_shield6.png" type="png" width="52" height="17" min_distance="120"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#809bc0" placement="line" file= "%SYMBOLS_DIR%/motorway_shield6.png" type="png" width="52" height="17" min_distance="120"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 1</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield1.png" type="png" width="17" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield1.png" type="png" width="17" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 2</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield2.png" type="png" width="24" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield2.png" type="png" width="24" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 3</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield3.png" type="png" width="31" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield3.png" type="png" width="31" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 4</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield4.png" type="png" width="38" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield4.png" type="png" width="38" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 5</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield5.png" type="png" width="45" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield5.png" type="png" width="45" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 6</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield6.png" type="png" width="52" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield6.png" type="png" width="52" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 7</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield7.png" type="png" width="59" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield7.png" type="png" width="59" height="17" min_distance="140"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 8</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file="%SYMBOLS_DIR%/trunk_shield8.png" type="png" width="66" height="17" min_distance="140"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#a9dba9" placement="line" file= "%SYMBOLS_DIR%/trunk_shield8.png" type="png" width="66" height="17" min_distance="140"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 1</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield1.png" type="png" width="17" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield1.png" type="png" width="17" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 2</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield2.png" type="png" width="24" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield2.png" type="png" width="24" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 3</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield3.png" type="png" width="31" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield3.png" type="png" width="31" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 4</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield4.png" type="png" width="38" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield4.png" type="png" width="38" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 5</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield5.png" type="png" width="45" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield5.png" type="png" width="45" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 6</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield6.png" type="png" width="52" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield6.png" type="png" width="52" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 7</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield7.png" type="png" width="59" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield7.png" type="png" width="59" height="17" min_distance="160"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 8</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file="%SYMBOLS_DIR%/primary_shield8.png" type="png" width="66" height="17" min_distance="160"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#ec989a" placement="line" file= "%SYMBOLS_DIR%/primary_shield8.png" type="png" width="66" height="17" min_distance="160"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 1</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 2</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 3</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 4</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 5</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 6</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 7</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 8</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file="%SYMBOLS_DIR%/secondary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#febf6d" placement="line" file= "%SYMBOLS_DIR%/secondary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 1</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield1.png" type="png" width="17" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 2</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield2.png" type="png" width="24" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 3</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield3.png" type="png" width="31" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 4</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield4.png" type="png" width="38" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 5</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield5.png" type="png" width="45" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 6</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield6.png" type="png" width="52" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 7</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield7.png" type="png" width="59" height="17" min_distance="100"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 8</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file="%SYMBOLS_DIR%/tertiary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="11" fill="#999" placement="line" file= "%SYMBOLS_DIR%/tertiary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
     </Rule>
 
     <Rule>
@@ -4916,7 +4957,7 @@
       <Filter>[highway] = 'secondary'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="black" halo_radius="1" halo_fill="#fdca86" placement="line"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="black" halo_radius="1" halo_fill="#fed7a5" placement="line"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
@@ -4934,12 +4975,12 @@
       <Filter>[highway] = 'secondary'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="black" halo_radius="1" halo_fill="#fdca86" placement="line"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="black" halo_radius="1" halo_fill="#fed7a5" placement="line"/>
     </Rule><Rule>
       <Filter>[highway] = 'secondary'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="black" halo_radius="1" halo_fill="#fdca86" placement="line"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="black" halo_radius="1" halo_fill="#fed7a5" placement="line"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'tertiary'</Filter>
@@ -4966,34 +5007,46 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" halo_radius="1"  placement="line" />
     </Rule>
     <Rule>
+      <Filter>[highway] = 'unclassified' or [highway] = 'residential'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="1" spacing="300" placement="line" />
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'unclassified' or [highway] = 'residential'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" halo_radius="1" spacing="400" placement="line" />
+    </Rule>
+    <Rule>
       <ElseFilter/>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="1"  placement="line" />
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="1" placement="line" />
     </Rule>
     <Rule>
       <ElseFilter/>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" halo_radius="1"  placement="line" />
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" halo_radius="1" placement="line" />
     </Rule>
-  </Style>
-  <Style name="cliffs">
+</Style>
+<Style name="cliffs">
      <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <Filter>[natural] = 'cliff'</Filter>       
-       <LinePatternSymbolizer file="%SYMBOLS_DIR%/cliff.png" type="png" width="10" height="4" />
+       <LinePatternSymbolizer file= "%SYMBOLS_DIR%/cliff.png" type="png" width="10" height="4" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <Filter>[natural] = 'cliff'</Filter>
-       <LinePatternSymbolizer file="%SYMBOLS_DIR%/cliff2.png" type="png" width="12" height="6" />
+       <LinePatternSymbolizer file= "%SYMBOLS_DIR%/cliff2.png" type="png" width="12" height="6" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <Filter>[man_made] = 'embankment'</Filter>
-       <LinePatternSymbolizer file="%SYMBOLS_DIR%/cliff.png" type="png" width="10" height="4" />
+       <LinePatternSymbolizer file= "%SYMBOLS_DIR%/cliff.png" type="png" width="10" height="4" />
     </Rule>
   </Style>
   <Style name="directions">
@@ -5027,7 +5080,7 @@
     </Rule>
     <Rule>
       <Filter>[oneway] = '-1'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#6c70d5</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -5055,17 +5108,7 @@
     </Rule>
  </Style>
 <Style name="admin">
-   <Rule>
-      <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
-      <MaxScaleDenominator>25000000</MaxScaleDenominator>
-      <MinScaleDenominator>5000000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-        <CssParameter name="stroke-opacity">0.2</CssParameter>
-      </LineSymbolizer>
-   </Rule>
-   <Rule>
+    <Rule>
       <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
       <MaxScaleDenominator>5000000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
@@ -5074,7 +5117,7 @@
         <CssParameter name="stroke-width">2</CssParameter>
         <CssParameter name="stroke-opacity">0.2</CssParameter>
       </LineSymbolizer>
-   </Rule>
+    </Rule>
    <Rule>
       <Filter>[admin_level]='2'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -5155,8 +5198,7 @@
       </LineSymbolizer>
     </Rule> 
  </Style>
-
-  <Layer name="world-1" status="on" srs="+proj=merc +datum=WGS84 +over">
+<Layer name="world-1" status="on" srs="+proj=merc +datum=WGS84 +over">
     <StyleName>world-1</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
@@ -5187,6 +5229,7 @@
       <Parameter name="file">%WORLD_BOUNDARIES_DIR%/builtup_area</Parameter>
     </Datasource>
   </Layer>
+
   <Layer name="leisure" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>leisure</StyleName>
     <Datasource>
@@ -5262,6 +5305,7 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
+  
   <Layer name="tracks-tunnels" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>tracks-tunnels</StyleName>
     <Datasource>
@@ -5373,7 +5417,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+   </Layer>
    <Layer name="trams" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>trams</StyleName>
     <Datasource>
@@ -5401,7 +5445,7 @@
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select * from %PREFIX%_point where amenity IS NOT NULL or tourism is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or man_made is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or power_source is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from %PREFIX%_point where amenity IS NOT NULL or tourism is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or power_source is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -5450,7 +5494,25 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-   <Layer name="planet roads text osm" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+<Layer name="placenames" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>city</StyleName> 
+    <StyleName>town</StyleName>    
+    <StyleName>suburb</StyleName>
+    <StyleName>village</StyleName>
+    <StyleName>hamlet</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">%PREFIX%_point</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="planet roads text osm" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>directions</StyleName>
      <StyleName>roads-text</StyleName>
      <Datasource>
@@ -5497,7 +5559,6 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
-  
   <Layer name="admin" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>admin</StyleName>
     <Datasource>
