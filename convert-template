@@ -34,6 +34,7 @@ s|/Users/artem/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
 s|/home/steve/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
 s|/home/jburgess/osm/data/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
 s|/home/jburgess/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
+s|c:/boundaries/world_boundaries/|%WORLD_BOUNDARIES_DIR%/|
 
 # PointSymbolizer file="/Users/artem/symbols/recycling.png" type="png" width="20" height="20" />
 s|/Users/artem/symbols/|%SYMBOLS_DIR%/|
