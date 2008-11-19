@@ -5483,7 +5483,7 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or tourism is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or power_source is NOT NULL) as amenity</Parameter>
+      <Parameter name="table">(select * from planet_osm_point where amenity IS NOT NULL or tourism is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL) as amenity</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
