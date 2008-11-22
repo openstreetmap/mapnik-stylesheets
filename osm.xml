@@ -427,7 +427,7 @@
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[landuse] = 'cemetery'</Filter>
+      <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard'</Filter>
       <PolygonSymbolizer>
         <CssParameter name="fill">#aacbaf</CssParameter>
       </PolygonSymbolizer>
@@ -465,7 +465,7 @@
     </Rule>
      <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <Filter>[landuse] = 'cemetery'</Filter>
+      <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard'</Filter>
       <PolygonPatternSymbolizer file= "c:/mapnik/symbols/grave_yard.png" type="png" width="16" height="16"/>
     </Rule>
 
@@ -566,8 +566,6 @@
         <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-
     <Rule>
       <Filter>[landuse] = 'industrial'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -673,29 +671,48 @@
         <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-
     <Rule>
+      <Filter>[leisure] = 'pitch'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#8ad3af</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'apron'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#f0e0ff</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'beach'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <PolygonPatternSymbolizer file= "c:/mapnik/symbols/beach.png" type="png" width="10" height="10"/>
+    </Rule>
+
+    <!--Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">lightgrey</CssParameter>
+     </PolygonSymbolizer>
+    </Rule-->
+  </Style>
+<Style name="buildings">
+     <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
      <PolygonSymbolizer>
          <CssParameter name="fill">#d4aaaa</CssParameter>
      </PolygonSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[building] = 'supermarket'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">pink</CssParameter>
          <CssParameter name="fill-opacity">0.5</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#cc9999</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
@@ -727,10 +744,10 @@
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[leisure] = 'pitch'</Filter>
+      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
-         <CssParameter name="fill">#8ad3af</CssParameter>
+         <CssParameter name="fill">#cc9999</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
@@ -748,28 +765,7 @@
         <CssParameter name="stroke-width">0.2</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>[aeroway] = 'apron'</Filter>
-      <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#f0e0ff</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[natural] = 'beach'</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <PolygonPatternSymbolizer file= "c:/mapnik/symbols/beach.png" type="png" width="10" height="10"/>
-    </Rule>
-
-    <!--Rule>
-      <ElseFilter/>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">lightgrey</CssParameter>
-     </PolygonSymbolizer>
-    </Rule-->
-  </Style>
-
+</Style>
   <Style name="area-text">
     <Rule>
       <Filter>[military] = 'danger_area'</Filter>
@@ -2633,18 +2629,6 @@
     </Rule>
     
     <Rule>
-      <Filter>[access] = 'private' or [access] = 'no'</Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#efa9a9</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
-        <CssParameter name="stroke-dasharray">6,8</CssParameter>
-        <CssParameter name="stroke-opacity">0.5</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
       <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
@@ -2973,6 +2957,20 @@
       </LineSymbolizer>
     </Rule-->
   </Style>
+<Style name="access">
+    <Rule>
+      <Filter>[access] = 'private' or [access] = 'no'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#efa9a9</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
 <Style name="aerialways">
     <Rule>
       <Filter>[aerialway] = 'cable_car' or [aerialway]='gondola'</Filter>
@@ -5396,6 +5394,20 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
    </Layer>
+<Layer name="buildings" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>buildings</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">martyn</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as buildings</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+  </Layer>
    <Layer name="waterway-bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>waterway-bridges</StyleName>
     <Datasource>
@@ -5456,6 +5468,22 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
    </Layer>
+<Layer name="access" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">martyn</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">
+      (select * from planet_osm_line order by z_order) as access
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+  </Layer>
    <Layer name="trams" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>trams</StyleName>
     <Datasource>
