@@ -6,7 +6,7 @@
 use strict;
 $ENV{MAPNIK_PREFIX} ||= "planet_osm";
 
-open(IN, '<', 'osm-template.xml');
+open(IN, '<', 'osm-template.xml') or die;
 
 while(<IN>) {
     s/%SYMBOLS_DIR%/$ENV{MAPNIK_SYMBOLS_DIR}/;
