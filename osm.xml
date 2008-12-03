@@ -2211,7 +2211,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>([railway] = 'disused' or [railway] = 'abandoned') and not [highway] &lt;&gt; ''</Filter>
+      <Filter>([railway] = 'disused' or [railway] = 'abandoned') and [highway]=''</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
