@@ -603,7 +603,28 @@
         <CssParameter name="stroke-width">0.4</CssParameter>
       </LineSymbolizer>
     </Rule>
-
+    <Rule>
+      <Filter>[natural] = 'glacier'</Filter>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MinScaleDenominator>2500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9cf</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/glacier.png" type="png" width="40" height="32"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'glacier'</Filter>
+      <MaxScaleDenominator>2500000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9cf</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/glacier2.png" type="png" width="70" height="56"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#99f" halo_radius="1" wrap_width="20"/>
+    </Rule>
     <Rule>
       <Filter>[landuse] = 'commercial'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -869,7 +890,7 @@
     <Rule>
       <Filter>[place] = 'island'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>20000</MinScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
@@ -895,7 +916,12 @@
     <Rule>
       <Filter>[natural] = 'peak'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="brown" dy="10" halo_radius="1" wrap_width="20"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="brown" dy="10" halo_radius="1"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'peak'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="ele" face_name="DejaVu Sans Oblique" size="9" fill="brown" dy="20" halo_radius="1"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'water' or [natural] = 'lake' or [landuse] = 'reservoir' or [landuse] = 'basin'</Filter>
@@ -1854,7 +1880,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'service' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -1877,7 +1902,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
+      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1888,7 +1913,17 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
+      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1899,7 +1934,17 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
+      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">3.6</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>10000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1910,7 +1955,17 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian'</Filter>
+      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>10000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+   </Rule>
+   <Rule>
+      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
@@ -1919,11 +1974,18 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
    </Rule>
-   
+   <Rule>
+      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+   </Rule>
 </Style>
 
 <Style name="minor-roads-fill">
-    
     
     <!-- level 10 -->
     <Rule>
