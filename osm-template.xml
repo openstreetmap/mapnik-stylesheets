@@ -490,7 +490,7 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[leisure] = 'park'</Filter>
+      <Filter>[leisure] = 'park' or [leisure] = 'recreation_ground'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#b6fdb6</CssParameter>
