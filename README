@@ -66,6 +66,10 @@ generate_tiles.py
 install.txt
     An almost cut-and-paste documentation on how to use all this.
 
+legend.py
+    Script for generating a simple legend from osm-template.xml, useful
+    for visualizing existing styles and changes.
+
 mkshield.pl
     Perl script to generate highway shield images. You normally don't
     have to run this because prerendered images are already stored in
