@@ -5438,6 +5438,16 @@
     </Rule>
  </Style>
 <Style name="admin">
+     <Rule>
+      <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MinScaleDenominator>5000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">0.6</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
     <Rule>
       <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
       <MaxScaleDenominator>5000000</MaxScaleDenominator>
