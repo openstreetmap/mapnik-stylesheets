@@ -1587,7 +1587,47 @@
     </Rule>
 </Style>
 <Style name="minor-roads-casing-links">
-<Rule>
+    <Rule>
+      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#506077</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
      <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
@@ -1627,10 +1667,95 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>      
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>      
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">7.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>      
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">11.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>      
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#8d4346</CssParameter>
+        <CssParameter name="stroke-width">16</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">8.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">11.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">16</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
 </Style>
 <Style name="minor-roads-casing">
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1650,7 +1775,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>      
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1660,7 +1785,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1671,7 +1796,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1691,7 +1816,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>      
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1701,7 +1826,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1712,7 +1837,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1732,7 +1857,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>      
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1742,7 +1867,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1753,7 +1878,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1773,7 +1898,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>      
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1783,7 +1908,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2049,10 +2174,52 @@
         <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
-   </Rule>
+    </Rule>
 </Style>
 <Style name="minor-roads-fill-links">
-   <Rule>
+    <Rule>
+      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
@@ -2096,21 +2263,97 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
    </Rule>
-</Style>
-<Style name="minor-roads-fill">
-    
-    <!-- level 10 -->
-    <Rule>
-      <Filter>([highway] = 'motorway' or [highway]='motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
-      <MaxScaleDenominator>200000</MaxScaleDenominator>
+   <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke">#ec989a</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ec989a</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ec989a</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ec989a</CssParameter>
+        <CssParameter name="stroke-width">15.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+   <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>150000</MaxScaleDenominator>
+      <MinScaleDenominator>75000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed7a5</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>75000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed7a5</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed7a5</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fed7a5</CssParameter>
+        <CssParameter name="stroke-width">15.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
 
-    <!-- level 11 ...-->
+</Style>
+<Style name="minor-roads-fill"> 
     <Rule>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
@@ -2154,7 +2397,16 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#809bc0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2164,9 +2416,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2176,9 +2427,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
-      <Filter>([highway] = 'motorway' or [highway] = 'motorway_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2210,8 +2460,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-   <Rule>
+    <Rule>
       <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
@@ -2222,7 +2471,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
       <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -2234,9 +2482,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
    </Rule>
-
    <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2246,9 +2493,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2257,10 +2503,9 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-    </Rule>
-    
+    </Rule> 
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2270,9 +2515,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
-      <Filter>([highway] = 'primary' or [highway] = 'primary_link') and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2282,10 +2526,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-    <!-- level 11 ..-->
    <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2295,9 +2537,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2307,9 +2548,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2319,9 +2559,8 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-   
     <Rule>
-      <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2331,8 +2570,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
-    <!-- -->
+
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
