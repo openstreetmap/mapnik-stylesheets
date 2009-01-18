@@ -247,6 +247,16 @@
       <PointSymbolizer file= "c:/mapnik/symbols/cafe.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tourism]='camp_site'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/camping.n.16.png" type="png" width="16" height="16" />
+    </Rule>
+     <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='cinema'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/cinema.p.24.png" type="png" width="24" height="24" />
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='fuel'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/fuel.p.16.png" type="png" width="16" height="16" />
@@ -260,6 +270,11 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[tourism]='hotel'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/hotel2.p.20.png" type="png" width="20" height="20" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='library'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/library.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -331,6 +346,11 @@
       <Filter>[amenity]='telephone'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/telephone.p.16.png" type="png" width="16" height="16" />
     </Rule>
+   <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='toilets'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/toilets.p.20.png" type="png" width="20" height="20" />
+    </Rule>
   </Style>
 
 <Style name="highway-area-casing">
@@ -373,12 +393,8 @@
       <Filter>[man_made] = 'pier'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <PolygonSymbolizer>
-        <CssParameter name="fill">#ededed</CssParameter>
+        <CssParameter name="fill">#f2efe9</CssParameter>
       </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-	<CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'playground' or [tourism] = 'picnic_site'</Filter>
@@ -925,6 +941,11 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#734a08" dy="14" halo_radius="1" wrap_width="0"/>
     </Rule>
+    <Rule>
+      <Filter>[amenity]='cinema' or [amenity]='library'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#734a08" dy="18" halo_radius="1" wrap_width="0"/>
+    </Rule>
      <Rule>
       <Filter>[amenity] = 'place_of_worship' or [amenity] = 'police'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -959,6 +980,11 @@
       <Filter>[tourism] = 'hotel'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#0092da" dy="16" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[tourism] = 'camp_site'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#0092da" dy="15" halo_radius="1" wrap_width="70"/>
     </Rule>
     <Rule>
       <Filter>[tourism]='museum'</Filter>
@@ -1014,6 +1040,11 @@
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <Filter>[natural] = 'marsh'</Filter>
+      <PolygonPatternSymbolizer file= "c:/mapnik/symbols/marsh.png" type="png" width="30" height="30"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'land'</Filter>
@@ -5670,6 +5701,35 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" halo_radius="1" placement="line" />
     </Rule>
 </Style>
+<Style name="piers">
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <Filter>[man_made] = 'pier'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#f2efe9</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <Filter>[man_made] = 'pier'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#f2efe9</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[man_made] = 'pier'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#f2efe9</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
 <Style name="cliffs">
      <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -5878,7 +5938,22 @@
       <Parameter name="file">c:/boundaries/world_boundaries/builtup_area</Parameter>
     </Datasource>
   </Layer>
-
+  <Layer name="land features" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+     <StyleName>piers</StyleName>
+     <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">martyn</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">
+      (select way,highway,landuse,"natural",man_made,waterway,name,ref,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+  </Layer>
   <Layer name="leisure" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>leisure</StyleName>
     <Datasource>
@@ -5903,7 +5978,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' or "natural"='land' order by z_order) as water_areas</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' or "natural"='land' or "natural"='marsh' order by z_order) as water_areas</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
   </Layer>
