@@ -1234,10 +1234,17 @@
 <Style name="power">
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>1000</MinScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#777</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule> 
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#777</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
       </LineSymbolizer>
     </Rule> 
 </Style>
@@ -5371,7 +5378,8 @@
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
-    </Rule><Rule>
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway]='tram' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
@@ -5747,7 +5755,17 @@
       <Filter>[man_made] = 'embankment'</Filter>
        <LinePatternSymbolizer file= "c:/mapnik/symbols/cliff.png" type="png" width="10" height="4" />
     </Rule>
-  </Style>
+</Style>
+<Style name="barriers">
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[barrier]='fence' or [barrier]='wall' or [barrier]='hedge'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
   <Style name="directions">
     <Rule>
       <Filter>[oneway] = 'yes' or [oneway] = 'true' or [oneway] = '1'</Filter>
@@ -6314,6 +6332,7 @@
    </Layer>
    <Layer name="line features" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>cliffs</StyleName>
+     <StyleName>barriers</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
       <Parameter name="password">martyn</Parameter>
@@ -6322,7 +6341,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,highway,landuse,"natural",man_made,waterway,name,ref,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
+      (select way,barrier,highway,landuse,"natural",man_made,waterway,name,ref,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
