@@ -1,33 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Map>
 <Map bgcolor="#b5d0d0" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <Style name="mapnik:selection">
-      <Rule>
-        <Filter>[mapnik:geometry] = 1</Filter>
-        <PointSymbolizer/>
-      </Rule>
-      <Rule>
-        <Filter>[mapnik:geometry] = 2</Filter>
-        <LineSymbolizer>
-          <CssParameter name="stroke">red</CssParameter>
-          <CssParameter name="stroke-width">6</CssParameter>
-          <CssParameter name="stroke-opacity">0.5</CssParameter>
-        </LineSymbolizer>
-        <LineSymbolizer>
-          <CssParameter name="stroke">yellow</CssParameter>
-          <CssParameter name="stroke-width">2</CssParameter>
-          <CssParameter name="stroke-opacity">1.0</CssParameter>
-        </LineSymbolizer>
-      </Rule>
-      <Rule>
-        <Filter>[mapnik:geometry] = 3</Filter>
-        <PolygonSymbolizer>
-          <CssParameter name="fill">red</CssParameter>
-          <CssParameter name="fill-opacity">0.5</CssParameter>
-        </PolygonSymbolizer>
-      </Rule>
-    </Style>
-
    <Style name="world-1">
     <Rule>
       <MaxScaleDenominator>250000000000</MaxScaleDenominator>

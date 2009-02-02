@@ -10,7 +10,7 @@ s/face_name="DejaVu Sans Bold"/fontset_name="bold-fonts"/
 s/face_name="DejaVu Sans Book"/fontset_name="book-fonts"/
 s/face_name="DejaVu Sans Oblique"/fontset_name="oblique-fonts"/
 
-/<Style name="mapnik:selection">/ i \
+/<Style name="world-1">/ i \
     <FontSet name="book-fonts">\
           <Font face_name="DejaVu Sans Book" />\
           <Font face_name="unifont Medium" />\

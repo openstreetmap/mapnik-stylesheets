@@ -13,33 +13,6 @@
           <Font face_name="DejaVu Sans Oblique" />
           <Font face_name="unifont Medium" />
     </FontSet>
-    <Style name="mapnik:selection">
-      <Rule>
-        <Filter>[mapnik:geometry] = 1</Filter>
-        <PointSymbolizer/>
-      </Rule>
-      <Rule>
-        <Filter>[mapnik:geometry] = 2</Filter>
-        <LineSymbolizer>
-          <CssParameter name="stroke">red</CssParameter>
-          <CssParameter name="stroke-width">6</CssParameter>
-          <CssParameter name="stroke-opacity">0.5</CssParameter>
-        </LineSymbolizer>
-        <LineSymbolizer>
-          <CssParameter name="stroke">yellow</CssParameter>
-          <CssParameter name="stroke-width">2</CssParameter>
-          <CssParameter name="stroke-opacity">1.0</CssParameter>
-        </LineSymbolizer>
-      </Rule>
-      <Rule>
-        <Filter>[mapnik:geometry] = 3</Filter>
-        <PolygonSymbolizer>
-          <CssParameter name="fill">red</CssParameter>
-          <CssParameter name="fill-opacity">0.5</CssParameter>
-        </PolygonSymbolizer>
-      </Rule>
-    </Style>
-
    <Style name="world-1">
     <Rule>
       <MaxScaleDenominator>250000000000</MaxScaleDenominator>
