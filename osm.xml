@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Map>
 <Map bgcolor="#b5d0d0" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <Style name="world-1">
+<Style name="world-1">
     <Rule>
       <MaxScaleDenominator>250000000000</MaxScaleDenominator>
       <MinScaleDenominator>6000000</MinScaleDenominator>
@@ -13,8 +13,8 @@
         <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
-  </Style>
-  <Style name="world">
+</Style>
+<Style name="world">
     <Rule>
       <MaxScaleDenominator>6000000</MaxScaleDenominator>
       <MinScaleDenominator>600000</MinScaleDenominator>
@@ -22,20 +22,18 @@
         <CssParameter name="fill">#f2efe9</CssParameter>
       </PolygonSymbolizer>
     </Rule>
-  </Style>
-
-  <Style name="coast-poly">
+</Style>
+<Style name="coast-poly">
     <Rule>
       <MaxScaleDenominator>600000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#f2efe9</CssParameter>
       </PolygonSymbolizer>
     </Rule>
-  </Style>
-
+</Style>
   <!-- BUILTUP VMAP0 -->
   <!-- level 7-9-->
-  <Style name="builtup">
+<Style name="builtup">
     <Rule>
       <MaxScaleDenominator>2500000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
@@ -43,7 +41,7 @@
         <CssParameter name="fill">#ddd</CssParameter>
       </PolygonSymbolizer>
     </Rule>
-  </Style>
+</Style>
 <Style name="turning_circle">
     <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -57,7 +55,7 @@
       <PointSymbolizer file =  "c:/mapnik/symbols/turning_circle.19.png" type="png" width="19" height="19" />
     </Rule>
 </Style>
-  <Style name="stations">
+<Style name="stations">
     <Rule>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
@@ -114,9 +112,8 @@
       <Filter>[railway]='level_crossing'</Filter>
       <PointSymbolizer file =  "c:/mapnik/symbols/level_crossing.png" type="png" width="7" height="7" />
     </Rule>
-  </Style>
-  
-  <Style name="symbols">
+</Style>
+<Style name="symbols">
     <Rule>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
@@ -321,8 +318,7 @@
       <Filter>[amenity]='toilets'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/toilets.p.20.png" type="png" width="20" height="20" />
     </Rule>
-  </Style>
-
+</Style>
 <Style name="highway-area-casing">
    <Rule>
       <Filter>[highway] = 'residential' or [highway]='unclassified'</Filter>
@@ -356,9 +352,8 @@
         <CssParameter name="fill">#ededed</CssParameter>
       </PolygonSymbolizer>
    </Rule>
-  </Style>
-
-  <Style name="leisure">
+</Style>
+<Style name="leisure">
     <Rule>
       <Filter>[man_made] = 'pier'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -511,8 +506,7 @@
       <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard'</Filter>
       <PolygonPatternSymbolizer file= "c:/mapnik/symbols/grave_yard.png" type="png" width="16" height="16"/>
     </Rule>
-
-     <Rule>
+    <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <Filter>[landuse] = 'meadow' or [landuse] = 'grass'</Filter>
       <PolygonSymbolizer>
@@ -552,7 +546,6 @@
         <CssParameter name="fill">#b5e3b5</CssParameter>
      </PolygonSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[landuse] = 'allotments'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -703,7 +696,6 @@
         <CssParameter name="fill">#b5d0d0</CssParameter>
      </PolygonSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -719,7 +711,6 @@
         <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[amenity] = 'parking'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -759,7 +750,6 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <PolygonPatternSymbolizer file= "c:/mapnik/symbols/mud.png" type="png" width="10" height="10"/>
     </Rule>
-
     <!--Rule>
       <ElseFilter/>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -767,7 +757,7 @@
         <CssParameter name="fill">lightgrey</CssParameter>
      </PolygonSymbolizer>
     </Rule-->
-  </Style>
+</Style>
 <Style name="buildings">
      <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
@@ -835,7 +825,7 @@
       </LineSymbolizer>
     </Rule>
 </Style>
-  <Style name="area-text">
+<Style name="area-text">
     <Rule>
       <Filter>[military] = 'danger_area'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -1075,7 +1065,7 @@
       <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-14" min_distance="20"/>
     </Rule>
-  </Style>
+</Style>
 <Style name="water_areas">
     <Rule>
       <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank'</Filter>
@@ -1109,7 +1099,7 @@
      </PolygonSymbolizer>
     </Rule>
 </Style>
- <Style name="water_lines">
+<Style name="water_lines">
     <Rule>
       <Filter>[waterway]='weir'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
@@ -1296,7 +1286,6 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
 </Style>
- 
 <Style name="power">
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -1343,7 +1332,6 @@
       </LineSymbolizer>
     </Rule> 
 </Style>
-
 <Style name="power_towers">
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -1855,7 +1843,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
 </Style>
 <Style name="minor-roads-casing">
     <Rule>
@@ -2022,7 +2009,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'tertiary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -2044,7 +2030,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -2066,7 +2051,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'tertiary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -2088,7 +2072,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -2110,7 +2093,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -2122,7 +2104,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-   <Rule>
+    <Rule>
       <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
@@ -2132,7 +2114,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -2154,7 +2135,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'service' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -2455,7 +2435,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
 </Style>
 <Style name="minor-roads-fill"> 
     <Rule>
@@ -2674,7 +2653,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
@@ -2895,7 +2873,6 @@
         <CssParameter name="stroke-dasharray">5,3</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
@@ -2915,8 +2892,7 @@
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-     <Rule>
+    <Rule>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <Filter>[railway]='subway' and ([tunnel] = 'yes' or [tunnel]='true')</Filter>
@@ -2935,7 +2911,6 @@
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -2945,7 +2920,6 @@
         <CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'road'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -2957,7 +2931,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'road'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -2969,7 +2942,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'road'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -2981,8 +2953,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-
     <Rule>
       <Filter>[highway] = 'road'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -3005,7 +2975,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -3017,7 +2986,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -3029,8 +2997,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-
     <Rule>
       <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -3075,7 +3041,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'tertiary'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3087,7 +3052,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'tertiary'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -3099,8 +3063,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
-   <Rule>
+    <Rule>
       <Filter>[highway] = 'tertiary'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
@@ -3130,7 +3093,7 @@
         <CssParameter name="stroke">#bbbbbb</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
-   </Rule>
+    </Rule>
     <Rule>
       <Filter>[highway] = 'service'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -3202,8 +3165,7 @@
         <CssParameter name="stroke-width">5.0</CssParameter>
         <CssParameter name="stroke-dasharray">2,1</CssParameter>
       </LineSymbolizer>
-    </Rule>
-    
+    </Rule>  
     <Rule>
       <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3219,8 +3181,7 @@
         <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
-    </Rule>
-    
+    </Rule>  
     <Rule>
       <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3238,8 +3199,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-    </Rule>
-    
+    </Rule>   
     <Rule>
       <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter> 
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3258,7 +3218,6 @@
        <CssParameter name="stroke-linecap">round</CssParameter>
     </LineSymbolizer>
     </Rule>
-    
     <Rule>
       <Filter>[highway] = 'steps'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3276,7 +3235,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3295,7 +3253,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
       <Filter>[highway] = 'byway'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -3379,7 +3336,6 @@
         <CssParameter name="stroke-dasharray">6,6</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>[aeroway] = 'runway'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
@@ -3444,7 +3400,7 @@
         <CssParameter name="stroke-dasharray">4,4</CssParameter>
       </LineSymbolizer>
     </Rule-->
-  </Style>
+</Style>
 <Style name="access">
      <Rule>
       <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential')</Filter>
@@ -3594,7 +3550,7 @@
         <CssParameter name="stroke-opacity">0.7</CssParameter>
       </LineSymbolizer>
     </Rule>
-   <Rule>
+    <Rule>
       <Filter>[tracktype]='grade2'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
@@ -3613,7 +3569,7 @@
         <CssParameter name="stroke-opacity">0.8</CssParameter>
       </LineSymbolizer>
     </Rule>
-   <Rule>
+    <Rule>
       <Filter>[tracktype]='grade3'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
@@ -4005,7 +3961,6 @@
         <CssParameter name="stroke-width">4</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'secondary' or [highway]='secondary_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
@@ -4140,9 +4095,7 @@
         <CssParameter name="stroke-width">9.5</CssParameter>
       </LineSymbolizer>
     </Rule>
-
 </Style>
-
 <Style name="road-bridges-fill">
      <Rule>
       <Filter>([highway] = 'motorway' or [highway]='motorway_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
@@ -4154,8 +4107,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-    </Rule>
-    
+    </Rule>   
     <Rule>
       <Filter>([highway] = 'trunk' or [highway]='trunk_link') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -4222,7 +4174,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -4233,8 +4184,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-    </Rule>
-    
+    </Rule>  
     <Rule>
       <Filter>([highway] = 'secondary' or [highway] = 'secondary_link') and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -4312,7 +4262,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -4413,7 +4362,7 @@
     </Rule>
 </Style>
 <Style name="waterway-bridges">
-<Rule>
+    <Rule>
       <Filter>[waterway]='canal' and ([bridge] = 'yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
@@ -4563,7 +4512,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <Rule>
       <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and ([bridge]='yes' or [bridge]='true')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -5276,7 +5224,7 @@
       <CssParameter name="stroke-width">2</CssParameter>
     </LineSymbolizer>
    </Rule>
-<Rule>
+   <Rule>
      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
@@ -5285,7 +5233,6 @@
       <CssParameter name="stroke-width">2.5</CssParameter>
     </LineSymbolizer>
    </Rule>
-
     <!-- TRUNK -->
     <!--level 4-6-->
     <Rule>
@@ -5317,7 +5264,6 @@
         <CssParameter name="stroke-width">2.5</CssParameter>
       </LineSymbolizer>
     </Rule>
-
    <!-- PRIMARY-->
    <!-- level 5-6-->
    <Rule>
@@ -5349,7 +5295,6 @@
         <CssParameter name="stroke-width">2.5</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <!-- SECONDARY -->
     <!-- level 7-9 -->
     <Rule>
@@ -5370,7 +5315,6 @@
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
-
     <!-- RAIL -->
         <Rule>
       <MaxScaleDenominator>2500000</MaxScaleDenominator>
@@ -5473,7 +5417,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-  </Style>
+</Style>
 <Style name="trams">
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -5494,8 +5438,6 @@
       </LineSymbolizer>
     </Rule>
 </Style>
-
-  <!-- ROADS TEXT -->
 <Style name="roads-text">
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 1</Filter>
@@ -5533,7 +5475,6 @@
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#809bc0" placement="line" file= "c:/mapnik/symbols/motorway_shield6.png" type="png" width="52" height="17" min_distance="120"/>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 1</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
@@ -5582,7 +5523,6 @@
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#a9dba9" placement="line" file= "c:/mapnik/symbols/trunk_shield8.png" type="png" width="66" height="17" min_distance="140"/>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 1</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -5631,7 +5571,6 @@
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#ec989a" placement="line" file= "c:/mapnik/symbols/primary_shield8.png" type="png" width="66" height="17" min_distance="160"/>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'secondary' and [length] = 1</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -5680,7 +5619,6 @@
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#febf6d" placement="line" file= "c:/mapnik/symbols/secondary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'tertiary' and [length] = 1</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -5729,7 +5667,6 @@
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="11" fill="#999" placement="line" file= "c:/mapnik/symbols/tertiary_shield8.png" type="png" width="66" height="17" min_distance="100"/>
     </Rule>
-
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
@@ -5871,7 +5808,7 @@
       </LineSymbolizer>
     </Rule>
 </Style>
-  <Style name="directions">
+<Style name="directions">
     <Rule>
       <Filter>[oneway] = 'yes' or [oneway] = 'true' or [oneway] = '1'</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
@@ -5928,7 +5865,7 @@
         <CssParameter name="stroke-dasharray">0,15,1,158</CssParameter>
       </LineSymbolizer>
     </Rule>
- </Style>
+</Style>
 <Style name="admin">
      <Rule>
       <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
@@ -6029,40 +5966,36 @@
         <CssParameter name="stroke-opacity">0.2</CssParameter>
       </LineSymbolizer>
     </Rule> 
- </Style>
+</Style>
 <Layer name="world-1" status="on" srs="+proj=merc +datum=WGS84 +over">
     <StyleName>world-1</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
       <Parameter name="file">c:/boundaries/world_boundaries/world_boundaries_m</Parameter>
     </Datasource>
-  </Layer>
-
-  <Layer name="world" status="on" srs="+proj=merc +datum=WGS84 +over">
+</Layer>
+<Layer name="world" status="on" srs="+proj=merc +datum=WGS84 +over">
     <StyleName>world</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
       <Parameter name="file">c:/boundaries/world_boundaries/world_bnd_m</Parameter>
     </Datasource>
-  </Layer>
-
-  <Layer name="coast-poly" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="coast-poly" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>coast-poly</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
       <Parameter name="file">c:/boundaries/world_boundaries/processed_p</Parameter>
     </Datasource>
-  </Layer>
-
-  <Layer name="builtup" status="on" srs="+proj=merc +datum=WGS84 +over">
+</Layer>
+<Layer name="builtup" status="on" srs="+proj=merc +datum=WGS84 +over">
     <StyleName>builtup</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
       <Parameter name="file">c:/boundaries/world_boundaries/builtup_area</Parameter>
     </Datasource>
-  </Layer>
-  
-  <Layer name="leisure" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="leisure" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6075,8 +6008,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="water_areas" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="water_areas" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>water_areas</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6089,8 +6022,8 @@
       <Parameter name="table">(select * from planet_osm_polygon where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' or "natural"='land' or "natural"='marsh' order by z_order) as water_areas</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="water_lines" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="water_lines" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>water_lines</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6103,7 +6036,7 @@
       <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL order by z_order) as water_lines</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="land features" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>piers</StyleName>
      <Datasource>
@@ -6119,9 +6052,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-
-  <Layer name="tunnels" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="tunnels" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>tunnels-casing</StyleName>
     <StyleName>tunnels-fill</StyleName>
     <Datasource>
@@ -6137,7 +6069,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="citywalls" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>citywalls</StyleName>
     <Datasource>
@@ -6151,7 +6083,7 @@
       <Parameter name="table">(select way from planet_osm_line where "historic"='citywalls') as citywalls</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="turning_circle" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>turning_circle</StyleName>    
     <Datasource>
@@ -6165,7 +6097,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
+</Layer>
 <Layer name="footbikecycle-tunnels" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>footbikecycle-tunnels</StyleName>
     <Datasource>
@@ -6181,9 +6113,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-
-  <Layer name="tracks-notunnel-nobridge" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="tracks-notunnel-nobridge" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>tracks-notunnel-nobridge</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6198,9 +6129,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  
-  <Layer name="tracks-tunnels" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="tracks-tunnels" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>tracks-tunnels</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6215,7 +6145,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="line features" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>cliffs</StyleName>
      <StyleName>barriers</StyleName>
@@ -6232,7 +6162,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="highway-area-casing" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>highway-area-casing</StyleName>
     <Datasource>
@@ -6246,8 +6176,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="minor-roads-casing" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="minor-roads-casing" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>minor-roads-casing-links</StyleName>
     <StyleName>minor-roads-casing</StyleName>
     <Datasource>
@@ -6263,7 +6193,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="highway-area-fill" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>highway-area-fill</StyleName>
     <Datasource>
@@ -6277,7 +6207,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="minor-roads-fill" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>minor-roads-fill-links</StyleName>
     <StyleName>minor-roads-fill</StyleName>
@@ -6295,8 +6225,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="roads" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="roads" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <!--StyleName>roads-casing</StyleName-->
     <StyleName>roads</StyleName>
     <Datasource>
@@ -6312,7 +6242,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
+</Layer>
 <Layer name="buildings" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>buildings</StyleName>
     <Datasource>
@@ -6326,8 +6256,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-   <Layer name="waterway-bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="waterway-bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>waterway-bridges</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6340,8 +6270,8 @@
       <Parameter name="table">(select * from planet_osm_line where waterway IS NOT NULL or landuse='reservoir' or landuse='water' or  "natural"='lake' or "natural"='water' order by z_order) as water</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
-   <Layer name="bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>road-bridges-casing</StyleName>
     <StyleName>road-bridges-fill</StyleName>
     <StyleName>noncased-ways-bridges</StyleName>
@@ -6376,8 +6306,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
-   <Layer name="tracks-bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="tracks-bridges" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>tracks-bridges</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6392,7 +6322,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
+</Layer>
 <Layer name="access" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>access</StyleName>
     <Datasource>
@@ -6408,8 +6338,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-   <Layer name="trams" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="trams" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>trams</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6424,8 +6354,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
-   <Layer name="amenity" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="amenity" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>stations</StyleName>    
     <StyleName>symbols</StyleName>
     <StyleName>points</StyleName>
@@ -6440,8 +6370,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
-   <Layer name="power" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="power" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>power</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6454,8 +6384,8 @@
       <Parameter name="table">(select way from planet_osm_line where "power"='line') as power</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="power_towers" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="power_towers" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>power_towers</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6468,8 +6398,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-   </Layer>
-   
+</Layer>  
 <Layer name="placenames" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>country</StyleName>
     <StyleName>city</StyleName> 
@@ -6505,8 +6434,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="area-text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="area-text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>area-text</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6519,7 +6448,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="interpolation_lines" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>interpolation</StyleName>
      <Datasource>
@@ -6535,7 +6464,7 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
+</Layer>
 <Layer name="housenumb_ways" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>way_numbers</StyleName>
     <Datasource>
@@ -6563,8 +6492,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6577,8 +6506,8 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  <Layer name="admin" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+</Layer>
+<Layer name="admin" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>admin</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -6592,6 +6521,5 @@
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
-  </Layer>
-  
+</Layer>
 </Map>
