@@ -6012,7 +6012,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <ElseFilter/>
+      <Filter>not [admin_level] &lt;&gt;''</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
       <LineSymbolizer>

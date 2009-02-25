@@ -863,7 +863,7 @@
       <Filter>[place] = 'country'</Filter>
       <MaxScaleDenominator>50000000</MaxScaleDenominator>
       <MinScaleDenominator>5000000</MinScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="12" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
 </Style>
 <Style name="city">
@@ -6012,7 +6012,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <ElseFilter/>
+      <Filter>not [admin_level] &lt;&gt;''</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
       <LineSymbolizer>
