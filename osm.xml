@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE Map>
 <Map bgcolor="#b5d0d0" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-<Style name="world-1">
-    <Rule>
-      <MaxScaleDenominator>250000000000</MaxScaleDenominator>
-      <MinScaleDenominator>6000000</MinScaleDenominator>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f2efe9</CssParameter>
-      </PolygonSymbolizer>
-       <LineSymbolizer>
-        <CssParameter name="stroke">#a97ea9</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-</Style>
 <Style name="world">
     <Rule>
-      <MaxScaleDenominator>6000000</MaxScaleDenominator>
+      <MaxScaleDenominator>250000000000</MaxScaleDenominator>
       <MinScaleDenominator>600000</MinScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#f2efe9</CssParameter>
@@ -6246,18 +6233,11 @@
       </LineSymbolizer>
     </Rule> 
 </Style>
-<Layer name="world-1" status="on" srs="+proj=merc +datum=WGS84 +over">
-    <StyleName>world-1</StyleName>
-    <Datasource>
-      <Parameter name="type">shape</Parameter>
-      <Parameter name="file">c:/boundaries/world_boundaries/world_boundaries_m</Parameter>
-    </Datasource>
-</Layer>
-<Layer name="world" status="on" srs="+proj=merc +datum=WGS84 +over">
+<Layer name="world" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>world</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">c:/boundaries/world_boundaries/world_bnd_m</Parameter>
+      <Parameter name="file">/home/jburgess/world_boundaries/shoreline_300</Parameter>
     </Datasource>
 </Layer>
 <Layer name="coast-poly" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
