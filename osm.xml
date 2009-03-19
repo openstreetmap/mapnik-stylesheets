@@ -216,7 +216,7 @@
       <PointSymbolizer file= "c:/mapnik/symbols/fuel.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
       <Filter>[amenity]='hospital'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/hospital.p.16.png" type="png" width="16" height="16" />
     </Rule>
@@ -335,6 +335,13 @@
    </Rule>
 </Style>
 <Style name="highway-area-fill">
+    <Rule>
+      <Filter>[highway] = 'living_street'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbb</CssParameter>
+      </PolygonSymbolizer>
+   </Rule>
    <Rule>
       <Filter>[highway] = 'residential' or [highway]='unclassified' or [highway]='service'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -1045,8 +1052,8 @@
     </Rule>
     <Rule>
       <Filter>[amenity] = 'hospital'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#da0092" dy="12" halo_radius="2" wrap_width="12"/>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#da0092" dy="16" halo_radius="2" wrap_width="12"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'pharmacy'</Filter>
@@ -3638,6 +3645,18 @@
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#cf9</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[access]='destination' and ([highway]='unclassified' or [highway]='residential')</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#c2e0ff</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
         <CssParameter name="stroke-dasharray">6,8</CssParameter>
         <CssParameter name="stroke-opacity">0.5</CssParameter>
