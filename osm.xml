@@ -315,6 +315,11 @@
       <Filter>[amenity]='toilets'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/toilets.p.20.png" type="png" width="20" height="20" />
     </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tourism]='viewpoint'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/view_point.p.16.png" type="png" width="16" height="16" />
+    </Rule>
 </Style>
 <Style name="highway-area-casing">
    <Rule>
@@ -2468,7 +2473,7 @@
     <Rule>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
-      <Filter>([highway] = 'proposed' or [highway]='construction') and [construction]='motorway'</Filter>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and ([construction]='motorway' or [construction]='motorway_link')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2538,7 +2543,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>10000</MinScaleDenominator>
-      <Filter>([highway] = 'proposed' or [highway]='construction') and [construction]='motorway'</Filter>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and ([construction]='motorway' or [construction]='motorway_link')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
         <CssParameter name="stroke-width">4</CssParameter>
@@ -2636,7 +2641,7 @@
     <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>([highway] = 'proposed' or [highway]='construction') and [construction]='motorway'</Filter>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and ([construction]='motorway' or [construction]='motorway_link')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
         <CssParameter name="stroke-width">8</CssParameter>
