@@ -62,3 +62,4 @@ s/planet_osm_/%PREFIX%_/g
 
 # Steve8 leaves these in the file
 /"password">martyn/d
+/"password">xxxxxx/d

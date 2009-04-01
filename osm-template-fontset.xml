@@ -747,13 +747,7 @@
         <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>[leisure] = 'pitch'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#8ad3af</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
+    
     <Rule>
       <Filter>[aeroway] = 'apron'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -779,8 +773,28 @@
      </PolygonSymbolizer>
     </Rule-->
 </Style>
+<Style name="sports_grounds">
+    <Rule>
+      <Filter>[leisure] = 'sports_centre' or [leisure]='stadium'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#33cc99</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+</Style>
 <Style name="buildings">
-     <Rule>
+    <Rule>
+      <Filter>[leisure] = 'pitch'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#8ad3af</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#888</CssParameter>
+        <CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
      <PolygonSymbolizer>
@@ -817,11 +831,15 @@
       </LineSymbolizer>
     </Rule>
      <Rule>
-      <Filter>[leisure] = 'sports_centre' or [leisure]='stadium' or [leisure]='track'</Filter>
+      <Filter>[leisure]='track'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
-         <CssParameter name="fill">#33cc99</CssParameter>
+         <CssParameter name="fill">#74dcba</CssParameter>
       </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#888</CssParameter>
+        <CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
@@ -895,16 +913,22 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city'</Filter>
+      <Filter>[place] = 'city' and [capital]='yes'</Filter>
       <MaxScaleDenominator>10000000</MaxScaleDenominator>
       <MinScaleDenominator>2000000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'city' and not [capital]='yes'</Filter>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[place] = 'city'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="12" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[place] = 'city'</Filter>
@@ -917,6 +941,12 @@
     <Rule>
       <Filter>[place] = 'town'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'town'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" halo_radius="1" wrap_width="20"/>
     </Rule>
@@ -3658,7 +3688,7 @@
 </Style>
 <Style name="access">
      <Rule>
-      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential')</Filter>
+      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#cf9</CssParameter>
@@ -3670,7 +3700,19 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[access]='destination' and ([highway]='unclassified' or [highway]='residential')</Filter>
+      <Filter>[access] = 'permissive' and [highway]='footway'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#cf9</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[access]='destination' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#c2e0ff</CssParameter>
@@ -5468,17 +5510,26 @@
       <MinScaleDenominator>5000000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#809bc0</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-width">0.5</CssParameter>
       </LineSymbolizer>
     </Rule>
     <!-- level 6-8 -->
     <Rule>
       <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
       <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <LineSymbolizer>
+       <CssParameter name="stroke">#809bc0</CssParameter>
+       <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+<Rule>
+      <Filter>[highway] = 'motorway' or [highway] = 'motorway_link'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <LineSymbolizer>
        <CssParameter name="stroke">#809bc0</CssParameter>
-       <CssParameter name="stroke-width">1.5</CssParameter>
+       <CssParameter name="stroke-width">1.4</CssParameter>
       </LineSymbolizer>
     </Rule>
     <!-- level 9 -->
@@ -5505,20 +5556,29 @@
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
       <MaxScaleDenominator>25000000</MaxScaleDenominator>
-      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <MinScaleDenominator>5000000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#a9dba9</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
       </LineSymbolizer>
     </Rule>
     <!-- level 7-9 -->
+   <Rule>
+      <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#97d397</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'trunk_link'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#97d397</CssParameter>
-        <CssParameter name="stroke-width">1.7</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <!-- level 10-->
@@ -5539,17 +5599,26 @@
       <MinScaleDenominator>2000000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#ec989a</CssParameter>
-        <CssParameter name="stroke-width">0.7</CssParameter>
+        <CssParameter name="stroke-width">0.5</CssParameter>
       </LineSymbolizer>
     </Rule>
     <!-- level 7-9-->
     <Rule>
       <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>1000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ec989a</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#ec989a</CssParameter>
-        <CssParameter name="stroke-width">1.6</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <!-- level 10 -->
@@ -5583,8 +5652,17 @@
       </LineSymbolizer>
     </Rule>
     <!-- RAIL -->
-        <Rule>
-      <MaxScaleDenominator>2500000</MaxScaleDenominator>
+    <Rule>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <Filter>[railway] = 'rail'</Filter>
+       <LineSymbolizer>
+        <CssParameter name="stroke">#aaa</CssParameter>
+        <CssParameter name="stroke-width">0.6</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <Filter>[railway] = 'rail' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
        <LineSymbolizer>
@@ -5593,7 +5671,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <MaxScaleDenominator>2500000</MaxScaleDenominator>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <Filter>[railway] = 'rail' and ([tunnel]='yes' or [tunnel]='true')</Filter>
        <LineSymbolizer>
@@ -6320,6 +6398,20 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">(select * from %PREFIX%_polygon order by z_order,way_area desc) as leisure</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="sports_grounds" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>sports_grounds</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">(select * from %PREFIX%_polygon order by z_order,way_area desc) as sports_grounds</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
