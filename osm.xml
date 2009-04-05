@@ -46,18 +46,23 @@
     <Rule>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
-      <Filter>[railway]='station'</Filter>
+      <Filter>[railway]='station' and not [disused]='yes'</Filter>
       <PointSymbolizer file =  "c:/mapnik/symbols/halt.png" type="png" width="4" height="4" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
-      <Filter>[railway]='station'</Filter>
+      <Filter>[railway]='station' and not [disused]='yes'</Filter>
       <PointSymbolizer file =  "c:/mapnik/symbols/station_small.png" type="png" width="6" height="6" />
     </Rule>
     <Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <Filter>[railway]='station' and [disused]='yes'</Filter>
+      <PointSymbolizer file =  "c:/mapnik/symbols/station_disused.png" type="png" width="6" height="6" />
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <Filter>[railway]='station'</Filter>
+      <Filter>[railway]='station' and not [disused]='yes'</Filter>
       <PointSymbolizer file =  "c:/mapnik/symbols/station.png" type="png" width="9" height="9" />
     </Rule>
     <Rule>
@@ -85,13 +90,18 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[railway]='station'</Filter>
+      <Filter>[railway]='station' and not [disused]='yes'</Filter>
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#66f" dy="-8" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <Filter>[railway]='station'</Filter>
+      <Filter>[railway]='station' and not [disused]='yes'</Filter>
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#66f" dy="-14" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <Filter>[railway]='station' and [disused]='yes'</Filter>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="grey" dy="-9" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -363,13 +373,6 @@
    </Rule>
 </Style>
 <Style name="leisure">
-     <Rule>
-      <Filter>[leisure] = 'marina'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#b5d0d0</CssParameter>
-     </PolygonSymbolizer>
-    </Rule>
     <Rule>
       <Filter>[man_made] = 'pier'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -449,7 +452,7 @@
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard'</Filter>
+      <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard'</Filter>
       <PolygonSymbolizer>
         <CssParameter name="fill">#aacbaf</CssParameter>
       </PolygonSymbolizer>
@@ -519,7 +522,7 @@
     </Rule>
      <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard'</Filter>
+      <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard'</Filter>
       <PolygonPatternSymbolizer file= "c:/mapnik/symbols/grave_yard.png" type="png" width="16" height="16"/>
     </Rule>
     <Rule>
@@ -866,6 +869,16 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
     </Rule>
     <Rule>
+      <Filter>[amenity] = 'university'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#000033" halo_radius="1" wrap_width="16"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'college'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="14"/>
+    </Rule>
+    <Rule>
       <Filter>[way_area] &gt;= 150000 and not [waterway]='riverbank'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
@@ -1088,8 +1101,13 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#660033" halo_radius="2" wrap_width="10"/>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'school' or [amenity] = 'college' or [amenity] = 'university'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <Filter>[amenity] = 'university'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="2" wrap_width="12"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'school' or [amenity] = 'college'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000033" halo_radius="2" wrap_width="12"/>
     </Rule>
     <Rule>
@@ -1125,7 +1143,7 @@
 <Style name="water_areas">
     <Rule>
       <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank'</Filter>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
      </PolygonSymbolizer>
@@ -2526,7 +2544,7 @@
       <MinScaleDenominator>100000</MinScaleDenominator>
       <Filter>([highway] = 'proposed' or [highway]='construction') and [construction]='trunk'</Filter>
       <LineSymbolizer>
-        <CssParameter name="stroke">#a9dba9</CssParameter>
+        <CssParameter name="stroke">#a9bda9</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
@@ -6250,15 +6268,15 @@
     </Rule>
     <Rule>
       <Filter>[boundary]='national_park'</Filter>
-      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MaxScaleDenominator>2500000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
-        <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" dy="-8" fill="#9c9" halo_radius="1" wrap_width="12"/>
+        <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" dy="-8" fill="#9c9" halo_radius="1" wrap_width="14"/>
     </Rule>
     <Rule>
       <Filter>[boundary]='national_park'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
-        <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#9c9" halo_radius="1" wrap_width="12"/>
+        <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#9c9" halo_radius="1" wrap_width="14"/>
     </Rule>
 </Style>
 <Style name="admin">
@@ -6387,7 +6405,7 @@
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6401,7 +6419,7 @@
     <StyleName>sports_grounds</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6415,7 +6433,7 @@
     <StyleName>water_areas</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6429,7 +6447,7 @@
     <StyleName>water_lines</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6443,7 +6461,7 @@
      <StyleName>piers</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6460,7 +6478,7 @@
     <StyleName>tunnels-fill</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6476,7 +6494,7 @@
     <StyleName>citywalls</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6490,7 +6508,7 @@
     <StyleName>turning_circle</StyleName>    
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6504,7 +6522,7 @@
     <StyleName>footbikecycle-tunnels</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6520,7 +6538,7 @@
     <StyleName>tracks-notunnel-nobridge</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6536,7 +6554,7 @@
     <StyleName>tracks-tunnels</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6553,7 +6571,7 @@
      <StyleName>barriers</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6569,7 +6587,7 @@
     <StyleName>highway-area-casing</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6584,7 +6602,7 @@
     <StyleName>minor-roads-casing</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6600,7 +6618,7 @@
     <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6616,7 +6634,7 @@
     <StyleName>aerialways</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6633,7 +6651,7 @@
     <StyleName>roads</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6649,7 +6667,7 @@
     <StyleName>buildings</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6663,7 +6681,7 @@
     <StyleName>waterway-bridges</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6697,7 +6715,7 @@
     <StyleName>primarybridge_layer2_fill</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6713,7 +6731,7 @@
     <StyleName>tracks-bridges</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6729,7 +6747,7 @@
     <StyleName>access</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6745,7 +6763,7 @@
     <StyleName>trams</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6763,7 +6781,7 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6777,7 +6795,7 @@
     <StyleName>power</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6791,7 +6809,7 @@
      <StyleName>power_towers</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6810,7 +6828,7 @@
     <StyleName>hamlet</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6825,7 +6843,7 @@
      <StyleName>roads-text</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6841,7 +6859,7 @@
     <StyleName>area-text</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6855,7 +6873,7 @@
      <StyleName>interpolation</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6871,7 +6889,7 @@
     <StyleName>way_numbers</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6885,7 +6903,7 @@
     <StyleName>node_numbers</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6899,7 +6917,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6913,7 +6931,7 @@
     <StyleName>boundary</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6929,7 +6947,7 @@
     <StyleName>admin</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="password">martyn</Parameter>
       <Parameter name="host">localhost</Parameter>
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
@@ -6940,4 +6958,5 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>
+
 </Map>
