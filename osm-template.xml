@@ -2544,7 +2544,7 @@
       <MinScaleDenominator>100000</MinScaleDenominator>
       <Filter>([highway] = 'proposed' or [highway]='construction') and [construction]='trunk'</Filter>
       <LineSymbolizer>
-        <CssParameter name="stroke">#a9bda9</CssParameter>
+        <CssParameter name="stroke">#a9dba9</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
