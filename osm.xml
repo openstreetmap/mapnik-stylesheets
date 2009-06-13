@@ -347,8 +347,15 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <Filter>[amenity]='restaurant' or [amenity]='fast_food'</Filter>
-      <PointSymbolizer file= "c:/mapnik/symbols/restaurant.p.16.png" type="png" width="16" height="16" />
+      <Filter>[amenity]='restaurant'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/restaurant.p.16.png"
+type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='fast_food'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/fast_food.png"  
+type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
