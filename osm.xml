@@ -1071,7 +1071,6 @@ type="png" width="16" height="16" />
 </Style>
 <Style name="interpolation">
     <Rule>
-      <Filter>[addr:interpolation] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#555</CssParameter>
@@ -1082,14 +1081,12 @@ type="png" width="16" height="16" />
 </Style>
 <Style name="way_numbers">
     <Rule>
-      <Filter>[addr:housenumber] &lt;&gt; '' and [building] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="addr:housenumber" face_name="DejaVu Sans Book" size="9" fill="#555" dy="0" halo_radius="0" wrap_width="0"/>
     </Rule>
 </Style>
 <Style name="node_numbers">
     <Rule>
-      <Filter>[addr:housenumber] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="addr:housenumber" face_name="DejaVu Sans Book" size="9" fill="#555" dy="0" halo_radius="1" halo_fill="#eee" wrap_width="0"/>
     </Rule>
@@ -7081,7 +7078,7 @@ type="png" width="16" height="16" />
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">      
-       (select * from planet_osm_line order by z_order) as interpolation
+       (select way from planet_osm_line where "addr:interpolation" is not null) as interpolation
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -7096,7 +7093,7 @@ type="png" width="16" height="16" />
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as node_numbers</Parameter>
+      <Parameter name="table">(select way,"addr:housenumber" from planet_osm_polygon where "addr:housenumber" is not null and building is not null) as way_numbers</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -7110,7 +7107,7 @@ type="png" width="16" height="16" />
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">planet_osm_point</Parameter>
+      <Parameter name="table">(select way,"addr:housenumber" from planet_osm_point where "addr:housenumber" is not null) as node_numbers</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
