@@ -207,6 +207,16 @@
     </Rule>
 </Style>
 <Style name="points">
+     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tourism]='alpine_hut'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/alpinehut.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='shelter'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/shelter2.p.16.png" type="png" width="16" height="16" />
+    </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='atm'</Filter>
@@ -221,6 +231,11 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='bar'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/bar.p.20.png" type="png" width="20" height="20" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='bicycle_rental'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/rental_bicycle.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -246,6 +261,11 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='cinema'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/cinema.p.24.png" type="png" width="24" height="24" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='fire_station'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/firestation.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -312,6 +332,11 @@
       <Filter>[amenity]='place_of_worship'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/place_of_worship3.p.16.png" type="png" width="16" height="16" allow_overlap="false"/>
      </Rule>
+     <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='police'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/police.p.16.png" type="png" width="16" height="16" />
+    </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='post_box'</Filter>
@@ -334,8 +359,15 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <Filter>[amenity]='restaurant' or [amenity]='fast_food'</Filter>
-      <PointSymbolizer file= "%SYMBOLS_DIR%/restaurant.p.16.png" type="png" width="16" height="16" />
+      <Filter>[amenity]='restaurant'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/restaurant.p.16.png"
+type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='fast_food'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/fast_food.png"  
+type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -1092,7 +1124,17 @@
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="18" halo_radius="1" wrap_width="0"/>
     </Rule>
      <Rule>
-      <Filter>[amenity] = 'place_of_worship' or [amenity] = 'police'</Filter>
+      <Filter>[amenity] = 'police'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="16" halo_radius="1" wrap_width="30"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'fire_station'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="20" halo_radius="1" wrap_width="30"/>
+    </Rule>
+     <Rule>
+      <Filter>[amenity] = 'place_of_worship'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="16" halo_radius="1" wrap_width="30"/>
     </Rule>
