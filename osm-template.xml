@@ -33,12 +33,10 @@
     <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
-      <Filter>[highway]='turning_circle'</Filter>
       <PointSymbolizer file =  "%SYMBOLS_DIR%/turning_circle.15.png" type="png" width="15" height="15" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <Filter>[highway]='turning_circle'</Filter>
       <PointSymbolizer file =  "%SYMBOLS_DIR%/turning_circle.19.png" type="png" width="19" height="19" />
     </Rule>
 </Style>
@@ -839,7 +837,6 @@ type="png" width="16" height="16" />
 </Style>
 <Style name="sports_grounds">
     <Rule>
-      <Filter>[leisure] = 'sports_centre' or [leisure]='stadium'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">#33cc99</CssParameter>
@@ -1071,7 +1068,6 @@ type="png" width="16" height="16" />
 </Style>
 <Style name="interpolation">
     <Rule>
-      <Filter>[addr:interpolation] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#555</CssParameter>
@@ -1082,14 +1078,12 @@ type="png" width="16" height="16" />
 </Style>
 <Style name="way_numbers">
     <Rule>
-      <Filter>[addr:housenumber] &lt;&gt; '' and [building] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="addr:housenumber" face_name="DejaVu Sans Book" size="9" fill="#555" dy="0" halo_radius="0" wrap_width="0"/>
     </Rule>
 </Style>
 <Style name="node_numbers">
     <Rule>
-      <Filter>[addr:housenumber] &lt;&gt; ''</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="addr:housenumber" face_name="DejaVu Sans Book" size="9" fill="#555" dy="0" halo_radius="1" halo_fill="#eee" wrap_width="0"/>
     </Rule>
@@ -6299,7 +6293,6 @@ type="png" width="16" height="16" />
     <Rule>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
-      <Filter>[man_made] = 'pier'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#f2efe9</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -6308,7 +6301,6 @@ type="png" width="16" height="16" />
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[man_made] = 'pier'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#f2efe9</CssParameter>
         <CssParameter name="stroke-width">4</CssParameter>
@@ -6317,7 +6309,6 @@ type="png" width="16" height="16" />
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[man_made] = 'pier'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#f2efe9</CssParameter>
         <CssParameter name="stroke-width">7</CssParameter>
@@ -6412,7 +6403,6 @@ type="png" width="16" height="16" />
 </Style>
 <Style name="boundary">
     <Rule>
-      <Filter>[boundary]='national_park'</Filter>
       <MaxScaleDenominator>5000000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
       <PolygonSymbolizer>
@@ -6427,7 +6417,6 @@ type="png" width="16" height="16" />
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary]='national_park'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <PolygonSymbolizer>
@@ -6442,7 +6431,6 @@ type="png" width="16" height="16" />
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary]='national_park'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -6453,13 +6441,11 @@ type="png" width="16" height="16" />
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[boundary]='national_park'</Filter>
       <MaxScaleDenominator>2500000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
         <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="8" dy="-8" fill="#9c9" halo_radius="1" wrap_width="14"/>
     </Rule>
     <Rule>
-      <Filter>[boundary]='national_park'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
         <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="11" fill="#9c9" halo_radius="1" wrap_width="14"/>
@@ -6610,7 +6596,7 @@ type="png" width="16" height="16" />
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select * from %PREFIX%_polygon order by z_order,way_area desc) as sports_grounds</Parameter>
+      <Parameter name="table">(select way,leisure from %PREFIX%_polygon where leisure in ('sports_centre','stadium') order by z_order,way_area desc) as sports_grounds</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -6653,7 +6639,7 @@ type="png" width="16" height="16" />
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,highway,landuse,"natural",man_made,waterway,name,ref,char_length(ref) as length from %PREFIX%_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as piers
+      (select way from %PREFIX%_line where man_made='pier') as piers
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -6699,7 +6685,7 @@ type="png" width="16" height="16" />
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select * from %PREFIX%_point where highway is NOT NULL) as turning_circle</Parameter>
+      <Parameter name="table">(select way from %PREFIX%_point where highway='turning_circle') as turning_circle</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -6777,7 +6763,7 @@ type="png" width="16" height="16" />
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,barrier,highway,landuse,"natural",man_made,waterway,name,ref,char_length(ref) as length from %PREFIX%_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
+      (select way,barrier,"natural",man_made from %PREFIX%_line where barrier is not null or "natural" in ('hedge','cliff') or man_made='embankment') as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -6847,7 +6833,6 @@ type="png" width="16" height="16" />
 <Layer name="minor-roads-fill" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>minor-roads-fill-links</StyleName>
     <StyleName>minor-roads-fill</StyleName>
-    <StyleName>aerialways</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
       <Parameter name="host">%DBHOST%</Parameter>
@@ -6857,6 +6842,22 @@ type="png" width="16" height="16" />
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
       (select * from %PREFIX%_line order by z_order) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="aerialways" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>aerialways</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+      (select way,aerialway from %PREFIX%_line where aerialway is not null) as aerialways
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -7081,7 +7082,7 @@ type="png" width="16" height="16" />
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">      
-       (select * from %PREFIX%_line order by z_order) as interpolation
+       (select way from %PREFIX%_line where "addr:interpolation" is not null) as interpolation
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -7096,7 +7097,7 @@ type="png" width="16" height="16" />
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select * from %PREFIX%_polygon order by z_order,way_area desc) as node_numbers</Parameter>
+      <Parameter name="table">(select way,"addr:housenumber" from %PREFIX%_polygon where "addr:housenumber" is not null and building is not null) as way_numbers</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -7110,7 +7111,7 @@ type="png" width="16" height="16" />
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">%PREFIX%_point</Parameter>
+      <Parameter name="table">(select way,"addr:housenumber" from %PREFIX%_point where "addr:housenumber" is not null) as node_numbers</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -7139,7 +7140,7 @@ type="png" width="16" height="16" />
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select * from %PREFIX%_polygon where boundary in ('administrative', 'national_park')) as boundary
+      (select way,name from %PREFIX%_polygon where boundary='national_park') as boundary
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
