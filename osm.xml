@@ -1232,7 +1232,7 @@ type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <Filter>[natural] = 'marsh'</Filter>
+      <Filter>[natural] = 'marsh' or [natural] = 'wetland'</Filter>
       <PolygonPatternSymbolizer file= "c:/mapnik/symbols/marsh.png" type="png" width="30" height="30"/>
     </Rule>
     <Rule>
