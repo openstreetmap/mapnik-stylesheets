@@ -346,14 +346,12 @@
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='restaurant'</Filter>
-      <PointSymbolizer file= "c:/mapnik/symbols/restaurant.p.16.png"
-type="png" width="16" height="16" />
+      <PointSymbolizer file= "c:/mapnik/symbols/restaurant.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='fast_food'</Filter>
-      <PointSymbolizer file= "c:/mapnik/symbols/fast_food.png"  
-type="png" width="16" height="16" />
+      <PointSymbolizer file= "c:/mapnik/symbols/fast_food.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -404,7 +402,7 @@ type="png" width="16" height="16" />
       <Filter>[highway] = 'living_street'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <PolygonSymbolizer>
-        <CssParameter name="fill">#bbb</CssParameter>
+        <CssParameter name="fill">#ccc</CssParameter>
       </PolygonSymbolizer>
    </Rule>
    <Rule>
@@ -1145,6 +1143,16 @@ type="png" width="16" height="16" />
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
     </Rule>
+     <Rule>
+      <Filter>[natural] = 'bay'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'bank'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="black" dy="16" halo_radius="1" wrap_width="0"/>
+    </Rule>
     <Rule>
       <Filter>[tourism] = 'hotel'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -1217,7 +1225,7 @@ type="png" width="16" height="16" />
 </Style>
 <Style name="water_areas">
     <Rule>
-      <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank'</Filter>
+      <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank' or [waterway]='canal'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
@@ -1304,7 +1312,7 @@ type="png" width="16" height="16" />
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='river'</Filter>
+      <Filter>[waterway]='river' and not ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1312,6 +1320,21 @@ type="png" width="16" height="16" />
         <CssParameter name="stroke-width">10</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" placement="line" min_distance="200"/>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='river'and ([tunnel] = 'yes' or [tunnel] ='true')</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">10</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
       </LineSymbolizer>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" placement="line" min_distance="200"/>
     </Rule>
@@ -3427,7 +3450,7 @@ type="png" width="16" height="16" />
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke">#ccc</CssParameter>
         <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3438,7 +3461,7 @@ type="png" width="16" height="16" />
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>15000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke">#ccc</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3449,7 +3472,7 @@ type="png" width="16" height="16" />
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke">#ccc</CssParameter>
         <CssParameter name="stroke-width">9.4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -3460,7 +3483,7 @@ type="png" width="16" height="16" />
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <LineSymbolizer>
-        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke">#ccc</CssParameter>
         <CssParameter name="stroke-width">13</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -6204,6 +6227,11 @@ type="png" width="16" height="16" />
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield8.png" type="png" width="66" height="17" min_distance="18" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'unclassified' or [highway]='residential'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#000" halo_radius="1"  min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
