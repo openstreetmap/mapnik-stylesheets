@@ -6369,7 +6369,7 @@
 </Style>
 <Style name="directions">
     <Rule>
-      <Filter>[oneway] = 'yes' or [oneway] = 'true' or [oneway] = '1'</Filter>
+      <Filter>[oneway] = 'yes'</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#6c70d5</CssParameter>
@@ -7060,13 +7060,28 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">planet_osm_point</Parameter>
+      <Parameter name="table">(select way,place,capital,name from planet_osm_point where place is not null) as placenames</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="directions" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">
+      (select way,case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway from planet_osm_line where oneway is not null) as directions
+      </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>
 <Layer name="planet roads text osm" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-     <StyleName>directions</StyleName>
      <StyleName>roads-text</StyleName>
      <Datasource>
       <Parameter name="type">postgis</Parameter>
@@ -7076,7 +7091,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,highway,landuse,"natural",man_made,waterway,tourism,learning,amenity,place,name,ref,oneway,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL) as roads
+      (select way,highway,name,ref,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL and (name is not null or ref is not null)) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
