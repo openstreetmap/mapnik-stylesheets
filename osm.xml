@@ -1882,7 +1882,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway]='motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1892,7 +1892,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway]='motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1902,7 +1902,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway]='motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1912,7 +1912,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway]='motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1922,7 +1922,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1932,7 +1932,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1942,7 +1942,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1952,7 +1952,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1962,7 +1962,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>      
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1972,7 +1972,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>      
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1982,7 +1982,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>      
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -1992,7 +1992,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>      
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2002,7 +2002,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2013,7 +2013,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2024,7 +2024,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2035,7 +2035,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2048,7 +2048,7 @@
 </Style>
 <Style name="minor-roads-casing">
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2058,7 +2058,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2068,7 +2068,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>      
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2078,7 +2078,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2089,7 +2089,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2099,7 +2099,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2109,7 +2109,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>      
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2119,7 +2119,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2130,7 +2130,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2140,7 +2140,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2150,7 +2150,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>      
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2160,7 +2160,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2171,7 +2171,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2181,7 +2181,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-     <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+     <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2191,7 +2191,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>      
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2201,7 +2201,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2212,7 +2212,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2223,7 +2223,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[highway] = 'tertiary' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'tertiary' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2233,7 +2233,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2244,7 +2244,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2254,7 +2254,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2265,7 +2265,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'tertiary' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2275,7 +2275,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2286,7 +2286,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2296,7 +2296,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2307,7 +2307,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2317,7 +2317,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2328,7 +2328,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2338,7 +2338,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2349,7 +2349,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'service' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2359,7 +2359,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or[tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2370,7 +2370,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'service' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2391,7 +2391,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2402,7 +2402,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2412,7 +2412,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2423,7 +2423,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2433,7 +2433,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>10000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2444,7 +2444,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>10000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2454,7 +2454,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
@@ -2464,7 +2464,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'pedestrian' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
@@ -2475,7 +2475,7 @@
 </Style>
 <Style name="minor-roads-fill-links">
     <Rule>
-      <Filter>[highway]='motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway]='motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2484,7 +2484,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2495,7 +2495,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2506,7 +2506,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2517,7 +2517,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2528,7 +2528,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2539,7 +2539,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2550,7 +2550,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2561,7 +2561,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2572,7 +2572,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2583,7 +2583,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2594,7 +2594,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary_link' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2605,7 +2605,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2616,7 +2616,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2627,7 +2627,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2638,7 +2638,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary_link' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary_link' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2917,7 +2917,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2926,7 +2926,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2937,7 +2937,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2948,7 +2948,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'motorway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2959,7 +2959,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2970,7 +2970,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2981,7 +2981,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -2992,7 +2992,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'trunk' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3003,7 +3003,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3014,7 +3014,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3025,7 +3025,7 @@
       </LineSymbolizer>
     </Rule> 
     <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3036,7 +3036,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'primary' and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3047,7 +3047,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>150000</MaxScaleDenominator>
       <MinScaleDenominator>75000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3058,7 +3058,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3069,7 +3069,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3080,7 +3080,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3093,7 +3093,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true')</Filter>
+      <Filter>[railway] = 'rail' and [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffff</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -3172,7 +3172,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and not ([tunnel] = 'yes' or [tunnel] = 'true')</Filter>
+      <Filter>[railway] = 'rail' and not [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -3188,7 +3188,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([bridge] = 'yes' or [bridge]='true')</Filter>
+      <Filter>[railway] = 'rail' and [bridge] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">7</CssParameter>
@@ -3203,7 +3203,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and not ([tunnel]='yes' or [tunnel] = 'true')</Filter>
+      <Filter>[railway] = 'rail' and not [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -3219,7 +3219,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'rail' and ([tunnel] = 'yes' or [tunnel] = 'true')</Filter>
+      <Filter>[railway] = 'rail' and [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffff</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -3266,7 +3266,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='narrow_gauge' and not ([tunnel]='yes' or [tunnel] = 'true')</Filter>
+      <Filter>[railway]='narrow_gauge' and not [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3275,7 +3275,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='narrow_gauge' and ([tunnel]='yes' or [tunnel] = 'true')</Filter>
+      <Filter>[railway]='narrow_gauge' and [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">5</CssParameter>
@@ -3293,7 +3293,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
-      <Filter>[railway]='tram' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -3303,7 +3303,7 @@
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='tram' and ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3313,7 +3313,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='light_rail' and ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[railway]='light_rail' and [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3323,7 +3323,7 @@
      <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='light_rail' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[railway]='light_rail' and not [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3332,7 +3332,7 @@
     <Rule>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='subway' and ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[railway]='subway' and [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3342,7 +3342,7 @@
     <Rule>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='subway' and not ([tunnel] = 'yes' or [tunnel]='true')</Filter>
+      <Filter>[railway]='subway' and not [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3636,7 +3636,7 @@
       </LineSymbolizer>
     </Rule>  
     <Rule>
-      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'bridleway' or ([highway] = 'path' and [horse] = 'designated')) and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
@@ -3652,7 +3652,7 @@
       </LineSymbolizer>
     </Rule>  
     <Rule>
-      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'footway' or ([highway] = 'path' and [foot] = 'designated')) and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
@@ -3670,7 +3670,7 @@
       </LineSymbolizer>
     </Rule>   
     <Rule>
-      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not ([tunnel] = 'yes' or [tunnel] = 'true' or [tunnel] = '1')</Filter> 
+      <Filter>[highway] = 'path' and not ([bicycle] = 'designated' or [foot] = 'designated' or [horse] = 'designated') and not [tunnel] = 'yes'</Filter> 
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -3715,7 +3715,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not ([tunnel]='yes' or [tunnel]='true')</Filter>
+      <Filter>([highway] = 'cycleway' or ([highway] = 'path' and [bicycle] = 'designated')) and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -3844,7 +3844,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'runway' and not ([bridge]='yes' or [bridge]='true')</Filter>
+      <Filter>[aeroway] = 'runway' and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#bbc</CssParameter>
@@ -3861,7 +3861,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'taxiway' and not ([bridge]='yes' or [bridge]='true')</Filter>
+      <Filter>[aeroway] = 'taxiway' and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3870,7 +3870,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[aeroway] = 'taxiway' and not ([bridge]='yes' or [bridge]='true')</Filter>
+      <Filter>[aeroway] = 'taxiway' and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#bbc</CssParameter>
@@ -6771,7 +6771,15 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as buildings</Parameter>
+      <Parameter name="table">
+      (select way,building,leisure,railway,amenity,aeroway from planet_osm_polygon
+       where building is not null
+          or leisure in ('pitch','track')
+          or railway='station'
+          or amenity='place_of_worship'
+          or aeroway='terminal'
+       order by z_order,way_area desc) as buildings
+      </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -6818,7 +6826,11 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
+      <Parameter name="table">
+      (select way,highway from planet_osm_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway')
+       order by z_order,way_area desc) as roads
+      </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -6834,7 +6846,11 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select * from planet_osm_line order by z_order) as roads
+      (select way,highway,service,
+       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+       from planet_osm_line
+       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway')
+       order by z_order) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -6849,7 +6865,11 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
+      <Parameter name="table">
+      (select way,highway from planet_osm_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway','living_street')
+       order by z_order,way_area desc) as roads
+      </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -6865,7 +6885,15 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select * from planet_osm_line order by z_order) as roads
+      (select way,highway,horse,bicycle,foot,construction,railway,aeroway,service,route,
+       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       from planet_osm_line
+       where highway is not null
+          or aeroway in ('runway','taxiway')
+          or railway in ('light_rail','narrow_gauge','rail','subway','tram')
+          or route='ferry'
+       order by z_order) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
