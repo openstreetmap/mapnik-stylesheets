@@ -6606,7 +6606,21 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
+      <Parameter name="table">
+      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,tourism,name
+       from planet_osm_polygon
+       where landuse is not null
+          or leisure is not null
+          or aeroway='apron'
+          or man_made='pier'
+          or amenity in ('parking','university','college','school','hospital','grave_yard')
+          or military in ('barracks','danger_area')
+          or "natural" in ('field','beach','glacier','heath','mud','wood')
+          or power in ('station','sub_station')
+          or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
+       order by z_order,way_area desc
+      ) as leisure
+      </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -7134,7 +7148,13 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select * from planet_osm_polygon order by z_order,way_area desc) as leisure</Parameter>
+      <Parameter name="table">
+      (select way,amenity,military,way_area,waterway,name
+       from planet_osm_polygon
+       where name is not null
+       order by z_order,way_area desc
+      ) as text
+      </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -7192,7 +7212,19 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">planet_osm_point</Parameter>
+      <Parameter name="table">
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref
+       from planet_osm_point
+       where amenity is not null
+          or leisure is not null
+          or landuse is not null
+          or tourism is not null
+          or "natural" is not null
+          or man_made='lighthouse'
+          or place='island'
+          or highway='motorway_junction'
+      ) as text
+      </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
