@@ -265,6 +265,11 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[tourism]='hostel'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/hostel.p.20.png" type="png" width="20" height="20" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[tourism]='hotel'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/hotel2.p.20.png" type="png" width="20" height="20" />
     </Rule>
@@ -396,6 +401,14 @@
 	<CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
    </Rule>
+   <Rule>
+      <Filter>[highway] = 'track'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#996600</CssParameter>
+	<CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+   </Rule>
 </Style>
 <Style name="highway-area-fill">
     <Rule>
@@ -417,6 +430,13 @@
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#ededed</CssParameter>
+      </PolygonSymbolizer>
+   </Rule>   
+   <Rule>
+      <Filter>[highway] = 'track'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#dfcc66</CssParameter>
       </PolygonSymbolizer>
    </Rule>
 </Style>
@@ -740,7 +760,6 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
       <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/glacier2.png" type="png" width="70" height="56"/>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#99f" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'commercial'</Filter>
@@ -807,7 +826,6 @@
         <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
       <Filter>[aeroway] = 'apron'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
@@ -825,23 +843,6 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <PolygonPatternSymbolizer file= "%SYMBOLS_DIR%/mud.png" type="png" width="10" height="10"/>
     </Rule>
-    <!--Rule>
-      <ElseFilter/>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">lightgrey</CssParameter>
-     </PolygonSymbolizer>
-    </Rule-->
-</Style>
-<Style name="sports_grounds">
-    <Rule>
-      <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#33cc99</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-</Style>
-<Style name="buildings">
     <Rule>
       <Filter>[leisure] = 'pitch'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -853,6 +854,25 @@
         <CssParameter name="stroke-width">0.5</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <!--Rule>
+      <ElseFilter/>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">lightgrey</CssParameter>
+     </PolygonSymbolizer>
+    </Rule-->
+</Style>
+<Style name="sports_grounds">
+     
+    <Rule>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#33cc99</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+</Style>
+<Style name="buildings">
+    
     <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -994,13 +1014,13 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
@@ -1008,19 +1028,19 @@
 </Style>
 <Style name="town">
     <Rule>
-      <Filter>[place] = 'town'</Filter>
+      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'town'</Filter>
+      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'town'</Filter>
+      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#777777" halo_radius="1" wrap_width="20"/>
     </Rule>
@@ -1040,13 +1060,13 @@
 </Style>
 <Style name="village">
     <Rule>
-      <Filter>[place] = 'village'</Filter>
+      <Filter>[place] = 'village' or [place]='large_village'</Filter>
       <MaxScaleDenominator>250000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'village'</Filter>
+      <Filter>[place] = 'village' or [place]='large_village'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="12" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
@@ -1154,7 +1174,7 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="black" dy="16" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[tourism] = 'hotel'</Filter>
+      <Filter>[tourism] = 'hotel' or [tourism]='hostel'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#0092da" dy="16" halo_radius="1" wrap_width="0"/>
     </Rule>
@@ -1224,6 +1244,11 @@
     </Rule>
 </Style>
 <Style name="water_areas">
+     <Rule>
+      <Filter>[natural] = 'glacier'</Filter>
+      <MaxScaleDenominator>1000000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#99f" halo_radius="1" wrap_width="20"/>
+      </Rule>
     <Rule>
       <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank' or [waterway]='canal'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
@@ -1233,7 +1258,7 @@
     </Rule>
     <Rule>
       <Filter>[natural] = 'lake' or [natural] = 'water'</Filter>
-      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
      </PolygonSymbolizer>
@@ -3212,6 +3237,22 @@
         <CssParameter name="stroke-dasharray">8,12</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <!--Rule>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <Filter>[construction] = 'bus_guideway'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9999cc</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">8,12</CssParameter>
+      </LineSymbolizer>
+    </Rule-->
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
@@ -3243,6 +3284,22 @@
         <CssParameter name="stroke-dasharray">0,11,8,1</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <!--Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[construction] = 'bus_guideway'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9999cc</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,11,8,1</CssParameter>
+      </LineSymbolizer>
+    </Rule-->
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
@@ -6676,7 +6733,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="table">(select way,"natural",waterway,landuse from %PREFIX%_polygon where waterway in ('dock','mill_pond','riverbank','canal') or landuse in ('reservoir','water') or "natural" in ('lake','water','land','marsh','scrub','wetland') order by z_order) as water_areas</Parameter>
+      <Parameter name="table">(select way,"natural",waterway,landuse,name from %PREFIX%_polygon where waterway in ('dock','mill_pond','riverbank','canal') or landuse in ('reservoir','water') or "natural" in ('lake','water','land','marsh','scrub','wetland','glacier') order by z_order,way_area desc) as water_areas</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>
@@ -6870,7 +6927,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
       (select way,highway from %PREFIX%_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway')
+       where highway in ('residential','unclassified','pedestrian','service','footway','track')
        order by z_order,way_area desc) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
@@ -6909,7 +6966,7 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
       (select way,highway from %PREFIX%_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','living_street')
+       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track')
        order by z_order,way_area desc) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
