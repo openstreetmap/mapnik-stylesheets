@@ -229,6 +229,11 @@
       <PointSymbolizer file= "c:/mapnik/symbols/bus_stop.p.12.png" type="png" width="12" height="12" />
     </Rule>
     <Rule>
+    <MaxScaleDenominator>5000</MaxScaleDenominator>
+    <Filter>[highway]='traffic_signals'</Filter>
+    <PointSymbolizer file= "c:/mapnik/symbols/traffic_light.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='cafe'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/cafe.p.16.png" type="png" width="16" height="16" />
