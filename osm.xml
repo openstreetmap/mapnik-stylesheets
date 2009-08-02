@@ -1728,6 +1728,66 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">7.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">16</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
 </Style>
 <Style name="tunnels-fill">
     <Rule>
@@ -1902,6 +1962,94 @@
       <LineSymbolizer>
         <CssParameter name="stroke">#fee0b8</CssParameter>
         <CssParameter name="stroke-width">14</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffc</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffc</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>50000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>25000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffc</CssParameter>
+        <CssParameter name="stroke-width">9.4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffc</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">9.4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2279,16 +2427,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-   <Rule>
-      <Filter>[highway] = 'tertiary' and [tunnel]='yes'</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <MinScaleDenominator>50000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
+   
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
@@ -2300,16 +2439,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
-      <MaxScaleDenominator>100000</MaxScaleDenominator>
-      <MinScaleDenominator>50000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
+    
     <Rule>
       <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -2321,16 +2451,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>[highway] = 'tertiary' and [tunnel]='yes'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">7.5</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
+    
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -2342,16 +2463,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">4.5</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
+    
     <Rule>
       <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -2363,16 +2475,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
-      <MinScaleDenominator>5000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">11</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
+    
     <Rule>
       <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -2384,16 +2487,7 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and [tunnel]='yes'</Filter>
-      <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <MinScaleDenominator>1000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">16</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
+    
     <Rule>
       <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
@@ -3491,7 +3585,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3502,7 +3596,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>15000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3513,7 +3607,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3524,7 +3618,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <LineSymbolizer>
@@ -3579,7 +3673,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3590,7 +3684,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>25000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3601,7 +3695,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>5000</MinScaleDenominator>
       <LineSymbolizer>
@@ -3612,7 +3706,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -6784,7 +6878,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,highway from planet_osm_roads where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link') and tunnel in ('yes','true','1') order by z_order) as roads
+      (select way,highway from planet_osm_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor') and tunnel in ('yes','true','1') order by z_order) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
