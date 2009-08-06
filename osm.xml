@@ -3383,6 +3383,22 @@
         <CssParameter name="stroke-dasharray">0,11,8,1</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <MinScaleDenominator>1000</MinScaleDenominator>
+      <Filter>[railway] = 'spur'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999999</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">0.8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,8,11,1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
     <!--Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
@@ -6360,55 +6376,55 @@
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/sec_shield8.png" type="png" width="66" height="17" min_distance="21" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 1</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 1) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield1.png" type="png" width="17" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 2</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 2) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield2.png" type="png" width="24" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 3</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 3) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield3.png" type="png" width="31" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 4</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 4) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield4.png" type="png" width="38" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 5</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 5) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield5.png" type="png" width="45" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 6</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 6) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield6.png" type="png" width="52" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 7</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 7) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield7.png" type="png" width="59" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] = 8</Filter>
+      <Filter>([highway] = 'tertiary' and [length] = 8) and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "c:/mapnik/symbols/ter_shield8.png" type="png" width="66" height="17" min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'unclassified' or [highway]='residential'</Filter>
+      <Filter>([highway] = 'unclassified' or [highway]='residential') and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#000" halo_radius="1"  min_distance="18" spacing="750"/>
     </Rule>
@@ -7089,7 +7105,7 @@
        from planet_osm_line
        where highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','rail','subway','tram')
+          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur')
           or route='ferry'
        order by z_order) as roads
       </Parameter>
