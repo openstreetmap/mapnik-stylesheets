@@ -7362,7 +7362,14 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,highway,name,ref,char_length(ref) as length from planet_osm_line where waterway IS NULL and leisure IS NULL and landuse IS NULL and (name is not null or ref is not null)) as roads
+      (select way,highway,name,ref,char_length(ref) as length,
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       from planet_osm_line
+       where waterway IS NULL
+         and leisure IS NULL
+         and landuse IS NULL
+         and (name is not null or ref is not null)
+      ) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
