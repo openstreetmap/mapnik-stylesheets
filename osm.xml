@@ -1000,33 +1000,47 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
 </Style>
-<Style name="city">
+<Style name="capital">
      <Rule>
-      <Filter>[place] = 'city' and [capital]='yes'</Filter>
+      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
       <MaxScaleDenominator>50000000</MaxScaleDenominator>
       <MinScaleDenominator>10000000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city' and [capital]='yes'</Filter>
+      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
       <MaxScaleDenominator>10000000</MaxScaleDenominator>
       <MinScaleDenominator>2000000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city' and not [capital]='yes'</Filter>
-      <MaxScaleDenominator>10000000</MaxScaleDenominator>
-      <MinScaleDenominator>2000000</MinScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
       <MaxScaleDenominator>2000000</MaxScaleDenominator>
       <MinScaleDenominator>500000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
+      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MinScaleDenominator>20000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+</Style>
+<Style name="city">
+    <Rule>
+      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
+      <MaxScaleDenominator>10000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
+      <MaxScaleDenominator>2000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>20000</MinScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
@@ -7304,6 +7318,7 @@
 </Layer>  
 <Layer name="placenames" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>country</StyleName>
+    <StyleName>capital</StyleName> 
     <StyleName>city</StyleName> 
     <StyleName>town</StyleName>    
     <StyleName>suburb</StyleName>
