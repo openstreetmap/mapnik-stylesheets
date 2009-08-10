@@ -7185,24 +7185,23 @@
     <StyleName>road-bridges-casing</StyleName>
     <StyleName>road-bridges-fill</StyleName>
     <StyleName>noncased-ways-bridges</StyleName>
+    <StyleName>primarybridge_layer0_casing</StyleName>
     <StyleName>mwaybridge_layer0_casing</StyleName>
+    <StyleName>primarybridge_layer0_fill</StyleName>
     <StyleName>mwaybridge_layer0_fill</StyleName>
+    <StyleName>primarybridge_layer1_casing</StyleName>
     <StyleName>mwaybridge_layer1_casing</StyleName>
+    <StyleName>primarybridge_layer1_fill</StyleName>
     <StyleName>mwaybridge_layer1_fill</StyleName>
+    <StyleName>primarybridge_layer2_casing</StyleName>
     <StyleName>mwaybridge_layer2_casing</StyleName>
-    <StyleName>mwaybridge_layer2_fill</StyleName>
+    <StyleName>primarybridge_layer2_fill</StyleName>
     <StyleName>mwaybridge_layer3_casing</StyleName>
     <StyleName>mwaybridge_layer3_fill</StyleName>
     <StyleName>mwaybridge_layer4_casing</StyleName>
     <StyleName>mwaybridge_layer4_fill</StyleName>
     <StyleName>mwaybridge_layer5_casing</StyleName>
     <StyleName>mwaybridge_layer5_fill</StyleName>
-    <StyleName>primarybridge_layer0_casing</StyleName>
-    <StyleName>primarybridge_layer0_fill</StyleName>
-    <StyleName>primarybridge_layer1_casing</StyleName>
-    <StyleName>primarybridge_layer1_fill</StyleName>
-    <StyleName>primarybridge_layer2_casing</StyleName>
-    <StyleName>primarybridge_layer2_fill</StyleName>
     <Datasource>
       <Parameter name="type">postgis</Parameter>
       <Parameter name="password">martyn</Parameter>
