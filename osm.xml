@@ -7288,6 +7288,22 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>
+<Layer name="amenity-poly" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>stations</StyleName>
+    <StyleName>symbols</StyleName>
+    <StyleName>points</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">martyn</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">(select * from planet_osm_polygon where barrier IS NOT NULL or amenity IS NOT NULL or tourism is NOT NULL or railway is NOT NULL or "natural" is NOT NULL or highway is NOT NULL or aeroway is NOT NULL or aerialway is NOT NULL or power_source is NOT NULL or man_made is NOT NULL) as amenity</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
 <Layer name="power" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>power</StyleName>
     <Datasource>
@@ -7459,6 +7475,31 @@
           or man_made='lighthouse'
           or place='island'
           or highway='motorway_junction'
+      ) as text
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="text-poly" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>text</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">martyn</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref
+       from planet_osm_point
+       where amenity is not null
+          or leisure is not null
+          or landuse is not null
+          or tourism is not null
+          or "natural" is not null
+          or man_made='lighthouse'
+          or place='island'
       ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
