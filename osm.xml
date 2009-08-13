@@ -295,7 +295,7 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <Filter>[amenity]='parking'</Filter>
+      <Filter>[amenity]='parking' and ([access] = 'public' or not [access] &lt;&gt; '')</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/parking.p.16.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
     <Rule>
