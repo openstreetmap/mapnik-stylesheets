@@ -7120,7 +7120,7 @@
        from planet_osm_line
        where highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur')
+          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','platform')
           or route='ferry'
        order by z_order) as roads
       </Parameter>
