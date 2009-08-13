@@ -7132,7 +7132,7 @@
        from %PREFIX%_line
        where highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur')
+          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','platform')
           or route='ferry'
        order by z_order) as roads
       </Parameter>
@@ -7208,6 +7208,7 @@
     <StyleName>primarybridge_layer2_casing</StyleName>
     <StyleName>mwaybridge_layer2_casing</StyleName>
     <StyleName>primarybridge_layer2_fill</StyleName>
+    <StyleName>mwaybridge_layer2_fill</StyleName>
     <StyleName>mwaybridge_layer3_casing</StyleName>
     <StyleName>mwaybridge_layer3_fill</StyleName>
     <StyleName>mwaybridge_layer4_casing</StyleName>
