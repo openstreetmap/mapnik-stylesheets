@@ -1005,6 +1005,26 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
 </Style>
+<Style name="state">
+    <Rule>
+      <Filter>[place] = 'state'</Filter>
+      <MaxScaleDenominator>50000000</MaxScaleDenominator>
+      <MinScaleDenominator>25000000</MinScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Oblique" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'state'</Filter>
+      <MaxScaleDenominator>25000000</MaxScaleDenominator>
+      <MinScaleDenominator>5000000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'state'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+</Style>
 <Style name="capital">
      <Rule>
       <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
@@ -6741,6 +6761,28 @@
     </Rule>
     <Rule>
       <Filter>[admin_level]='4'</Filter>
+      <MaxScaleDenominator>50000000</MaxScaleDenominator>
+      <MinScaleDenominator>5000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">0.6</CssParameter>
+        <CssParameter name="stroke-dasharray">4,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[admin_level]='4'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-dasharray">4,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[admin_level]='4'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
@@ -7344,6 +7386,7 @@
 </Layer>  
 <Layer name="placenames" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>country</StyleName>
+    <StyleName>state</StyleName>
     <StyleName>capital</StyleName> 
     <StyleName>city</StyleName> 
     <StyleName>town</StyleName>    
@@ -7357,7 +7400,7 @@
       <Parameter name="port">5432</Parameter>
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select way,place,capital,name from planet_osm_point where place is not null) as placenames</Parameter>
+      <Parameter name="table">(select way,place,capital,name,ref from planet_osm_point where place is not null) as placenames</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
