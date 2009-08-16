@@ -956,37 +956,22 @@
 </Style>
 <Style name="area-text">
     <Rule>
-      <Filter>[military] = 'danger_area'</Filter>
-      <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'university'</Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#000033" halo_radius="1" wrap_width="16"/>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'college'</Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="14"/>
-    </Rule>
-    <Rule>
-      <Filter>[way_area] &gt;= 150000 and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &gt;= 150000</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>([way_area] &gt;= 80000 and [way_area] &lt; 150000) and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &gt;= 80000 and [way_area] &lt; 150000</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>([way_area] &gt;= 20000 and [way_area] &lt; 80000) and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &gt;= 20000 and [way_area] &lt; 80000</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>[way_area] &lt; 20000 and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &lt; 20000</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
@@ -1184,11 +1169,6 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" dy="16" halo_radius="1" wrap_width="30"/>
     </Rule>
     <Rule>
-      <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' </Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
-    </Rule>
-    <Rule>
       <Filter>[natural] = 'wood'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000" halo_radius="2" wrap_width="10"/>
@@ -1207,6 +1187,11 @@
       <Filter>[natural] = 'water' or [natural] = 'lake' or [landuse] = 'reservoir' or [landuse] = 'basin'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>([leisure] &lt;&gt; '' or [landuse] &lt;&gt; '') and [point] = 'yes'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
     </Rule>
      <Rule>
       <Filter>[natural] = 'bay'</Filter>
@@ -1250,13 +1235,13 @@
     </Rule>
     <Rule>
       <Filter>[amenity] = 'university'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#000033" halo_radius="2" wrap_width="12"/>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="#000033" halo_radius="1" wrap_width="16"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'school' or [amenity] = 'college'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#000033" halo_radius="2" wrap_width="12"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#000033" halo_radius="1" wrap_width="14"/>
     </Rule>
     <Rule>
       <Filter>[man_made] = 'lighthouse'</Filter>
@@ -1291,6 +1276,11 @@
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-14" min_distance="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[military] = 'danger_area'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
     </Rule>
 </Style>
 <Style name="water_areas">
@@ -7444,26 +7434,6 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>
-<Layer name="area-text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <StyleName>area-text</StyleName>
-    <Datasource>
-      <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>
-      <Parameter name="user">postgres</Parameter>
-      <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">
-      (select way,amenity,military,way_area,waterway,name
-       from planet_osm_polygon
-       where name is not null
-       order by z_order,way_area desc
-      ) as text
-      </Parameter>
-      <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-    </Datasource>
-</Layer>
 <Layer name="interpolation_lines" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>interpolation</StyleName>
      <Datasource>
@@ -7518,7 +7488,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,'yes'::text as point
        from planet_osm_point
        where amenity is not null
           or leisure is not null
@@ -7528,6 +7498,7 @@
           or man_made='lighthouse'
           or place='island'
           or highway='motorway_junction'
+          or military='danger_area'
       ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
@@ -7544,8 +7515,8 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref
-       from planet_osm_point
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
+       from planet_osm_polygon
        where amenity is not null
           or leisure is not null
           or landuse is not null
@@ -7553,6 +7524,28 @@
           or "natural" is not null
           or man_made='lighthouse'
           or place='island'
+          or military='danger_area'
+      ) as text
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="area-text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>area-text</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">
+      (select way,way_area,name
+       from planet_osm_polygon
+       where name is not null
+         and (waterway is null or waterway &lt;&gt; 'riverbank')
+       order by z_order,way_area desc
       ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
