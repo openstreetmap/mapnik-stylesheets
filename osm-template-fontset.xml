@@ -257,6 +257,11 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[tourism]='caravan_site'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/caravan_park.p.24.png" type="png" width="24" height="24" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[amenity]='car_sharing'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/car_share.p.16.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
@@ -963,37 +968,22 @@
 </Style>
 <Style name="area-text">
     <Rule>
-      <Filter>[military] = 'danger_area'</Filter>
-      <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'university'</Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="16"/>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'college'</Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="14"/>
-    </Rule>
-    <Rule>
-      <Filter>[way_area] &gt;= 150000 and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &gt;= 150000</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>([way_area] &gt;= 80000 and [way_area] &lt; 150000) and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &gt;= 80000 and [way_area] &lt; 150000</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>([way_area] &gt;= 20000 and [way_area] &lt; 80000) and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &gt;= 20000 and [way_area] &lt; 80000</Filter>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>[way_area] &lt; 20000 and not [waterway]='riverbank'</Filter>
+      <Filter>[way_area] &lt; 20000</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
@@ -1010,6 +1000,26 @@
       <MaxScaleDenominator>50000000</MaxScaleDenominator>
       <MinScaleDenominator>5000000</MinScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+</Style>
+<Style name="state">
+    <Rule>
+      <Filter>[place] = 'state'</Filter>
+      <MaxScaleDenominator>50000000</MaxScaleDenominator>
+      <MinScaleDenominator>25000000</MinScaleDenominator>
+      <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'state'</Filter>
+      <MaxScaleDenominator>25000000</MaxScaleDenominator>
+      <MinScaleDenominator>5000000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[place] = 'state'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>2000000</MinScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
 </Style>
 <Style name="capital">
@@ -1171,11 +1181,6 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="16" halo_radius="1" wrap_width="30"/>
     </Rule>
     <Rule>
-      <Filter>[leisure] &lt;&gt; '' or [landuse] &lt;&gt; '' </Filter>
-      <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
-    </Rule>
-    <Rule>
       <Filter>[natural] = 'wood'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" halo_radius="2" wrap_width="10"/>
@@ -1194,6 +1199,11 @@
       <Filter>[natural] = 'water' or [natural] = 'lake' or [landuse] = 'reservoir' or [landuse] = 'basin'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>([leisure] &lt;&gt; '' or [landuse] &lt;&gt; '') and [point] = 'yes'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
     </Rule>
      <Rule>
       <Filter>[natural] = 'bay'</Filter>
@@ -1221,6 +1231,11 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0092da" dy="15" halo_radius="1" wrap_width="70"/>
     </Rule>
     <Rule>
+      <Filter>[tourism] = 'caravan_site'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0092da" dy="19" halo_radius="1" wrap_width="70"/>
+    </Rule>
+    <Rule>
       <Filter>[tourism]='museum'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="16" halo_radius="1" wrap_width="0"/>
@@ -1232,13 +1247,13 @@
     </Rule>
     <Rule>
       <Filter>[amenity] = 'university'</Filter>
-      <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="2" wrap_width="12"/>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="16"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'school' or [amenity] = 'college'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000033" halo_radius="2" wrap_width="12"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="14"/>
     </Rule>
     <Rule>
       <Filter>[man_made] = 'lighthouse'</Filter>
@@ -1273,6 +1288,11 @@
       <MaxScaleDenominator>20000</MaxScaleDenominator>
       <TextSymbolizer name="ref" fontset_name="book-fonts" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-14" min_distance="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[military] = 'danger_area'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
     </Rule>
 </Style>
 <Style name="water_areas">
@@ -3413,7 +3433,7 @@
     <Rule>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway] = 'spur'</Filter>
+      <Filter>[railway] = 'spur' or [railway] = 'siding'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -6743,6 +6763,28 @@
     </Rule>
     <Rule>
       <Filter>[admin_level]='4'</Filter>
+      <MaxScaleDenominator>50000000</MaxScaleDenominator>
+      <MinScaleDenominator>5000000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">0.6</CssParameter>
+        <CssParameter name="stroke-dasharray">4,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[admin_level]='4'</Filter>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">purple</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-dasharray">4,3</CssParameter>
+        <CssParameter name="stroke-opacity">0.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[admin_level]='4'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
@@ -7132,7 +7174,7 @@
        from %PREFIX%_line
        where highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','platform')
+          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','siding','platform')
           or route='ferry'
        order by z_order) as roads
       </Parameter>
@@ -7346,6 +7388,7 @@
 </Layer>  
 <Layer name="placenames" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>country</StyleName>
+    <StyleName>state</StyleName>
     <StyleName>capital</StyleName> 
     <StyleName>city</StyleName> 
     <StyleName>town</StyleName>    
@@ -7359,7 +7402,7 @@
       <Parameter name="user">%DBUSER%</Parameter>
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select way,place,capital,name from %PREFIX%_point where place is not null) as placenames</Parameter>
+      <Parameter name="table">(select way,place,capital,name,ref from %PREFIX%_point where place is not null) as placenames</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
@@ -7398,26 +7441,6 @@
          and landuse IS NULL
          and (name is not null or ref is not null)
       ) as roads
-      </Parameter>
-      <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-    </Datasource>
-</Layer>
-<Layer name="area-text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <StyleName>area-text</StyleName>
-    <Datasource>
-      <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">%DBHOST%</Parameter>
-      <Parameter name="port">%DBPORT%</Parameter>
-      <Parameter name="user">%DBUSER%</Parameter>
-      <Parameter name="password">%DBPASS%</Parameter>
-      <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">
-      (select way,amenity,military,way_area,waterway,name
-       from %PREFIX%_polygon
-       where name is not null
-       order by z_order,way_area desc
-      ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -7477,7 +7500,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,'yes'::text as point
        from %PREFIX%_point
        where amenity is not null
           or leisure is not null
@@ -7487,6 +7510,7 @@
           or man_made='lighthouse'
           or place='island'
           or highway='motorway_junction'
+          or military='danger_area'
       ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
@@ -7503,8 +7527,8 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref
-       from %PREFIX%_point
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
+       from %PREFIX%_polygon
        where amenity is not null
           or leisure is not null
           or landuse is not null
@@ -7512,6 +7536,28 @@
           or "natural" is not null
           or man_made='lighthouse'
           or place='island'
+          or military='danger_area'
+      ) as text
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="area-text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>area-text</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+      (select way,way_area,name
+       from %PREFIX%_polygon
+       where name is not null
+         and (waterway is null or waterway &lt;&gt; 'riverbank')
+       order by z_order,way_area desc
       ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
