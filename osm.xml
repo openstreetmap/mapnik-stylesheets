@@ -883,7 +883,6 @@
     </Rule>
 </Style>
 <Style name="buildings">
-    
     <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
@@ -932,7 +931,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; ''</Filter>
+      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <PolygonSymbolizer>
          <CssParameter name="fill">#cc9999</CssParameter>
