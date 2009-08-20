@@ -7313,6 +7313,27 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>
+<Layer name="placenames" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>country</StyleName>
+    <StyleName>state</StyleName>
+    <StyleName>capital</StyleName> 
+    <StyleName>city</StyleName> 
+    <StyleName>town</StyleName>    
+    <StyleName>suburb</StyleName>
+    <StyleName>village</StyleName>
+    <StyleName>hamlet</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">(select way,place,capital,name,ref from planet_osm_point where place is not null) as placenames</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
 <Layer name="amenity" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>stations</StyleName>    
     <StyleName>symbols</StyleName>
@@ -7373,27 +7394,6 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>  
-<Layer name="placenames" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <StyleName>country</StyleName>
-    <StyleName>state</StyleName>
-    <StyleName>capital</StyleName> 
-    <StyleName>city</StyleName> 
-    <StyleName>town</StyleName>    
-    <StyleName>suburb</StyleName>
-    <StyleName>village</StyleName>
-    <StyleName>hamlet</StyleName>
-    <Datasource>
-      <Parameter name="type">postgis</Parameter>
-      <Parameter name="password">xxxxxx</Parameter>
-      <Parameter name="host">localhost</Parameter>
-      <Parameter name="port">5432</Parameter>
-      <Parameter name="user">postgres</Parameter>
-      <Parameter name="dbname">osm</Parameter>
-      <Parameter name="table">(select way,place,capital,name,ref from planet_osm_point where place is not null) as placenames</Parameter>
-      <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-    </Datasource>
-</Layer>
 <Layer name="directions" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
      <StyleName>directions</StyleName>
      <Datasource>
