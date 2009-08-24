@@ -4040,25 +4040,6 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[route] = 'ferry'</Filter>
-      <MaxScaleDenominator>5000000</MaxScaleDenominator>
-      <MinScaleDenominator>500000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#66f</CssParameter>
-        <CssParameter name="stroke-width">0.4</CssParameter>
-        <CssParameter name="stroke-dasharray">4,4</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[route] = 'ferry'</Filter>
-      <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#66f</CssParameter>
-        <CssParameter name="stroke-width">0.8</CssParameter>
-        <CssParameter name="stroke-dasharray">6,6</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
       <Filter>[aeroway] = 'runway'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
@@ -4123,6 +4104,26 @@
       </LineSymbolizer>
     </Rule-->
 </Style>
+<Style name="ferry-routes">
+    <Rule>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#66f</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#66f</CssParameter>
+        <CssParameter name="stroke-width">0.8</CssParameter>
+        <CssParameter name="stroke-dasharray">6,6</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
+
 <Style name="access">
      <Rule>
       <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
@@ -7164,6 +7165,22 @@
           or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','siding','platform')
           or route='ferry'
        order by z_order) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="ferry-routes" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>ferry-routes</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="password">xxxxxx</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="port">5432</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="dbname">osm</Parameter>
+      <Parameter name="table">
+      (select way from planet_osm_line where route='ferry' ) as routes
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
