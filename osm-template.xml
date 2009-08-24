@@ -1914,7 +1914,7 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' or [highway] = 'primary_link'</Filter>
-      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#f4c3c4</CssParameter>
@@ -2092,7 +2092,7 @@
 <Style name="minor-roads-casing-links">
     <Rule>
       <Filter>[highway]='raceway'</Filter>
-      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">pink</CssParameter>
@@ -4040,25 +4040,6 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[route] = 'ferry'</Filter>
-      <MaxScaleDenominator>5000000</MaxScaleDenominator>
-      <MinScaleDenominator>500000</MinScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#66f</CssParameter>
-        <CssParameter name="stroke-width">0.4</CssParameter>
-        <CssParameter name="stroke-dasharray">4,4</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[route] = 'ferry'</Filter>
-      <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#66f</CssParameter>
-        <CssParameter name="stroke-width">0.8</CssParameter>
-        <CssParameter name="stroke-dasharray">6,6</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
       <Filter>[aeroway] = 'runway'</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
       <MinScaleDenominator>200000</MinScaleDenominator>
@@ -4123,6 +4104,26 @@
       </LineSymbolizer>
     </Rule-->
 </Style>
+<Style name="ferry-routes">
+    <Rule>
+      <MaxScaleDenominator>5000000</MaxScaleDenominator>
+      <MinScaleDenominator>500000</MinScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#66f</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>500000</MaxScaleDenominator>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#66f</CssParameter>
+        <CssParameter name="stroke-width">0.8</CssParameter>
+        <CssParameter name="stroke-dasharray">6,6</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
+
 <Style name="access">
      <Rule>
       <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
@@ -6216,148 +6217,294 @@
       </LineSymbolizer>
     </Rule>
 </Style>
-<Style name="roads-text">
+<Style name="roads-text-low-zoom">
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 1</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 2</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 3</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 4</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 5</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 6</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 7</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 8</Filter>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 1</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 2</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 3</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield3.png" type="png" width="31" height="17" min_distance="24" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 4</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 5</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 6</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 7</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 8</Filter>
       <MaxScaleDenominator>500000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 1</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 2</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 3</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 4</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 5</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 6</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 7</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
-      <MinScaleDenominator>100</MinScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 8</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <MinScaleDenominator>100000</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+</Style>
+<Style name="roads-text">
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 1</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 2</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 3</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 4</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 5</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 6</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 7</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'motorway' and [length] = 8</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/mot_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 1</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 2</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 3</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield3.png" type="png" width="31" height="17" min_distance="24" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 4</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 5</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 6</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 7</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'trunk' and [length] = 8</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/tru_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 1</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 2</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 3</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 4</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 5</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 6</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 7</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
+      <MinScaleDenominator>100</MinScaleDenominator>
+      <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'primary' and [length] = 8</Filter>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>100</MinScaleDenominator>
       <ShieldSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#fff" placement="line" file= "%SYMBOLS_DIR%/pri_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
     </Rule>
@@ -7155,15 +7302,30 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,highway,horse,bicycle,foot,construction,railway,aeroway,service,route,
+      (select way,highway,horse,bicycle,foot,construction,railway,aeroway,service,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
        from %PREFIX%_line
        where highway is not null
           or aeroway in ('runway','taxiway')
           or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','siding','platform')
-          or route='ferry'
        order by z_order) as roads
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="ferry-routes" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>ferry-routes</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+      (select way from %PREFIX%_line where route='ferry' ) as routes
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
@@ -7405,6 +7567,26 @@
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
       (select way,case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway from %PREFIX%_line where oneway is not null) as directions
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="planet roads text osm low zoom" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+     <StyleName>roads-text-low-zoom</StyleName>
+     <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+      (select way,highway,ref,char_length(ref) as length,
+       from %PREFIX%_roads
+       where highway in ('motorway','trunk','primary')
+         and ref is not null
+      ) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
