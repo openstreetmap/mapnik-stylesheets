@@ -7156,14 +7156,13 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,highway,horse,bicycle,foot,construction,railway,aeroway,service,route,
+      (select way,highway,horse,bicycle,foot,construction,railway,aeroway,service,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
        from planet_osm_line
        where highway is not null
           or aeroway in ('runway','taxiway')
           or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','siding','platform')
-          or route='ferry'
        order by z_order) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
