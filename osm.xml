@@ -1503,16 +1503,16 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">2.2</CssParameter>
+        <CssParameter name="stroke-width">2.4</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">1.4</CssParameter>
+        <CssParameter name="stroke">#f3f7f7</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([waterway]='stream' or [waterway]='drain')</Filter>
+      <Filter>([waterway]='stream' or [waterway]='drain') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
