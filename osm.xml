@@ -1281,6 +1281,11 @@
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
     </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'gate'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="10" fill="#aa66cc" halo_radius="1" wrap_width="10"/>
+    </Rule>
 </Style>
 <Style name="water_areas">
      <Rule>
@@ -7669,7 +7674,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,'yes'::text as point
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,'yes'::text as point
        from planet_osm_point
        where amenity is not null
           or leisure is not null
@@ -7680,6 +7685,7 @@
           or place='island'
           or highway='motorway_junction'
           or military='danger_area'
+          or aeroway='gate'
       ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
