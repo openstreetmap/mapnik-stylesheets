@@ -7587,7 +7587,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,highway,ref,char_length(ref) as length,
+      (select way,highway,ref,char_length(ref) as length
        from planet_osm_roads
        where highway in ('motorway','trunk','primary')
          and ref is not null
