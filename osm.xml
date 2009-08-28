@@ -1143,9 +1143,14 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='bar' or [amenity]='fast_food'</Filter>
+      <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='fast_food'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#734a08" dy="14" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity]='bar'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#734a08" dy="15" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[amenity]='cinema' or [amenity]='library' or [amenity]='theatre'</Filter>
