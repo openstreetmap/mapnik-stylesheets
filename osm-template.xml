@@ -1143,9 +1143,14 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Oblique" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='bar' or [amenity]='fast_food'</Filter>
+      <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='fast_food'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#734a08" dy="14" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity]='bar'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="10" fill="#734a08" dy="15" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[amenity]='cinema' or [amenity]='library' or [amenity]='theatre'</Filter>
@@ -1280,6 +1285,11 @@
       <Filter>[military] = 'danger_area'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Bold" size="9" fill="pink" halo_radius="1" wrap_width="10"/>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'gate'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="10" fill="#aa66cc" halo_radius="1" wrap_width="10"/>
     </Rule>
 </Style>
 <Style name="water_areas">
@@ -1503,16 +1513,16 @@
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">2.2</CssParameter>
+        <CssParameter name="stroke-width">2.4</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">1.4</CssParameter>
+        <CssParameter name="stroke">#f3f7f7</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([waterway]='stream' or [waterway]='drain')</Filter>
+      <Filter>([waterway]='stream' or [waterway]='drain') and not [tunnel]='yes'</Filter>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
@@ -7582,7 +7592,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,highway,ref,char_length(ref) as length,
+      (select way,highway,ref,char_length(ref) as length
        from %PREFIX%_roads
        where highway in ('motorway','trunk','primary')
          and ref is not null
@@ -7669,7 +7679,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,'yes'::text as point
+      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,'yes'::text as point
        from %PREFIX%_point
        where amenity is not null
           or leisure is not null
@@ -7680,6 +7690,7 @@
           or place='island'
           or highway='motorway_junction'
           or military='danger_area'
+          or aeroway='gate'
       ) as text
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
