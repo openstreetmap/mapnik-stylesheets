@@ -7707,7 +7707,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
+      (select way,aeroway,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
        from planet_osm_polygon
        where amenity is not null
           or leisure is not null

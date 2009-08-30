@@ -7707,7 +7707,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
+      (select way,aeroway,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
        from %PREFIX%_polygon
        where amenity is not null
           or leisure is not null
