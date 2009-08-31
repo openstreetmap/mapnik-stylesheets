@@ -1290,7 +1290,7 @@
     <Rule>
       <Filter>[amenity] = 'pharmacy'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#da0092" dy="12" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#da0092" dy="13" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
