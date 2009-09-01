@@ -229,9 +229,20 @@
       <PointSymbolizer file= "c:/mapnik/symbols/rental_bicycle.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/bus_stop_small.png" type="png" width="3" height="3" />
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/bus_stop.p.12.png" type="png" width="12" height="12" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='bus_station'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/bus_station.n.16.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
     <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -851,8 +862,20 @@
       <Filter>[aeroway] = 'apron'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <PolygonSymbolizer>
-         <CssParameter name="fill">#f0e0ff</CssParameter>
+         <CssParameter name="fill">#e9d1ff</CssParameter>
       </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'aerodrome'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#ccc</CssParameter>
+        <CssParameter name="fill-opacity">0.2</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">0.2</CssParameter>
+      </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[natural] = 'beach'</Filter>
@@ -1243,7 +1266,7 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#0092da" dy="13" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'fuel'</Filter>
+      <Filter>[amenity] = 'fuel' or [amenity]='bus_station'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#0092da" dy="14" halo_radius="1" wrap_width="0"/>
     </Rule>
@@ -6650,6 +6673,11 @@
       <TextSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#000" halo_radius="1"  min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
+      <Filter>([aeroway] = 'runway' or [aeroway]='taxiway') and not [bridge]='yes'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="10" fill="#333" halo_radius="1"  min_distance="18" spacing="750"/>
+    </Rule>
+    <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
@@ -7053,7 +7081,7 @@
        from planet_osm_polygon
        where landuse is not null
           or leisure is not null
-          or aeroway='apron'
+          or aeroway in ('apron','aerodrome')
           or man_made='pier'
           or amenity in ('parking','university','college','school','hospital','grave_yard')
           or military in ('barracks','danger_area')
@@ -7642,7 +7670,7 @@
       <Parameter name="user">postgres</Parameter>
       <Parameter name="dbname">osm</Parameter>
       <Parameter name="table">
-      (select way,highway,name,ref,char_length(ref) as length,
+      (select way,highway,aeroway,name,ref,char_length(ref) as length,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
        from planet_osm_line
        where waterway IS NULL
