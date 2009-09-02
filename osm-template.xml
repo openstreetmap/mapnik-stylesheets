@@ -157,6 +157,11 @@
       <PointSymbolizer file= "%SYMBOLS_DIR%/peak.png" type="png" width="8" height="8" />
     </Rule>
     <Rule>
+      <MaxScaleDenominator>50000</MaxScaleDenominator>
+      <Filter>[natural]='spring'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/spring.png" type="png" width="5" height="7" />
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>10000</MaxScaleDenominator>
       <Filter>[natural]='tree'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/tree.png" type="png" width="3" height="3" />
@@ -194,12 +199,12 @@
 </Style>
 <Style name="points">
      <Rule>
-      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <Filter>[tourism]='alpine_hut'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/alpinehut.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
-      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MaxScaleDenominator>100000</MaxScaleDenominator>
       <Filter>[amenity]='shelter'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/shelter2.p.16.png" type="png" width="16" height="16" />
     </Rule>
@@ -224,9 +229,20 @@
       <PointSymbolizer file= "%SYMBOLS_DIR%/rental_bicycle.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <MinScaleDenominator>5000</MinScaleDenominator>
+      <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/bus_stop_small.png" type="png" width="3" height="3" />
+    </Rule>
+    <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='bus_stop' or [highway]='bus_stop'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/bus_stop.p.12.png" type="png" width="12" height="12" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <Filter>[amenity]='bus_station'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/bus_station.n.16.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
     <Rule>
     <MaxScaleDenominator>5000</MaxScaleDenominator>
@@ -267,6 +283,11 @@
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='fuel'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/fuel.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[tourism]='guest_house'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/guest_house.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       <MaxScaleDenominator>25000</MaxScaleDenominator>
@@ -841,8 +862,20 @@
       <Filter>[aeroway] = 'apron'</Filter>
       <MaxScaleDenominator>200000</MaxScaleDenominator>
       <PolygonSymbolizer>
-         <CssParameter name="fill">#f0e0ff</CssParameter>
+         <CssParameter name="fill">#e9d1ff</CssParameter>
       </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'aerodrome'</Filter>
+      <MaxScaleDenominator>200000</MaxScaleDenominator>
+      <PolygonSymbolizer>
+         <CssParameter name="fill">#ccc</CssParameter>
+        <CssParameter name="fill-opacity">0.2</CssParameter>
+      </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke-width">0.2</CssParameter>
+      </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[natural] = 'beach'</Filter>
@@ -1203,6 +1236,21 @@
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
+      <Filter>[natural] = 'spring'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#6699cc" dy="10" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      <Filter>[tourism] = 'alpine_hut' or [amenity]='shelter'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#6699cc" dy="15" halo_radius="1"/>
+    </Rule>
+    <Rule>
+      <Filter>[tourism] = 'alpine_hut' or [amenity]='shelter'</Filter>
+      <MaxScaleDenominator>10000</MaxScaleDenominator>
+      <TextSymbolizer name="ele" face_name="DejaVu Sans Oblique" size="8" fill="#6699cc" dy="25" halo_radius="1"/>
+    </Rule>
+    <Rule>
       <Filter>[amenity] = 'bank'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="black" dy="16" halo_radius="1" wrap_width="0"/>
@@ -1210,10 +1258,15 @@
     <Rule>
       <Filter>[tourism] = 'hotel' or [tourism]='hostel'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#0092da" dy="16" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#0092da" dy="15" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'fuel'</Filter>
+      <Filter>[tourism]='guest_house'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#0092da" dy="13" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'fuel' or [amenity]='bus_station'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#0092da" dy="14" halo_radius="1" wrap_width="0"/>
     </Rule>
@@ -1260,7 +1313,7 @@
     <Rule>
       <Filter>[amenity] = 'pharmacy'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
-      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#da0092" dy="12" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="8" fill="#da0092" dy="13" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
@@ -3509,7 +3562,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='narrow_gauge' and not [tunnel]='yes'</Filter>
+      <Filter>([railway]='narrow_gauge' or [railway]='funicular') and not [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3518,7 +3571,7 @@
     <Rule>
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
-      <Filter>[railway]='narrow_gauge' and [tunnel]='yes'</Filter>
+      <Filter>([railway]='narrow_gauge' or [railway]='funicular') and [tunnel]='yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
         <CssParameter name="stroke-width">5</CssParameter>
@@ -6129,7 +6182,7 @@
     <Rule>
       <MaxScaleDenominator>2500000</MaxScaleDenominator>
       <MinScaleDenominator>1000000</MinScaleDenominator>
-      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
+      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge' or [railway]='funicular'</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#ccc</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -6157,7 +6210,7 @@
     <Rule>
       <MaxScaleDenominator>1000000</MaxScaleDenominator>
       <MinScaleDenominator>100000</MinScaleDenominator>
-      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge'</Filter>
+      <Filter>[railway] = 'tram' or [railway] = 'light_rail' or [railway] = 'narrow_gauge' or [railway]='funicular'</Filter>
        <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -6620,6 +6673,11 @@
       <TextSymbolizer name="ref" face_name="DejaVu Sans Bold" size="10" fill="#000" halo_radius="1"  min_distance="18" spacing="750"/>
     </Rule>
     <Rule>
+      <Filter>([aeroway] = 'runway' or [aeroway]='taxiway') and not [bridge]='yes'</Filter>
+      <MaxScaleDenominator>20000</MaxScaleDenominator>
+      <TextSymbolizer name="ref" face_name="DejaVu Sans Book" size="10" fill="#333" halo_radius="1"  min_distance="18" spacing="750"/>
+    </Rule>
+    <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
       <MaxScaleDenominator>75000</MaxScaleDenominator>
       <MinScaleDenominator>50000</MinScaleDenominator>
@@ -7023,7 +7081,7 @@
        from %PREFIX%_polygon
        where landuse is not null
           or leisure is not null
-          or aeroway='apron'
+          or aeroway in ('apron','aerodrome')
           or man_made='pier'
           or amenity in ('parking','university','college','school','hospital','grave_yard')
           or military in ('barracks','danger_area')
@@ -7318,7 +7376,7 @@
        from %PREFIX%_line
        where highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','rail','subway','tram','spur','siding','platform')
+          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform')
        order by z_order) as roads
       </Parameter>
       <Parameter name="estimate_extent">false</Parameter>
@@ -7612,7 +7670,7 @@
       <Parameter name="password">%DBPASS%</Parameter>
       <Parameter name="dbname">%DBNAME%</Parameter>
       <Parameter name="table">
-      (select way,highway,name,ref,char_length(ref) as length,
+      (select way,highway,aeroway,name,ref,char_length(ref) as length,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
        from %PREFIX%_line
        where waterway IS NULL
