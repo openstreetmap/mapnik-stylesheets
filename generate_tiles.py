@@ -2,9 +2,13 @@
 from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
+from Queue import Queue
+import mapnik
+import threading
 
 DEG_TO_RAD = pi/180
 RAD_TO_DEG = 180/pi
+MAX_ZOOM = 18
 
 def minmax (a,b,c):
     a = max(a,b)
@@ -40,22 +44,89 @@ class GoogleProjection:
          h = RAD_TO_DEG * ( 2 * atan(exp(g)) - 0.5 * pi)
          return (f,h)
 
-from mapnik import *
 
-def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
+
+class RenderThread:
+    def __init__(self, tile_dir, mapfile, q, printLock):
+        self.tile_dir = tile_dir
+        self.q = q
+        self.m = mapnik.Map(256, 256)
+        self.printLock = printLock
+        # Load style XML
+        mapnik.load_map(self.m, mapfile, True)
+        # Obtain <Map> projection
+        self.prj = mapnik.Projection(self.m.srs)
+        # Projects between tile pixel co-ordinates and LatLong (EPSG:4326)
+        self.tileproj = GoogleProjection(MAX_ZOOM)
+
+
+    def render_tile(self, tile_uri, x, y, z):
+        # Calculate pixel positions of bottom-left & top-right
+        p0 = (x * 256, (y + 1) * 256)
+        p1 = ((x + 1) * 256, y * 256)
+
+        # Convert to LatLong (EPSG:4326)
+        l0 = self.tileproj.fromPixelToLL(p0, z);
+        l1 = self.tileproj.fromPixelToLL(p1, z);
+
+        # Convert to map projection (e.g. mercator co-ords EPSG:900913)
+        c0 = self.prj.forward(mapnik.Coord(l0[0],l0[1]))
+        c1 = self.prj.forward(mapnik.Coord(l1[0],l1[1]))
+
+        # Bounding box for the tile
+        bbox = mapnik.Envelope(c0.x,c0.y, c1.x,c1.y)
+        render_size = 256
+        self.m.resize(render_size, render_size)
+        self.m.zoom_to_box(bbox)
+        self.m.buffer_size = 128
+
+        # Render image with default Agg renderer
+        im = mapnik.Image(render_size, render_size)
+        mapnik.render(self.m, im)
+        im.save(tile_uri, 'png256')
+
+
+    def loop(self):
+        while True:
+            #Fetch a tile from the queue and render it
+            (name, tile_uri, x, y, z) = self.q.get()
+            exists= ""
+            if os.path.isfile(tile_uri):
+                exists= "exists"
+            else:
+                self.render_tile(tile_uri, x, y, z)
+            bytes=os.stat(tile_uri)[6]
+            empty= ''
+            if bytes == 103:
+                empty = " Empty Tile "
+            self.printLock.acquire()
+            print name, ":", z, x, y, exists, empty
+            self.printLock.release()
+            self.q.task_done()
+
+
+def start_renderers(num_threads, tile_dir, mapfile, q):
+    # Need a lock to prevent output getting jumbled
+    printLock = threading.Lock()
+    for i in range(num_threads):
+        renderer = RenderThread(tile_dir, mapfile, q, printLock)
+        render_thread = threading.Thread(target=renderer.loop)
+        render_thread.setDaemon(True)
+        render_thread.start()
+        print "Started render thread %s" % render_thread.getName()
+
+
+def render_tiles(q, bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
     print "render_tiles(",bbox, mapfile, tile_dir, minZoom,maxZoom, name,")"
 
     if not os.path.isdir(tile_dir):
          os.mkdir(tile_dir)
 
     gprj = GoogleProjection(maxZoom+1) 
-    m = Map(2 * 256,2 * 256)
-    load_map(m,mapfile)
-    prj = Projection("+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over")
-    
+
     ll0 = (bbox[0],bbox[3])
     ll1 = (bbox[2],bbox[1])
-    
+
     for z in range(minZoom,maxZoom + 1):
         px0 = gprj.fromLLtoPixel(ll0,z)
         px1 = gprj.fromLLtoPixel(ll1,z)
@@ -65,44 +136,25 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
         if not os.path.isdir(tile_dir + zoom):
             os.mkdir(tile_dir + zoom)
         for x in range(int(px0[0]/256.0),int(px1[0]/256.0)+1):
+            # Validate x co-ordinate
+            if (x < 0) or (x >= 2**z):
+                continue
             # check if we have directories in place
             str_x = "%s" % x
             if not os.path.isdir(tile_dir + zoom + '/' + str_x):
                 os.mkdir(tile_dir + zoom + '/' + str_x)
             for y in range(int(px0[1]/256.0),int(px1[1]/256.0)+1):
-                p0 = gprj.fromPixelToLL((x * 256.0, (y+1) * 256.0),z)
-                p1 = gprj.fromPixelToLL(((x+1) * 256.0, y * 256.0),z)
-
-                # render a new tile and store it on filesystem
-                c0 = prj.forward(Coord(p0[0],p0[1]))
-                c1 = prj.forward(Coord(p1[0],p1[1]))
-            
-                bbox = Envelope(c0.x,c0.y,c1.x,c1.y)
-                bbox.width(bbox.width() * 2)
-                bbox.height(bbox.height() * 2)
-                m.zoom_to_box(bbox)
-                
+                # Validate x co-ordinate
+                if (y < 0) or (y >= 2**z):
+                    continue
                 str_y = "%s" % y
-
                 tile_uri = tile_dir + zoom + '/' + str_x + '/' + str_y + '.png'
+                # Submit tile to be rendered into the queue
+                t = (name, tile_uri, x, y, z)
+                q.put(t)
+    # wait for pending rendering jobs to complete
+    q.join()
 
-		exists= ""
-                if os.path.isfile(tile_uri):
-                    exists= "exists"
-                else:
-                    im = Image(512, 512)
-                    render(m, im)
-                    view = im.view(128,128,256,256) # x,y,width,height
-                    view.save(tile_uri,'png')
-                    command = "convert  -colors 255 %s %s" % (tile_uri,tile_uri)
-                    call(command, shell=True)
-
-                bytes=os.stat(tile_uri)[6]
-		empty= ''
-                if bytes == 137:
-                    empty = " Empty Tile "
-
-                print name,"[",minZoom,"-",maxZoom,"]: " ,z,x,y,"p:",p0,p1,exists, empty
 
 if __name__ == "__main__":
     home = os.environ['HOME']
@@ -115,6 +167,12 @@ if __name__ == "__main__":
     except KeyError:
         tile_dir = home + "/osm/tiles/"
 
+    # Number of rendering threads to spawn, should be roughly equal to number of CPU cores available
+    NUM_THREADS = 4
+
+    queue = Queue(32)
+    start_renderers(NUM_THREADS, tile_dir, mapfile, queue)
+
     #-------------------------------------------------------------------------
     #
     # Change the following for different bounding boxes and zoom levels
@@ -123,46 +181,47 @@ if __name__ == "__main__":
     # World
     bbox = (-180.0,-90.0, 180.0,90.0)
 
-    render_tiles(bbox, mapfile, tile_dir, 0, 5, "World")
+    render_tiles(queue, bbox, mapfile, tile_dir, 0, 4, "World")
+
 
     minZoom = 10
     maxZoom = 16
     bbox = (-2, 50.0,1.0,52.0)
-    render_tiles(bbox, mapfile, tile_dir, minZoom, maxZoom)
+    render_tiles(queue, bbox, mapfile, tile_dir, minZoom, maxZoom)
 
     # Muenchen
     bbox = (11.4,48.07, 11.7,48.22)
-    render_tiles(bbox, mapfile, tile_dir, 1, 12 , "Muenchen")
+    render_tiles(queue, bbox, mapfile, tile_dir, 1, 12 , "Muenchen")
 
     # Muenchen+
     bbox = (11.3,48.01, 12.15,48.44)
-    render_tiles(bbox, mapfile, tile_dir, 7, 12 , "Muenchen+")
+    render_tiles(queue, bbox, mapfile, tile_dir, 7, 12 , "Muenchen+")
 
     # Muenchen++
     bbox = (10.92,47.7, 12.24,48.61)
-    render_tiles(bbox, mapfile, tile_dir, 7, 12 , "Muenchen++")
+    render_tiles(queue, bbox, mapfile, tile_dir, 7, 12 , "Muenchen++")
 
     # Nuernberg
     bbox=(10.903198,49.560441,49.633534,11.038085)
-    render_tiles(bbox, mapfile, tile_dir, 10, 16, "Nuernberg")
+    render_tiles(queue, bbox, mapfile, tile_dir, 10, 16, "Nuernberg")
 
     # Karlsruhe
     bbox=(8.179113,48.933617,8.489252,49.081707)
-    render_tiles(bbox, mapfile, tile_dir, 10, 16, "Karlsruhe")
+    render_tiles(queue, bbox, mapfile, tile_dir, 10, 16, "Karlsruhe")
 
     # Karlsruhe+
     bbox = (8.3,48.95,8.5,49.05)
-    render_tiles(bbox, mapfile, tile_dir, 1, 16, "Karlsruhe+")
+    render_tiles(queue, bbox, mapfile, tile_dir, 1, 16, "Karlsruhe+")
 
     # Augsburg
     bbox = (8.3,48.95,8.5,49.05)
-    render_tiles(bbox, mapfile, tile_dir, 1, 16, "Augsburg")
+    render_tiles(queue, bbox, mapfile, tile_dir, 1, 16, "Augsburg")
 
     # Augsburg+
     bbox=(10.773251,48.369594,10.883834,48.438577)
-    render_tiles(bbox, mapfile, tile_dir, 10, 14, "Augsburg+")
+    render_tiles(queue, bbox, mapfile, tile_dir, 10, 14, "Augsburg+")
 
     # Europe+
     bbox = (1.0,10.0, 20.6,50.0)
-    render_tiles(bbox, mapfile, tile_dir, 1, 11 , "Europe+")
+    render_tiles(queue, bbox, mapfile, tile_dir, 1, 11 , "Europe+")
 
