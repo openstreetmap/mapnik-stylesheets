@@ -8,7 +8,10 @@ import threading
 
 DEG_TO_RAD = pi/180
 RAD_TO_DEG = 180/pi
-MAX_ZOOM = 18
+
+# Default number of rendering threads to spawn, should be roughly equal to number of CPU cores available
+NUM_THREADS = 4
+
 
 def minmax (a,b,c):
     a = max(a,b)
@@ -47,7 +50,7 @@ class GoogleProjection:
 
 
 class RenderThread:
-    def __init__(self, tile_dir, mapfile, q, printLock):
+    def __init__(self, tile_dir, mapfile, q, printLock, maxZoom):
         self.tile_dir = tile_dir
         self.q = q
         self.m = mapnik.Map(256, 256)
@@ -57,7 +60,7 @@ class RenderThread:
         # Obtain <Map> projection
         self.prj = mapnik.Projection(self.m.srs)
         # Projects between tile pixel co-ordinates and LatLong (EPSG:4326)
-        self.tileproj = GoogleProjection(MAX_ZOOM)
+        self.tileproj = GoogleProjection(maxZoom+1)
 
 
     def render_tile(self, tile_uri, x, y, z):
@@ -89,7 +92,13 @@ class RenderThread:
     def loop(self):
         while True:
             #Fetch a tile from the queue and render it
-            (name, tile_uri, x, y, z) = self.q.get()
+            r = self.q.get()
+            if (r == None):
+                self.q.task_done()
+                break
+            else:
+                (name, tile_uri, x, y, z) = r
+
             exists= ""
             if os.path.isfile(tile_uri):
                 exists= "exists"
@@ -105,19 +114,20 @@ class RenderThread:
             self.q.task_done()
 
 
-def start_renderers(num_threads, tile_dir, mapfile, q):
-    # Need a lock to prevent output getting jumbled
-    printLock = threading.Lock()
-    for i in range(num_threads):
-        renderer = RenderThread(tile_dir, mapfile, q, printLock)
-        render_thread = threading.Thread(target=renderer.loop)
-        render_thread.setDaemon(True)
-        render_thread.start()
-        print "Started render thread %s" % render_thread.getName()
 
-
-def render_tiles(q, bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown"):
+def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", num_threads=NUM_THREADS):
     print "render_tiles(",bbox, mapfile, tile_dir, minZoom,maxZoom, name,")"
+
+    # Launch rendering threads
+    queue = Queue(32)
+    printLock = threading.Lock()
+    renderers = {}
+    for i in range(num_threads):
+        renderer = RenderThread(tile_dir, mapfile, queue, printLock, maxZoom)
+        render_thread = threading.Thread(target=renderer.loop)
+        render_thread.start()
+        #print "Started render thread %s" % render_thread.getName()
+        renderers[i] = render_thread
 
     if not os.path.isdir(tile_dir):
          os.mkdir(tile_dir)
@@ -151,9 +161,16 @@ def render_tiles(q, bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown
                 tile_uri = tile_dir + zoom + '/' + str_x + '/' + str_y + '.png'
                 # Submit tile to be rendered into the queue
                 t = (name, tile_uri, x, y, z)
-                q.put(t)
+                queue.put(t)
+
+    # Signal render threads to exit by sending empty request to queue
+    for i in range(num_threads):
+        queue.put(None)
     # wait for pending rendering jobs to complete
-    q.join()
+    queue.join()
+    for i in range(num_threads):
+        renderers[i].join()
+
 
 
 if __name__ == "__main__":
@@ -167,11 +184,7 @@ if __name__ == "__main__":
     except KeyError:
         tile_dir = home + "/osm/tiles/"
 
-    # Number of rendering threads to spawn, should be roughly equal to number of CPU cores available
-    NUM_THREADS = 4
 
-    queue = Queue(32)
-    start_renderers(NUM_THREADS, tile_dir, mapfile, queue)
 
     #-------------------------------------------------------------------------
     #
@@ -181,7 +194,7 @@ if __name__ == "__main__":
     # World
     bbox = (-180.0,-90.0, 180.0,90.0)
 
-    render_tiles(queue, bbox, mapfile, tile_dir, 0, 4, "World")
+    render_tiles(bbox, mapfile, tile_dir, 0, 5, "World")
 
 
     minZoom = 10
