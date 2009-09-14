@@ -306,6 +306,11 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='embassy'</Filter>
+      <PointSymbolizer file= "c:/mapnik/symbols/embassy.png" type="png" width="12" height="12" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='library'</Filter>
       <PointSymbolizer file= "c:/mapnik/symbols/library.p.20.png" type="png" width="20" height="20" />
     </Rule>
@@ -1259,6 +1264,11 @@
       <Filter>[tourism] = 'hotel' or [tourism]='hostel'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="10" fill="#0092da" dy="15" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'embassy'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" face_name="DejaVu Sans Book" size="9" fill="#0092da" dy="13" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[tourism]='guest_house'</Filter>
