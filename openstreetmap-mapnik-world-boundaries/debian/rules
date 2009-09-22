@@ -37,7 +37,7 @@ install: build
 
 #	./debian/update_svn_revision.sh
 
-	./debian/update_world_boundaries_dir.sh
+	bash ./debian/update_world_boundaries_dir.sh
 
 # Build architecture-independent files here.
 binary-indep: build install
