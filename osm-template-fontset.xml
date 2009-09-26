@@ -318,6 +318,11 @@
     </Rule>
     <Rule>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <Filter>[amenity]='embassy'</Filter>
+      <PointSymbolizer file= "%SYMBOLS_DIR%/embassy.png" type="png" width="12" height="12" />
+    </Rule>
+    <Rule>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
       <Filter>[amenity]='library'</Filter>
       <PointSymbolizer file= "%SYMBOLS_DIR%/library.p.20.png" type="png" width="20" height="20" />
     </Rule>
@@ -1271,6 +1276,11 @@
       <Filter>[tourism] = 'hotel' or [tourism]='hostel'</Filter>
       <MaxScaleDenominator>5000</MaxScaleDenominator>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0092da" dy="15" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'embassy'</Filter>
+      <MaxScaleDenominator>5000</MaxScaleDenominator>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0092da" dy="13" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[tourism]='guest_house'</Filter>
@@ -2600,10 +2610,10 @@
     <Rule>
       <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
+      <MinScaleDenominator>15000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2611,31 +2621,31 @@
     <Rule>
       <Filter>[highway] = 'service' and [tunnel]='yes'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
+      <MinScaleDenominator>15000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MaxScaleDenominator>15000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
    </Rule>
    <Rule>
       <Filter>[highway] = 'service' and [tunnel]='yes'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MaxScaleDenominator>15000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#999</CssParameter>
-        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
    </Rule>
@@ -3853,7 +3863,7 @@
     <Rule>
       <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
+      <MinScaleDenominator>15000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -3861,7 +3871,7 @@
    </Rule>
    <Rule>
       <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MaxScaleDenominator>15000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -3948,14 +3958,14 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-opacity">0.4</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">green</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>  
@@ -3964,14 +3974,14 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-opacity">0.4</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">salmon</CssParameter>
-        <CssParameter name="stroke-width">2.0</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-dasharray">1,3</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -4027,14 +4037,14 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-opacity">0.4</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">blue</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
         <CssParameter name="stroke-dasharray">1,3</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -4045,14 +4055,14 @@
       <MaxScaleDenominator>100000</MaxScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-opacity">0.4</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffcc00</CssParameter>
-        <CssParameter name="stroke-width">2.0</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-dasharray">3,4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -4083,14 +4093,14 @@
       <MinScaleDenominator>50000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-width">3.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
         <CssParameter name="stroke-opacity">0.4</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#debd9c</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
         <CssParameter name="stroke-dasharray">2,4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -4867,7 +4877,7 @@
     <Rule>
       <Filter>[highway] = 'service'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
+      <MinScaleDenominator>15000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -4875,7 +4885,7 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'service'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MaxScaleDenominator>15000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -5120,7 +5130,7 @@
     <Rule>
       <Filter>[highway] = 'service'</Filter>
       <MaxScaleDenominator>50000</MaxScaleDenominator>
-      <MinScaleDenominator>25000</MinScaleDenominator>
+      <MinScaleDenominator>15000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -5130,7 +5140,7 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'service'</Filter>
-      <MaxScaleDenominator>25000</MaxScaleDenominator>
+      <MaxScaleDenominator>15000</MaxScaleDenominator>
       <MinScaleDenominator>1000</MinScaleDenominator>
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -6687,7 +6697,7 @@
     <Rule>
       <Filter>([aeroway] = 'runway' or [aeroway]='taxiway') and not [bridge]='yes'</Filter>
       <MaxScaleDenominator>20000</MaxScaleDenominator>
-      <TextSymbolizer name="ref" fontset_name="book-fonts" size="10" fill="#333" halo_radius="1"  min_distance="18" spacing="750"/>
+      <TextSymbolizer name="ref" fontset_name="book-fonts" size="10" fill="#333" halo_radius="1"  min_distance="18" spacing="750" placement="line"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' or [highway] = 'primary'</Filter>
@@ -7695,50 +7705,6 @@
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
 </Layer>
-<Layer name="interpolation_lines" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-     <StyleName>interpolation</StyleName>
-     <Datasource>
-      <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">%DBHOST%</Parameter>
-      <Parameter name="port">%DBPORT%</Parameter>
-      <Parameter name="user">%DBUSER%</Parameter>
-      <Parameter name="password">%DBPASS%</Parameter>
-      <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">      
-       (select way from %PREFIX%_line where "addr:interpolation" is not null) as interpolation
-      </Parameter>
-      <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-    </Datasource>
-</Layer>
-<Layer name="housenumb_ways" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <StyleName>way_numbers</StyleName>
-    <Datasource>
-      <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">%DBHOST%</Parameter>
-      <Parameter name="port">%DBPORT%</Parameter>
-      <Parameter name="user">%DBUSER%</Parameter>
-      <Parameter name="password">%DBPASS%</Parameter>
-      <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select way,"addr:housenumber" from %PREFIX%_polygon where "addr:housenumber" is not null and building is not null) as way_numbers</Parameter>
-      <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-    </Datasource>
-</Layer>
-<Layer name="housenumb_nodes" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
-    <StyleName>node_numbers</StyleName>
-    <Datasource>
-      <Parameter name="type">postgis</Parameter>
-      <Parameter name="host">%DBHOST%</Parameter>
-      <Parameter name="port">%DBPORT%</Parameter>
-      <Parameter name="user">%DBUSER%</Parameter>
-      <Parameter name="password">%DBPASS%</Parameter>
-      <Parameter name="dbname">%DBNAME%</Parameter>
-      <Parameter name="table">(select way,"addr:housenumber" from %PREFIX%_point where "addr:housenumber" is not null) as node_numbers</Parameter>
-      <Parameter name="estimate_extent">false</Parameter>
-      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
-    </Datasource>
-</Layer>
 <Layer name="text" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
     <StyleName>text</StyleName>
     <Datasource>
@@ -7810,6 +7776,50 @@
        order by z_order,way_area desc
       ) as text
       </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="interpolation_lines" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+     <StyleName>interpolation</StyleName>
+     <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">
+       (select way from %PREFIX%_line where "addr:interpolation" is not null) as interpolation
+      </Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="housenumb_ways" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>way_numbers</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">(select way,"addr:housenumber" from %PREFIX%_polygon where "addr:housenumber" is not null and building is not null) as way_numbers</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+    </Datasource>
+</Layer>
+<Layer name="housenumb_nodes" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <StyleName>node_numbers</StyleName>
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="host">%DBHOST%</Parameter>
+      <Parameter name="port">%DBPORT%</Parameter>
+      <Parameter name="user">%DBUSER%</Parameter>
+      <Parameter name="password">%DBPASS%</Parameter>
+      <Parameter name="dbname">%DBNAME%</Parameter>
+      <Parameter name="table">(select way,"addr:housenumber" from %PREFIX%_point where "addr:housenumber" is not null) as node_numbers</Parameter>
       <Parameter name="estimate_extent">false</Parameter>
       <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
     </Datasource>
