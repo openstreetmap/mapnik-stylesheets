@@ -184,8 +184,6 @@ if __name__ == "__main__":
     except KeyError:
         tile_dir = home + "/osm/tiles/"
 
-
-
     #-------------------------------------------------------------------------
     #
     # Change the following for different bounding boxes and zoom levels
@@ -196,45 +194,44 @@ if __name__ == "__main__":
 
     render_tiles(bbox, mapfile, tile_dir, 0, 5, "World")
 
-
     minZoom = 10
     maxZoom = 16
     bbox = (-2, 50.0,1.0,52.0)
-    render_tiles(queue, bbox, mapfile, tile_dir, minZoom, maxZoom)
+    render_tiles(bbox, mapfile, tile_dir, minZoom, maxZoom)
 
     # Muenchen
     bbox = (11.4,48.07, 11.7,48.22)
-    render_tiles(queue, bbox, mapfile, tile_dir, 1, 12 , "Muenchen")
+    render_tiles(bbox, mapfile, tile_dir, 1, 12 , "Muenchen")
 
     # Muenchen+
     bbox = (11.3,48.01, 12.15,48.44)
-    render_tiles(queue, bbox, mapfile, tile_dir, 7, 12 , "Muenchen+")
+    render_tiles(bbox, mapfile, tile_dir, 7, 12 , "Muenchen+")
 
     # Muenchen++
     bbox = (10.92,47.7, 12.24,48.61)
-    render_tiles(queue, bbox, mapfile, tile_dir, 7, 12 , "Muenchen++")
+    render_tiles(bbox, mapfile, tile_dir, 7, 12 , "Muenchen++")
 
     # Nuernberg
     bbox=(10.903198,49.560441,49.633534,11.038085)
-    render_tiles(queue, bbox, mapfile, tile_dir, 10, 16, "Nuernberg")
+    render_tiles(bbox, mapfile, tile_dir, 10, 16, "Nuernberg")
 
     # Karlsruhe
     bbox=(8.179113,48.933617,8.489252,49.081707)
-    render_tiles(queue, bbox, mapfile, tile_dir, 10, 16, "Karlsruhe")
+    render_tiles(bbox, mapfile, tile_dir, 10, 16, "Karlsruhe")
 
     # Karlsruhe+
     bbox = (8.3,48.95,8.5,49.05)
-    render_tiles(queue, bbox, mapfile, tile_dir, 1, 16, "Karlsruhe+")
+    render_tiles(bbox, mapfile, tile_dir, 1, 16, "Karlsruhe+")
 
     # Augsburg
     bbox = (8.3,48.95,8.5,49.05)
-    render_tiles(queue, bbox, mapfile, tile_dir, 1, 16, "Augsburg")
+    render_tiles(bbox, mapfile, tile_dir, 1, 16, "Augsburg")
 
     # Augsburg+
     bbox=(10.773251,48.369594,10.883834,48.438577)
-    render_tiles(queue, bbox, mapfile, tile_dir, 10, 14, "Augsburg+")
+    render_tiles(bbox, mapfile, tile_dir, 10, 14, "Augsburg+")
 
     # Europe+
     bbox = (1.0,10.0, 20.6,50.0)
-    render_tiles(queue, bbox, mapfile, tile_dir, 1, 11 , "Europe+")
+    render_tiles(bbox, mapfile, tile_dir, 1, 11 , "Europe+")
 
