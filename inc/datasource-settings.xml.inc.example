@@ -1,0 +1,8 @@
+<Parameter name="type">postgis</Parameter>
+<Parameter name="password">%DBPASS%</Parameter>
+<Parameter name="host">%DBHOST%</Parameter>
+<Parameter name="port">%DBPORT%</Parameter>
+<Parameter name="user">%DBUSER%</Parameter>
+<Parameter name="dbname">%DBNAME%</Parameter>
+<Parameter name="estimate_extent">false</Parameter>
+<Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
