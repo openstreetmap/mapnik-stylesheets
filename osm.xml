@@ -1322,6 +1322,11 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000033" dy="16" halo_radius="2" wrap_width="12"/>
     </Rule>
     <Rule>
+      <Filter>[man_made] = 'windmill'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#734a08" dy="12" halo_radius="1" wrap_width="20"/>
+    </Rule>
+    <Rule>
       <Filter>[amenity] = 'hospital'</Filter>
       &maxscale_zoom16;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="16" halo_radius="2" wrap_width="12"/>
@@ -7461,7 +7466,7 @@
           or landuse is not null
           or tourism is not null
           or "natural" is not null
-          or man_made='lighthouse'
+          or man_made in ('lighthouse','windmill')
           or place='island'
           or highway='motorway_junction'
           or military='danger_area'
@@ -7482,7 +7487,7 @@
           or landuse is not null
           or tourism is not null
           or "natural" is not null
-          or man_made='lighthouse'
+          or man_made in ('lighthouse','windmill')
           or place='island'
           or military='danger_area'
       ) as text
