@@ -820,7 +820,7 @@
     </Rule>
      <Rule>
       <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
-      &maxscale_zoom10;
+      &maxscale_zoom9;
       <PolygonSymbolizer>
         <CssParameter name="fill">#aed1a0</CssParameter>
      </PolygonSymbolizer>
