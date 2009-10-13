@@ -8,33 +8,6 @@
      that necessitate an upgrade to at least mapnik 0.6.1 -->
 <Map bgcolor="#b5d0d0" srs="&srs900913;">
   &fontset-settings;
-<Style name="world">
-    <Rule>
-      &maxscale_zoom0;
-      &minscale_zoom9;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f2efe9</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-</Style>
-<Style name="coast-poly">
-    <Rule>
-      &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f2efe9</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-</Style>
-  <!-- BUILTUP VMAP0 -->
-<Style name="builtup">
-    <Rule>
-      &maxscale_zoom8;
-      &minscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ddd</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-</Style>
 <Style name="turning_circle">
     <Rule>
       &maxscale_zoom15;
@@ -926,77 +899,6 @@
       </PolygonSymbolizer>
     </Rule>
 </Style>
-<Style name="buildings">
-    <Rule>
-      <Filter>[railway] = 'station' or [building] = 'station'</Filter>
-      &maxscale_zoom10;
-     <PolygonSymbolizer>
-         <CssParameter name="fill">#d4aaaa</CssParameter>
-     </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[building] = 'supermarket'</Filter>
-      &maxscale_zoom10;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">pink</CssParameter>
-         <CssParameter name="fill-opacity">0.5</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'place_of_worship'</Filter>
-      &maxscale_zoom10;
-      &minscale_zoom14;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#777</CssParameter>
-         <CssParameter name="fill-opacity">0.5</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[amenity] = 'place_of_worship'</Filter>
-      &maxscale_zoom15;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#777</CssParameter>
-         <CssParameter name="fill-opacity">0.5</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#111</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-     <Rule>
-      <Filter>[leisure]='track'</Filter>
-      &maxscale_zoom10;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#74dcba</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#888</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
-      &maxscale_zoom10;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#cc9999</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[aeroway] = 'terminal'</Filter>
-      &maxscale_zoom12;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#cc99ff</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[aeroway] = 'terminal'</Filter>
-      &maxscale_zoom14;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#330066</CssParameter>
-        <CssParameter name="stroke-width">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-</Style>
 <Style name="area-text">
     <Rule>
       <Filter>[way_area] &gt;= 150000</Filter>
@@ -1017,166 +919,6 @@
       <Filter>[way_area] &lt; 20000</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
-    </Rule>
-</Style>
-<Style name="country">
-    <Rule>
-      <Filter>[place] = 'country'</Filter>
-      &maxscale_zoom2;
-      &minscale_zoom3;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'country'</Filter>
-      &maxscale_zoom4;
-      &minscale_zoom6;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="state">
-    <Rule>
-      <Filter>[place] = 'state'</Filter>
-      &maxscale_zoom4;
-      &minscale_zoom4;
-      <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'state'</Filter>
-      &maxscale_zoom5;
-      &minscale_zoom6;
-      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'state'</Filter>
-      &maxscale_zoom7;
-      &minscale_zoom8;
-      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="capital">
-     <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
-      &maxscale_zoom4;
-      &minscale_zoom5;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
-      &maxscale_zoom6;
-      &minscale_zoom8;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
-      &maxscale_zoom9;
-      &minscale_zoom10;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
-      &maxscale_zoom11;
-      &minscale_zoom14;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="city">
-    <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
-      &maxscale_zoom6;
-      &minscale_zoom8;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
-      &maxscale_zoom9;
-      &minscale_zoom10;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
-      &maxscale_zoom11;
-      &minscale_zoom14;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="town">
-    <Rule>
-      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
-      &maxscale_zoom9;
-      &minscale_zoom10;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" halo_radius="1" wrap_width="20"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
-      &maxscale_zoom11;
-      &minscale_zoom13;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" halo_radius="1" wrap_width="20"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'town' or [place]='large_town' or [place]='small_town'</Filter>
-      &maxscale_zoom14;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#777777" halo_radius="1" wrap_width="20"/>
-    </Rule>
-</Style>
-<Style name="suburb">
-    <Rule>
-      <Filter>[place] = 'suburb'</Filter>
-      &maxscale_zoom12;
-      &minscale_zoom13;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'suburb'</Filter>
-      &maxscale_zoom14;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="13" fill="#777777" halo_radius="1" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="village">
-    <Rule>
-      <Filter>[place] = 'village' or [place]='large_village'</Filter>
-      &maxscale_zoom12;
-      &minscale_zoom14;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'village' or [place]='large_village'</Filter>
-      &maxscale_zoom15;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="12" fill="#777777" halo_radius="1" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="hamlet">
-    <Rule>
-      <Filter>[place] = 'hamlet' or [place] = 'locality'</Filter>
-      &maxscale_zoom14;
-      &minscale_zoom15;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" halo_radius="1" wrap_width="0"/>
-    </Rule>
-    <Rule>
-      <Filter>[place] = 'hamlet' or [place] = 'locality'</Filter>
-      &maxscale_zoom16;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="interpolation">
-    <Rule>
-      &maxscale_zoom17;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-        <CssParameter name="stroke-dasharray">2,4</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-</Style>
-<Style name="way_numbers">
-    <Rule>
-      &maxscale_zoom17;
-      <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#555" dy="0" halo_radius="0" wrap_width="0"/>
-    </Rule>
-</Style>
-<Style name="node_numbers">
-    <Rule>
-      &maxscale_zoom17;
-      <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#555" dy="0" halo_radius="1" halo_fill="#eee" wrap_width="0"/>
     </Rule>
 </Style>
 <Style name="text">
@@ -1631,58 +1373,6 @@
       <Filter>[waterway]='dam'</Filter>
       &maxscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#222" halo_radius="1"/>
-    </Rule>
-</Style>
-<Style name="power">
-    <Rule>
-      &maxscale_zoom14;
-      &minscale_zoom15;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#777</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-      </LineSymbolizer>
-    </Rule> 
-    <Rule>
-      &maxscale_zoom16;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#777</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
-      </LineSymbolizer>
-    </Rule> 
-</Style>
-<Style name="citywalls">
-    <Rule>
-      &maxscale_zoom14;
-      &minscale_zoom14;
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
-        <CssParameter name="stroke-opacity">0.8</CssParameter>
-      </LineSymbolizer>
-    </Rule> 
-    <Rule>
-      &maxscale_zoom15;
-      &minscale_zoom15;
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
-        <CssParameter name="stroke-opacity">0.8</CssParameter>
-      </LineSymbolizer>
-    </Rule> 
-    <Rule>
-      &maxscale_zoom16;
-      &minscale_zoom18;
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-        <CssParameter name="stroke-width">9</CssParameter>
-        <CssParameter name="stroke-opacity">0.8</CssParameter>
-      </LineSymbolizer>
-    </Rule> 
-</Style>
-<Style name="power_towers">
-    <Rule>
-      &maxscale_zoom14;
-      <PointSymbolizer file="&symbols;/power_tower.png" type="png" width="7" height="7" allow_overlap="false"/>
     </Rule>
 </Style>
 <Style name="tunnels-casing">
@@ -4188,25 +3878,6 @@
       </LineSymbolizer>
     </Rule-->
 </Style>
-<Style name="ferry-routes">
-    <Rule>
-      &maxscale_zoom7;
-      &minscale_zoom10;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#66f</CssParameter>
-        <CssParameter name="stroke-width">0.4</CssParameter>
-        <CssParameter name="stroke-dasharray">4,4</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      &maxscale_zoom11;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#66f</CssParameter>
-        <CssParameter name="stroke-width">0.8</CssParameter>
-        <CssParameter name="stroke-dasharray">6,6</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-</Style>
 
 <Style name="access">
      <Rule>
@@ -4256,20 +3927,6 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
-    </Rule>
-</Style>
-<Style name="aerialways">
-    <Rule>
-      <Filter>[aerialway] = 'cable_car' or [aerialway]='gondola'</Filter>
-      &maxscale_zoom12;
-      &minscale_zoom18;
-      <LinePatternSymbolizer file="&symbols;/cable_car.png" type="png" width="28" height="3" />
-    </Rule>
-    <Rule>
-      <Filter>[aerialway] = 'chair_lift' or [aerialway]='drag_lift'</Filter>
-      &maxscale_zoom12;
-      &minscale_zoom18;
-      <LinePatternSymbolizer file="&symbols;/chair_lift.png" type="png" width="30" height="5" />
     </Rule>
 </Style>
 <Style name="footbikecycle-tunnels">
@@ -6933,150 +6590,8 @@
         <TextSymbolizer name="name" fontset_name="bold-fonts" size="11" fill="#9c9" halo_radius="1" wrap_width="14"/>
     </Rule>
 </Style>
-<Style name="admin">
-    <Rule>
-      <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
-      &maxscale_zoom2;
-      &minscale_zoom6;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">0.6</CssParameter>
-        <CssParameter name="stroke-opacity">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
-      &maxscale_zoom7;
-      &minscale_zoom9;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-        <CssParameter name="stroke-opacity">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-   <Rule>
-      <Filter>[admin_level]='2'</Filter>
-      &maxscale_zoom10;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
-        <CssParameter name="stroke-opacity">0.1</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='3'</Filter>
-      &maxscale_zoom10;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">5</CssParameter>
-        <CssParameter name="stroke-dasharray">4,2</CssParameter>
-        <CssParameter name="stroke-opacity">0.1</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='4'</Filter>
-      &maxscale_zoom4;
-      &minscale_zoom6;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">0.6</CssParameter>
-        <CssParameter name="stroke-dasharray">4,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='4'</Filter>
-      &maxscale_zoom7;
-      &minscale_zoom10;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-        <CssParameter name="stroke-dasharray">4,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='4'</Filter>
-      &maxscale_zoom11;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-dasharray">4,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='5'</Filter>
-      &maxscale_zoom11;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-        <CssParameter name="stroke-dasharray">6,3,2,3,2,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='6'</Filter>
-      &maxscale_zoom11;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-        <CssParameter name="stroke-dasharray">6,3,2,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='8' or [admin_level]='7'</Filter>
-      &maxscale_zoom12;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
-        <CssParameter name="stroke-dasharray">5,2</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[admin_level]='10' or [admin_level]='9'</Filter>
-      &maxscale_zoom13;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-        <CssParameter name="stroke-dasharray">2,3</CssParameter>
-        <CssParameter name="stroke-opacity">0.3</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-   <Rule>
-      <Filter>not [admin_level] &lt;&gt;''</Filter>
-      &maxscale_zoom9;
-      &minscale_zoom11;
-      <LineSymbolizer>
-        <CssParameter name="stroke">purple</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-        <CssParameter name="stroke-opacity">0.2</CssParameter>
-      </LineSymbolizer>
-    </Rule> 
-</Style>
-<Layer name="world" status="on" srs="&srs900913;">
-    <StyleName>world</StyleName>
-    <Datasource>
-      <Parameter name="type">shape</Parameter>
-      <Parameter name="file">&world_boundaries;/shoreline_300</Parameter>
-    </Datasource>
-</Layer>
-<Layer name="coast-poly" status="on" srs="&srs900913;">
-    <StyleName>coast-poly</StyleName>
-    <Datasource>
-      <Parameter name="type">shape</Parameter>
-      <Parameter name="file">&world_boundaries;/processed_p</Parameter>
-    </Datasource>
-</Layer>
-<Layer name="builtup" status="on" srs="&srsmercator;">
-    <StyleName>builtup</StyleName>
-    <Datasource>
-      <Parameter name="type">shape</Parameter>
-      <Parameter name="file">&world_boundaries;/builtup_area</Parameter>
-    </Datasource>
-</Layer>
+
+&layer-shapefiles;
 <Layer name="leisure" status="on" srs="&osm2pgsql_projection;">
     <StyleName>leisure</StyleName>
     <Datasource>
@@ -7139,13 +6654,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="citywalls" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>citywalls</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way from &prefix;_line where "historic"='citywalls') as citywalls</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
+&layer-citywall;
 <Layer name="turning_circle" status="on" srs="&osm2pgsql_projection;">
     <StyleName>turning_circle</StyleName>    
     <Datasource>
@@ -7180,21 +6689,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="buildings" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>buildings</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,building,leisure,railway,amenity,aeroway from &prefix;_polygon
-       where building is not null
-          or leisure in ('pitch','track')
-          or railway='station'
-          or amenity='place_of_worship'
-          or aeroway='terminal'
-       order by z_order,way_area desc) as buildings
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
+&layer-buildings;
 <Layer name="line features" status="on" srs="&osm2pgsql_projection;">
      <StyleName>cliffs</StyleName>
      <StyleName>barriers</StyleName>
@@ -7267,24 +6762,8 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="ferry-routes" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>ferry-routes</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way from &prefix;_line where route='ferry' ) as routes
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<Layer name="aerialways" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>aerialways</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,aerialway from &prefix;_line where aerialway is not null) as aerialways
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
+&layer-ferry-routes;
+&layer-aerialways;
 <Layer name="roads" status="on" srs="&osm2pgsql_projection;">
     <!--StyleName>roads-casing</StyleName-->
     <StyleName>roads</StyleName>
@@ -7371,20 +6850,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="placenames" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>country</StyleName>
-    <StyleName>state</StyleName>
-    <StyleName>capital</StyleName> 
-    <StyleName>city</StyleName> 
-    <StyleName>town</StyleName>    
-    <StyleName>suburb</StyleName>
-    <StyleName>village</StyleName>
-    <StyleName>hamlet</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way,place,capital,name,ref from &prefix;_point where place is not null) as placenames</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
+&layer-placenames;
 <Layer name="amenity" status="on" srs="&osm2pgsql_projection;">
     <StyleName>stations</StyleName>    
     <StyleName>symbols</StyleName>
@@ -7403,20 +6869,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="power" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>power</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way from &prefix;_line where "power"='line') as power</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<Layer name="power_towers" status="on" srs="&osm2pgsql_projection;">
-     <StyleName>power_towers</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way from &prefix;_point where power='tower') as power_towers</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>  
+&layer-power;
 <Layer name="directions" status="on" srs="&osm2pgsql_projection;">
      <StyleName>directions</StyleName>
      <Datasource>
@@ -7509,29 +6962,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="interpolation_lines" status="on" srs="&osm2pgsql_projection;">
-     <StyleName>interpolation</StyleName>
-     <Datasource>
-      <Parameter name="table">
-       (select way from &prefix;_line where "addr:interpolation" is not null) as interpolation
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<Layer name="housenumb_ways" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>way_numbers</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way,"addr:housenumber" from &prefix;_polygon where "addr:housenumber" is not null and building is not null) as way_numbers</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<Layer name="housenumb_nodes" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>node_numbers</StyleName>
-    <Datasource>
-      <Parameter name="table">(select way,"addr:housenumber" from &prefix;_point where "addr:housenumber" is not null) as node_numbers</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
+&layer-addressing;
 <Layer name="misc_boundaries" status="on" srs="&osm2pgsql_projection;">
     <StyleName>boundary</StyleName>
     <Datasource>
@@ -7541,13 +6972,5 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="admin" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>admin</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,admin_level from &prefix;_roads where "boundary"='administrative') as admin</Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-
+&layer-admin;
 </Map>
