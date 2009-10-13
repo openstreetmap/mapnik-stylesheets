@@ -6,7 +6,7 @@
 <!-- This stylesheet uses features only available in mapnik builds with
      libxml2 as the XML parser. Furthermore, there are other features
      that necessitate an upgrade to at least mapnik 0.6.1 -->
-<Map bgcolor="#b5d0d0" srs="&osm2pgsql_projection;">
+<Map bgcolor="#b5d0d0" srs="&srs900913;">
   &fontset-settings;
 <Style name="world">
     <Rule>
