@@ -34,25 +34,25 @@
 </Style>
 <Style name="capital">
      <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom4;
       &minscale_zoom5;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom6;
       &minscale_zoom8;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom9;
       &minscale_zoom10;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and [capital]='yes'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom11;
       &minscale_zoom14;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
@@ -60,19 +60,19 @@
 </Style>
 <Style name="city">
     <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom6;
       &minscale_zoom8;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom9;
       &minscale_zoom10;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>([place] = 'city' or [place]='metropolis') and not [capital]='yes'</Filter>
+      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom11;
       &minscale_zoom14;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
@@ -137,17 +137,44 @@
     </Rule>
 </Style>
 
-<Layer name="placenames" status="on" srs="&osm2pgsql_projection;">
+<Layer name="placenames-large" status="on" srs="&osm2pgsql_projection;">
     <StyleName>country</StyleName>
     <StyleName>state</StyleName>
     <StyleName>capital</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,name,ref
+      from &prefix;_point
+      where place in ('country','state')
+         or (place in ('city','metropolis') and capital='yes')
+      ) as placenames</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="placenames-medium" status="on" srs="&osm2pgsql_projection;">
     <StyleName>city</StyleName>
     <StyleName>town</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,name
+      from &prefix;_point
+      where place in ('city','metropolis','town','large_town','small_town')
+        and (capital is null or capital&lt;&gt;'yes')
+      ) as placenames</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="placenames-small" status="on" srs="&osm2pgsql_projection;">
     <StyleName>suburb</StyleName>
     <StyleName>village</StyleName>
     <StyleName>hamlet</StyleName>
     <Datasource>
-      <Parameter name="table">(select way,place,capital,name,ref from &prefix;_point where place is not null) as placenames</Parameter>
+      <Parameter name="table">
+      (select way,place,name
+      from &prefix;_point
+      where place in ('suburb','village','large_village','hamlet','locality')
+      ) as placenames</Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
+
