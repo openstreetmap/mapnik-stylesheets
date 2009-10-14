@@ -464,13 +464,6 @@
       </PolygonSymbolizer> 
     </Rule> 
     <Rule>
-      <Filter>[man_made] = 'pier'</Filter>
-      &maxscale_zoom12;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f2efe9</CssParameter>
-      </PolygonSymbolizer>
-    </Rule>
-    <Rule>
       <Filter>[leisure] = 'playground'</Filter>
       &maxscale_zoom13;
      <PolygonSymbolizer>
@@ -6428,32 +6421,6 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" halo_radius="1" placement="line" />
     </Rule>
 </Style>
-<Style name="piers">
-    <Rule>
-      &maxscale_zoom11;
-      &minscale_zoom12;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#f2efe9</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      &maxscale_zoom13;
-      &minscale_zoom14;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#f2efe9</CssParameter>
-        <CssParameter name="stroke-width">4</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      &maxscale_zoom15;
-      &minscale_zoom18;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#f2efe9</CssParameter>
-        <CssParameter name="stroke-width">7</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-</Style>
 <Style name="cliffs">
      <Rule>
       &maxscale_zoom13;
@@ -6601,7 +6568,6 @@
        where landuse is not null
           or leisure is not null
           or aeroway in ('apron','aerodrome')
-          or man_made='pier'
           or amenity in ('parking','university','college','school','hospital','grave_yard')
           or military in ('barracks','danger_area')
           or "natural" in ('field','beach','glacier','heath','mud','wood')
@@ -6635,15 +6601,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="land features" status="on" srs="&osm2pgsql_projection;">
-     <StyleName>piers</StyleName>
-     <Datasource>
-      <Parameter name="table">
-      (select way from &prefix;_line where man_made='pier') as piers
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
+&layer-piers;
 <Layer name="tunnels" status="on" srs="&osm2pgsql_projection;">
     <StyleName>tunnels-casing</StyleName>
     <StyleName>tunnels-fill</StyleName>
