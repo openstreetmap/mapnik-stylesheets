@@ -1,5 +1,6 @@
 <!ENTITY layer-shapefiles SYSTEM "layer-shapefiles.xml.inc">
-<!ENTITY layer-piers SYSTEM "layer-piers.xml.inc">
+<!ENTITY layer-water SYSTEM "layer-water.xml.inc">
+<!ENTITY layer-water_features SYSTEM "layer-water_features.xml.inc">
 <!ENTITY layer-citywall SYSTEM "layer-citywall.xml.inc">
 <!ENTITY layer-buildings SYSTEM "layer-buildings.xml.inc">
 <!ENTITY layer-ferry-routes SYSTEM "layer-ferry-routes.xml.inc">
