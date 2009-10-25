@@ -5775,7 +5775,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
-      <Filter>[barrier] &lt;&gt; ''</Filter>
+      <Filter>[barrier] &lt;&gt; '' and not [barrier] = 'hedge'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">0.4</CssParameter>
