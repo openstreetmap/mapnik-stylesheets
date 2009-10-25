@@ -5767,7 +5767,15 @@
 <Style name="barriers">
     <Rule>
       &maxscale_zoom16;
-      <Filter>[barrier] &lt;&gt; '' or [natural]='hedge'</Filter>
+      <Filter>[natural]='hedge' or [barrier] = 'hedge'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#aed1a0</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[barrier] &lt;&gt; ''</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">0.4</CssParameter>
