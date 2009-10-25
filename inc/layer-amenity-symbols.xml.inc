@@ -53,8 +53,14 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
+      &minscale_zoom16;
       <Filter>[natural]='tree'</Filter>
       <PointSymbolizer file="&symbols;/tree.png" type="png" width="3" height="3" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[natural]='tree'</Filter>
+      <PointSymbolizer file="&symbols;/tree2.png" type="png" width="5" height="5" />
     </Rule>
     <Rule>
       &maxscale_zoom15;

@@ -50,7 +50,7 @@
       <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
       &maxscale_zoom10;
       <PolygonSymbolizer>
-         <CssParameter name="fill">#cc9999</CssParameter>
+         <CssParameter name="fill">#bca9a9</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
