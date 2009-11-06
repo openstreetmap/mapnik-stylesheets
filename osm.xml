@@ -2462,22 +2462,6 @@
         <CssParameter name="stroke-dasharray">8,12</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <!--Rule>
-      &maxscale_zoom13;
-      &minscale_zoom13;
-      <Filter>[construction] = 'bus_guideway'</Filter>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#9999cc</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">8,12</CssParameter>
-      </LineSymbolizer>
-    </Rule-->
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom18;
@@ -2525,22 +2509,6 @@
         <CssParameter name="stroke-dasharray">0,8,11,1</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <!--Rule>
-      &maxscale_zoom14;
-      &minscale_zoom18;
-      <Filter>[construction] = 'bus_guideway'</Filter>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#9999cc</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">0,11,8,1</CssParameter>
-      </LineSymbolizer>
-    </Rule-->
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom18;
@@ -5265,6 +5233,38 @@
       </LineSymbolizer>
     </Rule>
 </Style>
+<Style name="guideways">
+<Rule>
+      &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6666cc</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">8,12</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom14;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#6666ff</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,11,8,1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
 <Style name="roads-text-low-zoom">
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 1</Filter>
@@ -6123,6 +6123,15 @@
     <Datasource>
       <Parameter name="table">
       (select way from &prefix;_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1'))) as trams
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="guideways" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>guideways</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way from &prefix;_line where highway='bus_guideway' and (tunnel is null or tunnel not in ('yes','true','1'))) as guideways
       </Parameter>
       &datasource-settings;
     </Datasource>
