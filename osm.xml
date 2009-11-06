@@ -5238,7 +5238,7 @@
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
-        <CssParameter name="stroke">#6666cc</CssParameter>
+        <CssParameter name="stroke">#6666ff</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
