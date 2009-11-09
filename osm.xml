@@ -6145,7 +6145,12 @@
      <StyleName>directions</StyleName>
      <Datasource>
       <Parameter name="table">
-      (select way,case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway from &prefix;_line where oneway is not null) as directions
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+      ) as directions
       </Parameter>
       &datasource-settings;
     </Datasource>
