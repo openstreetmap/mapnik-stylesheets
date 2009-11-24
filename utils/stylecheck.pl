@@ -5,6 +5,9 @@
 # aggregating the min/max scale denominators for all rules and styles and 
 # matching them up with layers.
 
+# it reads the osm.xml file in the current directory and requires that
+# xmlstarlet be installed.
+
 # Example result (needs wide window):
 
 # Layer                    |MinZ|MaxZ| Table              | WHERE clause
@@ -34,7 +37,7 @@ while(<ENT>)
 close(ENT);
 
 # Using xmlstarlet resolves all entities for us...
-open(STYLE, "xmlstarlet c14n osm.xml|") or die;
+open(STYLE, "xmlstarlet c14n osm.xml|") or die "cannot run xmlstarlet and/or cannot find osm.xml in current directory";
 
 my $styles = {};
 
