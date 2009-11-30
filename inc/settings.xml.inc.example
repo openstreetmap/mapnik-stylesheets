@@ -1,5 +1,0 @@
-<!ENTITY symbols "%SYMBOLS_DIR%">
-<!-- use srs900913 if you have called osm2pgsql without special flags (or with -m); use srs4326 if you have used -l -->
-<!ENTITY osm2pgsql_projection "&srs900913;">
-<!ENTITY world_boundaries "%WORLD_BOUNDARIES_DIR%">
-<!ENTITY prefix "%PREFIX%">
