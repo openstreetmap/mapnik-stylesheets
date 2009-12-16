@@ -2496,7 +2496,7 @@
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom18;
-      <Filter>[railway] = 'spur' or [railway] = 'siding'</Filter>
+      <Filter>[railway] = 'spur-siding-yard'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -6027,9 +6027,12 @@
     <StyleName>minor-roads-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,horse,bicycle,foot,construction,railway,aeroway,service,
+      (select way,highway,horse,bicycle,foot,construction,aeroway,service,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when railway in ('spur','siding')
+              or (railway='rail' and service in ('spur','siding','yard'))
+            then 'spur-siding-yard'::text else railway end as railway
        from &prefix;_line
        where highway is not null
           or aeroway in ('runway','taxiway')
