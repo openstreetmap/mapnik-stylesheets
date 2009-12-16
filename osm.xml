@@ -629,6 +629,11 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="16" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
+      <Filter>[amenity]='prison'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="16" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
       <Filter>[tourism] = 'attraction'</Filter>
       &maxscale_zoom16;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#660033" halo_radius="2" wrap_width="10"/>
