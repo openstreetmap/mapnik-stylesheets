@@ -2713,7 +2713,7 @@
     <Rule>
       <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom14;
-      &minscale_zoom15;
+      &minscale_zoom14;
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
