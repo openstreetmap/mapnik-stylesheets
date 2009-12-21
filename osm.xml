@@ -528,6 +528,11 @@
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="18" halo_radius="1" wrap_width="0"/>
     </Rule>
+    <Rule>
+      <Filter>[amenity] = 'parking'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="14" halo_radius="1" wrap_width="34"/>
+    </Rule>
      <Rule>
       <Filter>[amenity] = 'police'</Filter>
       &maxscale_zoom17;
@@ -596,32 +601,32 @@
     <Rule>
       <Filter>[tourism] = 'hotel' or [tourism]='hostel'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0092da" dy="15" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0066ff" dy="15" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'embassy'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0092da" dy="13" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="13" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[tourism]='guest_house'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#0092da" dy="13" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#0066ff" dy="13" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'fuel' or [amenity]='bus_station'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0092da" dy="14" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="14" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[tourism] = 'camp_site'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0092da" dy="15" halo_radius="1" wrap_width="70"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0066ff" dy="15" halo_radius="1" wrap_width="70"/>
     </Rule>
     <Rule>
       <Filter>[tourism] = 'caravan_site'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0092da" dy="19" halo_radius="1" wrap_width="70"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0066ff" dy="19" halo_radius="1" wrap_width="70"/>
     </Rule>
     <Rule>
       <Filter>[tourism]='museum'</Filter>
