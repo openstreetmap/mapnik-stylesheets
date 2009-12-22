@@ -398,14 +398,14 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital'</Filter>
+      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital' or [amenity]='kindergarten'</Filter>
       &maxscale_zoom10;
       <PolygonSymbolizer>
         <CssParameter name="fill">#f0f0d8</CssParameter>
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital'</Filter>
+      <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital' or [amenity]='kindergarten'</Filter>
       &maxscale_zoom12;
       <LineSymbolizer>
         <CssParameter name="stroke">brown</CssParameter>
@@ -652,6 +652,11 @@
       <Filter>[amenity] = 'school' or [amenity] = 'college'</Filter>
       &maxscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000033" halo_radius="1" wrap_width="14"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity] = 'kindergarten'</Filter>
+      &maxscale_zoom16;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000033" halo_radius="1" wrap_width="14"/>
     </Rule>
     <Rule>
       <Filter>[man_made] = 'lighthouse'</Filter>
@@ -905,7 +910,27 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary'</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -1171,6 +1196,17 @@
     <Rule>
       <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
@@ -1599,9 +1635,30 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
-      <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke-width">8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -1611,7 +1668,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
     <Rule>
       <Filter>([highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom17;
@@ -1759,6 +1815,51 @@
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[highway] = 'living_street'</Filter>
+      &maxscale_zoom12;
+      &minscale_zoom13;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'living_street'</Filter>
+      &maxscale_zoom14;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+   <Rule>
+      <Filter>[highway] = 'living_street'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+   <Rule>
+      <Filter>[highway] = 'living_street'</Filter>
+      &maxscale_zoom17;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">14.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+
 </Style>
 <Style name="minor-roads-fill-links">
     <Rule>
@@ -2729,6 +2830,17 @@
     <Rule>
       <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fff</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([highway] = 'residential'  or [highway] = 'minor' or [highway] = 'unclassified') and not [tunnel] = 'yes'</Filter>
+      &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">#fff</CssParameter>
@@ -3811,6 +3923,15 @@
     <Rule>
       <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -4057,9 +4178,20 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    <Rule>
+   <Rule>
       <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">7.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified'</Filter>
+      &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
@@ -5734,6 +5866,12 @@
     <Rule>
       <Filter>[highway] = 'unclassified' or [highway] = 'residential'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" halo_radius="1" spacing="300" placement="line" />
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'unclassified' or [highway] = 'residential'</Filter>
+      &maxscale_zoom16;
       &minscale_zoom16;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="1" spacing="300" placement="line" />
     </Rule>
@@ -5911,7 +6049,7 @@
        where landuse is not null
           or leisure is not null
           or aeroway in ('apron','aerodrome')
-          or amenity in ('parking','university','college','school','hospital','grave_yard')
+          or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard')
           or military in ('barracks','danger_area')
           or "natural" in ('field','beach','heath','mud','wood')
           or power in ('station','sub_station')
@@ -6015,7 +6153,7 @@
       (select way,highway,service,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
        from &prefix;_line
-       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway')
+       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway','living_street')
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
