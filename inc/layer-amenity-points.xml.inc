@@ -211,16 +211,6 @@
       <PointSymbolizer file="&symbols;/toilets.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
-      &maxscale_zoom17;
-      <Filter>[amenity]='drinking_water'</Filter>
-      <PointSymbolizer file="&symbols;/food_drinkingtap.p.20.png" type="png" width="20" height="20" />
-    </Rule>
-    <Rule>
-      &maxscale_zoom16;
-      <Filter>[amenity]='prison'</Filter>
-      <PointSymbolizer file="&symbols;/amenity_prison.p.20.png" type="png" width="20" height="20" />
-    </Rule>
-    <Rule>
       &maxscale_zoom16;
       <Filter>[tourism]='viewpoint'</Filter>
       <PointSymbolizer file="&symbols;/view_point.p.16.png" type="png" width="16" height="16" />
@@ -230,15 +220,46 @@
       <Filter>[man_made]='water_tower'</Filter>
       <PointSymbolizer file="&symbols;/tower_water.p.20.png" type="png" width="20" height="20" />
     </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[shop]='supermarket'</Filter>
+      <PointSymbolizer file="&symbols;/shop_supermarket.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='bakery'</Filter>
+      <PointSymbolizer file="&symbols;/shop_bakery.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='clothes'</Filter>
+      <PointSymbolizer file="&symbols;/shop_clothes.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='convenience'</Filter>
+      <PointSymbolizer file="&symbols;/shop_convenience.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='diy'</Filter>
+      <PointSymbolizer file="&symbols;/shop_diy.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='hairdresser'</Filter>
+      <PointSymbolizer file="&symbols;/shop_hairdresser.p.16.png" type="png" width="16" height="16" />
+    </Rule>
 </Style>
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,tourism,highway,man_made,access,religion
+      (select way,amenity,shop,tourism,highway,man_made,access,religion
       from &prefix;_point
       where amenity is not null
+         or shop is not null
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
@@ -250,9 +271,10 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,tourism,highway,man_made,access,religion
+      (select way,amenity,shop,tourism,highway,man_made,access,religion
       from &prefix;_polygon
       where amenity is not null
+         or shop is not null
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
