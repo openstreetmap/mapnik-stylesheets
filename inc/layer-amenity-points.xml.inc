@@ -211,6 +211,16 @@
       <PointSymbolizer file="&symbols;/toilets.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
+      &maxscale_zoom17; 
+      <Filter>[amenity]='drinking_water'</Filter> 
+      <PointSymbolizer file="&symbols;/food_drinkingtap.p.20.png" type="png" width="20" height="20" /> 
+    </Rule> 
+    <Rule> 
+      &maxscale_zoom16; 
+      <Filter>[amenity]='prison'</Filter> 
+      <PointSymbolizer file="&symbols;/amenity_prison.p.20.png" type="png" width="20" height="20" /> 
+    </Rule> 
+    <Rule>
       &maxscale_zoom16;
       <Filter>[tourism]='viewpoint'</Filter>
       <PointSymbolizer file="&symbols;/view_point.p.16.png" type="png" width="16" height="16" />
