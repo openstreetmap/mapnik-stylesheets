@@ -87,7 +87,7 @@
       <Filter>[leisure] = 'playground'</Filter>
       &maxscale_zoom13;
      <PolygonSymbolizer>
-        <CssParameter name="fill">#ccffff</CssParameter>
+        <CssParameter name="fill">#ccfff1</CssParameter>
      </PolygonSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#666</CssParameter>
