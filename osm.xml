@@ -5516,49 +5516,49 @@
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 1</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 2</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 3</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 4</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 5</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 6</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 7</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 8</Filter>
-      &maxscale_zoom12;
+      &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
     </Rule>
@@ -5709,100 +5709,100 @@
       <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 1</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 1) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield1.png" type="png" width="17" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield1.png" type="png" width="17" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 2</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 2) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield2.png" type="png" width="24" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield2.png" type="png" width="24" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 3</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 3) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield3.png" type="png" width="31" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield3.png" type="png" width="31" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 4</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 4) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield4.png" type="png" width="38" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield4.png" type="png" width="38" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 5</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 5) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield5.png" type="png" width="45" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield5.png" type="png" width="45" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 6</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 6) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield6.png" type="png" width="52" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield6.png" type="png" width="52" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 7</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 7) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield7.png" type="png" width="59" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield7.png" type="png" width="59" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] = 8</Filter>
-      &maxscale_zoom14;
+      <Filter>([highway] = 'secondary' and [length] = 8) and not [bridge]='yes'</Filter>
+      &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield8.png" type="png" width="66" height="17" min_distance="21" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield8.png" type="png" width="66" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 1) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield1.png" type="png" width="17" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield1.png" type="png" width="17" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 2) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield2.png" type="png" width="24" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield2.png" type="png" width="24" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 3) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield3.png" type="png" width="31" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield3.png" type="png" width="31" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 4) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield4.png" type="png" width="38" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield4.png" type="png" width="38" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 5) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield5.png" type="png" width="45" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield5.png" type="png" width="45" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 6) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield6.png" type="png" width="52" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield6.png" type="png" width="52" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 7) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield7.png" type="png" width="59" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield7.png" type="png" width="59" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 8) and not [bridge]='yes'</Filter>
-      &maxscale_zoom15;
+      &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield8.png" type="png" width="66" height="17" min_distance="18" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield8.png" type="png" width="66" height="17" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'unclassified' or [highway]='residential') and not [bridge]='yes'</Filter>
