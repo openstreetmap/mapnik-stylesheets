@@ -252,7 +252,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[shop]='diy'</Filter>
+      <Filter>[shop]='doityourself'</Filter>
       <PointSymbolizer file="&symbols;/shop_diy.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
