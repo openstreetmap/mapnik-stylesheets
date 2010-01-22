@@ -184,6 +184,9 @@ if __name__ == "__main__":
     except KeyError:
         tile_dir = home + "/osm/tiles/"
 
+    if not tile_dir.endswith('/'):
+        tile_dir = tile_dir + '/'
+
     #-------------------------------------------------------------------------
     #
     # Change the following for different bounding boxes and zoom levels
