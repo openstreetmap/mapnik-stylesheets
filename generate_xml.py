@@ -72,7 +72,7 @@ def serialize(xml,options):
         mapnik.save_map(m,options.output)
     else:
         if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() >= 700:
-            print mapnik.save_map_string(m)
+            print mapnik.save_map_to_string(m)
         else:
             sys.exit(color_text(1,'Minor error: printing XML to stdout requires Mapnik >=0.7.0, please provide a second argument to save the output to a file'))
 
