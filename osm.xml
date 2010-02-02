@@ -679,7 +679,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="13" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
-      <Filter>[shop]='bakery' or [shop]='clothes' or [shop]='convenience' or [shop]='diy' or [shop]='hairdresser'</Filter>
+      <Filter>[shop]='bakery' or [shop]='clothes' or [shop]='convenience' or [shop]='doityourself' or [shop]='hairdresser'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#939" dy="13" halo_radius="1" wrap_width="12"/>
     </Rule>
@@ -6353,7 +6353,7 @@
       (select way,amenity,shop,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,'yes'::text as point
        from &prefix;_point
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','convenience','diy','hairdresser')
+          or shop in ('supermarket','bakery','clothes','convenience','doityourself','hairdresser')
           or leisure is not null
           or landuse is not null
           or tourism is not null
@@ -6375,7 +6375,7 @@
       (select way,aeroway,shop,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','convenience','diy','hairdresser')
+          or shop in ('supermarket','bakery','clothes','convenience','doityourself','hairdresser')
           or leisure is not null
           or landuse is not null
           or tourism is not null
