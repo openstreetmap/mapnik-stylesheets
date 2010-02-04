@@ -38,7 +38,7 @@ if __name__ == "__main__":
     prj = Projection("+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over")
     c0 = prj.forward(Coord(ll[0],ll[1]))
     c1 = prj.forward(Coord(ll[2],ll[3]))
-    if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() >= 700:
+    if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() >= 800:
         bbox = Box2d(c0.x,c0.y,c1.x,c1.y)
     else:
         bbox = Envelope(c0.x,c0.y,c1.x,c1.y)

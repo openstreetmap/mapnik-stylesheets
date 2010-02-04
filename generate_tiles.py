@@ -77,7 +77,7 @@ class RenderThread:
         c1 = self.prj.forward(mapnik.Coord(l1[0],l1[1]))
 
         # Bounding box for the tile
-        if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() >= 700:
+        if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() >= 800:
             bbox = mapnik.Box2d(c0.x,c0.y, c1.x,c1.y)
         else:
             bbox = mapnik.Envelope(c0.x,c0.y, c1.x,c1.y)
