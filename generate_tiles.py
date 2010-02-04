@@ -77,7 +77,10 @@ class RenderThread:
         c1 = self.prj.forward(mapnik.Coord(l1[0],l1[1]))
 
         # Bounding box for the tile
-        bbox = mapnik.Envelope(c0.x,c0.y, c1.x,c1.y)
+        if hasattr(mapnik,'mapnik_version') and mapnik.mapnik_version() >= 700:
+            bbox = mapnik.Box2d(c0.x,c0.y, c1.x,c1.y)
+        else:
+            bbox = mapnik.Envelope(c0.x,c0.y, c1.x,c1.y)
         render_size = 256
         self.m.resize(render_size, render_size)
         self.m.zoom_to_box(bbox)
