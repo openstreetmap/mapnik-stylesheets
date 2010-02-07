@@ -339,7 +339,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#80d1ae" halo_radius="1" spacing="600" placement="line"/>
     </Rule>
     <Rule>
-      <Filter>([waterway]='stream' or [waterway]='drain') and [tunnel]='yes'</Filter>
+      <Filter>[waterway]='stream' and [tunnel]='yes'</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -353,7 +353,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([waterway]='stream' or [waterway]='drain') and not [tunnel]='yes'</Filter>
+      <Filter>[waterway]='stream' and not [tunnel]='yes'</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -362,6 +362,31 @@
       </LineSymbolizer>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#6699cc" halo_radius="1" spacing="600" placement="line"/>
     </Rule>
+    <Rule>
+      <Filter>([waterway]='drain' or [waterway]='ditch') and [tunnel]='yes'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-dasharray">4,2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#f3f7f7</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([waterway]='drain' or [waterway]='ditch') and not [tunnel]='yes'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#6699cc" halo_radius="1" spacing="600" placement="line"/>
+    </Rule>
+
     <Rule>
       <ElseFilter/> <!--[waterway]='stream'</Filter>-->
       &maxscale_zoom15;
@@ -406,7 +431,7 @@
       (select way,waterway,disused,name,
       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
       from &prefix;_line
-      where waterway in ('weir','river','canal','derelict_canal','stream','drain')
+      where waterway in ('weir','river','canal','derelict_canal','stream','drain','ditch')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
       order by z_order
       ) as water_lines</Parameter>
