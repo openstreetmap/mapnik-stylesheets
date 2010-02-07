@@ -880,7 +880,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -890,7 +890,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -940,7 +940,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -950,7 +950,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link' or [highway] = 'residential' or [highway] = 'minor' or [highway] = 'unclassified' or [highway] = 'road'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -1138,7 +1138,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -1149,7 +1149,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -1182,7 +1182,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -1193,7 +1193,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -1427,6 +1427,50 @@
       &minscale_zoom18;
       <LineSymbolizer>
         <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">16</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom14;
+      &minscale_zoom14;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke-width">7.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbb</CssParameter>
+        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom17;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbb</CssParameter>
         <CssParameter name="stroke-width">16</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
@@ -2042,6 +2086,50 @@
       <LineSymbolizer>
         <CssParameter name="stroke">#fed7a5</CssParameter>
         <CssParameter name="stroke-width">15.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom13;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
+        <CssParameter name="stroke-width">4.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom14;
+      &minscale_zoom14;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
+        <CssParameter name="stroke-width">9.4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'tertiary_link' and not [tunnel]='yes'</Filter>
+      &maxscale_zoom17;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffb3</CssParameter>
+        <CssParameter name="stroke-width">13</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -3895,7 +3983,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -3904,7 +3992,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -3913,7 +4001,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -4112,7 +4200,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -4123,7 +4211,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer>
@@ -4134,7 +4222,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary'</Filter>
+      <Filter>[highway] = 'tertiary' or [highway]='tertiary_link'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -6085,7 +6173,7 @@
     <StyleName>tunnels-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from &prefix;_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor') and tunnel in ('yes','true','1') order by z_order) as roads
+      (select way,highway from &prefix;_line where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor') and tunnel in ('yes','true','1') order by z_order) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6164,7 +6252,7 @@
       (select way,highway,service,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
        from &prefix;_line
-       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','residential','unclassified','minor','road','service','pedestrian','raceway','living_street')
+       where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street')
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
