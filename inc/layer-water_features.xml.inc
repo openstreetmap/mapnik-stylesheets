@@ -48,7 +48,14 @@
       </LineSymbolizer>
     </Rule>
 </Style>
-
+<Style name="locks">
+<Rule>
+      &maxscale_zoom17;
+      &minscale_zoom18;
+      <Filter>[waterway]='lock_gate'</Filter>
+      <PointSymbolizer file="&symbols;/lock_gate.png" type="png" width="9" height="9" />
+</Rule>
+</Style>
 <Layer name="dam" status="on" srs="&osm2pgsql_projection;">
     <StyleName>dam</StyleName>
     <Datasource>
@@ -75,4 +82,14 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="locks" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>locks</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,waterway from &prefix;_point where waterway='lock_gate') as locks
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
 

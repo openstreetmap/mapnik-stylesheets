@@ -286,7 +286,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [disused]='yes')</Filter>
+      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [disused]='yes' or [lock]='yes')</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -296,6 +296,18 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" placement="line"/>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [disused]='yes') and [lock]='yes'</Filter>
+      &maxscale_zoom17;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" dy="-5" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[waterway]='derelict_canal' or ([waterway]='canal' and [disused]='yes')</Filter>
@@ -428,14 +440,13 @@
     <StyleName>water_lines</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,waterway,disused,name,
+      (select way,waterway,disused,lock,name,
       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
       from &prefix;_line
-      where waterway in ('weir','river','canal','derelict_canal','stream','drain','ditch')
+      where waterway in ('weir','river','canal','derelict_canal','stream','drain')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
       order by z_order
       ) as water_lines</Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
-
