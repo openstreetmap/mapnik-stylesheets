@@ -2703,7 +2703,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      &maxscale_zoom14;
+      &maxscale_zoom13;
       &minscale_zoom18;
       <Filter>[railway] = 'spur-siding-yard'</Filter>
       <LineSymbolizer>
