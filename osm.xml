@@ -629,6 +629,11 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0066ff" dy="19" halo_radius="1" wrap_width="70"/>
     </Rule>
     <Rule>
+      <Filter>[waterway] = 'lock'</Filter>
+      &maxscale_zoom15;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="10" halo_radius="1" wrap_width="70"/>
+    </Rule>
+    <Rule>
       <Filter>[tourism]='museum'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="16" halo_radius="1" wrap_width="0"/>
@@ -6438,7 +6443,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,'yes'::text as point
+      (select way,amenity,shop,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,'yes'::text as point
        from &prefix;_point
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','convenience','doityourself','hairdresser')
@@ -6451,6 +6456,7 @@
           or highway='motorway_junction'
           or military='danger_area'
           or aeroway='gate'
+          or waterway='lock'
       ) as text
       </Parameter>
       &datasource-settings;
