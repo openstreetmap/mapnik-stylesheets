@@ -116,6 +116,11 @@
       <PointSymbolizer file="&symbols;/library.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
+      &maxscale_zoom15;
+      <Filter>[waterway]='lock' or [lock]='yes'</Filter>
+      <PointSymbolizer file="&symbols;/lock_gate.png" type="png" width="9" height="9" />
+    </Rule>
+    <Rule>
       &maxscale_zoom17;
       <Filter>[man_made]='mast'</Filter>
       <PointSymbolizer file="&symbols;/communications.p.20.png" type="png" width="20" height="20" />
@@ -266,13 +271,15 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock
       from &prefix;_point
       where amenity is not null
          or shop is not null
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
+         or waterway='lock'
+         or lock='yes'
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
