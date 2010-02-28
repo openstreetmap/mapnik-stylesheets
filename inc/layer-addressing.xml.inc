@@ -2,7 +2,7 @@
     <Rule>
       &maxscale_zoom17;
       <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
+        <CssParameter name="stroke">#888</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
         <CssParameter name="stroke-dasharray">2,4</CssParameter>
       </LineSymbolizer>
@@ -11,13 +11,13 @@
 <Style name="way_numbers">
     <Rule>
       &maxscale_zoom17;
-      <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#555" dy="0" halo_radius="0" wrap_width="0"/>
+      <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#444" dy="0" wrap_width="0"/>
     </Rule>
 </Style>
 <Style name="node_numbers">
     <Rule>
       &maxscale_zoom17;
-      <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#555" dy="0" halo_radius="1" halo_fill="#eee" wrap_width="0"/>
+      <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#444" dy="0" wrap_width="0"/>
     </Rule>
 </Style>
 
