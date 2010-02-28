@@ -68,7 +68,7 @@
     <StyleName>piers-area</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way from &prefix;_polygon where man_made='pier') as piers
+      (select way from &prefix;_polygon where man_made in ('pier','breakwater')) as piers
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -77,7 +77,7 @@
      <StyleName>piers</StyleName>
      <Datasource>
       <Parameter name="table">
-      (select way from &prefix;_line where man_made='pier') as piers
+      (select way from &prefix;_line where man_made in ('pier','breakwater')) as piers
       </Parameter>
       &datasource-settings;
     </Datasource>

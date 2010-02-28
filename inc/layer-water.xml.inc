@@ -21,7 +21,7 @@
       <PolygonPatternSymbolizer file="&symbols;/glacier2.png" type="png" width="70" height="56"/>
     </Rule>
     <Rule>
-      <Filter>[waterway] = 'dock' or [landuse] = 'reservoir' or [landuse] = 'water' or [waterway] = 'mill_pond' or [waterway] = 'riverbank' or [waterway]='canal'</Filter>
+      <Filter>[waterway] = 'dock' or [waterway] = 'mill_pond' or [waterway]='canal'</Filter>
       &maxscale_zoom9;
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
@@ -35,7 +35,7 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[natural] = 'lake' or [natural] = 'water'</Filter>
+      <Filter>[natural] = 'lake' or [natural] = 'water' or [landuse] = 'reservoir' or [waterway] = 'riverbank' or [landuse] = 'water'</Filter>
       &maxscale_zoom6;
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
