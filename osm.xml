@@ -2710,6 +2710,21 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
+      <Filter>[railway] = 'spur-siding-yard' and [bridge] = 'yes'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom13;
+      &minscale_zoom18;
       <Filter>[railway] = 'spur-siding-yard'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
