@@ -6481,7 +6481,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,shop,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,'no'::text as point
+      (select way,aeroway,shop,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','convenience','doityourself','hairdresser')

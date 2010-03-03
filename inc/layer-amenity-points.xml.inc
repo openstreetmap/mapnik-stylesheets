@@ -288,7 +288,7 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock
       from &prefix;_polygon
       where amenity is not null
          or shop is not null
