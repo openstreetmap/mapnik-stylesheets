@@ -62,6 +62,11 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
+      <Filter>[highway]='ford'</Filter>
+      <PointSymbolizer file="&symbols;/transport_ford.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
       <Filter>[tourism]='caravan_site'</Filter>
       <PointSymbolizer file="&symbols;/caravan_park.p.24.png" type="png" width="24" height="24" />
     </Rule>
@@ -276,7 +281,7 @@
       where amenity is not null
          or shop is not null
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
-         or highway in ('bus_stop','traffic_signals')
+         or highway in ('bus_stop','traffic_signals','ford')
          or man_made in ('mast','water_tower')
          or waterway='lock'
          or lock='yes'
