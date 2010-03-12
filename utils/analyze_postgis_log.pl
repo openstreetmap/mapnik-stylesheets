@@ -30,16 +30,30 @@ while(1)
 {
     $input = <>;
     chomp $input;
+
     if (!defined($input) || $input =~ /^\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d (.*)/)
     {
         my $rest = $1;
+
+        if ($rest =~ /^\S+ \S+ LOG:\s+duration: (\d+)(\.\d+)? ms\s*$/)
+        {
+            # duration given on extra line
+            $duration = $1;
+        }
         process_statement($statement, $duration) if defined($statement);
         last unless defined($input);
         undef $statement;
-        if ($rest =~ /^\S+ \S+ LOG:\s+duration: (\d+)(\.\d+)? ms\s+execute <[^>]*>: (SELECT .*)/)
+        if ($rest =~ /^\S+ \S+ LOG:\s+(duration: (\d+)(\.\d+)? ms\s+)?execute <[^>]*>: (SELECT .*)/)
         {
-            $duration = $1;
-            $statement = $3;
+            if (defined($1))
+            {
+                $duration = $2;
+            }
+            else
+            {
+                undef $duration;
+            }
+            $statement = $4;
         }
     }
     else
@@ -77,7 +91,7 @@ sub process_statement
 {
     my ($stmt, $dur) = @_;
     $stmt =~ s/\s+/ /g;
-    if ($stmt =~ /SELECT.*from (\(.*\) as \S+) WHERE \S+ && SetSRID\('BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,4326\)/)
+    if ($stmt =~ /SELECT.*from (\(.*\) as \S+) WHERE \S+ && SetSRID\('BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*4326\)/)
     {
         my ($datasource, $left, $bottom, $right, $top) = ($1, $2, $3, $4, $5);
         my $zoom = guessZoomLevel($left, $bottom, $right, $top);
@@ -88,6 +102,10 @@ sub process_statement
         # top but you could also do a "max" calculation here or simply count
         # the invocations.
         $timings->{$datasource}->{-1} += $dur;
+    }
+    else
+    {
+        print "cannot understand $stmt\n";
     }
 }
 
