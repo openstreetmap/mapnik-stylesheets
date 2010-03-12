@@ -23,7 +23,7 @@
 # Written by Frederik Ramm <frederik@remote.org>, PD.
 
 use strict;
-use warnings;
+#use warnings;
 
 use Math::Trig;
 
@@ -43,7 +43,7 @@ while (1)
     {
         my $rest = $1;
 
-        if ($rest =~ /^\S+ \S+ LOG:\s+duration: (\d+)(\.\d+)? ms\s*$/)
+        if ($rest =~ /^.*LOG:\s+duration: (\d+)(\.\d+)? ms\s*$/)
         {
             # duration given on extra line
             $duration = $1;
@@ -51,7 +51,7 @@ while (1)
         process_statement($statement, $duration) if (defined $statement);
         last unless defined($input);
         undef $statement;
-        if ($rest =~ /^\S+ \S+ LOG:\s+(duration: (\d+)(\.\d+)? ms\s+)?execute <[^>]*>: (SELECT .*)/)
+        if ($rest =~ /^.*LOG:\s+(duration: (\d+)(\.\d+)? ms\s+)?execute <[^>]*>: (SELECT .*)/)
         {
             if (defined($1))
             {
@@ -110,10 +110,10 @@ sub process_statement
 {
     my ($stmt, $dur) = @_;
     $stmt =~ s/\s+/ /g;
-    if ($stmt =~ /SELECT.*from (\(.*\) as \S+) WHERE \S+ && SetSRID\('BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*4326\)/)
+    if ($stmt =~ /SELECT.*from (\(.*\) as \S+) WHERE \S+ && SetSRID\('BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*(4326|900913)\)/)
     {
-        my ($datasource, $left, $bottom, $right, $top) = ($1, $2, $3, $4, $5);
-        my $zoom = guessZoomLevel($left, $bottom, $right, $top);
+        my ($datasource, $left, $bottom, $right, $top, $proj) = ($1, $2, $3, $4, $5, $6);
+        my $zoom = guessZoomLevel($left, $bottom, $right, $top, $proj);
         $timings->{$datasource}->{$zoom}->{count} ++;
         $timings->{$datasource}->{$zoom}->{sum} += $dur;
         $timings->{$datasource}->{$zoom}->{min} = $dur if ($dur < ($timings->{$datasource}->{$zoom}->{min} // 999_999_999_999_999));
@@ -126,7 +126,7 @@ sub process_statement
     }
     else
     {
-        print "cannot understand $stmt\n";
+        print STDERR "cannot understand $stmt\n";
     }
 }
 
@@ -138,17 +138,23 @@ sub process_statement
 
 sub guessZoomLevel
 {
-    my ($left, $bottom, $right, $top) = @_;
-    my ($left_tile, $bottom_tile) = getTileNumber($bottom, $left, 18);
-    my ($right_tile, $top_tile) = getTileNumber($top, $right, 18);
-    my $width = $right_tile - $left_tile;
-    my $zoom = 18;
-    while ($width >= 16)
+    my ($left, $bottom, $right, $top, $proj) = @_;
+    if ($proj == 4326)
     {
-        $width /= 2;
-        $zoom--;
+        my ($left_tile, $bottom_tile) = getTileNumber($bottom, $left, 18);
+        my ($right_tile, $top_tile) = getTileNumber($top, $right, 18);
+        my $width = $right_tile - $left_tile;
+        my $zoom = 18;
+        while ($width >= 16)
+        {
+            $width /= 2;
+            $zoom--;
+        }
+        return $zoom;
+    } elsif ($proj == 900913)
+    {
+        return 99;
     }
-    return $zoom;
 }
 
 sub getTileNumber
