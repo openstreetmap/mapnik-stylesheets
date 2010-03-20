@@ -76,13 +76,6 @@
    </Rule>
 </Style>
 <Style name="leisure">
-    <Rule> 
-      <Filter>[leisure] = 'marina'</Filter> 
-      &maxscale_zoom10; 
-      <PolygonSymbolizer> 
-         <CssParameter name="fill">#b5d0d0</CssParameter> 
-      </PolygonSymbolizer> 
-    </Rule> 
     <Rule>
       <Filter>[leisure] = 'playground'</Filter>
       &maxscale_zoom13;
@@ -129,6 +122,11 @@
       <PolygonSymbolizer>
         <CssParameter name="fill">#abdf96</CssParameter>
      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'orchard'</Filter>
+      &maxscale_zoom10;
+      <PolygonPatternSymbolizer file="&symbols;/orchard.png" type="png" width="10" height="10"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'vineyard'</Filter>
@@ -632,6 +630,17 @@
       <Filter>[waterway] = 'lock'</Filter>
       &maxscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="10" halo_radius="1" wrap_width="70"/>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'marina'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom16;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="blue" halo_radius="1" wrap_width="30"/>
+    </Rule>
+    <Rule>
+      <Filter>[leisure] = 'marina'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="blue" halo_radius="1" wrap_width="30"/>
     </Rule>
     <Rule>
       <Filter>[tourism]='museum'</Filter>
@@ -1888,7 +1897,7 @@
     <Rule>
       <Filter>[highway] = 'living_street'</Filter>
       &maxscale_zoom14;
-      &minscale_zoom15;
+      &minscale_zoom14;
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
         <CssParameter name="stroke-width">4</CssParameter>
@@ -1896,13 +1905,24 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-   <Rule>
+    <Rule>
       <Filter>[highway] = 'living_street'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+   <Rule>
+      <Filter>[highway] = 'living_street'</Filter>
+      &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">11</CssParameter>
+        <CssParameter name="stroke-width">9</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
@@ -2992,7 +3012,7 @@
     <Rule>
       <Filter>[highway] = 'living_street'</Filter>
       &maxscale_zoom14;
-      &minscale_zoom15;
+      &minscale_zoom14;
       <LineSymbolizer>
         <CssParameter name="stroke">#ccc</CssParameter>
         <CssParameter name="stroke-width">3</CssParameter>
@@ -3003,10 +3023,21 @@
     <Rule>
       <Filter>[highway] = 'living_street'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ccc</CssParameter>
+        <CssParameter name="stroke-width">4.7</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'living_street'</Filter>
+      &maxscale_zoom16;
       &minscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">#ccc</CssParameter>
-        <CssParameter name="stroke-width">9.4</CssParameter>
+        <CssParameter name="stroke-width">7.4</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
