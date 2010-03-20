@@ -14,6 +14,27 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#222" halo_radius="1"/>
     </Rule>
 </Style>
+<Style name="marinas-area">
+    <Rule>
+      &maxscale_zoom14;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">blue</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-dasharray">6,2</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">blue</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-dasharray">6,2</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
 <Style name="piers-area">
     <Rule>
       &maxscale_zoom12;
@@ -61,6 +82,15 @@
     <Datasource>
       <Parameter name="table">
       (select way,name from &prefix;_line where waterway='dam') as dam</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="marinas-area" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>marinas-area</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way from &prefix;_polygon where leisure ='marina') as marinas
+      </Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
