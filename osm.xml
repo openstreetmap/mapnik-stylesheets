@@ -2924,6 +2924,17 @@
     <Rule>
       <Filter>[highway] = 'road'</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ddd</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[highway] = 'road'</Filter>
+      &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">#ddd</CssParameter>
