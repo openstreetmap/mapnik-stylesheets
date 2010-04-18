@@ -443,7 +443,7 @@
       (select way,waterway,disused,lock,name,
       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
       from &prefix;_line
-      where waterway in ('weir','river','canal','derelict_canal','stream','drain')
+      where waterway in ('weir','river','canal','derelict_canal','stream','drain','ditch')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
       order by z_order
       ) as water_lines</Parameter>
