@@ -514,7 +514,7 @@
     <Rule>
       <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='fast_food'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="14" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="9" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[amenity]='bar'</Filter>
@@ -524,17 +524,22 @@
     <Rule>
       <Filter>[amenity]='cinema' or [amenity]='library' or [amenity]='theatre'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="18" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="12" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity] = 'parking'</Filter>
+      <Filter>[amenity]='parking' and ([access] = 'public' or not [access] &lt;&gt; '')</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="14" halo_radius="1" wrap_width="34"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="9" halo_radius="1" wrap_width="34"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity]='parking' and ([access] &lt;&gt; '' and not [access] = 'public')</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#66ccaf" dy="9" halo_radius="1" wrap_width="34"/>
     </Rule>
      <Rule>
       <Filter>[amenity] = 'police'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="16" halo_radius="1" wrap_width="30"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#734a08" dy="10" halo_radius="1" wrap_width="30"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'fire_station'</Filter>
@@ -544,7 +549,7 @@
      <Rule>
       <Filter>[amenity] = 'place_of_worship'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="16" halo_radius="1" wrap_width="30"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" dy="11" halo_radius="1" wrap_width="30"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'wood'</Filter>
@@ -614,7 +619,7 @@
     <Rule>
       <Filter>[amenity] = 'fuel' or [amenity]='bus_station'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="14" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="9" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[tourism] = 'camp_site'</Filter>
@@ -685,22 +690,22 @@
     <Rule>
       <Filter>[amenity] = 'hospital'</Filter>
       &maxscale_zoom16;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="16" halo_radius="2" wrap_width="12"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="10" halo_radius="2" wrap_width="12"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'pharmacy'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="13" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
       <Filter>[shop]='bakery' or [shop]='clothes' or [shop]='convenience' or [shop]='doityourself' or [shop]='hairdresser'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#939" dy="13" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#939" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
       <Filter>[shop]='supermarket'</Filter>
       &maxscale_zoom16;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#939" dy="14" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#939" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
@@ -6500,7 +6505,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,'yes'::text as point
+      (select way,amenity,shop,access,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,'yes'::text as point
        from &prefix;_point
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','convenience','doityourself','hairdresser')
@@ -6523,7 +6528,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,shop,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,'no'::text as point
+      (select way,aeroway,shop,access,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','convenience','doityourself','hairdresser')
