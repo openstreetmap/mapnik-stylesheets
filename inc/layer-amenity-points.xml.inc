@@ -141,6 +141,11 @@
       <PointSymbolizer file="&symbols;/parking.p.16.png" type="png" width="16" height="16" allow_overlap="false"/>
     </Rule>
     <Rule>
+      &maxscale_zoom15;
+      <Filter>[amenity]='parking' and ([access] &lt;&gt; '' and not [access] = 'public')</Filter>
+      <PointSymbolizer file="&symbols;/parking_private.p.16.png" type="png" width="16" height="16" allow_overlap="false"/>
+    </Rule>
+    <Rule>
       &maxscale_zoom17;
       <Filter>[amenity]='pharmacy'</Filter>
       <PointSymbolizer file="&symbols;/pharmacy.p.16.png" type="png" width="16" height="16" />
@@ -243,7 +248,7 @@
     <Rule>
       &maxscale_zoom16;
       <Filter>[shop]='supermarket'</Filter>
-      <PointSymbolizer file="&symbols;/shop_supermarket.p.16.png" type="png" width="16" height="16" />
+      <PointSymbolizer file="&symbols;/shop_supermarket.p.16.png" />
     </Rule>
     <Rule>
       &maxscale_zoom17;

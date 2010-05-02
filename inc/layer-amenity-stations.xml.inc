@@ -52,7 +52,7 @@
     <Rule>
       &maxscale_zoom15;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="11" fill="#66f" dy="-14" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="11" fill="#66f" dy="-10" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
