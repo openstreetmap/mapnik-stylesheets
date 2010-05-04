@@ -248,7 +248,7 @@
     <Rule>
       &maxscale_zoom16;
       <Filter>[shop]='supermarket'</Filter>
-      <PointSymbolizer file="&symbols;/shop_supermarket.p.16.png" />
+      <PointSymbolizer file="&symbols;/shop_supermarket.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
