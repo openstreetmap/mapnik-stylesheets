@@ -6262,15 +6262,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="tracks-notunnel-nobridge" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>tracks-notunnel-nobridge</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,tracktype from &prefix;_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0'))) as tracks
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <Layer name="tracks-tunnels" status="on" srs="&osm2pgsql_projection;">
     <StyleName>tracks-tunnels</StyleName>
     <Datasource>
@@ -6332,6 +6323,15 @@
       (select way,highway from &prefix;_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path')
        order by z_order,way_area desc) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="tracks-notunnel-nobridge" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>tracks-notunnel-nobridge</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,tracktype from &prefix;_line where highway='track' and (bridge is null or bridge in ('no','false','0')) and (tunnel is null or tunnel in ('no','false','0'))) as tracks
       </Parameter>
       &datasource-settings;
     </Datasource>
