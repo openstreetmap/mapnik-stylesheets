@@ -221,9 +221,14 @@
       <Filter>[military] = 'danger_area'</Filter>
       <PolygonPatternSymbolizer file="&symbols;/danger.png" type="png" width="30" height="30"/>
     </Rule>
-     <Rule>
+    <Rule>
       &maxscale_zoom14;
-      <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard'</Filter>
+      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'jewish'</Filter>
+      <PolygonPatternSymbolizer file="&symbols;/cemetery_jewish.18.png" type="png" width="18" height="18"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom14;
+      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and (not [religion] &lt;&gt; '' or [religion] &lt;&gt; 'jewish')</Filter>
       <PolygonPatternSymbolizer file="&symbols;/grave_yard.png" type="png" width="16" height="16"/>
     </Rule>
     <Rule>
@@ -6209,7 +6214,7 @@
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,shop,tourism,name
+      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,shop,tourism,name,religion
        from &prefix;_polygon
        where landuse is not null
           or leisure is not null
