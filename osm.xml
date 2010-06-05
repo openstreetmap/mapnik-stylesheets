@@ -6513,7 +6513,7 @@
       (select way,amenity,shop,access,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,'yes'::text as point
        from &prefix;_point
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser')
+          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
           or leisure is not null
           or landuse is not null
           or tourism is not null
