@@ -281,7 +281,7 @@
     </Rule>
     <Rule>
       <Filter>[landuse] = 'forest'</Filter>
-      &maxscale_zoom9;
+      &maxscale_zoom8;
       &minscale_zoom13;
       <PolygonSymbolizer>
         <CssParameter name="fill">#8dc56c</CssParameter>
@@ -519,7 +519,7 @@
     <Rule>
       <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='fast_food'</Filter>
       &maxscale_zoom17;
-      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="9" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="9" halo_radius="1" wrap_width="34"/>
     </Rule>
     <Rule>
       <Filter>[amenity]='bar'</Filter>
@@ -708,9 +708,9 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#939" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
-      <Filter>[shop]='supermarket'</Filter>
+      <Filter>[shop]='supermarket' or [shop]='department_store'</Filter>
       &maxscale_zoom16;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#939" dy="9" halo_radius="1" wrap_width="12"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#939" dy="19" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway_junction'</Filter>
