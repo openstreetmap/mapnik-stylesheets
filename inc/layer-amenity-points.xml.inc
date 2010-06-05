@@ -217,6 +217,11 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[amenity]='emergency_phone'</Filter>
+      <PointSymbolizer file="&symbols;/sosphone.png" type="png" width="16" height="14" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[amenity]='theatre'</Filter>
       <PointSymbolizer file="&symbols;/theatre.p.20.png" type="png" width="20" height="20" />
     </Rule>
@@ -264,6 +269,11 @@
       &maxscale_zoom17;
       <Filter>[shop]='convenience'</Filter>
       <PointSymbolizer file="&symbols;/shop_convenience.p.16.png" type="png" width="16" height="16" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[shop]='department_store'</Filter>
+      <PointSymbolizer file="&symbols;/department_store.p.16.png" type="png" width="16" height="16" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
