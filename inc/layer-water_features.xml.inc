@@ -47,22 +47,52 @@
     <Rule>
       &maxscale_zoom11;
       &minscale_zoom12;
+      <Filter>[man_made]='breakwater'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#aaa</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom11;
+      &minscale_zoom12;
+      <Filter>[man_made]='pier'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#f2efe9</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom13;
+      &minscale_zoom15;
+      <Filter>[man_made]='breakwater'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom13;
-      &minscale_zoom14;
+      &minscale_zoom15;
+      <Filter>[man_made]='pier'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#f2efe9</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <Filter>[man_made]='breakwater'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">4</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
-      &maxscale_zoom15;
+      &maxscale_zoom16;
       &minscale_zoom18;
+      <Filter>[man_made]='pier'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#f2efe9</CssParameter>
         <CssParameter name="stroke-width">7</CssParameter>
@@ -98,7 +128,7 @@
     <StyleName>piers-area</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way from &prefix;_polygon where man_made in ('pier','breakwater')) as piers
+      (select way,man_made from &prefix;_polygon where man_made in ('pier','breakwater')) as piers
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -107,7 +137,7 @@
      <StyleName>piers</StyleName>
      <Datasource>
       <Parameter name="table">
-      (select way from &prefix;_line where man_made in ('pier','breakwater')) as piers
+      (select way,man_made from &prefix;_line where man_made in ('pier','breakwater')) as piers
       </Parameter>
       &datasource-settings;
     </Datasource>
