@@ -6571,7 +6571,7 @@
       (select way,aeroway,shop,access,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser')
+          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
           or leisure is not null
           or landuse is not null
           or tourism is not null
