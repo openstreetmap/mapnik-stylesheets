@@ -509,6 +509,24 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#000033" halo_radius="1" wrap_width="20"/>
     </Rule>
 </Style>
+<Style name="highway-junctions">
+    <Rule>
+      &maxscale_zoom11;
+      &minscale_zoom11;
+      <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="2" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom12;
+      &minscale_zoom14;
+      <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="2"/>
+      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="8" fill="#6666ff" halo_radius="1" wrap_width="2" dy="-8" min_distance="2" wrap_character=";" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      <TextSymbolizer name="ref" fontset_name="oblique-fonts" size="12" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="2"/>
+      <TextSymbolizer name="name" fontset_name="oblique-fonts" size="11" fill="#6666ff" halo_radius="1" wrap_width="2" dy="-10" min_distance="2" wrap_character=";" />
+    </Rule>
+</Style>
 <Style name="text">
     <Rule>
       <Filter>[place] = 'island'</Filter>
@@ -722,25 +740,6 @@
       <Filter>[shop]='supermarket' or [shop]='department_store'</Filter>
       &maxscale_zoom16;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#939" dy="9" halo_radius="1" wrap_width="20"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'motorway_junction'</Filter>
-      &maxscale_zoom11;
-      &minscale_zoom11;
-      <TextSymbolizer name="ref" fontset_name="book-fonts" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'motorway_junction'</Filter>
-      &maxscale_zoom12;
-      &minscale_zoom14;
-      <TextSymbolizer name="ref" fontset_name="book-fonts" size="9" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-8" min_distance="20"/>
-    </Rule>
-    <Rule>
-      <Filter>[highway] = 'motorway_junction'</Filter>
-      &maxscale_zoom15;
-      <TextSymbolizer name="ref" fontset_name="book-fonts" size="13" fill="#6666ff" halo_radius="1" wrap_width="12" min_distance="20"/>
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#6666ff" halo_radius="1" wrap_width="12" dy="-14" min_distance="20"/>
     </Rule>
     <Rule>
       <Filter>[military] = 'danger_area'</Filter>
@@ -6525,6 +6524,18 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="highway-junctions" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>highway-junctions</StyleName>
+    <Datasource>
+     <Parameter name="table">
+     (select way,ref,name
+      from &prefix;_point
+      where highway='motorway_junction'
+     ) as junctions
+     </Parameter>
+     &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="planet roads text osm" status="on" srs="&osm2pgsql_projection;">
      <StyleName>roads-text</StyleName>
      <Datasource>
@@ -6545,7 +6556,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,access,highway,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,'yes'::text as point
+      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,'yes'::text as point
        from &prefix;_point
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
@@ -6555,7 +6566,6 @@
           or "natural" is not null
           or man_made in ('lighthouse','windmill')
           or place='island'
-          or highway='motorway_junction'
           or military='danger_area'
           or aeroway='gate'
           or waterway='lock'
@@ -6568,7 +6578,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,shop,access,amenity,highway,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,'no'::text as point
+      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
