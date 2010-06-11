@@ -251,6 +251,11 @@
       <PointSymbolizer file="&symbols;/tower_water.p.20.png" type="png" width="20" height="20" />
     </Rule>
     <Rule>
+      &maxscale_zoom17;
+      <Filter>[historic]='memorial'</Filter>
+      <PointSymbolizer file="&symbols;/tourist_memorial.p.20.png" />
+    </Rule>
+    <Rule>
       &maxscale_zoom16;
       <Filter>[shop]='supermarket'</Filter>
       <PointSymbolizer file="&symbols;/shop_supermarket.p.16.png" type="png" width="16" height="16" />
@@ -291,13 +296,14 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic
       from &prefix;_point
       where amenity is not null
          or shop is not null
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
          or highway in ('bus_stop','traffic_signals','ford')
          or man_made in ('mast','water_tower')
+         or historic='memorial'
          or waterway='lock'
          or lock='yes'
       ) as points</Parameter>
@@ -308,13 +314,14 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic
       from &prefix;_polygon
       where amenity is not null
          or shop is not null
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
+         or historic='memorial'
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>

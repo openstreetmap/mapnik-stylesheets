@@ -600,6 +600,11 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="brown" dy="9" halo_radius="1" wrap_width="20" />
     </Rule>
     <Rule>
+      <Filter>[historic] = 'memorial'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="brown" dy="12" halo_radius="1" wrap_width="20" />
+    </Rule>
+    <Rule>
       <Filter>[natural] = 'water' or [natural] = 'lake' or [landuse] = 'reservoir' or [landuse] = 'basin'</Filter>
       &maxscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
@@ -609,7 +614,7 @@
       &maxscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" halo_radius="2" wrap_width="10"/>
     </Rule>
-     <Rule>
+    <Rule>
       <Filter>[natural] = 'bay'</Filter>
       &maxscale_zoom14;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
@@ -6566,7 +6571,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,'yes'::text as point
+      (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,historic,'yes'::text as point
        from &prefix;_point
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
@@ -6579,6 +6584,7 @@
           or military='danger_area'
           or aeroway='gate'
           or waterway='lock'
+          or historic='memorial'
       ) as text
       </Parameter>
       &datasource-settings;
@@ -6588,7 +6594,7 @@
     <StyleName>text</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,'no'::text as point
+      (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,historic,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
           or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
@@ -6599,6 +6605,7 @@
           or man_made in ('lighthouse','windmill')
           or place='island'
           or military='danger_area'
+          or historic='memorial'
       ) as text
       </Parameter>
       &datasource-settings;
