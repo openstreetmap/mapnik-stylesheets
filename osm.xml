@@ -595,6 +595,11 @@
       <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="9" fill="brown" dy="16" halo_radius="1"/>
     </Rule>
     <Rule>
+      <Filter>[natural] = 'cave_entrance'</Filter>
+      &maxscale_zoom15;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="brown" dy="9" halo_radius="1" wrap_width="20" />
+    </Rule>
+    <Rule>
       <Filter>[natural] = 'water' or [natural] = 'lake' or [landuse] = 'reservoir' or [landuse] = 'basin'</Filter>
       &maxscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" wrap_width="20"/>
