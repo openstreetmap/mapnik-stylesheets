@@ -582,12 +582,17 @@
     <Rule>
       <Filter>[natural] = 'peak'</Filter>
       &maxscale_zoom13;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="brown" dy="10" halo_radius="1"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="brown" dy="5" halo_radius="1"/>
     </Rule>
     <Rule>
-      <Filter>[natural] = 'peak'</Filter>
+      <Filter>[natural] = 'peak' and not [name] != ''</Filter>
       &maxscale_zoom14;
-      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="9" fill="brown" dy="20" halo_radius="1"/>
+      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="9" fill="brown" dy="6" halo_radius="1"/>
+    </Rule>
+    <Rule>
+      <Filter>[natural] = 'peak' and [name] != ''</Filter>
+      &maxscale_zoom14;
+      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="9" fill="brown" dy="16" halo_radius="1"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'water' or [natural] = 'lake' or [landuse] = 'reservoir' or [landuse] = 'basin'</Filter>
