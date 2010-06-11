@@ -75,7 +75,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,building,leisure,railway,amenity,aeroway from &prefix;_polygon
-       where building is not null
+       where (building is not null and building != 'no')
           or leisure in ('pitch','track')
           or railway='station'
           or amenity='place_of_worship'
