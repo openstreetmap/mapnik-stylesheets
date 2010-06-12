@@ -6397,8 +6397,8 @@
     <Datasource>
       <Parameter name="table">
       (select p.way as way,l.highway as int_tc_type
-       from planet_osm_point p
-        join planet_osm_line l
+       from &prefix;_point p
+        join &prefix;_line l
         on ST_DWithin(p.way,l.way,&dwithin_node_way;)
        where p.highway='turning_circle' and l.highway is not null
       ) as turning_circle
@@ -6475,8 +6475,8 @@
     <Datasource>
       <Parameter name="table">
       (select p.way as way,l.highway as int_tc_type
-       from planet_osm_point p
-        join planet_osm_line l
+       from &prefix;_point p
+        join &prefix;_line l
         on ST_DWithin(p.way,l.way,&dwithin_node_way;)
        where p.highway='turning_circle' and l.highway is not null
       ) as turning_circle
