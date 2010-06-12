@@ -137,17 +137,19 @@ if __name__ == '__main__':
         parser.error(color_text(1,"Can't properly parse out variables in include templates.\nMake sure they are all wrapped like '%(variable)s'"))
     
     # look ahead and build up --help text...
-    #import pdb;pdb.set_trace()
     p = Params(matches,accept_none=False)
     blended = p.blend_with_env({})
+    c_opts = []
     for var in matches:
-        msg = "(default: '%(" + var + ")s')"
-        if var in blended:
-            default = msg % blended
-        else:
-            default = ''#msg % {var:'None'} 
-        parser.add_option('--%s' % var, dest=var,
-            help="Set value of '%s' %s" % (var,default))
+        if not var in c_opts:
+            msg = "(default: '%(" + var + ")s')"
+            if var in blended:
+                default = msg % blended
+            else:
+                default = ''#msg % {var:'None'} 
+            parser.add_option('--%s' % var, dest=var,
+                help="Set value of '%s' %s" % (var,default))
+            c_opts.append(var)
 
     # now, actually run the tool...
     (options, args) = parser.parse_args()
