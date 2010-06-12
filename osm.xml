@@ -8,15 +8,107 @@
      and behaviour that necessitate an upgrade to mapnik 0.7.1 -->
 <Map bgcolor="#b5d0d0" srs="&srs900913;" minimum_version="0.7.1">
   &fontset-settings;
-<Style name="turning_circle">
+<Style name="turning_circle-casing">
+    <!-- Render turning circle casings.
+         Tertiary/unclassified/residential/living_street have explicit handling.
+         Other types get the basic gray circle without fill. -->
     <Rule>
       &maxscale_zoom15;
       &minscale_zoom16;
-      <PointSymbolizer file="&symbols;/turning_circle.15.png" type="png" width="15" height="15" />
+      <Filter>[int_tc_type]='tertiary'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-tert-casing.18.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <Filter>[int_tc_type]='living_street'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <ElseFilter />
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.18.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <Filter>[int_tc_type]='living_street'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.18.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <ElseFilter />
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.18.png" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <PointSymbolizer file="&symbols;/turning_circle.19.png" type="png" width="19" height="19" />
+      <Filter>[int_tc_type]='tertiary'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-tert-casing.24.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[int_tc_type]='living_street'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.24.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <ElseFilter />
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.24.png" />
+    </Rule>
+</Style>
+<Style name="turning_circle-fill">
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom16;
+      <Filter>[int_tc_type]='tertiary'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-tert-fill.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.14.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <Filter>[int_tc_type]='living_street'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-livs-fill.14.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <Filter>[int_tc_type]='living_street'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-livs-fill.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[int_tc_type]='tertiary'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-tert-fill.22.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.22.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[int_tc_type]='living_street'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-livs-fill.22.png" />
     </Rule>
 </Style>
 <Style name="highway-area-casing">
@@ -6300,14 +6392,22 @@
     </Datasource>
 </Layer>
 &layer-citywall;
-<Layer name="turning_circle" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>turning_circle</StyleName>    
+<Layer name="turning_circle-casing" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>turning_circle-casing</StyleName>    
     <Datasource>
-      <Parameter name="table">(select way from &prefix;_point where highway='turning_circle') as turning_circle</Parameter>
+      <Parameter name="table">
+      (select p.way as way,l.highway as int_tc_type
+       from planet_osm_point p
+        join planet_osm_line l
+        on ST_DWithin(p.way,l.way,&dwithin_node_way;)
+       where p.highway='turning_circle' and l.highway is not null
+      ) as turning_circle
+      </Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="footbikecycle-tunnels" status="on" srs="&osm2pgsql_projection;">
+<!-- clear_label_cache="on" needs to follow immediately after the turning_circle-casing layer -->
+<Layer name="footbikecycle-tunnels" status="on" srs="&osm2pgsql_projection;" clear_label_cache="on">
     <StyleName>footbikecycle-tunnels</StyleName>
     <Datasource>
       <Parameter name="table">
@@ -6366,6 +6466,20 @@
        from &prefix;_line
        where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street')
        order by z_order) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="turning_circle-fill" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>turning_circle-fill</StyleName>    
+    <Datasource>
+      <Parameter name="table">
+      (select p.way as way,l.highway as int_tc_type
+       from planet_osm_point p
+        join planet_osm_line l
+        on ST_DWithin(p.way,l.way,&dwithin_node_way;)
+       where p.highway='turning_circle' and l.highway is not null
+      ) as turning_circle
       </Parameter>
       &datasource-settings;
     </Datasource>
