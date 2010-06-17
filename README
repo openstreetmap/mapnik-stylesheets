@@ -34,7 +34,7 @@ If you are looking for an old file that used to be here see the 'archive' direct
 Required
 --------
 
-Mapnik >= 0.6.1 | The rendering library
+Mapnik >= 0.7.1 | The rendering library
  * Built with the PostGIS plugin
  * http://trac.mapnik.org/wiki/MapnikInstallation
 
