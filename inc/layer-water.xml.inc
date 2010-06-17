@@ -8,7 +8,7 @@
         <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
-      <PolygonPatternSymbolizer file="&symbols;/glacier.png" type="png" width="40" height="32"/>
+      <PolygonPatternSymbolizer file="&symbols;/glacier.png" />
     </Rule>
     <Rule>
       <Filter>[natural] = 'glacier'</Filter>
@@ -18,7 +18,7 @@
         <CssParameter name="stroke-width">1.5</CssParameter>
         <CssParameter name="stroke-dasharray">4,2</CssParameter>
       </LineSymbolizer>
-      <PolygonPatternSymbolizer file="&symbols;/glacier2.png" type="png" width="70" height="56"/>
+      <PolygonPatternSymbolizer file="&symbols;/glacier2.png" />
     </Rule>
     <Rule>
       <Filter>[waterway] = 'dock' or [waterway] = 'mill_pond' or [waterway]='canal'</Filter>
@@ -44,12 +44,12 @@
     <Rule>
       &maxscale_zoom13;
       <Filter>[natural] = 'marsh' or [natural] = 'wetland'</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/marsh.png" type="png" width="30" height="30"/>
+      <PolygonPatternSymbolizer file="&symbols;/marsh.png" />
     </Rule>
     <Rule>
       &maxscale_zoom13;
       <Filter>[natural] = 'scrub'</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/scrub.png" type="png" width="30" height="30"/>
+      <PolygonPatternSymbolizer file="&symbols;/scrub.png" />
     </Rule>
     <Rule>
       <Filter>[natural] = 'land'</Filter>

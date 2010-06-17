@@ -3,7 +3,7 @@
       &maxscale_zoom9;
       &minscale_zoom10;
       <Filter>[aeroway]='airport'</Filter>
-      <PointSymbolizer file="&symbols;/airport.p.16.png" type="png" width="16" height="16" />
+      <PointSymbolizer file="&symbols;/airport.p.16.png" />
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="8" fill="#6692da" dy="-12" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
@@ -16,7 +16,7 @@
       &maxscale_zoom10;
       &minscale_zoom10;
       <Filter>[aeroway]='aerodrome'</Filter>
-      <PointSymbolizer file="&symbols;/aerodrome.p.16.png" type="png" width="16" height="16" />
+      <PointSymbolizer file="&symbols;/aerodrome.p.16.png" />
       <TextSymbolizer name="name" fontset_name="oblique-fonts" size="8" fill="#6692da" dy="-12" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
@@ -29,22 +29,22 @@
       &maxscale_zoom14;
       &minscale_zoom15;
       <Filter>[railway]='level_crossing'</Filter>
-      <PointSymbolizer file="&symbols;/level_crossing.png" type="png" width="7" height="7" />
+      <PointSymbolizer file="&symbols;/level_crossing.png" />
     </Rule>
     <Rule>
       &maxscale_zoom16;
       <Filter>[railway]='level_crossing'</Filter>
-      <PointSymbolizer file="&symbols;/level_crossing2.png" type="png" width="11" height="11" />
+      <PointSymbolizer file="&symbols;/level_crossing2.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[man_made]='lighthouse'</Filter>
-      <PointSymbolizer file="&symbols;/lighthouse.p.20.png" type="png" width="20" height="20" />
+      <PointSymbolizer file="&symbols;/lighthouse.p.20.png" />
     </Rule>
     <Rule>
       &maxscale_zoom11;
       <Filter>[natural]='peak'</Filter>
-      <PointSymbolizer file="&symbols;/peak.png" type="png" width="8" height="8" />
+      <PointSymbolizer file="&symbols;/peak.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
@@ -54,53 +54,53 @@
     <Rule>
       &maxscale_zoom14;
       <Filter>[natural]='spring'</Filter>
-      <PointSymbolizer file="&symbols;/spring.png" type="png" width="5" height="7" />
+      <PointSymbolizer file="&symbols;/spring.png" />
     </Rule>
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
       <Filter>[natural]='tree'</Filter>
-      <PointSymbolizer file="&symbols;/tree.png" type="png" width="3" height="3" />
+      <PointSymbolizer file="&symbols;/tree.png" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
       <Filter>[natural]='tree'</Filter>
-      <PointSymbolizer file="&symbols;/tree2.png" type="png" width="5" height="5" />
+      <PointSymbolizer file="&symbols;/tree2.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[man_made]='power_wind' or ([power]='generator' and [power_source] = 'wind')</Filter>
-      <PointSymbolizer file="&symbols;/power_wind.png" type="png" width="16" height="26" />
+      <PointSymbolizer file="&symbols;/power_wind.png" />
     </Rule>
     <Rule>
       &maxscale_zoom16;
       <Filter>[man_made]='windmill'</Filter>
-      <PointSymbolizer file="&symbols;/windmill.png" type="png" width="10" height="15" />
+      <PointSymbolizer file="&symbols;/windmill.png" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
       <Filter>[man_made]='mast'</Filter>
-      <PointSymbolizer file="&symbols;/communications.p.20.png" type="png" width="20" height="20" />
+      <PointSymbolizer file="&symbols;/communications.p.20.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[highway]='mini_roundabout'</Filter>
-      <PointSymbolizer file="&symbols;/mini_round.png" type="png" width="9" height="9" allow_overlap="false"/>
+      <PointSymbolizer file="&symbols;/mini_round.png" allow_overlap="false"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[highway]='gate' or [barrier]='gate'</Filter>
-      <PointSymbolizer file="&symbols;/gate2.png" type="png" width="7" height="5" allow_overlap="false"/>
+      <PointSymbolizer file="&symbols;/gate2.png" allow_overlap="false"/>
     </Rule>
     <Rule> 
  	&maxscale_zoom16; 
  	<Filter>[barrier]='lift_gate'</Filter> 
- 	<PointSymbolizer file="&symbols;/liftgate.png" type="png" width="7" height="5" allow_overlap="false"/> 
+ 	<PointSymbolizer file="&symbols;/liftgate.png" allow_overlap="false"/> 
     </Rule> 
     <Rule>
       &maxscale_zoom16;
       <Filter>[barrier]='bollard'</Filter>
-      <PointSymbolizer file="&symbols;/bollard.png" type="png" width="3" height="3" allow_overlap="false"/>
+      <PointSymbolizer file="&symbols;/bollard.png" allow_overlap="false"/>
     </Rule>
 </Style>
 

@@ -3,13 +3,13 @@
       <Filter>[aerialway] = 'cable_car' or [aerialway]='gondola'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <LinePatternSymbolizer file="&symbols;/cable_car.png" type="png" width="28" height="3" />
+      <LinePatternSymbolizer file="&symbols;/cable_car.png" />
     </Rule>
     <Rule>
       <Filter>[aerialway] = 'chair_lift' or [aerialway]='drag_lift'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <LinePatternSymbolizer file="&symbols;/chair_lift.png" type="png" width="30" height="5" />
+      <LinePatternSymbolizer file="&symbols;/chair_lift.png" />
     </Rule>
 </Style>
 

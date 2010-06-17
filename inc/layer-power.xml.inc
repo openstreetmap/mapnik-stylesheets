@@ -18,7 +18,7 @@
 <Style name="power_towers">
     <Rule>
       &maxscale_zoom14;
-      <PointSymbolizer file="&symbols;/power_tower.png" type="png" width="7" height="7" allow_overlap="false"/>
+      <PointSymbolizer file="&symbols;/power_tower.png" allow_overlap="false"/>
     </Rule>
 </Style>
 

@@ -201,7 +201,7 @@
     <Rule>
       <Filter>[landuse] = 'quarry'</Filter>
       &maxscale_zoom11;
-      <PolygonPatternSymbolizer file="&symbols;/quarry2.png" type="png" width="30" height="30"/>
+      <PolygonPatternSymbolizer file="&symbols;/quarry2.png" />
       <LineSymbolizer>
         <CssParameter name="stroke">grey</CssParameter>
 	<CssParameter name="stroke-width">0.5</CssParameter>
@@ -218,29 +218,29 @@
     <Rule>
       <Filter>[landuse] = 'orchard'</Filter>
       &maxscale_zoom10;
-      <PolygonPatternSymbolizer file="&symbols;/orchard.png" type="png" width="10" height="10"/>
+      <PolygonPatternSymbolizer file="&symbols;/orchard.png" />
     </Rule>
     <Rule>
       <Filter>[landuse] = 'vineyard'</Filter>
       &maxscale_zoom13;
       &minscale_zoom14;
-      <PolygonPatternSymbolizer file="&symbols;/vineyard.png" type="png" width="19" height="21"/>
+      <PolygonPatternSymbolizer file="&symbols;/vineyard.png" />
     </Rule>
     <Rule>
       <Filter>[landuse] = 'vineyard'</Filter>
       &maxscale_zoom15;
-      <PolygonPatternSymbolizer file="&symbols;/vineyard.png" type="png" width="29" height="29"/>
+      <PolygonPatternSymbolizer file="&symbols;/vineyard.png" />
     </Rule>
     <Rule>
       <Filter>[leisure] = 'nature_reserve'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
-      <PolygonPatternSymbolizer file="&symbols;/nature_reserve.png" type="png" width="21" height="24"/>
+      <PolygonPatternSymbolizer file="&symbols;/nature_reserve.png" />
     </Rule>
     <Rule>
       <Filter>[leisure] = 'nature_reserve'</Filter>
       &maxscale_zoom14;
-      <PolygonPatternSymbolizer file="&symbols;/nature_reserve2.png" type="png" width="42" height="48"/>
+      <PolygonPatternSymbolizer file="&symbols;/nature_reserve2.png" />
     </Rule>
     <Rule>
       &maxscale_zoom10;
@@ -311,17 +311,17 @@
       &maxscale_zoom11;
       &minscale_zoom18;
       <Filter>[military] = 'danger_area'</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/danger.png" type="png" width="30" height="30"/>
+      <PolygonPatternSymbolizer file="&symbols;/danger.png" />
     </Rule>
     <Rule>
       &maxscale_zoom14;
       <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'jewish'</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/cemetery_jewish.18.png" type="png" width="18" height="18"/>
+      <PolygonPatternSymbolizer file="&symbols;/cemetery_jewish.18.png" />
     </Rule>
     <Rule>
       &maxscale_zoom14;
       <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and (not [religion] &lt;&gt; '' or [religion] &lt;&gt; 'jewish')</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/grave_yard.png" type="png" width="16" height="16"/>
+      <PolygonPatternSymbolizer file="&symbols;/grave_yard.png" />
     </Rule>
     <Rule>
       &maxscale_zoom10;
@@ -341,7 +341,7 @@
     <Rule>
       <Filter>[tourism] = 'zoo'</Filter>
       &maxscale_zoom10;
-      <PolygonPatternSymbolizer file="&symbols;/zoo.png" type="png" width="21" height="24"/>
+      <PolygonPatternSymbolizer file="&symbols;/zoo.png" />
     </Rule>
     <Rule>
       <Filter>[leisure] = 'common'</Filter>
@@ -382,7 +382,7 @@
     <Rule>
       <Filter>[landuse] = 'forest'</Filter>
       &maxscale_zoom14;
-      <PolygonPatternSymbolizer file="&symbols;/forest.png" type="png" width="21" height="24"/>
+      <PolygonPatternSymbolizer file="&symbols;/forest.png" />
     </Rule>
     <Rule>
       <Filter>[landuse]='farmyard'</Filter>
@@ -544,12 +544,12 @@
     <Rule>
       <Filter>[natural] = 'beach'</Filter>
       &maxscale_zoom13;
-      <PolygonPatternSymbolizer file="&symbols;/beach.png" type="png" width="10" height="10"/>
+      <PolygonPatternSymbolizer file="&symbols;/beach.png" />
     </Rule>
     <Rule>
       <Filter>[natural] = 'mud'</Filter>
       &maxscale_zoom13;
-      <PolygonPatternSymbolizer file="&symbols;/mud.png" type="png" width="10" height="10"/>
+      <PolygonPatternSymbolizer file="&symbols;/mud.png" />
     </Rule>
     <Rule>
       <Filter>[leisure] = 'pitch'</Filter>
@@ -5699,145 +5699,145 @@
       <Filter>[highway] = 'motorway' and [length] = 1</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield1.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 2</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield2.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 3</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield3.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 4</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield4.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 5</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield5.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 6</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 7</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 8</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield7.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 1</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield1.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 2</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield2.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 3</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield3.png" type="png" width="31" height="17" min_distance="24" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield3.png" min_distance="24" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 4</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield4.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 5</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield5.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 6</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 7</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield7.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 8</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield8.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 1</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield1.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 2</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield2.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 3</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield3.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 4</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield4.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 5</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield5.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 6</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 7</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield7.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 8</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield8.png" min_distance="30" spacing="750"/>
     </Rule>
 </Style>
 <Style name="roads-text">
@@ -5845,241 +5845,241 @@
       <Filter>[highway] = 'motorway' and [length] = 1</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield1.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 2</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield2.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 3</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield3.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 4</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield4.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 5</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield5.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 6</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 7</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'motorway' and [length] = 8</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/mot_shield7.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 1</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield1.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 2</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield2.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 3</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield3.png" type="png" width="31" height="17" min_distance="24" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield3.png" min_distance="24" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 4</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield4.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 5</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield5.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 6</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 7</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield7.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'trunk' and [length] = 8</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/tru_shield8.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 1</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield1.png" type="png" width="17" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield1.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 2</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield2.png" type="png" width="24" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield2.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 3</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield3.png" type="png" width="31" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield3.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 4</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield4.png" type="png" width="38" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield4.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 5</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield5.png" type="png" width="45" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield5.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 6</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield6.png" type="png" width="52" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield6.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 7</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield7.png" type="png" width="59" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield7.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>[highway] = 'primary' and [length] = 8</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield8.png" type="png" width="66" height="17" min_distance="30" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/pri_shield8.png" min_distance="30" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 1) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield1.png" type="png" width="17" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield1.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 2) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield2.png" type="png" width="24" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield2.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 3) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield3.png" type="png" width="31" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield3.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 4) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield4.png" type="png" width="38" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield4.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 5) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield5.png" type="png" width="45" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield5.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 6) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield6.png" type="png" width="52" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield6.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 7) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield7.png" type="png" width="59" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield7.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'secondary' and [length] = 8) and not [bridge]='yes'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield8.png" type="png" width="66" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/sec_shield8.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 1) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield1.png" type="png" width="17" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield1.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 2) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield2.png" type="png" width="24" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield2.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 3) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield3.png" type="png" width="31" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield3.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 4) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield4.png" type="png" width="38" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield4.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 5) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield5.png" type="png" width="45" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield5.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 6) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield6.png" type="png" width="52" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield6.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 7) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield7.png" type="png" width="59" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield7.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'tertiary' and [length] = 8) and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield8.png" type="png" width="66" height="17" min_distance="40" spacing="750"/>
+      <ShieldSymbolizer name="ref" fontset_name="bold-fonts" size="10" fill="#fff" placement="line" file="&symbols;/ter_shield8.png" min_distance="40" spacing="750"/>
     </Rule>
     <Rule>
       <Filter>([highway] = 'unclassified' or [highway]='residential') and not [bridge]='yes'</Filter>
@@ -6186,17 +6186,17 @@
       &maxscale_zoom13;
       &minscale_zoom14;
       <Filter>[natural] = 'cliff'</Filter>       
-       <LinePatternSymbolizer file="&symbols;/cliff.png" type="png" width="10" height="4" />
+       <LinePatternSymbolizer file="&symbols;/cliff.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[natural] = 'cliff'</Filter>
-       <LinePatternSymbolizer file="&symbols;/cliff2.png" type="png" width="12" height="6" />
+       <LinePatternSymbolizer file="&symbols;/cliff2.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[man_made] = 'embankment'</Filter>
-       <LinePatternSymbolizer file="&symbols;/cliff.png" type="png" width="10" height="4" />
+       <LinePatternSymbolizer file="&symbols;/cliff.png" />
     </Rule>
 </Style>
 <Style name="barriers">

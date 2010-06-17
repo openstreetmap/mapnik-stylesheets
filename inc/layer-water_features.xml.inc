@@ -104,7 +104,7 @@
       &maxscale_zoom17;
       &minscale_zoom18;
       <Filter>[waterway]='lock_gate'</Filter>
-      <PointSymbolizer file="&symbols;/lock_gate.png" type="png" width="9" height="9" />
+      <PointSymbolizer file="&symbols;/lock_gate.png" />
 </Rule>
 </Style>
 <Layer name="dam" status="on" srs="&osm2pgsql_projection;">
