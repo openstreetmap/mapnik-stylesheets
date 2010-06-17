@@ -35,17 +35,6 @@
         <CssParameter name="stroke-width">0.3</CssParameter>
       </LineSymbolizer>
     </Rule>
-     <Rule>
-      <Filter>[leisure]='track'</Filter>
-      &maxscale_zoom10;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#74dcba</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#888</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
-    </Rule>
     <Rule>
       <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
       &maxscale_zoom10;
@@ -76,7 +65,6 @@
       <Parameter name="table">
       (select way,building,leisure,railway,amenity,aeroway from &prefix;_polygon
        where (building is not null and building != 'no')
-          or leisure in ('pitch','track')
           or railway='station'
           or amenity='place_of_worship'
           or aeroway='terminal'
