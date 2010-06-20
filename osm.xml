@@ -6641,7 +6641,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-&layer-placenames;
+
 &layer-amenity-stations;
 &layer-amenity-symbols;
 &layer-amenity-points;
@@ -6779,4 +6779,5 @@
     </Datasource>
 </Layer>
 &layer-admin;
+&layer-placenames;
 </Map>
