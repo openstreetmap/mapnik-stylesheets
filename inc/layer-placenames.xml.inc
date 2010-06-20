@@ -3,13 +3,13 @@
       <Filter>[place] = 'country'</Filter>
       &maxscale_zoom2;
       &minscale_zoom3;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
       <Filter>[place] = 'country'</Filter>
       &maxscale_zoom4;
       &minscale_zoom6;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="0"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="20"/>
     </Rule>
 </Style>
 <Style name="state">
@@ -35,7 +35,7 @@
 <Style name="capital">
      <Rule>
       <Filter>[place] = 'city' or [place]='metropolis'</Filter>
-      &maxscale_zoom4;
+      &maxscale_zoom5;
       &minscale_zoom5;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
