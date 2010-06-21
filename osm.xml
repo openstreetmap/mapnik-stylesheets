@@ -3531,6 +3531,15 @@
     <Rule>
       <Filter>[aeroway] = 'runway'</Filter>
       &maxscale_zoom12;
+      &minscale_zoom12;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#bbc</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'runway'</Filter>
+      &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
         <CssParameter name="stroke">#bbc</CssParameter>
