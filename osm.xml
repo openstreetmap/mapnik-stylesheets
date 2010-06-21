@@ -5537,7 +5537,7 @@
     <Rule>
       <Filter>[highway] = 'secondary' or [highway] = 'secondary_link'</Filter>
       &maxscale_zoom11;
-      &minscale_zoom12;
+      &minscale_zoom11;
       <LineSymbolizer>
         <CssParameter name="stroke">#fecc8b</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
