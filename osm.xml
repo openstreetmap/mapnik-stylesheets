@@ -223,12 +223,6 @@
     <Rule>
       <Filter>[landuse] = 'vineyard'</Filter>
       &maxscale_zoom13;
-      &minscale_zoom14;
-      <PolygonPatternSymbolizer file="&symbols;/vineyard.png" />
-    </Rule>
-    <Rule>
-      <Filter>[landuse] = 'vineyard'</Filter>
-      &maxscale_zoom15;
       <PolygonPatternSymbolizer file="&symbols;/vineyard.png" />
     </Rule>
     <Rule>
