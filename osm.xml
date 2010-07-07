@@ -153,7 +153,7 @@
       </PolygonSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' or [highway]='service' or [highway]='footway' or [highway]='path'</Filter>
+      <Filter>[highway] = 'pedestrian' or [highway]='footway' or [highway]='path'</Filter>
       &maxscale_zoom14;
       <PolygonSymbolizer>
         <CssParameter name="fill">#ededed</CssParameter>
