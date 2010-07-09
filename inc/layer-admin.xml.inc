@@ -1,7 +1,7 @@
 <Style name="admin-01234">
     <Rule>
       <Filter>[admin_level]='2' or [admin_level]='3'</Filter>
-      &maxscale_zoom2;
+      &maxscale_zoom4;
       &minscale_zoom6;
       <LineSymbolizer>
         <CssParameter name="stroke">purple</CssParameter>
