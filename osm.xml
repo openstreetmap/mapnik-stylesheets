@@ -136,6 +136,16 @@
 	<CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
    </Rule>
+    <Rule>
+      <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
 </Style>
 <Style name="highway-area-fill">
     <Rule>
@@ -166,6 +176,14 @@
         <CssParameter name="fill">#dfcc66</CssParameter>
       </PolygonSymbolizer>
    </Rule>
+    <Rule>
+      <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
+      &maxscale_zoom16;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbbbbb</CssParameter>
+        <CssParameter name="gamma">.65</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
 </Style>
 <Style name="leisure">
     <Rule>
@@ -6472,8 +6490,9 @@
     <StyleName>highway-area-casing</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from &prefix;_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','track','path')
+      (select way,highway,railway from &prefix;_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway','track','path','platform')
+          or railway='platform'
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
@@ -6511,8 +6530,9 @@
     <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from &prefix;_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path')
+      (select way,highway,railway from &prefix;_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform')
+          or railway='platform'
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
