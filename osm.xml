@@ -332,8 +332,13 @@
     </Rule>
     <Rule>
       &maxscale_zoom14;
-      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and (not [religion] &lt;&gt; '' or [religion] &lt;&gt; 'jewish')</Filter>
+      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'christian'</Filter>
       <PolygonPatternSymbolizer file="&symbols;/grave_yard.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom14;
+      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'INT-generic'</Filter>
+      <PolygonPatternSymbolizer file="&symbols;/grave_yard_generic.png" />
     </Rule>
     <Rule>
       &maxscale_zoom10;
@@ -6387,7 +6392,8 @@
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,shop,tourism,name,religion
+      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,shop,tourism,name,
+       case when religion in ('christian','jewish') then religion else 'INT-generic'::text end as religion
        from &prefix;_polygon
        where landuse is not null
           or leisure is not null
