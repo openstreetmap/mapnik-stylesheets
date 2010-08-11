@@ -74,6 +74,8 @@ Finally try rendering a few maps using either 'generate_image.py',
 
 Downloading the Coastlines Shapefiles
 -------------------------------------
+ 
+    All these actions are regrouped in the script file get-coastlines.sh in this directory
 
     wget http://tile.openstreetmap.org/world_boundaries-spherical.tgz # (50M)
     wget http://tile.openstreetmap.org/processed_p.tar.bz2 # (227M)
