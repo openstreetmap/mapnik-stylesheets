@@ -267,6 +267,11 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[shop]='butcher'</Filter>
+      <PointSymbolizer file="&symbols;/shop_butcher.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[shop]='clothes' or [shop]='fashion'</Filter>
       <PointSymbolizer file="&symbols;/shop_clothes.p.16.png" />
     </Rule>
