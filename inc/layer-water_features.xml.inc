@@ -47,7 +47,7 @@
     <Rule>
       &maxscale_zoom11;
       &minscale_zoom12;
-      <Filter>[man_made]='breakwater'</Filter>
+      <Filter>[man_made]='breakwater' or [man_made]='groyne'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -65,7 +65,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom15;
-      <Filter>[man_made]='breakwater'</Filter>
+      <Filter>[man_made]='breakwater' or [man_made]='groyne'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -83,7 +83,7 @@
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom18;
-      <Filter>[man_made]='breakwater'</Filter>
+      <Filter>[man_made]='breakwater' or [man_made]='groyne'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#aaa</CssParameter>
         <CssParameter name="stroke-width">4</CssParameter>
@@ -128,7 +128,7 @@
     <StyleName>piers-area</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,man_made from &prefix;_polygon where man_made in ('pier','breakwater')) as piers
+      (select way,man_made from &prefix;_polygon where man_made in ('pier','breakwater','groyne')) as piers
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -137,7 +137,7 @@
      <StyleName>piers</StyleName>
      <Datasource>
       <Parameter name="table">
-      (select way,man_made from &prefix;_line where man_made in ('pier','breakwater')) as piers
+      (select way,man_made from &prefix;_line where man_made in ('pier','breakwater','groyne')) as piers
       </Parameter>
       &datasource-settings;
     </Datasource>
