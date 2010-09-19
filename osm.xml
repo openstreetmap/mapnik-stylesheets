@@ -9,9 +9,6 @@
 <Map bgcolor="#b5d0d0" srs="&srs900913;" minimum_version="0.7.1">
   &fontset-settings;
 <Style name="turning_circle-casing">
-    <!-- Render turning circle casings.
-         Tertiary/unclassified/residential/living_street have explicit handling.
-         Other types get the basic gray circle without fill. -->
     <Rule>
       &maxscale_zoom15;
       &minscale_zoom16;
@@ -31,10 +28,10 @@
       <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.16.png" allow_overlap="true" />
     </Rule>
     <Rule>
-      &maxscale_zoom15;
-      &minscale_zoom15;
-      <ElseFilter />
-      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.18.png" allow_overlap="true" />
+      &maxscale_zoom16;
+      &minscale_zoom16;
+      <Filter>[int_tc_type]='service'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.14.png" allow_overlap="true" />
     </Rule>
     <Rule>
       &maxscale_zoom16;
@@ -43,25 +40,19 @@
       <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.18.png" allow_overlap="true" />
     </Rule>
     <Rule>
-      &maxscale_zoom16;
-      &minscale_zoom16;
-      <ElseFilter />
-      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.18.png" allow_overlap="true" />
-    </Rule>
-    <Rule>
       &maxscale_zoom17;
       <Filter>[int_tc_type]='tertiary'</Filter>
       <PointSymbolizer file="&symbols;/turning_circle-tert-casing.24.png" allow_overlap="true" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[int_tc_type]='living_street'</Filter>
-      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.24.png" allow_overlap="true" />
+      <Filter>[int_tc_type]='service'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.16.png" allow_overlap="true" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <ElseFilter />
-      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.24.png" allow_overlap="true" />
+      <Filter>[int_tc_type]='living_street'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.24.png" allow_overlap="true" />
     </Rule>
 </Style>
 <Style name="turning_circle-fill">
@@ -92,6 +83,12 @@
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
+      <Filter>[int_tc_type]='service'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.12.png" allow_overlap="true" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom16;
       <Filter>[int_tc_type]='living_street'</Filter>
       <PointSymbolizer file="&symbols;/turning_circle-livs-fill.16.png" allow_overlap="true" />
     </Rule>
@@ -104,6 +101,11 @@
       &maxscale_zoom17;
       <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
       <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.22.png" allow_overlap="true" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[int_tc_type]='service'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.14.png" allow_overlap="true" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
@@ -136,6 +138,16 @@
 	<CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
    </Rule>
+    <Rule>
+      <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">grey</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
 </Style>
 <Style name="highway-area-fill">
     <Rule>
@@ -153,7 +165,7 @@
       </PolygonSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'pedestrian' or [highway]='service' or [highway]='footway' or [highway]='path'</Filter>
+      <Filter>[highway] = 'pedestrian' or [highway]='footway' or [highway]='path'</Filter>
       &maxscale_zoom14;
       <PolygonSymbolizer>
         <CssParameter name="fill">#ededed</CssParameter>
@@ -166,6 +178,14 @@
         <CssParameter name="fill">#dfcc66</CssParameter>
       </PolygonSymbolizer>
    </Rule>
+    <Rule>
+      <Filter>[highway] = 'platform' or [railway] = 'platform'</Filter>
+      &maxscale_zoom16;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbbbbb</CssParameter>
+        <CssParameter name="gamma">.65</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
 </Style>
 <Style name="leisure">
     <Rule>
@@ -223,12 +243,6 @@
     <Rule>
       <Filter>[landuse] = 'vineyard'</Filter>
       &maxscale_zoom13;
-      &minscale_zoom14;
-      <PolygonPatternSymbolizer file="&symbols;/vineyard.png" />
-    </Rule>
-    <Rule>
-      <Filter>[landuse] = 'vineyard'</Filter>
-      &maxscale_zoom15;
       <PolygonPatternSymbolizer file="&symbols;/vineyard.png" />
     </Rule>
     <Rule>
@@ -320,8 +334,13 @@
     </Rule>
     <Rule>
       &maxscale_zoom14;
-      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and (not [religion] &lt;&gt; '' or [religion] &lt;&gt; 'jewish')</Filter>
+      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'christian'</Filter>
       <PolygonPatternSymbolizer file="&symbols;/grave_yard.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom14;
+      <Filter>([landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard') and [religion] = 'INT-generic'</Filter>
+      <PolygonPatternSymbolizer file="&symbols;/grave_yard_generic.png" />
     </Rule>
     <Rule>
       &maxscale_zoom10;
@@ -480,7 +499,7 @@
     </Rule>
      <Rule>
       <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
-      &maxscale_zoom9;
+      &maxscale_zoom8;
       <PolygonSymbolizer>
         <CssParameter name="fill">#aed1a0</CssParameter>
      </PolygonSymbolizer>
@@ -850,7 +869,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
-      <Filter>[shop]='bakery' or [shop]='clothes' or [shop]='fashion' or [shop]='convenience' or [shop]='doityourself' or [shop]='hairdresser'</Filter>
+      <Filter>[shop]='bakery' or [shop]='clothes' or [shop]='fashion' or [shop]='convenience' or [shop]='doityourself' or [shop]='hairdresser' or [shop]='butcher'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#939" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
@@ -1885,8 +1904,9 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
+    
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through' or [tunnel]='yes')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
       &maxscale_zoom14;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -1907,7 +1927,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through' or [tunnel]='yes')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -1928,7 +1948,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and [service]='parking_aisle'</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -2740,7 +2760,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom13;
-      &minscale_zoom13;
+      &minscale_zoom18;
       <Filter>[railway] = 'rail' and [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#ffffff</CssParameter>
@@ -2819,6 +2839,21 @@
     </Rule>
     <Rule>
       &maxscale_zoom13;
+      &minscale_zoom18;
+      <Filter>[railway] = 'rail' and [bridge] = 'yes'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom13;
       &minscale_zoom13;
       <Filter>[railway] = 'rail' and not [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
@@ -2831,21 +2866,6 @@
         <CssParameter name="stroke-width">1</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-dasharray">8,12</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      &maxscale_zoom14;
-      &minscale_zoom18;
-      <Filter>[railway] = 'rail' and [bridge] = 'yes'</Filter>
-      <LineSymbolizer>
-        <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">7</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">5</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -2867,6 +2887,53 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
+      <Filter>[railway] = 'spur-siding-yard' and [tunnel] = 'yes'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ffffff</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">1,9</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#fdfdfd</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,1,1,8</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#ececec</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,2,1,7</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#cacaca</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,3,1,6</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#afafaf</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,4,1,5</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a1a1a1</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,5,1,4</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#9b9b9b</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,6,1,3</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom13;
+      &minscale_zoom18;
       <Filter>[railway] = 'spur-siding-yard' and [bridge] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
@@ -2882,7 +2949,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <Filter>[railway] = 'spur-siding-yard'</Filter>
+      <Filter>[railway] = 'spur-siding-yard' and not [tunnel] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#999999</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -2893,53 +2960,6 @@
         <CssParameter name="stroke-width">0.8</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-dasharray">0,8,11,1</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      &maxscale_zoom14;
-      &minscale_zoom18;
-      <Filter>[railway] = 'rail' and [tunnel] = 'yes'</Filter>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#ffffff</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">1,9</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#fdfdfd</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">0,1,1,8</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#ececec</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">0,2,1,7</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#cacaca</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">0,3,1,6</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#afafaf</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">0,4,1,5</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#a1a1a1</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">0,5,1,4</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#9b9b9b</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-dasharray">0,6,1,3</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -3246,7 +3266,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -3255,7 +3275,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
       &maxscale_zoom14;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -3264,7 +3284,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -3275,7 +3295,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and [service]='parking_aisle'</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -6374,7 +6394,8 @@
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,shop,tourism,name,religion
+      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,shop,tourism,name,
+       case when religion in ('christian','jewish') then religion else 'INT-generic'::text end as religion
        from &prefix;_polygon
        where landuse is not null
           or leisure is not null
@@ -6428,7 +6449,7 @@
        from &prefix;_point p
         join &prefix;_line l
         on ST_DWithin(p.way,l.way,&dwithin_node_way;)
-       where p.highway='turning_circle' and l.highway is not null
+       where p.highway='turning_circle' and l.highway in ('tertiary','unclassified','residential','service','living_street')
       ) as turning_circle
       </Parameter>
       &datasource-settings;
@@ -6477,8 +6498,9 @@
     <StyleName>highway-area-casing</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from &prefix;_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','track','path')
+      (select way,highway,railway from &prefix;_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway','track','path','platform')
+          or railway='platform'
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
@@ -6506,7 +6528,7 @@
        from &prefix;_point p
         join &prefix;_line l
         on ST_DWithin(p.way,l.way,&dwithin_node_way;)
-       where p.highway='turning_circle' and l.highway is not null
+       where p.highway='turning_circle' and l.highway in ('tertiary','unclassified','residential','service','living_street')
       ) as turning_circle
       </Parameter>
       &datasource-settings;
@@ -6516,8 +6538,9 @@
     <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway from &prefix;_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path')
+      (select way,highway,railway from &prefix;_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform')
+          or railway='platform'
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
@@ -6563,7 +6586,7 @@
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
        from &prefix;_roads
        where highway is not null
-          or railway is not null
+          or (railway is not null and (service is null or service not in ('spur','siding','yard')))
        order by z_order
       ) as roads
       </Parameter>
@@ -6649,7 +6672,8 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-
+&layer-admin;
+&layer-placenames;
 &layer-amenity-stations;
 &layer-amenity-symbols;
 &layer-amenity-points;
@@ -6716,7 +6740,7 @@
       (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,historic,'yes'::text as point
        from &prefix;_point
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
+          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher')
           or leisure is not null
           or landuse is not null
           or tourism is not null
@@ -6739,7 +6763,7 @@
       (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,historic,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store')
+          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher')
           or leisure is not null
           or landuse is not null
           or tourism is not null
@@ -6786,6 +6810,4 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-&layer-admin;
-&layer-placenames;
 </Map>
