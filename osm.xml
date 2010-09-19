@@ -1906,7 +1906,7 @@
     </Rule>
     
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through' or [tunnel]='yes')</Filter>
       &maxscale_zoom14;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -1927,7 +1927,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [tunnel]='yes')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through' or [tunnel]='yes')</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -1948,7 +1948,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and [service]='parking_aisle'</Filter>
+      <Filter>[highway] = 'service' and ([service]='parking_aisle' or [service]='drive-through')</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -3266,7 +3266,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -3275,7 +3275,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
       &maxscale_zoom14;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -3284,7 +3284,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and not [service]='parking_aisle'</Filter>
+      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -3295,7 +3295,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and [service]='parking_aisle'</Filter>
+      <Filter>[highway] = 'service' and ([service]='parking_aisle' or [service]='drive-through')</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
