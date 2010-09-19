@@ -1,6 +1,6 @@
 <Style name="aerialways">
     <Rule>
-      <Filter>[aerialway] = 'cable_car' or [aerialway]='gondola'</Filter>
+      <Filter>[aerialway] = 'cable_car' or [aerialway]='gondola' or [aerialway]='goods'</Filter>
       &maxscale_zoom12;
       &minscale_zoom18;
       <LinePatternSymbolizer file="&symbols;/cable_car.png" />
