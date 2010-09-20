@@ -1,3 +1,11 @@
+<Style name="continent">
+    <Rule>
+      <Filter>[place] = 'continent'</Filter>
+      &maxscale_zoom1;
+      &minscale_zoom2;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#9d6c9d" dy="0" halo_radius="1" wrap_width="20"/>
+    </Rule>
+</Style>
 <Style name="country">
     <Rule>
       <Filter>[place] = 'country'</Filter>
