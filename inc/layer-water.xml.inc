@@ -25,6 +25,7 @@
       &maxscale_zoom9;
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
+        <CssParameter name="gamma">.75</CssParameter>
      </PolygonSymbolizer>
     </Rule>
     <Rule>
@@ -32,6 +33,7 @@
       &maxscale_zoom7;
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
+        <CssParameter name="gamma">.75</CssParameter>
      </PolygonSymbolizer>
     </Rule>
     <Rule>
@@ -39,6 +41,7 @@
       &maxscale_zoom6;
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
+        <CssParameter name="gamma">.75</CssParameter>
      </PolygonSymbolizer>
     </Rule>
     <Rule>
