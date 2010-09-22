@@ -273,6 +273,15 @@
       </PolygonSymbolizer>
     </Rule>
     <Rule>
+      &maxscale_zoom12;
+      &minscale_zoom18;
+      <Filter>[landuse] = 'garages'</Filter>
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#996</CssParameter>
+        <CssParameter name="fill-opacity">0.2</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
       &maxscale_zoom10;
       &minscale_zoom18;
       <Filter>[military] = 'barracks'</Filter>
