@@ -76,6 +76,7 @@
     <Datasource>
       <Parameter name="type">shape</Parameter>
       <Parameter name="file">&world_boundaries;/10m_populated_places.shp</Parameter>
+      <Parameter name="encoding">latin1</Parameter>
     </Datasource>
 </Layer>
 
