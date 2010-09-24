@@ -192,7 +192,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
-      <Filter>[amenity]='pub'</Filter>
+      <Filter>[amenity]='pub' or [amenity]='biergarten'</Filter>
       <PointSymbolizer file="&symbols;/pub.p.16.png" />
     </Rule>
     <Rule>

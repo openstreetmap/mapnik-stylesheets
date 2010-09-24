@@ -677,7 +677,7 @@
       <TextSymbolizer name="name" fontset_name="oblique-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='fast_food'</Filter>
+      <Filter>[amenity]='pub' or [amenity]='restaurant' or [amenity]='cafe' or [amenity]='fast_food' or [amenity]='biergarten'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="9" halo_radius="1" wrap_width="34"/>
     </Rule>
