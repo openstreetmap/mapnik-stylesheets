@@ -30,6 +30,12 @@
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom16;
+      <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.18.png" allow_overlap="true" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom16;
       <Filter>[int_tc_type]='service'</Filter>
       <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.14.png" allow_overlap="true" />
     </Rule>
@@ -43,6 +49,11 @@
       &maxscale_zoom17;
       <Filter>[int_tc_type]='tertiary'</Filter>
       <PointSymbolizer file="&symbols;/turning_circle-tert-casing.24.png" allow_overlap="true" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.24.png" allow_overlap="true" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
