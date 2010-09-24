@@ -300,6 +300,16 @@
       <Filter>[shop]='hairdresser'</Filter>
       <PointSymbolizer file="&symbols;/shop_hairdresser.p.16.png" />
     </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='car'</Filter>
+      <PointSymbolizer file="&symbols;/shopping_car.p.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='car_repair'</Filter>
+      <PointSymbolizer file="&symbols;/shopping_car_repair.p.16.png" />
+    </Rule>
 </Style>
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">

@@ -904,7 +904,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#da0092" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
     <Rule>
-      <Filter>[shop]='bakery' or [shop]='clothes' or [shop]='fashion' or [shop]='convenience' or [shop]='doityourself' or [shop]='hairdresser' or [shop]='butcher'</Filter>
+      <Filter>[shop]='bakery' or [shop]='clothes' or [shop]='fashion' or [shop]='convenience' or [shop]='doityourself' or [shop]='hairdresser' or [shop]='butcher' or [shop]='car' or [shop]='car_repair'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#939" dy="9" halo_radius="1" wrap_width="12"/>
     </Rule>
@@ -6448,12 +6448,11 @@
     <StyleName>leisure</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,shop,tourism,name,
+      (select way,aeroway,amenity,landuse,leisure,man_made,military,"natural",power,tourism,name,
        case when religion in ('christian','jewish') then religion else 'INT-generic'::text end as religion
        from &prefix;_polygon
        where landuse is not null
           or leisure is not null
-          or shop is not null
           or aeroway in ('apron','aerodrome')
           or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard')
           or military in ('barracks','danger_area')
@@ -6794,7 +6793,7 @@
       (select way,amenity,shop,access,leisure,landuse,man_made,"natural",place,tourism,ele,name,ref,military,aeroway,waterway,historic,'yes'::text as point
        from &prefix;_point
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher')
+          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store','butcher','car','car_repair')
           or leisure is not null
           or landuse is not null
           or tourism is not null
@@ -6817,7 +6816,7 @@
       (select way,aeroway,shop,access,amenity,leisure,landuse,man_made,"natural",place,tourism,NULL as ele,name,ref,military,waterway,historic,'no'::text as point
        from &prefix;_polygon
        where amenity is not null
-          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher')
+          or shop in ('supermarket','bakery','clothes','fashion','convenience','doityourself','hairdresser','department_store', 'butcher','car','car_repair')
           or leisure is not null
           or landuse is not null
           or tourism is not null
