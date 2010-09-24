@@ -257,6 +257,11 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
+      <Filter>[historic]='archaeological_site'</Filter>
+      <PointSymbolizer file="&symbols;/tourist_archaeological2.glow.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
       <Filter>[shop]='supermarket'</Filter>
       <PointSymbolizer file="&symbols;/shop_supermarket.p.16.png" />
     </Rule>
@@ -308,7 +313,7 @@
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
          or highway in ('bus_stop','traffic_signals','ford')
          or man_made in ('mast','water_tower')
-         or historic='memorial'
+         or historic in ('memorial','archaeological_site')
          or waterway='lock'
          or lock='yes'
       ) as points</Parameter>
@@ -326,7 +331,7 @@
          or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
-         or historic='memorial'
+         or historic in ('memorial','archaeological_site')
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
