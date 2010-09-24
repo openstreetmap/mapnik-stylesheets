@@ -47,6 +47,11 @@
       <PointSymbolizer file="&symbols;/peak.png" />
     </Rule>
     <Rule>
+      &maxscale_zoom11;
+      <Filter>[natural]='volcano'</Filter>
+      <PointSymbolizer file="&symbols;/volcano.png" />
+    </Rule>
+    <Rule>
       &maxscale_zoom15;
       <Filter>[natural]='cave_entrance'</Filter>
       <PointSymbolizer file="&symbols;/poi_cave.p.16.png" />
@@ -115,7 +120,7 @@
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
          or (power='generator' and power_source='wind')
-         or "natural" in ('peak','spring','tree','cave_entrance')
+         or "natural" in ('peak','volcano','spring','tree','cave_entrance')
          or railway='level_crossing'
       ) as symbols</Parameter>
       &datasource-settings;
@@ -132,7 +137,7 @@
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
          or (power='generator' and power_source='wind')
-         or "natural" in ('peak','spring','tree')
+         or "natural" in ('peak','volcano','spring','tree')
          or railway='level_crossing'
       ) as symbols</Parameter>
       &datasource-settings;
