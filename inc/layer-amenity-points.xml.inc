@@ -92,7 +92,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[tourism]='guest_house'</Filter>
+      <Filter>[tourism]='guest_house' or [tourism]='bed_and_breakfast'</Filter>
       <PointSymbolizer file="&symbols;/guest_house.p.16.png" />
     </Rule>
     <Rule>
@@ -310,7 +310,7 @@
       from &prefix;_point
       where amenity is not null
          or shop is not null
-         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
+         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint','bed_and_breakfast')
          or highway in ('bus_stop','traffic_signals','ford')
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
@@ -328,7 +328,7 @@
       from &prefix;_polygon
       where amenity is not null
          or shop is not null
-         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint')
+         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint','bed_and_breakfast')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
