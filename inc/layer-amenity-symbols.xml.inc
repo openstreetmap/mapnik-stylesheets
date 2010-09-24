@@ -104,7 +104,7 @@
     </Rule> 
     <Rule>
       &maxscale_zoom16;
-      <Filter>[barrier]='bollard'</Filter>
+      <Filter>[barrier]='bollard' or [barrier]='block'</Filter>
       <PointSymbolizer file="&symbols;/bollard.png" allow_overlap="false"/>
     </Rule>
 </Style>
@@ -116,7 +116,7 @@
       (select *
       from &prefix;_point
       where aeroway in ('airport','aerodrome')
-         or barrier in ('bollard','gate','lift_gate')
+         or barrier in ('bollard','gate','lift_gate','block')
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
          or (power='generator' and power_source='wind')
@@ -133,7 +133,7 @@
       (select *
       from &prefix;_polygon
       where aeroway in ('airport','aerodrome')
-         or barrier in ('bollard','gate','lift_gate')
+         or barrier in ('bollard','gate','lift_gate','block')
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
          or (power='generator' and power_source='wind')
