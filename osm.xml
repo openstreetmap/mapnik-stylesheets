@@ -199,6 +199,17 @@
     </Rule>
 </Style>
 <Style name="leisure">
+     <Rule>
+      <Filter>[leisure] = 'swimming_pool'</Filter>
+      &maxscale_zoom14;
+     <PolygonSymbolizer>
+        <CssParameter name="fill">#b5d0d0</CssParameter>
+     </PolygonSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">blue</CssParameter>
+        <CssParameter name="stroke-width">0.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
     <Rule>
       <Filter>[leisure] = 'playground'</Filter>
       &maxscale_zoom13;
