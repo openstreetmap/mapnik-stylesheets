@@ -43,4 +43,4 @@
 <!ENTITY maxscale_zoom17 "<MaxScaleDenominator>5000</MaxScaleDenominator>">
 <!ENTITY minscale_zoom17 "<MinScaleDenominator>2500</MinScaleDenominator>">
 <!ENTITY maxscale_zoom18 "<MaxScaleDenominator>2500</MaxScaleDenominator>">
-<!ENTITY minscale_zoom18 "<MinScaleDenominator>1000</MinScaleDenominator>">
+<!ENTITY minscale_zoom18 "">
