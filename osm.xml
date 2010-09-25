@@ -6527,7 +6527,6 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-&layer-buildings;
 <Layer name="line features" status="on" srs="&osm2pgsql_projection;">
      <StyleName>cliffs</StyleName>
      <StyleName>barriers</StyleName>
@@ -6573,6 +6572,19 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="highway-area-fill" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>highway-area-fill</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,highway,railway from &prefix;_polygon
+       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform')
+          or railway='platform'
+       order by z_order,way_area desc) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+&layer-buildings;
 <Layer name="turning_circle-fill" status="on" srs="&osm2pgsql_projection;">
     <StyleName>turning_circle-fill</StyleName>    
     <Datasource>
@@ -6583,18 +6595,6 @@
         on ST_DWithin(p.way,l.way,&dwithin_node_way;)
        where p.highway='turning_circle' and l.highway in ('tertiary','unclassified','residential','service','living_street')
       ) as turning_circle
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
-<Layer name="highway-area-fill" status="on" srs="&osm2pgsql_projection;">
-    <StyleName>highway-area-fill</StyleName>
-    <Datasource>
-      <Parameter name="table">
-      (select way,highway,railway from &prefix;_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform')
-          or railway='platform'
-       order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
     </Datasource>
