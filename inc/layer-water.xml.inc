@@ -92,6 +92,29 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      <Filter>[waterway]='wadi'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='wadi'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+        <CssParameter name="stroke-dasharray">4,4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>[waterway]='river'</Filter>
       &maxscale_zoom12;
       &minscale_zoom12;
@@ -446,7 +469,7 @@
       (select way,waterway,disused,lock,name,
       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
       from &prefix;_line
-      where waterway in ('weir','river','canal','derelict_canal','stream','drain','ditch')
+      where waterway in ('weir','river','canal','derelict_canal','stream','drain','ditch','wadi')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
       order by z_order
       ) as water_lines</Parameter>
