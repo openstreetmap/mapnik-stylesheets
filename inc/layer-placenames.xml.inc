@@ -42,25 +42,21 @@
 </Style>
 <Style name="capital">
      <Rule>
-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom5;
       &minscale_zoom5;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom6;
       &minscale_zoom8;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom9;
       &minscale_zoom10;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'city' or [place]='metropolis'</Filter>
       &maxscale_zoom11;
       &minscale_zoom14;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="14" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
@@ -148,13 +144,22 @@
 <Layer name="placenames-large" status="on" srs="&osm2pgsql_projection;">
     <StyleName>country</StyleName>
     <StyleName>state</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,place,name,ref
+       from &prefix;_point
+       where place in ('country','state')
+      ) as placenames</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="placenames-capital" status="on" srs="&osm2pgsql_projection;">
     <StyleName>capital</StyleName>
     <Datasource>
       <Parameter name="table">
       (select way,place,name,ref
-      from &prefix;_point
-      where place in ('country','state')
-         or (place in ('city','metropolis') and capital='yes')
+       from &prefix;_point
+       where place in ('city','metropolis','town') and capital='yes'
       ) as placenames</Parameter>
       &datasource-settings;
     </Datasource>
