@@ -197,6 +197,13 @@
         <CssParameter name="gamma">.65</CssParameter>
       </PolygonSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[aeroway] = 'runway'</Filter>
+      &maxscale_zoom11;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbc</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
 </Style>
 <Style name="leisure">
      <Rule>
@@ -6597,9 +6604,10 @@
     <StyleName>highway-area-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,railway from &prefix;_polygon
+      (select way,highway,railway,aeroway from &prefix;_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform')
           or railway='platform'
+          or aeroway='runway'
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
