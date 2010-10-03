@@ -610,11 +610,6 @@
       &maxscale_zoom13;
       <PolygonPatternSymbolizer file="&symbols;/beach.png" />
     </Rule>
-    <Rule>
-      <Filter>[natural] = 'mud'</Filter>
-      &maxscale_zoom13;
-      <PolygonPatternSymbolizer file="&symbols;/mud.png" />
-    </Rule>
     <!--Rule>
       <ElseFilter/>
       &maxscale_zoom10;
