@@ -320,13 +320,18 @@
       <Filter>[shop]='bicycle'</Filter>
       <PointSymbolizer file="&symbols;/shopping_bicycle.p.16.png" />
     </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[leisure]='playground'</Filter>
+      <PointSymbolizer file="&symbols;/playground.p.20.png" />
+    </Rule>
 </Style>
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure
       from &prefix;_point
       where amenity is not null
          or shop is not null
@@ -336,6 +341,7 @@
          or historic in ('memorial','archaeological_site')
          or waterway='lock'
          or lock='yes'
+         or leisure='playground'
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
@@ -344,7 +350,7 @@
     <StyleName>points</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic
+      (select way,amenity,shop,tourism,highway,man_made,access,religion,waterway,lock,historic,leisure
       from &prefix;_polygon
       where amenity is not null
          or shop is not null
@@ -352,6 +358,7 @@
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
+         or leisure='playground'
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
