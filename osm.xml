@@ -204,6 +204,13 @@
         <CssParameter name="fill">#bbc</CssParameter>
       </PolygonSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[highway] = 'services'</Filter>
+      &maxscale_zoom14;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#efc8c8</CssParameter>
+      </PolygonSymbolizer>
+   </Rule>
 </Style>
 <Style name="leisure">
      <Rule>
@@ -6605,7 +6612,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,highway,railway,aeroway from &prefix;_polygon
-       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform')
+       where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform','services')
           or railway='platform'
           or aeroway='runway'
        order by z_order,way_area desc) as roads
