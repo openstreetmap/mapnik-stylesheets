@@ -325,6 +325,11 @@
       <Filter>[leisure]='playground'</Filter>
       <PointSymbolizer file="&symbols;/playground.p.20.png" />
     </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[amenity]='picnic_site'</Filter>
+      <PointSymbolizer file="&symbols;/picnic.p.16.png" />
+    </Rule>
 </Style>
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">
