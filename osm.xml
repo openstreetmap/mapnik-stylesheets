@@ -499,7 +499,7 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[power] = 'station'</Filter>
+      <Filter>[power] = 'station' or [power]='generator'</Filter>
       &maxscale_zoom10;
       &minscale_zoom11;
       <PolygonSymbolizer>
@@ -507,7 +507,7 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[power] = 'station'</Filter>
+      <Filter>[power] = 'station' or [power]='generator'</Filter>
       &maxscale_zoom12;
       <PolygonSymbolizer>
         <CssParameter name="fill">#bbb</CssParameter>
@@ -6487,7 +6487,7 @@
           or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard')
           or military in ('barracks','danger_area')
           or "natural" in ('field','beach','heath','mud','wood')
-          or power in ('station','sub_station')
+          or power in ('station','sub_station','generator')
           or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
        order by z_order,way_area desc
       ) as leisure
