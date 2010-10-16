@@ -74,7 +74,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom15;
-      <Filter>[man_made]='power_wind' or ([power]='generator' and [power_source] = 'wind') or ([power]='generator' and [generator:source] = 'wind')</Filter>
+      <Filter>[man_made]='power_wind' or ([power]='generator' and [power_source] = 'wind')</Filter>
       <PointSymbolizer file="&symbols;/power_wind.png" />
     </Rule>
     <Rule>
