@@ -27,6 +27,16 @@
 <Style name="power_towers">
     <Rule>
       &maxscale_zoom14;
+      &minscale_zoom14;
+      <PointSymbolizer file="&symbols;/power_tower_3x3.png" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom16;
+      <PointSymbolizer file="&symbols;/power_tower_5x5.png" allow_overlap="false"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
       <PointSymbolizer file="&symbols;/power_tower.png" allow_overlap="false"/>
     </Rule>
 </Style>
