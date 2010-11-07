@@ -2914,7 +2914,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <Filter>[railway] = 'rail' and [bridge] = 'yes'</Filter>
+      <Filter>[railway] = 'rail' and ([bridge] = 'yes' or [bridge] = 'viaduct')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">7</CssParameter>
@@ -3018,7 +3018,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <Filter>[railway] = 'spur-siding-yard' and [bridge] = 'yes'</Filter>
+      <Filter>[railway] = 'spur-siding-yard' and ([bridge] = 'yes' or [bridge] = 'viaduct')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
