@@ -604,7 +604,7 @@
       <PolygonPatternSymbolizer file="&symbols;/beach.png" />
     </Rule>
     <Rule>
-      <Filter>[highway] = 'services'</Filter>
+      <Filter>[highway] = 'services' or [highway] = 'rest_area'</Filter>
       &maxscale_zoom14;
       <PolygonSymbolizer>
         <CssParameter name="fill">#efc8c8</CssParameter>
@@ -6491,7 +6491,7 @@
           or "natural" in ('field','beach','heath','mud','wood')
           or power in ('station','sub_station','generator')
           or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
-          or highway='services'
+          or highway in ('services','rest_area')
        order by z_order,way_area desc
       ) as leisure
       </Parameter>
