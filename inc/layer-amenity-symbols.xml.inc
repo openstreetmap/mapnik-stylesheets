@@ -1,4 +1,10 @@
 <Style name="symbols">
+     <Rule>
+      &maxscale_zoom16;
+      <Filter>[aeroway]='helipad'</Filter>
+      <PointSymbolizer file="&symbols;/helipad.p.16.png" />
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="8" fill="#6692da" dy="-10" halo_radius="1" wrap_width="0"/>
+    </Rule>
     <Rule>
       &maxscale_zoom9;
       &minscale_zoom10;
@@ -115,7 +121,7 @@
       <Parameter name="table">
       (select *
       from &prefix;_point
-      where aeroway in ('airport','aerodrome')
+      where aeroway in ('airport','aerodrome','helipad')
          or barrier in ('bollard','gate','lift_gate','block')
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
@@ -132,7 +138,7 @@
       <Parameter name="table">
       (select *
       from &prefix;_polygon
-      where aeroway in ('airport','aerodrome')
+      where aeroway in ('airport','aerodrome','helipad')
          or barrier in ('bollard','gate','lift_gate','block')
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
