@@ -30,7 +30,23 @@
       </LineSymbolizer>
     </Rule>
 </Style>
-
+<Style name="castle_walls">
+<Rule>
+      &maxscale_zoom14;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#888</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
 <Layer name="citywalls" status="on" srs="&osm2pgsql_projection;">
     <StyleName>citywalls</StyleName>
     <Datasource>
@@ -38,4 +54,20 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="castle_walls" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>castle_walls</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from &prefix;_line where "historic"='castle_walls') as castle_walls</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="castle_walls" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>castle_walls</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way from &prefix;_polygon where "historic"='castle_walls') as castle_walls</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
+
 
