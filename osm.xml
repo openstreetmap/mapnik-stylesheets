@@ -834,9 +834,14 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#0066ff" dy="8" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[tourism]='guest_house' or [tourism]='bed_and_breakfast'</Filter>
+      <Filter>[tourism]='guest_house'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#0066ff" dy="9" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[tourism]='bed_and_breakfast'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#0066ff" dy="7" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'fuel' or [amenity]='bus_station'</Filter>

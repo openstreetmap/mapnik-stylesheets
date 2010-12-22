@@ -92,8 +92,13 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[tourism]='guest_house' or [tourism]='bed_and_breakfast'</Filter>
+      <Filter>[tourism]='guest_house'</Filter>
       <PointSymbolizer file="&symbols;/guest_house.p.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[tourism]='bed_and_breakfast'</Filter>
+      <PointSymbolizer file="&symbols;/bandb.p.20.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
@@ -197,8 +202,13 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
-      <Filter>[amenity]='pub' or [amenity]='biergarten'</Filter>
+      <Filter>[amenity]='pub'</Filter>
       <PointSymbolizer file="&symbols;/pub.p.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[amenity]='biergarten'</Filter>
+      <PointSymbolizer file="&symbols;/biergarten.p.16.png" />
     </Rule>
     <Rule>
       &maxscale_zoom16;
