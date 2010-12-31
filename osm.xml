@@ -549,6 +549,13 @@
         <CssParameter name="fill">#aed1a0</CssParameter>
      </PolygonSymbolizer>
     </Rule>
+ <Rule>
+      <Filter>[natural] = 'desert'</Filter>
+      &maxscale_zoom8;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#e3b57a</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
      <Rule>
       <Filter>[natural] = 'heath'</Filter>
       &maxscale_zoom10;
@@ -6500,7 +6507,7 @@
           or aeroway in ('apron','aerodrome')
           or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard')
           or military in ('barracks','danger_area')
-          or "natural" in ('field','beach','heath','mud','wood')
+          or "natural" in ('field','beach','desert','heath','mud','wood')
           or power in ('station','sub_station','generator')
           or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
           or highway in ('services','rest_area')
