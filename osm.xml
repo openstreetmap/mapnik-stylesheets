@@ -6459,9 +6459,10 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      <Filter>[way_area] &gt;= 200000000</Filter>
       &maxscale_zoom8;
       &minscale_zoom9;
-        <TextSymbolizer name="name" fontset_name="bold-fonts" size="8" dy="-8" fill="#9c9" halo_radius="1" wrap_width="14"/>
+        <TextSymbolizer name="name" fontset_name="bold-fonts" size="8" fill="#9c9" halo_radius="1" wrap_width="14"/>
     </Rule>
     <Rule>
       &maxscale_zoom10;
@@ -6902,7 +6903,7 @@
     <StyleName>boundary</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,name,boundary from &prefix;_polygon where boundary='national_park') as boundary
+      (select way,way_area,name,boundary from &prefix;_polygon where boundary='national_park') as boundary
       </Parameter>
       &datasource-settings;
     </Datasource>
