@@ -1,5 +1,10 @@
 <Style name="stations">
     <Rule>
+      &maxscale_zoom18;
+      <Filter>[railway]='subway_entrance'</Filter>
+      <PointSymbolizer file="&symbols;/walking.n.12.png" />
+    </Rule>
+    <Rule>
       &maxscale_zoom12;
       &minscale_zoom12;
       <Filter>[railway]='station' and not [disused]='yes'</Filter>
@@ -67,7 +72,7 @@
       <Parameter name="table">
       (select way,name,railway,aerialway,disused
       from &prefix;_point
-      where railway in ('station','halt','tram_stop')
+      where railway in ('station','halt','tram_stop','subway_entrance')
          or aerialway='station'
       ) as stations
       </Parameter>
