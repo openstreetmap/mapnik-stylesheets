@@ -431,9 +431,13 @@
     <Rule>
       <Filter>[landuse] = 'allotments'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#c8b084</CssParameter>
-     </PolygonSymbolizer>
+      &minscale_zoom13;
+      <PolygonPatternSymbolizer file="&symbols;/allotments.png" />
+    </Rule>
+    <Rule>
+      <Filter>[landuse] = 'allotments'</Filter>
+      &maxscale_zoom14;
+      <PolygonPatternSymbolizer file="&symbols;/allotments.png" width="30" height="6" />
     </Rule>
     <Rule>
       <Filter>[landuse] = 'forest'</Filter>
@@ -540,6 +544,7 @@
       &maxscale_zoom10;
       <PolygonSymbolizer>
         <CssParameter name="fill">#9d9d6c</CssParameter>
+        <CssParameter name="fill-opacity">0.7</CssParameter>
      </PolygonSymbolizer>
     </Rule>
      <Rule>
