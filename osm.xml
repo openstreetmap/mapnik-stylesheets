@@ -6375,6 +6375,14 @@
         <CssParameter name="fill">#aed1a0</CssParameter>
      </PolygonSymbolizer>
     </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <Filter>[barrier] &lt;&gt; '' and not [barrier] = 'hedge'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
 </Style>
 <Style name="barriers">
     <Rule>
@@ -6389,7 +6397,7 @@
       &maxscale_zoom16;
       <Filter>[barrier] &lt;&gt; '' and not [barrier] = 'hedge'</Filter>
       <LineSymbolizer>
-        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">0.4</CssParameter>
       </LineSymbolizer>
     </Rule>
