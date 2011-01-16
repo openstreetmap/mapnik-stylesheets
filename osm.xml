@@ -6348,6 +6348,15 @@
        <LinePatternSymbolizer file="&symbols;/cliff.png" />
     </Rule>
 </Style>
+<Style name="barriers_area">
+    <Rule>
+      <Filter>[natural]='hedge' or [barrier] = 'hedge'</Filter>
+      &maxscale_zoom16;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#aed1a0</CssParameter>
+     </PolygonSymbolizer>
+    </Rule>
+</Style>
 <Style name="barriers">
     <Rule>
       &maxscale_zoom16;
@@ -6596,7 +6605,7 @@
     </Datasource>
 </Layer>
 <Layer name="polygon barriers" status="on" srs="&osm2pgsql_projection;">
-      <StyleName>barriers</StyleName>
+      <StyleName>barriers_area</StyleName>
       <Datasource>
              <Parameter name="table">
        (select way,barrier,"natural" from &prefix;_polygon where barrier is not null or "natural"='hedge') as barriers
