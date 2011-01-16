@@ -5795,6 +5795,7 @@
 </Style>
 <Style name="trams">
     <Rule>
+      <Filter>[railway] = 'tram'</Filter>
       &maxscale_zoom13;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -5803,8 +5804,26 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      <Filter>[railway] = 'tram' and not [bridge]='yes'</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[railway] = 'tram' and [bridge]='yes'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">black</CssParameter>
+        <CssParameter name="stroke-width">5</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">4</CssParameter>
+      </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
@@ -6779,7 +6798,7 @@
     <StyleName>trams</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way from &prefix;_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1'))) as trams
+      (select way,railway,bridge from &prefix;_line where railway='tram' and (tunnel is null or tunnel not in ('yes','true','1'))) as trams
       </Parameter>
       &datasource-settings;
     </Datasource>
