@@ -36,7 +36,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[building] = 'residential' or [building] = 'house'</Filter>
+      <Filter>[building] = 'residential' or [building] = 'house' or [building]='garage' or [building]='garages'</Filter>
       &maxscale_zoom12;
       <PolygonSymbolizer>
          <CssParameter name="fill">#bca9a9</CssParameter>
@@ -44,7 +44,7 @@
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; 'residential' and [building] &lt;&gt; 'house' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
+      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; 'residential' and [building] &lt;&gt; 'garage' and [building] &lt;&gt; 'garages' and [building] &lt;&gt; 'house' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
       &maxscale_zoom12;
       <PolygonSymbolizer>
          <CssParameter name="fill">#bca9a9</CssParameter>
@@ -52,7 +52,7 @@
       </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; 'residential' and [building] &lt;&gt; 'house' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
+      <Filter>[building] &lt;&gt; 'station' and [building] &lt;&gt; 'supermarket' and [building] &lt;&gt; 'residential' and [building] &lt;&gt; 'garage' and [building] &lt;&gt; 'garages' and [building] &lt;&gt; 'house' and [building] &lt;&gt; '' and (not [amenity] &lt;&gt; '' or [amenity] &lt;&gt; 'place_of_worship')</Filter>
       &maxscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">#330066</CssParameter>
