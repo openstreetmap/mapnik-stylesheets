@@ -217,7 +217,12 @@
       &maxscale_zoom10;
       &minscale_zoom18;
       <Filter>[landuse]='military'</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/military_restraint2.png" />
+      <PolygonPatternSymbolizer file="&symbols;/military_red.png" />
+      <LineSymbolizer>
+        <CssParameter name="stroke">#f55</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-opacity">0.66</CssParameter>
+      </LineSymbolizer>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'nature_reserve'</Filter>
