@@ -745,9 +745,14 @@
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="11" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[amenity]='cinema' or [amenity]='library' or [amenity]='theatre'</Filter>
+      <Filter>[amenity]='library' or [amenity]='theatre'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="12" halo_radius="1" wrap_width="0"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity]='cinema'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="bold-fonts" size="10" fill="#734a08" dy="14" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
       <Filter>[amenity]='parking' and ([access] = 'public' or not [access] &lt;&gt; '')</Filter>
