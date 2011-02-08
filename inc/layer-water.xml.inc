@@ -45,11 +45,6 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      &maxscale_zoom13;
-      <Filter>[natural] = 'marsh' or [natural] = 'wetland'</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/marsh.png" />
-    </Rule>
-    <Rule>
       <Filter>[natural] = 'mud'</Filter>
       &maxscale_zoom13;
       <PolygonPatternSymbolizer file="&symbols;/mud.png" />
@@ -65,6 +60,13 @@
       <PolygonSymbolizer>
         <CssParameter name="fill">#f2efe9</CssParameter>
      </PolygonSymbolizer>
+    </Rule>
+</Style>
+<Style name="water-areas-overlay">
+    <Rule>
+      &maxscale_zoom13;
+      <Filter>[natural] = 'marsh' or [natural] = 'wetland'</Filter>
+      <PolygonPatternSymbolizer file="&symbols;/marsh.png" />
     </Rule>
 </Style>
 <Style name="glaciers-text">
@@ -461,7 +463,20 @@
       from &prefix;_polygon
       where waterway in ('dock','mill_pond','riverbank','canal')
          or landuse in ('reservoir','water','basin')
-         or "natural" in ('lake','water','land','marsh','scrub','wetland','glacier','mud')
+         or "natural" in ('lake','water','land','scrub','glacier','mud')
+      order by z_order,way_area desc
+      ) as water_areas</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<!-- Make sure overlay styles are always rendered on top of solid areas. -->
+<Layer name="water-areas-overlay" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>water-areas-overlay</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,"natural"
+      from &prefix;_polygon
+      where "natural" in ('marsh','wetland')
       order by z_order,way_area desc
       ) as water_areas</Parameter>
       &datasource-settings;
