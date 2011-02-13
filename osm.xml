@@ -205,6 +205,13 @@
       </PolygonSymbolizer>
     </Rule>
     <Rule>
+      <Filter>[aeroway] = 'taxiway'</Filter>
+      &maxscale_zoom13;
+      <PolygonSymbolizer>
+        <CssParameter name="fill">#bbc</CssParameter>
+      </PolygonSymbolizer>
+    </Rule>
+    <Rule>
       <Filter>[aeroway] = 'helipad'</Filter>
       &maxscale_zoom16;
       <PolygonSymbolizer>
@@ -6709,7 +6716,7 @@
       (select way,highway,railway,aeroway from &prefix;_polygon
        where highway in ('residential','unclassified','pedestrian','service','footway','living_street','track','path','platform','services')
           or railway='platform'
-          or aeroway in ('runway','helipad')
+          or aeroway in ('runway','taxiway','helipad')
        order by z_order,way_area desc) as roads
       </Parameter>
       &datasource-settings;
