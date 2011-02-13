@@ -797,7 +797,7 @@
     <Rule>
       <Filter>[natural] = 'peak' and [name] != ''</Filter>
       &maxscale_zoom14;
-      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="9" fill="brown" dy="16" halo_radius="1"/>
+      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="9" fill="brown" dy="18" halo_radius="1"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'volcano'</Filter>
