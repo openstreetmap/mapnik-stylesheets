@@ -116,6 +116,11 @@
       <PointSymbolizer file="&symbols;/hotel2.p.20.png" />
     </Rule>
     <Rule>
+      &maxscale_zoom17;
+      <Filter>[tourism]='motel'</Filter>
+      <PointSymbolizer file="&symbols;/motel.p.20.png" />
+    </Rule>
+    <Rule>
       &maxscale_zoom16;
       <Filter>[tourism]='information'</Filter>
       <PointSymbolizer file="&symbols;/information.p.16.png" />
@@ -350,7 +355,7 @@
       from &prefix;_point
       where amenity is not null
          or shop is not null
-         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint','bed_and_breakfast','information')
+         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','motel','museum','viewpoint','bed_and_breakfast','information')
          or highway in ('bus_stop','traffic_signals','ford')
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
@@ -369,7 +374,7 @@
       from &prefix;_polygon
       where amenity is not null
          or shop is not null
-         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','museum','viewpoint','bed_and_breakfast','information')
+         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','motel','museum','viewpoint','bed_and_breakfast','information')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
