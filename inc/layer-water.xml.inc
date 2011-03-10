@@ -210,7 +210,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#6699cc" halo_radius="1" placement="line"/>
     </Rule>
     <Rule>
-      <ElseFilter/> <!--[waterway]='stream'</Filter>-->
+      <Filter>[waterway]='stream' or [waterway]='ditch' or [waterway]='drain'</Filter>
       &maxscale_zoom13;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -438,20 +438,6 @@
         <CssParameter name="stroke-width">1</CssParameter>
       </LineSymbolizer>
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#6699cc" halo_radius="1" spacing="600" placement="line"/>
-    </Rule>
-
-    <Rule>
-      <ElseFilter/> <!--[waterway]='stream'</Filter>-->
-      &maxscale_zoom15;
-      &minscale_zoom18;
-      <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">2.5</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">2</CssParameter>
-      </LineSymbolizer>
     </Rule>
 </Style>
 
