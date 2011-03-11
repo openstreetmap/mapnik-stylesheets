@@ -86,6 +86,28 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#99f" halo_radius="1" wrap_width="20"/>
     </Rule>
 </Style>
+
+<Style name="water-lines-casing">
+    <Rule>
+      <Filter>[waterway]='stream' or [waterway]='ditch' or [waterway]='drain'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom14;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">1.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='stream'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom18;
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">2.5</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
+
 <Style name="water_lines">
     <Rule>
       <Filter>[waterway]='weir'</Filter>
@@ -213,10 +235,6 @@
       <Filter>[waterway]='stream' or [waterway]='ditch' or [waterway]='drain'</Filter>
       &maxscale_zoom13;
       &minscale_zoom14;
-      <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">1.5</CssParameter>
-      </LineSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
         <CssParameter name="stroke-width">1</CssParameter>
@@ -406,10 +424,6 @@
       &maxscale_zoom15;
       &minscale_zoom18;
       <LineSymbolizer>
-        <CssParameter name="stroke">white</CssParameter>
-        <CssParameter name="stroke-width">2.5</CssParameter>
-      </LineSymbolizer>
-      <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
         <CssParameter name="stroke-width">2</CssParameter>
       </LineSymbolizer>
@@ -441,6 +455,18 @@
     </Rule>
 </Style>
 
+<Layer name="water-lines-casing" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>water-lines-casing</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,waterway
+      from &prefix;_line
+      where waterway in ('stream','drain','ditch')
+        and (tunnel is null or tunnel != 'yes')
+      ) as water_lines</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="water_areas" status="on" srs="&osm2pgsql_projection;">
     <StyleName>water_areas</StyleName>
     <Datasource>
