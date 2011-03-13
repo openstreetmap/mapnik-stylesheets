@@ -164,7 +164,10 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", 
                 tile_uri = tile_dir + zoom + '/' + str_x + '/' + str_y + '.png'
                 # Submit tile to be rendered into the queue
                 t = (name, tile_uri, x, y, z)
-                queue.put(t)
+                try:
+                    queue.put(t)
+                except KeyboardInterrupt:
+                    raise SystemExit("Ctrl-c detected, exiting...")
 
     # Signal render threads to exit by sending empty request to queue
     for i in range(num_threads):
