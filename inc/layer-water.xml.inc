@@ -164,6 +164,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" halo_radius="1" placement="line" spacing="400" />
     </Rule>
     <Rule>
       <Filter>[waterway]='river'</Filter>
@@ -175,6 +176,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" placement="line" spacing="400" />
     </Rule><Rule>
       <Filter>[waterway]='river'</Filter>
       &maxscale_zoom15;
@@ -185,6 +187,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" placement="line" spacing="400" />
     </Rule>
     <Rule>
       <Filter>[waterway]='river'</Filter>
@@ -196,6 +199,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" placement="line" spacing="400" />
     </Rule>
     <Rule>
       <Filter>[waterway]='river'</Filter>
@@ -207,6 +211,7 @@
         <CssParameter name="stroke-linejoin">round</CssParameter>
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#6699cc" halo_radius="1" placement="line" spacing="400" />
     </Rule>
     <Rule>
       <Filter>[waterway]='canal' and not [disused]='yes'</Filter>
