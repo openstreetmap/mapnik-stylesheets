@@ -6417,6 +6417,14 @@
 </Style>
 <Style name="barriers">
     <Rule>
+      &maxscale_zoom14;
+      <Filter>[barrier] = 'embankment'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#444</CssParameter>
+        <CssParameter name="stroke-width">0.4</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       &maxscale_zoom16;
       <Filter>[natural]='hedge' or [barrier] = 'hedge'</Filter>
       <LineSymbolizer>
@@ -6426,7 +6434,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom16;
-      <Filter>[barrier] &lt;&gt; '' and not [barrier] = 'hedge'</Filter>
+      <Filter>[barrier] &lt;&gt; '' and not ([barrier] = 'hedge' or [barrier] = 'embankment')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#444</CssParameter>
         <CssParameter name="stroke-width">0.4</CssParameter>
