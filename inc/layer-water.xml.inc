@@ -108,6 +108,45 @@
     </Rule>
 </Style>
 
+<Style name="water-lines-low-zoom">
+    <Rule>
+      <Filter>[waterway]='river'</Filter>
+      &maxscale_zoom6;
+      &minscale_zoom6;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">0.7</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='river'</Filter>
+      &maxscale_zoom7;
+      &minscale_zoom8;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='river'</Filter>
+      &maxscale_zoom9;
+      &minscale_zoom9;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">1.6</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[waterway]='river'</Filter>
+      &maxscale_zoom10;
+      &minscale_zoom11;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#b5d0d0</CssParameter>
+        <CssParameter name="stroke-width">2.2</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
+
 <Style name="water_lines">
     <Rule>
       <Filter>[waterway]='weir'</Filter>
@@ -511,6 +550,19 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+
+<Layer name="water-lines-low-zoom" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>water-lines-low-zoom</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,waterway
+      from &prefix;_line
+      where waterway='river'
+      ) as water_lines</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
 <Layer name="water_lines" status="on" srs="&osm2pgsql_projection;">
     <StyleName>water_lines</StyleName>
     <Datasource>
