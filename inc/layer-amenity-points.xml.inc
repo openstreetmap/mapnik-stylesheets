@@ -317,6 +317,11 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[shop]='florist'</Filter>
+      <PointSymbolizer file="&symbols;/florist.p.16.png" />
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[shop]='hairdresser'</Filter>
       <PointSymbolizer file="&symbols;/shop_hairdresser.p.16.png" />
     </Rule>
