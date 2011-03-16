@@ -4838,7 +4838,7 @@
      <Rule>
       &maxscale_zoom14;
       &minscale_zoom18;
-      <Filter>[railway]='light_rail'</Filter>
+      <Filter>[railway]='light_rail' or [railway]='narrow_gauge'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">#555</CssParameter>
         <CssParameter name="stroke-width">5.5</CssParameter>
@@ -6829,7 +6829,7 @@
        from &prefix;_line
        where (highway is not null
               or aeroway in ('runway','taxiway')
-              or railway in ('light_rail','subway'))
+              or railway in ('light_rail','subway','narrow_gauge'))
          and bridge not in ('no','false','0')
        order by z_order
       ) as roads
