@@ -129,13 +129,13 @@
 </Style>
 <Style name="hamlet">
     <Rule>
-      <Filter>[place] = 'hamlet' or [place] = 'locality' or [place] = 'isolated_dwelling'</Filter>
+      <Filter>[place] = 'hamlet' or [place] = 'locality' or [place] = 'isolated_dwelling' or [place] = 'farm'</Filter>
       &maxscale_zoom14;
       &minscale_zoom15;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#000" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[place] = 'hamlet' or [place] = 'locality' or [place] = 'isolated_dwelling'</Filter>
+      <Filter>[place] = 'hamlet' or [place] = 'locality' or [place] = 'isolated_dwelling' or [place] = 'farm'</Filter>
       &maxscale_zoom16;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="11" fill="#777777" halo_radius="1" wrap_width="0"/>
     </Rule>
@@ -185,7 +185,7 @@
       <Parameter name="table">
       (select way,place,name
       from &prefix;_point
-      where place in ('suburb','village','large_village','hamlet','locality','isolated_dwelling')
+      where place in ('suburb','village','large_village','hamlet','locality','isolated_dwelling','farm')
       ) as placenames</Parameter>
       &datasource-settings;
     </Datasource>
