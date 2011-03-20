@@ -111,20 +111,11 @@
 <Style name="water-lines-low-zoom">
     <Rule>
       <Filter>[waterway]='river'</Filter>
-      &maxscale_zoom6;
-      &minscale_zoom6;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">0.7</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[waterway]='river'</Filter>
-      &maxscale_zoom7;
+      &maxscale_zoom8;
       &minscale_zoom8;
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">1.2</CssParameter>
+        <CssParameter name="stroke-width">0.7</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -133,7 +124,7 @@
       &minscale_zoom9;
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">1.6</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
       </LineSymbolizer>
     </Rule>
     <Rule>
@@ -142,7 +133,7 @@
       &minscale_zoom11;
       <LineSymbolizer>
         <CssParameter name="stroke">#b5d0d0</CssParameter>
-        <CssParameter name="stroke-width">2.2</CssParameter>
+        <CssParameter name="stroke-width">1.6</CssParameter>
       </LineSymbolizer>
     </Rule>
 </Style>
