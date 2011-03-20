@@ -350,6 +350,11 @@
       <Filter>[amenity]='picnic_site'</Filter>
       <PointSymbolizer file="&symbols;/picnic.p.16.png" />
     </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[leisure]='slipway'</Filter>
+      <PointSymbolizer file="&symbols;/transport_slipway.p.20.png" />
+    </Rule>
 </Style>
 
 <Layer name="amenity-points" status="on" srs="&osm2pgsql_projection;">
@@ -366,7 +371,7 @@
          or historic in ('memorial','archaeological_site')
          or waterway='lock'
          or lock='yes'
-         or leisure='playground'
+         or leisure in ('playground','slipway')
       ) as points</Parameter>
       &datasource-settings;
     </Datasource>
