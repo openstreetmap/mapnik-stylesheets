@@ -27,8 +27,8 @@
       <Filter>[amenity] = 'place_of_worship'</Filter>
       &maxscale_zoom15;
       <PolygonSymbolizer>
-         <CssParameter name="fill">#777</CssParameter>
-         <CssParameter name="fill-opacity">0.5</CssParameter>
+         <CssParameter name="fill">#aaa</CssParameter>
+         <CssParameter name="fill-opacity">0.9</CssParameter>
       </PolygonSymbolizer>
       <LineSymbolizer>
         <CssParameter name="stroke">#111</CssParameter>
