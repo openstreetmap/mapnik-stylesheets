@@ -2018,7 +2018,7 @@
     </Rule>
     
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through' or [tunnel]='yes')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='INT-minor' or [tunnel]='yes')</Filter>
       &maxscale_zoom14;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -2039,7 +2039,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through' or [tunnel]='yes')</Filter>
+      <Filter>[highway] = 'service' and not ([service]='INT-minor' or [tunnel]='yes')</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -2060,7 +2060,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and [service]='INT-minor'</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -3407,7 +3407,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and not [service]='INT-minor'</Filter>
       &maxscale_zoom13;
       &minscale_zoom13;
       <LineSymbolizer>
@@ -3416,7 +3416,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and not [service]='INT-minor'</Filter>
       &maxscale_zoom14;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -3427,7 +3427,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and not ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and not [service]='INT-minor'</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -3438,7 +3438,7 @@
       </LineSymbolizer>
    </Rule>
    <Rule>
-      <Filter>[highway] = 'service' and ([service]='parking_aisle' or [service]='drive-through')</Filter>
+      <Filter>[highway] = 'service' and [service]='INT-minor'</Filter>
       &maxscale_zoom16;
       &minscale_zoom18;
       <LineSymbolizer>
@@ -6710,8 +6710,9 @@
     <StyleName>minor-roads-casing</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,service,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      (select way,highway,
+       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service
        from &prefix;_line
        where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','minor','road','service','pedestrian','raceway','living_street')
        order by z_order) as roads
@@ -6761,12 +6762,13 @@
     <StyleName>minor-roads-fill</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,horse,bicycle,foot,construction,aeroway,service,
+      (select way,highway,horse,bicycle,foot,construction,aeroway,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
        case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
               or (railway='rail' and service in ('spur','siding','yard'))
-            then 'spur-siding-yard'::text else railway end as railway
+            then 'spur-siding-yard'::text else railway end as railway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service
        from &prefix;_line
        where highway is not null
           or aeroway in ('runway','taxiway')
