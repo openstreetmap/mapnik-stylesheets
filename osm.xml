@@ -2971,7 +2971,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <Filter>[railway] = 'rail' and ([bridge] = 'yes' or [bridge] = 'viaduct')</Filter>
+      <Filter>[railway] = 'rail' and [bridge] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">6.5</CssParameter>
@@ -3075,7 +3075,7 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom18;
-      <Filter>[railway] = 'spur-siding-yard' and ([bridge] = 'yes' or [bridge] = 'viaduct')</Filter>
+      <Filter>[railway] = 'spur-siding-yard' and [bridge] = 'yes'</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
         <CssParameter name="stroke-width">5.7</CssParameter>
@@ -6764,7 +6764,7 @@
       <Parameter name="table">
       (select way,highway,horse,bicycle,foot,construction,aeroway,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge,
+       case when bridge in ('yes','true','1','viaduct') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
               or (railway='rail' and service in ('spur','siding','yard'))
             then 'spur-siding-yard'::text else railway end as railway,
