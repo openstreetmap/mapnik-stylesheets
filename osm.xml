@@ -739,7 +739,7 @@
 <Style name="text">
     <Rule>
       <Filter>[place] = 'island'</Filter>
-      &maxscale_zoom10;
+      &maxscale_zoom12;
       &minscale_zoom18;
       <TextSymbolizer name="name" fontset_name="oblique-fonts" size="9" fill="#000" dy="0" halo_radius="1" wrap_width="0"/>
     </Rule>
