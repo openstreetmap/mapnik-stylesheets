@@ -2974,7 +2974,7 @@
       <Filter>[railway] = 'rail' and ([bridge] = 'yes' or [bridge] = 'viaduct')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">7</CssParameter>
+        <CssParameter name="stroke-width">6.5</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
@@ -3078,7 +3078,7 @@
       <Filter>[railway] = 'spur-siding-yard' and ([bridge] = 'yes' or [bridge] = 'viaduct')</Filter>
       <LineSymbolizer>
         <CssParameter name="stroke">black</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-width">5.7</CssParameter>
         <CssParameter name="stroke-linejoin">round</CssParameter>
       </LineSymbolizer>
       <LineSymbolizer>
