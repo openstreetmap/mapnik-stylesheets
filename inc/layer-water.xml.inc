@@ -37,7 +37,7 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[natural] = 'lake' or [natural] = 'water' or [landuse] = 'reservoir' or [waterway] = 'riverbank' or [landuse] = 'water'</Filter>
+      <Filter>[natural] = 'lake' or [natural] = 'water' or [landuse] = 'reservoir' or [waterway] = 'riverbank' or [landuse] = 'water' or [natural]='bay'</Filter>
       &maxscale_zoom6;
       <PolygonSymbolizer>
         <CssParameter name="fill">#b5d0d0</CssParameter>
@@ -510,7 +510,7 @@
       from &prefix;_polygon
       where waterway in ('dock','mill_pond','riverbank','canal')
          or landuse in ('reservoir','water','basin')
-         or "natural" in ('lake','water','land','scrub','glacier','mud')
+         or "natural" in ('lake','water','land','scrub','glacier','mud','bay')
       order by z_order,way_area desc
       ) as water_areas</Parameter>
       &datasource-settings;
