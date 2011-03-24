@@ -665,6 +665,27 @@
      </PolygonSymbolizer>
     </Rule-->
 </Style>
+<Style name="leisure_line">
+    <Rule>
+      &maxscale_zoom14;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#f2efe9</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">square</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#f2efe9</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">square</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+</Style>
 <Style name="sports_grounds">
     <Rule>
       <Filter>[leisure] = 'sports_centre' or [leisure] = 'stadium'</Filter>
@@ -6595,6 +6616,18 @@
           or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
           or highway in ('services','rest_area')
        order by z_order,way_area desc
+      ) as leisure
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="leisure_line" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>leisure_line</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way
+       from &prefix;_line
+       where man_made='cutline'
       ) as leisure
       </Parameter>
       &datasource-settings;
