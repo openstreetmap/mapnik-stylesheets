@@ -3152,6 +3152,20 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      &maxscale_zoom15;
+      &minscale_zoom18;
+      <Filter>[railway]='miniature'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">1.2</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-dasharray">1,10</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       &maxscale_zoom13;
       &minscale_zoom14;
       <Filter>[railway]='tram' and [tunnel]='yes'</Filter>
@@ -6805,7 +6819,7 @@
        from &prefix;_line
        where highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction')
+          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction','miniature')
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
