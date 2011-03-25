@@ -50,11 +50,6 @@
       <PolygonPatternSymbolizer file="&symbols;/mud.png" />
     </Rule>
     <Rule>
-      &maxscale_zoom13;
-      <Filter>[natural] = 'scrub'</Filter>
-      <PolygonPatternSymbolizer file="&symbols;/scrub.png" />
-    </Rule>
-    <Rule>
       <Filter>[natural] = 'land'</Filter>
       &maxscale_zoom10;
       <PolygonSymbolizer>
@@ -510,7 +505,7 @@
       from &prefix;_polygon
       where waterway in ('dock','mill_pond','riverbank','canal')
          or landuse in ('reservoir','water','basin')
-         or "natural" in ('lake','water','land','scrub','glacier','mud','bay')
+         or "natural" in ('lake','water','land','glacier','mud','bay')
       order by z_order,way_area desc
       ) as water_areas</Parameter>
       &datasource-settings;

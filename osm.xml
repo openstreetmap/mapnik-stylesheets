@@ -597,6 +597,11 @@
      </PolygonSymbolizer>
     </Rule>
     <Rule>
+      &maxscale_zoom10;
+      <Filter>[natural] = 'scrub'</Filter>
+      <PolygonPatternSymbolizer file="&symbols;/scrub.png" />
+    </Rule>
+    <Rule>
       <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital' or [amenity]='kindergarten'</Filter>
       &maxscale_zoom10;
       <PolygonSymbolizer>
@@ -6625,7 +6630,7 @@
           or aeroway in ('apron','aerodrome')
           or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard')
           or military in ('barracks','danger_area')
-          or "natural" in ('field','beach','desert','heath','mud','wood','sand')
+          or "natural" in ('field','beach','desert','heath','mud','wood','sand','scrub')
           or power in ('station','sub_station','generator')
           or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
           or highway in ('services','rest_area')
