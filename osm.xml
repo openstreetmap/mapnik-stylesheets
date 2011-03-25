@@ -850,7 +850,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="brown" dy="9" halo_radius="1" wrap_width="20" />
     </Rule>
     <Rule>
-      <Filter>[historic] = 'memorial'</Filter>
+      <Filter>[historic] = 'memorial' or [historic]='archaeological_site'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="brown" dy="12" halo_radius="1" wrap_width="20" />
     </Rule>
@@ -7000,7 +7000,7 @@
           or military='danger_area'
           or aeroway='gate'
           or waterway='lock'
-          or historic='memorial'
+          or historic in ('memorial','archaeological_site')
       ) as text
       </Parameter>
       &datasource-settings;
@@ -7021,7 +7021,7 @@
           or man_made in ('lighthouse','windmill')
           or place='island'
           or military='danger_area'
-          or historic='memorial'
+          or historic in ('memorial','archaeological_site')
       ) as text
       </Parameter>
       &datasource-settings;
