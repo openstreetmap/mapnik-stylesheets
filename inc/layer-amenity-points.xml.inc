@@ -5,7 +5,7 @@
       <PointSymbolizer file="&symbols;/alpinehut.p.16.png" />
     </Rule>
     <Rule>
-      &maxscale_zoom13;
+      &maxscale_zoom16;
       <Filter>[amenity]='shelter'</Filter>
       <PointSymbolizer file="&symbols;/shelter2.p.16.png" />
     </Rule>

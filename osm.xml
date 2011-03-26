@@ -880,14 +880,20 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="8" fill="#6699cc" dy="10" halo_radius="1" wrap_width="20"/>
     </Rule>
     <Rule>
-      <Filter>[tourism] = 'alpine_hut' or [amenity]='shelter'</Filter>
+      <Filter>[tourism] = 'alpine_hut'</Filter>
       &maxscale_zoom15;
-      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" dy="15" halo_radius="1"/>
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" dy="10" halo_radius="1"/>
     </Rule>
     <Rule>
-      <Filter>[tourism] = 'alpine_hut' or [amenity]='shelter'</Filter>
+      <Filter>[tourism] = 'alpine_hut'</Filter>
       &maxscale_zoom16;
-      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="8" fill="#6699cc" dy="25" halo_radius="1"/>
+      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="8" fill="#6699cc" dy="22" halo_radius="1"/>
+    </Rule>
+    <Rule>
+      <Filter>[amenity]='shelter'</Filter>
+      &maxscale_zoom17;
+      <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="#6699cc" dy="10" halo_radius="1"/>
+      <TextSymbolizer name="ele" fontset_name="oblique-fonts" size="8" fill="#6699cc" dy="22" halo_radius="1"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'bank'</Filter>
