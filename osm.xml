@@ -5853,6 +5853,32 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
+      &maxscale_zoom12;
+      &minscale_zoom12;
+      <Filter>[railway] = 'INT-preserved-ssy'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#aaa</CssParameter>
+        <CssParameter name="stroke-width">1</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      &maxscale_zoom13;
+      &minscale_zoom18;
+      <Filter>[railway] = 'INT-preserved-ssy'</Filter>
+      <LineSymbolizer>
+        <CssParameter name="stroke">#999999</CssParameter>
+        <CssParameter name="stroke-width">2</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+      </LineSymbolizer>
+      <LineSymbolizer>
+        <CssParameter name="stroke">white</CssParameter>
+        <CssParameter name="stroke-width">0.8</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">0,1,8,1</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
       &maxscale_zoom14;
       &minscale_zoom18;
       <Filter>[railway]='monorail'</Filter>
@@ -6843,11 +6869,13 @@
     <StyleName>roads</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,highway,railway,
-       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      (select way,highway,
+       case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
+       case when railway='preserved' and service in ('spur','siding','yard') then 'INT-preserved-ssy'::text else railway end as railway
        from &prefix;_roads
        where highway is not null
-          or (railway is not null and (service is null or service not in ('spur','siding','yard')))
+          or (railway is not null and railway!='preserved' and (service is null or service not in ('spur','siding','yard')))
+          or railway='preserved'
        order by z_order
       ) as roads
       </Parameter>
