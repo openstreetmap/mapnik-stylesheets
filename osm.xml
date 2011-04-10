@@ -901,7 +901,7 @@
       <TextSymbolizer name="name" fontset_name="book-fonts" size="9" fill="black" dy="9" halo_radius="1" wrap_width="0"/>
     </Rule>
     <Rule>
-      <Filter>[tourism] = 'hotel' or [tourism]='hostel'</Filter>
+      <Filter>[tourism] = 'hotel' or [tourism]='hostel' or [tourism]='chalet'</Filter>
       &maxscale_zoom17;
       <TextSymbolizer name="name" fontset_name="book-fonts" size="10" fill="#0066ff" dy="11" halo_radius="1" wrap_width="0"/>
     </Rule>
