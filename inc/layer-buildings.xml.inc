@@ -102,7 +102,7 @@
       <Parameter name="table">
       (select way,aeroway,
         case
-         when building in ('residential','house','garage','garages') then 'INT-light'::text
+         when building in ('residential','house','garage','garages','detached','terrace','apartments') then 'INT-light'::text
          else building
         end as building
        from &prefix;_polygon
