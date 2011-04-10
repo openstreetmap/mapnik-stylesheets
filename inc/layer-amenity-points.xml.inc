@@ -75,6 +75,11 @@
       <Filter>[amenity]='car_sharing'</Filter>
       <PointSymbolizer file="&symbols;/car_share.p.16.png" allow_overlap="false"/>
     </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[tourism]='chalet'</Filter>
+      <PointSymbolizer file="&symbols;/chalet.p.16.png" />
+    </Rule>
      <Rule>
       &maxscale_zoom17;
       <Filter>[amenity]='cinema'</Filter>
@@ -365,7 +370,7 @@
       from &prefix;_point
       where amenity is not null
          or shop is not null
-         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','motel','museum','viewpoint','bed_and_breakfast','information')
+         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','motel','museum','viewpoint','bed_and_breakfast','information','chalet')
          or highway in ('bus_stop','traffic_signals','ford')
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
@@ -384,7 +389,7 @@
       from &prefix;_polygon
       where amenity is not null
          or shop is not null
-         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','motel','museum','viewpoint','bed_and_breakfast','information')
+         or tourism in ('alpine_hut','camp_site','caravan_site','guest_house','hostel','hotel','motel','museum','viewpoint','bed_and_breakfast','information','chalet')
          or highway in ('bus_stop','traffic_signals')
          or man_made in ('mast','water_tower')
          or historic in ('memorial','archaeological_site')
