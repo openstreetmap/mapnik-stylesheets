@@ -157,12 +157,12 @@
     </Rule>
     <Rule>
       &maxscale_zoom15;
-      <Filter>[amenity]='parking' and ([access] = 'public' or not [access] &lt;&gt; '')</Filter>
+      <Filter>[amenity] = 'parking' and ([access] = 'public' or [access] = 'yes' or not [access] != '')</Filter>
       <PointSymbolizer file="&symbols;/parking.p.16.png" allow_overlap="false"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
-      <Filter>[amenity]='parking' and ([access] &lt;&gt; '' and not [access] = 'public')</Filter>
+      <Filter>[amenity] = 'parking' and ([access] != '' and not [access] = 'public' and not [access] = 'yes')</Filter>
       <PointSymbolizer file="&symbols;/parking_private.p.16.png" allow_overlap="false"/>
     </Rule>
     <Rule>
