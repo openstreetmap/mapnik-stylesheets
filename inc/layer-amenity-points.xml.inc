@@ -141,6 +141,11 @@
       <PointSymbolizer file="&symbols;/library.p.20.png" />
     </Rule>
     <Rule>
+      &maxscale_zoom17;
+      <Filter>[amenity]='courthouse'</Filter>
+      <PointSymbolizer file="&symbols;/amenity_court.p.20.png" />
+    </Rule>
+    <Rule>
       &maxscale_zoom15;
       <Filter>[waterway]='lock' or [lock]='yes'</Filter>
       <PointSymbolizer file="&symbols;/lock_gate.png" />
