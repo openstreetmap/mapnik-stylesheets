@@ -6729,11 +6729,20 @@
     <StyleName>turning_circle-casing</StyleName>    
     <Datasource>
       <Parameter name="table">
-      (select p.way as way,l.highway as int_tc_type
+      (select distinct on (p.way) p.way as way,l.highway as int_tc_type
        from &prefix;_point p
-        join &prefix;_line l
+       join &prefix;_line l
         on ST_DWithin(p.way,l.way,&dwithin_node_way;)
-       where p.highway='turning_circle' and l.highway in ('tertiary','unclassified','residential','service','living_street')
+       join (values
+        ('tertiary',1),
+        ('unclassified',2),
+        ('residential',3),
+        ('living_street',4),
+        ('service',5)
+       ) as v (highway,prio)
+        on v.highway=l.highway
+       where p.highway='turning_circle'
+       order by p.way,v.prio
       ) as turning_circle
       </Parameter>
       &datasource-settings;
@@ -6822,11 +6831,20 @@
     <StyleName>turning_circle-fill</StyleName>    
     <Datasource>
       <Parameter name="table">
-      (select p.way as way,l.highway as int_tc_type
+      (select distinct on (p.way) p.way as way,l.highway as int_tc_type
        from &prefix;_point p
-        join &prefix;_line l
+       join &prefix;_line l
         on ST_DWithin(p.way,l.way,&dwithin_node_way;)
-       where p.highway='turning_circle' and l.highway in ('tertiary','unclassified','residential','service','living_street')
+       join (values
+        ('tertiary',1),
+        ('unclassified',2),
+        ('residential',3),
+        ('living_street',4),
+        ('service',5)
+       ) as v (highway,prio)
+        on v.highway=l.highway
+       where p.highway='turning_circle'
+       order by p.way,v.prio
       ) as turning_circle
       </Parameter>
       &datasource-settings;
