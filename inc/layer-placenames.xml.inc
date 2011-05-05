@@ -172,7 +172,7 @@
       (select way,place,name
       from &prefix;_point
       where place in ('city','metropolis','town','large_town','small_town')
-        and (capital is null or capital&lt;&gt;'yes')
+        and (capital is null or capital != 'yes')
       ) as placenames</Parameter>
       &datasource-settings;
     </Datasource>

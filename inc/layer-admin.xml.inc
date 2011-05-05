@@ -115,7 +115,7 @@
       </LineSymbolizer>
     </Rule>
    <Rule>
-      <Filter>not [admin_level] &lt;&gt;''</Filter>
+      <Filter>not [admin_level] != ''</Filter>
       &maxscale_zoom9;
       &minscale_zoom11;
       <LineSymbolizer>
