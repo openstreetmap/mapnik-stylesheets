@@ -20,7 +20,28 @@
       <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#444" dy="0" wrap_width="0"/>
     </Rule>
 </Style>
-
+<Style name="node_names">
+    <Rule>
+      &maxscale_zoom17;
+      &minscale_zoom17;
+      <TextSymbolizer name="addr:housename" fontset_name="book-fonts" size="8" fill="#444" dy="0" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom18;
+      <TextSymbolizer name="addr:housename" fontset_name="book-fonts" size="9" fill="#444" dy="0" wrap_width="20"/>
+    </Rule>
+</Style>
+<Style name="way_names">
+    <Rule>
+      &maxscale_zoom17;
+      &minscale_zoom17;
+      <TextSymbolizer name="addr:housename" fontset_name="book-fonts" size="8" fill="#444" dy="0" wrap_width="20"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom18;
+      <TextSymbolizer name="addr:housename" fontset_name="book-fonts" size="9" fill="#444" dy="0" wrap_width="20"/>
+    </Rule>
+</Style>
 <Layer name="interpolation_lines" status="on" srs="&osm2pgsql_projection;">
      <StyleName>interpolation</StyleName>
      <Datasource>
@@ -44,3 +65,18 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="housename_ways" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>way_names</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way,"addr:housename" from &prefix;_polygon where "addr:housename" is not null and building is not null) as way_names</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="housename_nodes" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>node_names</StyleName>
+    <Datasource>
+      <Parameter name="table">(select way,"addr:housename" from &prefix;_point where "addr:housename" is not null) as node_names</Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+
