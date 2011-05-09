@@ -3812,7 +3812,7 @@
 
 <Style name="access">
      <Rule>
-      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential')</Filter>
+      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='footway')</Filter>
       &maxscale_zoom15;
       &minscale_zoom15;
       <LineSymbolizer>
@@ -3838,20 +3838,8 @@
       </LineSymbolizer>
     </Rule>
      <Rule>
-      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
+      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='footway' or [highway]='service')</Filter>
       &maxscale_zoom16;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#cf9</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
-        <CssParameter name="stroke-dasharray">6,8</CssParameter>
-        <CssParameter name="stroke-opacity">0.5</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">round</CssParameter>
-      </LineSymbolizer>
-    </Rule>
-    <Rule>
-      <Filter>[access] = 'permissive' and [highway]='footway'</Filter>
-      &maxscale_zoom15;
       <LineSymbolizer>
         <CssParameter name="stroke">#cf9</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
