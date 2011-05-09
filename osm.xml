@@ -3812,8 +3812,34 @@
 
 <Style name="access">
      <Rule>
-      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
+      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential')</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#cf9</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[access] = 'permissive' and ([highway] = 'service' and not [service] = 'INT-minor')</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#cf9</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+     <Rule>
+      <Filter>[access] = 'permissive' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
+      &maxscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">#cf9</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -3836,8 +3862,9 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[access]='destination' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
+      <Filter>[access]='destination' and ([highway]='unclassified' or [highway]='residential')</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
       <LineSymbolizer>
         <CssParameter name="stroke">#c2e0ff</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -3848,8 +3875,59 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[access] = 'private' or [access] = 'no'</Filter>
+      <Filter>[access]='destination' and ([highway] = 'service' and not [service] = 'INT-minor')</Filter>
       &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#c2e0ff</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[access]='destination' and ([highway]='unclassified' or [highway]='residential' or [highway]='service')</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#c2e0ff</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([access] = 'private' or [access] = 'no') and not [highway] = 'service'</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#efa9a9</CssParameter>
+        <CssParameter name="stroke-width">6</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>([access] = 'private' or [access] = 'no') and ([highway] = 'service' and not [service] = 'INT-minor')</Filter>
+      &maxscale_zoom15;
+      &minscale_zoom15;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#efa9a9</CssParameter>
+        <CssParameter name="stroke-width">3</CssParameter>
+        <CssParameter name="stroke-dasharray">6,8</CssParameter>
+        <CssParameter name="stroke-opacity">0.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-linecap">round</CssParameter>
+      </LineSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[access] = 'private' or [access] = 'no'</Filter>
+      &maxscale_zoom16;
       <LineSymbolizer>
         <CssParameter name="stroke">#efa9a9</CssParameter>
         <CssParameter name="stroke-width">6</CssParameter>
@@ -6964,7 +7042,11 @@
     <StyleName>access</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,access,highway from &prefix;_line where access is not null) as access
+      (select way,access,highway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
+       from &prefix;_line
+       where access is not null and highway is not null
+      ) as access
       </Parameter>
       &datasource-settings;
     </Datasource>
