@@ -50,12 +50,11 @@ class GoogleProjection:
 
 
 class RenderThread:
-    def __init__(self, tile_dir, mapfile, q, printLock, maxZoom, tms_scheme=False):
+    def __init__(self, tile_dir, mapfile, q, printLock, maxZoom):
         self.tile_dir = tile_dir
         self.q = q
         self.m = mapnik.Map(256, 256)
         self.printLock = printLock
-        self.tms_scheme = tms_scheme
         # Load style XML
         mapnik.load_map(self.m, mapfile, True)
         # Obtain <Map> projection
@@ -65,10 +64,6 @@ class RenderThread:
 
 
     def render_tile(self, tile_uri, x, y, z):
-
-        # flip y to match OSGEO TMS spec
-        if self.tms_scheme:
-            y = (2**z-1) - y
 
         # Calculate pixel positions of bottom-left & top-right
         p0 = (x * 256, (y + 1) * 256)
@@ -132,7 +127,7 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", 
     printLock = threading.Lock()
     renderers = {}
     for i in range(num_threads):
-        renderer = RenderThread(tile_dir, mapfile, queue, printLock, maxZoom, tms_scheme=tms_scheme)
+        renderer = RenderThread(tile_dir, mapfile, queue, printLock, maxZoom)
         render_thread = threading.Thread(target=renderer.loop)
         render_thread.start()
         #print "Started render thread %s" % render_thread.getName()
@@ -166,7 +161,11 @@ def render_tiles(bbox, mapfile, tile_dir, minZoom=1,maxZoom=18, name="unknown", 
                 # Validate x co-ordinate
                 if (y < 0) or (y >= 2**z):
                     continue
-                str_y = "%s" % y
+                # flip y to match OSGEO TMS spec
+                if tms_scheme:
+                    str_y = "%s" % ((2**z-1) - y)
+                else:
+                    str_y = "%s" % y
                 tile_uri = tile_dir + zoom + '/' + str_x + '/' + str_y + '.png'
                 # Submit tile to be rendered into the queue
                 t = (name, tile_uri, x, y, z)
@@ -207,7 +206,7 @@ if __name__ == "__main__":
     # World
     bbox = (-180.0,-90.0, 180.0,90.0)
 
-    render_tiles(bbox, mapfile, tile_dir, 0, 5, "World", tms_scheme=False)
+    render_tiles(bbox, mapfile, tile_dir, 0, 5, "World")
 
     minZoom = 10
     maxZoom = 16
