@@ -1859,7 +1859,7 @@
    </Rule>
    <Rule>
       <Filter>[highway] = 'primary_link' and not [tunnel] = 'yes'</Filter>
-      &maxscale_zoom11;
+      &maxscale_zoom12;
       &minscale_zoom12;
       <LineSymbolizer>
         <CssParameter name="stroke">#ec989a</CssParameter>
