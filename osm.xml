@@ -6200,9 +6200,23 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="access-pre_bridges" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
+       from &prefix;_line
+       where access is not null and highway is not null
+         and (bridge is null or bridge not in ('yes','true','1','viaduct'))
+      ) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="bridges_layer0" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bridges_casing</StyleName>
-	<StyleName>bridges_casing2</StyleName>
+    <StyleName>bridges_casing2</StyleName>
     <StyleName>bridges_fill</StyleName>
     <Datasource>
       <Parameter name="table">
@@ -6218,6 +6232,21 @@
          and (layer is null or layer = '0')
        order by z_order
       ) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bridges_access0" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
+       from &prefix;_line
+       where access is not null and highway is not null
+         and bridge in ('yes','true','1','viaduct')
+         and (layer is null or layer in ('-5','-4','-3','-2','-1','0'))
+      ) as access
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6244,6 +6273,21 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bridges_access1" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
+       from &prefix;_line
+       where access is not null and highway is not null
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '1'
+      ) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="bridges_layer2" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bridges_casing</StyleName>
 	<StyleName>bridges_casing2</StyleName>
@@ -6262,6 +6306,21 @@
          and layer = '2'
        order by z_order
       ) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bridges_access2" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
+       from &prefix;_line
+       where access is not null and highway is not null
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '2'
+      ) as access
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6288,6 +6347,21 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bridges_access3" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
+       from &prefix;_line
+       where access is not null and highway is not null
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '3'
+      ) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="bridges_layer4" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bridges_casing</StyleName>
 	<StyleName>bridges_casing2</StyleName>
@@ -6306,6 +6380,21 @@
          and layer = '4'
        order by z_order
       ) as roads
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bridges_access4" status="on" srs="&osm2pgsql_projection;">
+    <StyleName>access</StyleName>
+    <Datasource>
+      <Parameter name="table">
+      (select way,access,highway,
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
+       from &prefix;_line
+       where access is not null and highway is not null
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '4'
+      ) as access
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6332,7 +6421,7 @@
       &datasource-settings;
     </Datasource>
 </Layer>
-<Layer name="access" status="on" srs="&osm2pgsql_projection;">
+<Layer name="bridges_access5" status="on" srs="&osm2pgsql_projection;">
     <StyleName>access</StyleName>
     <Datasource>
       <Parameter name="table">
@@ -6340,6 +6429,8 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '5'
       ) as access
       </Parameter>
       &datasource-settings;
