@@ -6214,6 +6214,21 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="direction_pre_bridges" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+         and (bridge is null or bridge not in ('yes','true','1','viaduct'))
+      ) as directions
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="bridges_layer0" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bridges_casing</StyleName>
     <StyleName>bridges_casing2</StyleName>
@@ -6247,6 +6262,22 @@
          and bridge in ('yes','true','1','viaduct')
          and (layer is null or layer in ('-5','-4','-3','-2','-1','0'))
       ) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bridges_directions0" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+         and bridge in ('yes','true','1','viaduct')
+         and (layer is null or layer in ('-5','-4','-3','-2','-1','0'))
+      ) as directions
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6288,6 +6319,22 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bridges_directions1" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '1'
+      ) as directions
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="bridges_layer2" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bridges_casing</StyleName>
 	<StyleName>bridges_casing2</StyleName>
@@ -6321,6 +6368,22 @@
          and bridge in ('yes','true','1','viaduct')
          and layer = '2'
       ) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bridges_directions2" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '2'
+      ) as directions
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6362,6 +6425,22 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bridges_directions3" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '3'
+      ) as directions
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="bridges_layer4" status="on" srs="&osm2pgsql_projection;">
     <StyleName>bridges_casing</StyleName>
 	<StyleName>bridges_casing2</StyleName>
@@ -6395,6 +6474,22 @@
          and bridge in ('yes','true','1','viaduct')
          and layer = '4'
       ) as access
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
+<Layer name="bridges_directions4" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '4'
+      ) as directions
       </Parameter>
       &datasource-settings;
     </Datasource>
@@ -6436,6 +6531,22 @@
       &datasource-settings;
     </Datasource>
 </Layer>
+<Layer name="bridges_directions5" status="on" srs="&osm2pgsql_projection;">
+     <StyleName>directions</StyleName>
+     <Datasource>
+      <Parameter name="table">
+      (select way,
+       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
+       from &prefix;_line
+       where oneway is not null
+         and (highway is not null or railway is not null or waterway is not null)
+         and bridge in ('yes','true','1','viaduct')
+         and layer = '5'
+      ) as directions
+      </Parameter>
+      &datasource-settings;
+    </Datasource>
+</Layer>
 <Layer name="trams" status="on" srs="&osm2pgsql_projection;">
     <StyleName>trams</StyleName>
     <Datasource>
@@ -6460,20 +6571,6 @@
 &layer-amenity-symbols;
 &layer-amenity-points;
 &layer-power;
-<Layer name="directions" status="on" srs="&osm2pgsql_projection;">
-     <StyleName>directions</StyleName>
-     <Datasource>
-      <Parameter name="table">
-      (select way,
-       case when oneway in ('yes','true','1') then 'yes'::text else oneway end as oneway
-       from &prefix;_line
-       where oneway is not null
-         and (highway is not null or railway is not null or waterway is not null)
-      ) as directions
-      </Parameter>
-      &datasource-settings;
-    </Datasource>
-</Layer>
 <Layer name="planet roads text osm low zoom" status="on" srs="&osm2pgsql_projection;">
      <StyleName>roads-text-low-zoom</StyleName>
      <Datasource>
