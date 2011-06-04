@@ -6606,7 +6606,7 @@
        where waterway IS NULL
          and leisure IS NULL
          and landuse IS NULL
-         and (name is not null or ref is not null)
+         and (name is not null or (highway is not null and ref is not null))
       ) as roads
       </Parameter>
       &datasource-settings;
