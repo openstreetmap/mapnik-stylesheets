@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 
-import mapnik
+try:
+    import mapnik2 as mapnik
+except:
+    import mapnik
+
 import sys, os
 
 # Set up projections
@@ -76,6 +80,6 @@ if __name__ == "__main__":
     # to Cairo supported formats if you have Mapnik built with Cairo support
     # For example, to render to pdf or svg do:
     # mapnik.render_to_file(m, "image.pdf")
-    mapnik.render_to_file(m, "image.svg")
+    #mapnik.render_to_file(m, "image.svg")
     
 

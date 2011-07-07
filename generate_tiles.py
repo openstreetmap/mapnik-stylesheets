@@ -3,8 +3,13 @@ from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
 from Queue import Queue
-import mapnik
+
 import threading
+
+try:
+    import mapnik2 as mapnik
+except:
+    import mapnik
 
 DEG_TO_RAD = pi/180
 RAD_TO_DEG = 180/pi
