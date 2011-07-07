@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
