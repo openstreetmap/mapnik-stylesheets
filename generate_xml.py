@@ -58,6 +58,13 @@ class Params:
                 self.missing.append(p)
         return d
 
+def generate_help_text(var,default):
+    if var == 'host':
+        return 'Set postgres database host %s' % default
+    elif var == 'port':
+        return 'Set postgres database host %s' % default
+    return "Set value of '%s' %s" % (var,default)
+    
 def serialize(xml,options):
     try:
         import mapnik
@@ -86,13 +93,13 @@ def validate(params,parser):
         params['extent'] = ''
 
 # set up parser...
-parser = optparse.OptionParser(usage="""%prog [template xml] [output xml] <parameters>
+parser = optparse.OptionParser(usage="""%prog [template xml] <output xml> <parameters>
 
 Full help:
  $ %prog -h (or --help for possible options)
 
-Read 'osm.xml' and print resulting xml to stdout:
- $ %prog osm.xml
+Read 'osm.xml' and modify '/inc' files in place, pass dbname and user, accept empty string for other options
+ $ %prog --dbname osm --user postgres --accept-none
 
 Read template, save output xml, and pass variables as options
  $ %prog osm.xml my_osm.xml --dbname spain --user postgres --host ''""", version='%prog ' + __version__)
@@ -146,9 +153,9 @@ if __name__ == '__main__':
             if var in blended:
                 default = msg % blended
             else:
-                default = ''#msg % {var:'None'} 
-            parser.add_option('--%s' % var, dest=var,
-                help="Set value of '%s' %s" % (var,default))
+                default = ''#msg % {var:'None'}
+            help = generate_help_text(var,default)
+            parser.add_option('--%s' % var, dest=var,help=generate_help_text(var,default))
             c_opts.append(var)
 
     # now, actually run the tool...
