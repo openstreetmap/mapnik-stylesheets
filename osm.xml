@@ -1394,7 +1394,7 @@
       </LineSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and not [tunnel] = 'yes'</Filter>
+      <Filter>[highway] = 'secondary' and not [tunnel] = 'yes' and [surface] = 'paved'</Filter>
       &maxscale_zoom13;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -1404,6 +1404,17 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
+    <Rule>
+      <Filter>[highway] = 'secondary' and not [tunnel] = 'yes' and [surface] = 'unpaved'</Filter>
+      &maxscale_zoom13;
+      &minscale_zoom14;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#a37b48</CssParameter>
+        <CssParameter name="stroke-width">10.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">6,2,2,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>    
     <Rule>
       <Filter>[highway] = 'motorway' and not [tunnel] = 'yes'</Filter>
       &maxscale_zoom15;
@@ -1497,7 +1508,6 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-   
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom13;
@@ -1511,7 +1521,7 @@
     </Rule>
     
     <Rule>
-      <Filter>[highway] = 'tertiary' and not [tunnel]='yes'</Filter>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes' and [surface] = 'paved'</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer>
@@ -1521,7 +1531,17 @@
         <CssParameter name="stroke-linecap">round</CssParameter>
       </LineSymbolizer>
     </Rule>
-    
+    <Rule>
+      <Filter>[highway] = 'tertiary' and not [tunnel]='yes' and [surface] = 'unpaved'</Filter>
+      &maxscale_zoom14;
+      &minscale_zoom14;
+      <LineSymbolizer>
+        <CssParameter name="stroke">#d6a25f</CssParameter>
+        <CssParameter name="stroke-width">8.5</CssParameter>
+        <CssParameter name="stroke-linejoin">round</CssParameter>
+        <CssParameter name="stroke-dasharray">6,2,2,2</CssParameter>
+      </LineSymbolizer>
+    </Rule>    
     <Rule>
       <Filter>([highway] = 'residential' or [highway] = 'unclassified' or [highway] = 'road') and not [tunnel]='yes'</Filter>
       &maxscale_zoom14;
@@ -6099,7 +6119,8 @@
       <Parameter name="table">
       (select way,highway,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service
+       case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text else service end as service,
+       case when surface in ('unpaved', 'compacted', 'grass_paver', 'gravel', 'fine_gravel', 'pebblestone', 'sand', 'dirt', 'earth', 'ground', 'grass', 'mud', 'wood', 'metal', 'artificial_turf') then 'unpaved'::text else 'paved'::text end as surface
        from &prefix;_line
        where highway in ('motorway','motorway_link','trunk','trunk_link','primary','primary_link','secondary','secondary_link','tertiary','tertiary_link','residential','unclassified','road','service','pedestrian','raceway','living_street')
        order by z_order) as roads
