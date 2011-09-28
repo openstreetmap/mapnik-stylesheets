@@ -67,8 +67,11 @@ def generate_help_text(var,default):
     
 def serialize(xml,options):
     try:
-        import mapnik
-    except:
+        try:
+            import mapnik2 as mapnik
+        except ImportError:
+            import mapnik
+    except ImportError:
         sys.exit(color_text(1,'Error: saving xml requires Mapnik python bindings to be installed'))
     m = mapnik.Map(1,1)
     if options.from_string:
