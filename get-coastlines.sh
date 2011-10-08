@@ -12,6 +12,13 @@ TAR=/bin/tar
 BUNZIP2=/bin/bunzip2
 WGET=/usr/bin/wget
 
+if [ -z $1 ] ; then
+OUTDIR=`pwd`
+else
+OUTDIR=$1
+fi
+
+
 if [ ! -x $UNZIP ]; then
     echo "unzip is not installed in $UNZIP, it is needed by this script"
     exit
@@ -32,38 +39,38 @@ if [ ! -x $WGET ]; then
     exit
 fi
 
-$WGET http://tile.openstreetmap.org/world_boundaries-spherical.tgz -O world_boundaries-spherical.tgz
-$WGET http://tile.openstreetmap.org/processed_p.tar.bz2 -O processed_p.tar.bz2
-$WGET http://tile.openstreetmap.org/shoreline_300.tar.bz2 -O shoreline_300.tar.bz2
-$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places.zip -O 10m-populated-places.zip
-$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/110m-admin-0-boundary-lines.zip -O 110m-admin-0-boundary-lines.zip
+$WGET http://tile.openstreetmap.org/world_boundaries-spherical.tgz -O $OUTDIR/world_boundaries-spherical.tgz
+$WGET http://tile.openstreetmap.org/processed_p.tar.bz2 -O $OUTDIR/processed_p.tar.bz2
+$WGET http://tile.openstreetmap.org/shoreline_300.tar.bz2 -O $OUTDIR/shoreline_300.tar.bz2
+$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places.zip -O $OUTDIR/10m-populated-places.zip
+$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/110m-admin-0-boundary-lines.zip -O $OUTDIR/110m-admin-0-boundary-lines.zip
 
-$TAR xvf world_boundaries-spherical.tgz
+$TAR xvf $OUTDIR/world_boundaries-spherical.tgz -C $OUTDIR
 
-if [ -d world_boundaries ]; then
+if [ -d $OUTDIR/world_boundaries ]; then
 
-	if [ -f processed_p.tar.bz2 ]; then
-		$TAR xvf processed_p.tar.bz2
-		mv processed_p.[dis]* world_boundaries/
+	if [ -f $OUTDIR/processed_p.tar.bz2 ]; then
+		$TAR xvf $OUTDIR/processed_p.tar.bz2 -C $OUTDIR
+		mv $OUTDIR/processed_p.[dis]* $OUTDIR/world_boundaries/
 	else
 		echo 'processed_p.tar.bz2 not present'
 	fi
 
-	if [ -f shoreline_300.tar.bz2 ]; then
-		$TAR xvf shoreline_300.tar.bz2
-		mv shoreline_300.[dis]* world_boundaries/
+	if [ -f $OUTDIR/shoreline_300.tar.bz2 ]; then
+		$TAR xvf $OUTDIR/shoreline_300.tar.bz2 -C $OUTDIR
+		mv $OUTDIR/shoreline_300.[dis]* $OUTDIR/world_boundaries/
 	else
 		echo 'shoreline_300.tar.bz2 not present'
 	fi
 
-	if [ -f 10m-populated-places.zip ]; then
-		$UNZIP 10m-populated-places.zip -d world_boundaries
+	if [ -f $OUTDIR/10m-populated-places.zip ]; then
+		$UNZIP $OUTDIR/10m-populated-places.zip -d $OUTDIR/world_boundaries
 	else
 		echo '10m-populated-places.zip not present'
 	fi
 
-	if [ -f 110m-admin-0-boundary-lines.zip ]; then
-		$UNZIP 110m-admin-0-boundary-lines.zip -d world_boundaries
+	if [ -f $OUTDIR/110m-admin-0-boundary-lines.zip ]; then
+		$UNZIP $OUTDIR/110m-admin-0-boundary-lines.zip -d $OUTDIR/world_boundaries
 	else
 		echo '110m-admin-0-boundary-lines.zip not present'
 	fi
