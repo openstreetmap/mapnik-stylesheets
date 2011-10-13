@@ -6663,8 +6663,9 @@
       (select way,way_area,name
        from &prefix;_polygon
        where name is not null
-         and (waterway is null or waterway != 'riverbank')
-       order by z_order,way_area desc
+         and (waterway is null or waterway != 'riverbank' or place is null)
+         and place is null
+       order by way_area desc
       ) as text
       </Parameter>
       &datasource-settings;
