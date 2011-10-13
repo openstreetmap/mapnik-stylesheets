@@ -6663,7 +6663,7 @@
       (select way,way_area,name
        from &prefix;_polygon
        where name is not null
-         and (waterway is null or waterway != 'riverbank' or place is null)
+         and (waterway is null or waterway != 'riverbank')
          and place is null
        order by way_area desc
       ) as text
