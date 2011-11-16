@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-# This file is based on generate_tiles_multiprocess.py
+
+# this file is based on generate_tiles_multiprocess.py
+# run it without arguments to see options list
+
 from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
