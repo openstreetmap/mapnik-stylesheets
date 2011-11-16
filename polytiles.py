@@ -534,38 +534,4 @@ if __name__ == "__main__":
 
     render_tiles(generator, options.style, writer, num_threads=options.threads, verbose=options.verbose)
     writer.close()
-    sys.exit()
-
-    #vas = read_db(db, -1114252)
-    #vyb = read_db(db, -1138534)
-    writer = MBTilesWriter('Vasileostrovsky', 'vo')
-    #render_tiles(vas, mapfile, FileWriter(tile_dir), 12, 13, "spb")
-    render_tiles(vas, mapfile, writer, [10,11,12, 13,14], "spb")
-    render_tiles(vyb, mapfile, writer, [10,11,12,13], "vyb")
-    writer.close()
-    sys.exit()
-    #-------------------------------------------------------------------------
-    #
-    # Change the following for different bounding boxes and zoom levels
-    #
-    # Start with an overview
-    # World
-
-    ######
-    
-    # Обзорная часть, по bbox
-    bbox = box(19.364370,41.116250,180.000000,77.989470)
-    render_tiles(bbox, mapfile, tile_dir, [2, 6], "Россия 2-6")
-
-    #sys.exit()
-
-    # Калининградская область по границам
-    # bbox = (19.364370,54.307900,22.916120,55.412780)
-    poly = Polygon(poly_parse(open('/home/maks/OSM/russia-kaliningrad-mapnik.poly' )))
-    render_tiles(poly, mapfile, tile_dir, [7, 12], "Калиниград 7-13")
-
-    # Материковая часть страны по границе
-    bbox = box(26.574820,41.116250,100.000000,77.989470)
-    poly = Polygon(poly_parse(open('/home/maks/OSM/russia-mapnik.poly')))
-    render_tiles(poly.intersection(bbox), mapfile, tile_dir, [7, 10], "Россия 7-13")
 
