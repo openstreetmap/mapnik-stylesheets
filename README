@@ -179,6 +179,12 @@ Edit the 'bbox' inside 'generate_tiles.py' and run
 
     ./generate_tiles.py
 
+Alternatively, run
+
+    ./polytiles.py --bbox X1 Y1 X2 Y2
+
+Tiles will be written into 'tiles' directory. To see the list of all parameters,
+run this script without any.
 
 Files and Directories
 ---------------------
@@ -210,6 +216,12 @@ generate_tiles.py
     write the finished maps to the $MAPNIK_TILE_DIR directory. You have
     to change the script to change the bounding boxes or zoom levels
     for which tiles are created.
+
+polytiles.py
+    An advanced script to generate map tiles with Mapnik. Can produce
+    png files, .mbtiles or just a list. Supports not only bboxes,
+    but PostGIS polygons, .poly files and tile lists. Run the script
+    without parameters to see the full list of options.
 
 install.txt
     An almost cut-and-paste documentation on how to use all this.
