@@ -7,11 +7,11 @@
 from math import pi,cos,sin,log,exp,atan
 from subprocess import call
 import sys, os
-from Queue import Queue
 import mapnik2 as mapnik
 import multiprocessing
 import psycopg2
-import shapely
+from shapely.geometry import Polygon
+from shapely.wkb import loads
 import ogr
 import sqlite3
 import getpass
@@ -23,7 +23,6 @@ TILE_SIZE = 256
 
 
 def box(x1,y1,x2,y2):
-    from shapely.geometry import Polygon
     return Polygon([(x1,y1), (x2,y1), (x2,y2), (x1,y2)])
 
 def minmax (a,b,c):
@@ -132,7 +131,7 @@ class TMSWriter(FileWriter):
 
 # https://github.com/mapbox/mbutil/blob/master/mbutil/util.py
 class MBTilesWriter:
-    def __init__(self, setname, filename, overlay=False, version=1, description=None):
+    def __init__(self, filename, setname, overlay=False, version=1, description=None):
         self.filename = filename
         if not self.filename.endswith('.mbtiles'):
             self.filename = self.filename + '.mbtiles'
@@ -188,7 +187,7 @@ class MBTilesWriter:
 class ThreadedWriter:
     def __init__(self, writer):
         self.writer = writer
-        self.queue = Queue(10)
+        self.queue = multiprocessing.Queue(10)
 
     def __str__(self):
         return "Threaded{0}".format(self.writer)
@@ -396,11 +395,6 @@ def poly_parse(fp):
     return poly
 
 
-def read_poly(filename):
-    from shapely.geometry import Polygon
-    poly = Polygon(poly_parse(open(filename)))
-    return poly
-
 def project(geom, from_epsg=900913, to_epsg=4326):
     # source: http://hackmap.blogspot.com/2008/03/ogr-python-projection.html
     to_srs = ogr.osr.SpatialReference()
@@ -413,7 +407,6 @@ def project(geom, from_epsg=900913, to_epsg=4326):
     ogr_geom.AssignSpatialReference(from_srs)
 
     ogr_geom.TransformTo(to_srs)
-    from shapely.wkb import loads
     return loads(ogr_geom.ExportToWkb())
 
 def read_db(db, osm_id=0):
@@ -425,19 +418,17 @@ def read_db(db, osm_id=0):
         cur.execute("""SELECT ST_ConvexHull(ST_Collect(way)) FROM planet_osm_polygon;""")
     way = cur.fetchone()[0]
     cur.close()
-    from shapely.wkb import loads
     poly = loads(way.decode('hex'))
     return project(poly)
 
 def read_cities(db, osm_id=0):
-    from shapely.wkb import loads
     cur = db.cursor()
     if osm_id:
         cur.execute("""SELECT ST_Union(pl.way) FROM planet_osm_polygon pl, planet_osm_polygon b WHERE b.osm_id = %s AND pl.place IN ('town', 'city') AND AT_Area(pl.way) < 500*1000*1000 AND ST_Contains(b.way, pl.way);""", (osm_id,))
     else:
         cur.execute("""SELECT ST_Union(way) FROM planet_osm_polygon WHERE place IN ('town', 'city') AND ST_Area(way) < 500*1000*1000;""")
     result = cur.fetchone()
-    way = result[0] if result else shapely.geometry.Polygon()
+    way = result[0] if result else Polygon()
     poly = loads(way.decode('hex'))
     if osm_id:
         cur.execute("""SELECT ST_Union(ST_Buffer(p.way, 5000)) FROM planet_osm_point p, planet_osm_polygon b WHERE b.osm_id=%s AND ST_Contains(b.way, p.way) AND p.place IN ('town', 'city') AND NOT EXISTS(SELECT 1 FROM planet_osm_polygon pp WHERE pp.name=p.name AND ST_Contains(pp.way, p.way));""", (osm_id,))
@@ -468,6 +459,8 @@ if __name__ == "__main__":
     apg_output.add_argument('-t', '--tiledir', metavar='DIR', help='output tiles to directory (default: {0}/tiles)'.format(os.getcwd()))
     apg_output.add_argument('--tms', action='store_true', help='write files in TMS order', default=False)
     apg_output.add_argument('-m', '--mbtiles', help='generate mbtiles file')
+    apg_output.add_argument('--name', help='name for mbtiles', default='Test MBTiles')
+    apg_output.add_argument('--overlay', action='store_true', help='if this layer is an overlay (for mbtiles metadata)', default=False)
     apg_output.add_argument('-x', '--export', type=argparse.FileType('w'), metavar='TILES.LST', help='save tile list into file')
     apg_output.add_argument('-z', '--zooms', type=int, nargs=2, metavar=('ZMIN', 'ZMAX'), help='range of zoom levels to render (default: 6 12)', default=(6, 12))
     apg_other = parser.add_argument_group('Settings')
@@ -491,7 +484,7 @@ if __name__ == "__main__":
     if options.tiledir:
         writer = FileWriter(options.tiledir) if not options.tms else TMSWriter(options.tiledir)
     elif options.mbtiles:
-        writer = MBTilesWriter(options.mbtiles)
+        writer = MBTilesWriter(options.mbtiles, options.name, overlay=options.overlay)
     elif options.export:
         writer = ListWriter(options.export)
     else:
@@ -504,9 +497,8 @@ if __name__ == "__main__":
         tpoly = box(b[0], b[1], b[2], b[3])
         poly = tpoly if not poly else poly.intersection(tpoly)
     if options.poly:
-        tpoly = poly_parse(options.poly)
+        tpoly = Polygon(poly_parse(options.poly))
         poly = tpoly if not poly else poly.intersection(tpoly)
-    db = None
     if options.area != None or options.cities != None:
         passwd = ""
         if options.password:
@@ -514,18 +506,16 @@ if __name__ == "__main__":
 
         try:
             db = psycopg2.connect(database=options.dbname, user=options.user, password=passwd, host=options.host, port=options.port)
+	    if options.area != None:
+		tpoly = read_db(db, options.area)
+		poly = tpoly if not poly else poly.intersection(tpoly)
+	    if options.cities != None:
+		tpoly = read_cities(db, options.poly)
+		poly = tpoly if not poly else poly.intersection(tpoly)
+	    db.close()
         except Exception, e:
             print "Error connecting to database: ", e.pgerror
             sys.exit(1)
-    if options.area != None:
-        tpoly = read_db(db, options.area)
-        poly = tpoly if not poly else poly.intersection(tpoly)
-    if options.cities != None:
-        tpoly = read_cities(db, options.poly)
-        poly = tpoly if not poly else poly.intersection(tpoly)
-
-    if db:
-        db.close()
 
     if options.list:
         generator = ListGenerator(options.list)
