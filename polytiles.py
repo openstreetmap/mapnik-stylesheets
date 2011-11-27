@@ -424,12 +424,11 @@ def read_db(db, osm_id=0):
 def read_cities(db, osm_id=0):
     cur = db.cursor()
     if osm_id:
-        cur.execute("""SELECT ST_Union(pl.way) FROM planet_osm_polygon pl, planet_osm_polygon b WHERE b.osm_id = %s AND pl.place IN ('town', 'city') AND AT_Area(pl.way) < 500*1000*1000 AND ST_Contains(b.way, pl.way);""", (osm_id,))
+        cur.execute("""SELECT ST_Union(pl.way) FROM planet_osm_polygon pl, planet_osm_polygon b WHERE b.osm_id = %s AND pl.place IN ('town', 'city') AND ST_Area(pl.way) < 500*1000*1000 AND ST_Contains(b.way, pl.way);""", (osm_id,))
     else:
         cur.execute("""SELECT ST_Union(way) FROM planet_osm_polygon WHERE place IN ('town', 'city') AND ST_Area(way) < 500*1000*1000;""")
     result = cur.fetchone()
-    way = result[0] if result else Polygon()
-    poly = loads(way.decode('hex'))
+    poly = loads(result[0].decode('hex')) if result else Polygon()
     if osm_id:
         cur.execute("""SELECT ST_Union(ST_Buffer(p.way, 5000)) FROM planet_osm_point p, planet_osm_polygon b WHERE b.osm_id=%s AND ST_Contains(b.way, p.way) AND p.place IN ('town', 'city') AND NOT EXISTS(SELECT 1 FROM planet_osm_polygon pp WHERE pp.name=p.name AND ST_Contains(pp.way, p.way));""", (osm_id,))
     else:
@@ -510,7 +509,7 @@ if __name__ == "__main__":
 		tpoly = read_db(db, options.area)
 		poly = tpoly if not poly else poly.intersection(tpoly)
 	    if options.cities != None:
-		tpoly = read_cities(db, options.poly)
+		tpoly = read_cities(db, options.cities)
 		poly = tpoly if not poly else poly.intersection(tpoly)
 	    db.close()
         except Exception, e:
