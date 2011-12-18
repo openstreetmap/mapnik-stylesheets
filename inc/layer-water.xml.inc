@@ -503,9 +503,10 @@
       <Parameter name="table">
       (select way,"natural",waterway,landuse,name
       from &prefix;_polygon
-      where waterway in ('dock','mill_pond','riverbank','canal')
+      where (waterway in ('dock','mill_pond','riverbank','canal')
          or landuse in ('reservoir','water','basin')
-         or "natural" in ('lake','water','land','glacier','mud','bay')
+         or "natural" in ('lake','water','land','glacier','mud','bay'))
+         and building is null
       order by z_order,way_area desc
       ) as water_areas</Parameter>
       &datasource-settings;
@@ -518,7 +519,7 @@
       <Parameter name="table">
       (select way,"natural"
       from &prefix;_polygon
-      where "natural" in ('marsh','wetland')
+      where "natural" in ('marsh','wetland') and building is null
       order by z_order,way_area desc
       ) as water_areas</Parameter>
       &datasource-settings;
@@ -530,7 +531,7 @@
       <Parameter name="table">
       (select way,name,way_area
       from &prefix;_polygon
-      where "natural"='glacier'
+      where "natural"='glacier' and building is null
       order by way_area desc
       ) as glaciers</Parameter>
       &datasource-settings;

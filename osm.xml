@@ -6013,7 +6013,7 @@
       <Parameter name="table">
       (select way,landuse,leisure
        from &prefix;_polygon
-       where landuse = 'military' or leisure='nature_reserve'
+       where (landuse = 'military' or leisure='nature_reserve') and building is null
       ) as landuse_overlay
       </Parameter>
       &datasource-settings;
@@ -6676,7 +6676,7 @@
     <StyleName>boundary</StyleName>
     <Datasource>
       <Parameter name="table">
-      (select way,way_area,name,boundary from &prefix;_polygon where boundary='national_park') as boundary
+      (select way,way_area,name,boundary from &prefix;_polygon where boundary='national_park' and building is null) as boundary
       </Parameter>
       &datasource-settings;
     </Datasource>
