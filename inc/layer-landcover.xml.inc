@@ -2,60 +2,37 @@
      <Rule>
       <Filter>[leisure] = 'swimming_pool'</Filter>
       &maxscale_zoom14;
-     <PolygonSymbolizer>
-        <CssParameter name="fill">#b5d0d0</CssParameter>
-     </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">blue</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill="#b5d0d0"/>
+      <LineSymbolizer stroke="blue" stroke-width="0.5"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'playground'</Filter>
       &maxscale_zoom13;
-     <PolygonSymbolizer>
-        <CssParameter name="fill">#ccfff1</CssParameter>
-     </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#666</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill="#ccfff1"/>
+      <LineSymbolizer stroke="#666" stroke-width="0.3"/>
     </Rule>
     <Rule>
       <Filter>[tourism] = 'camp_site' or [tourism]='caravan_site' or [tourism] = 'picnic_site'</Filter>
       &maxscale_zoom13;
-     <PolygonSymbolizer>
-        <CssParameter name="fill">#ccff99</CssParameter>
-        <CssParameter name="fill-opacity">0.5</CssParameter>
-     </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#666</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.5" fill="#ccff99"/>
+      <LineSymbolizer stroke="#666" stroke-width="0.3"/>
     </Rule>        
     <Rule>
       <Filter>[tourism] = 'attraction'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f2caea</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#f2caea"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'quarry'</Filter>
       &maxscale_zoom11;
       <PolygonPatternSymbolizer file="&symbols;/quarry2.png" />
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-	<CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="grey" stroke-width="0.5"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'vineyard'</Filter>
       &maxscale_zoom10;
       &minscale_zoom12;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#abdf96</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#abdf96"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'orchard'</Filter>
@@ -71,66 +48,44 @@
       &maxscale_zoom10;
       &minscale_zoom14;
       <Filter>[landuse] = 'cemetery' or [landuse] = 'grave_yard' or [amenity]='grave_yard'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#aacbaf</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#aacbaf"/>
     </Rule>
     <Rule>
       &maxscale_zoom10;
       &minscale_zoom18;
       <Filter>[landuse] = 'residential'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ddd</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#ddd"/>
     </Rule>
     <Rule>
       &maxscale_zoom12;
       &minscale_zoom18;
       <Filter>[landuse] = 'garages'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#996</CssParameter>
-        <CssParameter name="fill-opacity">0.2</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.2" fill="#996"/>
     </Rule>
     <Rule>
       &maxscale_zoom10;
       &minscale_zoom18;
       <Filter>[military] = 'barracks'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ff8f8f</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#ff8f8f"/>
     </Rule>
     <Rule>
       &maxscale_zoom10;
       &minscale_zoom13;
       <Filter>[landuse]='field' or [natural]='field'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#666600</CssParameter>
-        <CssParameter name="fill-opacity">0.2</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.2" fill="#666600"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom18;
       <Filter>[landuse]='field' or [natural]='field'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#666600</CssParameter>
-        <CssParameter name="fill-opacity">0.2</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#660</CssParameter>
-        <CssParameter name="stroke-opacity">0.4</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.2" fill="#666600"/>
+      <LineSymbolizer stroke="#660" stroke-width="0.3" stroke-opacity="0.4"/>
     </Rule>
     <Rule>
       &maxscale_zoom9;
       &minscale_zoom10;
       <Filter>[military] = 'danger_area'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">pink</CssParameter>
-        <CssParameter name="fill-opacity">0.3</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.3" fill="pink"/>
     </Rule>
     <Rule>
       &maxscale_zoom11;
@@ -156,17 +111,12 @@
     <Rule>
       &maxscale_zoom10;
       <Filter>[landuse] = 'meadow' or [landuse] = 'grass'</Filter>
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#cfeca8</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#cfeca8"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'park' or [leisure] = 'recreation_ground'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#b6fdb6</CssParameter>
-        <CssParameter name="fill-opacity">0.6</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.6" fill="#b6fdb6"/>
     </Rule>
     <Rule>
       <Filter>[tourism] = 'zoo'</Filter>
@@ -176,31 +126,23 @@
     <Rule>
       <Filter>[leisure] = 'common'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#cfeca8</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#cfeca8"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'garden'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#cfeca8</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#cfeca8"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'golf_course'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#b5e3b5</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#b5e3b5"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'allotments'</Filter>
       &maxscale_zoom10;
       &minscale_zoom13;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#e5c7ab</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#e5c7ab"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'allotments'</Filter>
@@ -211,9 +153,7 @@
       <Filter>[landuse] = 'forest'</Filter>
       &maxscale_zoom8;
       &minscale_zoom13;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#8dc56c</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#8dc56c"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'forest'</Filter>
@@ -223,133 +163,91 @@
     <Rule>
       <Filter>[landuse]='farmyard'</Filter>
       &maxscale_zoom9;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ddbf92</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#ddbf92"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'farm' or [landuse]='farmland'</Filter>
       &maxscale_zoom9;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ead8bd</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#ead8bd"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'recreation_ground' or [landuse] = 'conservation'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#cfeca8</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#cfeca8"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'village_green'</Filter>
       &maxscale_zoom11;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#cfeca8</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#cfeca8"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'retail'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f1dada</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#f1dada"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'retail'</Filter>
       &maxscale_zoom15;
-      <LineSymbolizer>
-        <CssParameter name="stroke">red</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="red" stroke-width="0.3"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'industrial' or [landuse]='railway'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#dfd1d6</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#dfd1d6"/>
     </Rule>
     <Rule>
       <Filter>[power] = 'station' or [power]='generator'</Filter>
       &maxscale_zoom10;
       &minscale_zoom11;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#bbb</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#bbb"/>
     </Rule>
     <Rule>
       <Filter>[power] = 'station' or [power]='generator'</Filter>
       &maxscale_zoom12;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#bbb</CssParameter>
-     </PolygonSymbolizer>
-    <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
-        <CssParameter name="stroke-width">0.4</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill="#bbb"/>
+      <LineSymbolizer stroke="#555" stroke-width="0.4"/>
     </Rule>
     <Rule>
       <Filter>[power] = 'sub_station'</Filter>
       &maxscale_zoom13;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#bbb</CssParameter>
-     </PolygonSymbolizer>
-    <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
-        <CssParameter name="stroke-width">0.4</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill="#bbb"/>
+      <LineSymbolizer stroke="#555" stroke-width="0.4"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'commercial'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#efc8c8</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#efc8c8"/>
     </Rule>
     <Rule>
       <Filter>[landuse] = 'brownfield' or [landuse]='landfill' or [landuse] = 'greenfield' or [landuse]='construction'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#9d9d6c</CssParameter>
-        <CssParameter name="fill-opacity">0.7</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.7" fill="#9d9d6c"/>
     </Rule>
      <Rule>
       <Filter>[natural] = 'wood' or [landuse] = 'wood'</Filter>
       &maxscale_zoom8;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#aed1a0</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#aed1a0"/>
     </Rule>
- <Rule>
+    <Rule>
       <Filter>[natural] = 'desert'</Filter>
       &maxscale_zoom8;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#e3b57a</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#e3b57a"/>
     </Rule>
-     <Rule>
+    <Rule>
       <Filter>[natural] = 'sand'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ffdf88</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#ffdf88"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'heath'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#d6d99f</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#d6d99f"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'scrub'</Filter>
       &maxscale_zoom10;
       &minscale_zoom13;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#b5e3b5</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#b5e3b5"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
@@ -359,51 +257,33 @@
     <Rule>
       <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital' or [amenity]='kindergarten'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f0f0d8</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#f0f0d8"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'university' or [amenity] = 'college' or [amenity] = 'school' or [amenity]='hospital' or [amenity]='kindergarten'</Filter>
       &maxscale_zoom12;
-      <LineSymbolizer>
-        <CssParameter name="stroke">brown</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="brown" stroke-width="0.3"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'parking'</Filter>
       &maxscale_zoom10;
-     <PolygonSymbolizer>
-         <CssParameter name="fill">#f7efb7</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#f7efb7"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'parking'</Filter>
       &maxscale_zoom15;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#eeeed1</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="#eeeed1" stroke-width="0.3"/>
     </Rule>
     <Rule>
       <Filter>[aeroway] = 'apron'</Filter>
       &maxscale_zoom12;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#e9d1ff</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#e9d1ff"/>
     </Rule>
     <Rule>
       <Filter>[aeroway] = 'aerodrome'</Filter>
       &maxscale_zoom12;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#ccc</CssParameter>
-        <CssParameter name="fill-opacity">0.2</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#555</CssParameter>
-        <CssParameter name="stroke-width">0.2</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.2" fill="#ccc"/>
+      <LineSymbolizer stroke="#555" stroke-width="0.2"/>
     </Rule>
     <Rule>
       <Filter>[natural] = 'beach'</Filter>
@@ -413,68 +293,37 @@
     <Rule>
       <Filter>[highway] = 'services' or [highway] = 'rest_area'</Filter>
       &maxscale_zoom14;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#efc8c8</CssParameter>
-      </PolygonSymbolizer>
-   </Rule>
-    <!--Rule>
-      <ElseFilter/>
-      &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">lightgrey</CssParameter>
-     </PolygonSymbolizer>
-    </Rule-->
+      <PolygonSymbolizer fill="#efc8c8"/>
+    </Rule>
 </Style>
 <Style name="landcover_line">
     <Rule>
       &maxscale_zoom14;
       &minscale_zoom15;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#f2efe9</CssParameter>
-        <CssParameter name="stroke-width">3</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">square</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke-linejoin="round" stroke="#f2efe9" stroke-width="3" stroke-linecap="square"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#f2efe9</CssParameter>
-        <CssParameter name="stroke-width">6</CssParameter>
-        <CssParameter name="stroke-linejoin">round</CssParameter>
-        <CssParameter name="stroke-linecap">square</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke-linejoin="round" stroke="#f2efe9" stroke-width="6" stroke-linecap="square"/>
     </Rule>
 </Style>
 <Style name="sports_grounds">
     <Rule>
       <Filter>[leisure] = 'sports_centre' or [leisure] = 'stadium'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#33cc99</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#33cc99"/>
     </Rule>
     <Rule>
       <Filter>[leisure]='track'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#74dcba</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#888</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill="#74dcba"/>
+      <LineSymbolizer stroke="#888" stroke-width="0.5"/>
     </Rule>
     <Rule>
       <Filter>[leisure] = 'pitch'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#8ad3af</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#888</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill="#8ad3af"/>
+      <LineSymbolizer stroke="#888" stroke-width="0.5"/>
     </Rule>
 </Style>
 

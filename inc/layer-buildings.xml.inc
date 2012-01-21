@@ -2,38 +2,24 @@
     <Rule>
       <Filter>[railway] = 'station' or [building] = 'station'</Filter>
       &maxscale_zoom10;
-     <PolygonSymbolizer>
-         <CssParameter name="fill">#d4aaaa</CssParameter>
-     </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#d4aaaa"/>
     </Rule>
     <Rule>
       <Filter>[building] = 'supermarket'</Filter>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">pink</CssParameter>
-         <CssParameter name="fill-opacity">0.5</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.5" fill="pink"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'place_of_worship'</Filter>
       &maxscale_zoom10;
       &minscale_zoom14;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#777</CssParameter>
-         <CssParameter name="fill-opacity">0.5</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.5" fill="#777"/>
     </Rule>
     <Rule>
       <Filter>[amenity] = 'place_of_worship'</Filter>
       &maxscale_zoom15;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#aaa</CssParameter>
-         <CssParameter name="fill-opacity">0.9</CssParameter>
-      </PolygonSymbolizer>
-      <LineSymbolizer>
-        <CssParameter name="stroke">#111</CssParameter>
-        <CssParameter name="stroke-width">0.3</CssParameter>
-      </LineSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.9" fill="#aaa"/>
+      <LineSymbolizer stroke="#111" stroke-width="0.3"/>
     </Rule>
 </Style>
 
@@ -41,41 +27,27 @@
     <Rule>
       <Filter>[building] = 'INT-light'</Filter>
       &maxscale_zoom12;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#bca9a9</CssParameter>
-         <CssParameter name="fill-opacity">0.7</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.7" fill="#bca9a9"/>
     </Rule>
     <Rule>
       <Filter>[building] != 'INT-light' and [building] != ''</Filter>
       &maxscale_zoom12;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#bca9a9</CssParameter>
-         <CssParameter name="fill-opacity">0.9</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill-opacity="0.9" fill="#bca9a9"/>
     </Rule>
     <Rule>
       <Filter>[building] != 'INT-light' and [building] != ''</Filter>
       &maxscale_zoom16;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#330066</CssParameter>
-        <CssParameter name="stroke-width">0.2</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="#330066" stroke-width="0.2"/>
     </Rule>
     <Rule>
       <Filter>[aeroway] = 'terminal'</Filter>
       &maxscale_zoom12;
-      <PolygonSymbolizer>
-         <CssParameter name="fill">#cc99ff</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#cc99ff"/>
     </Rule>
     <Rule>
       <Filter>[aeroway] = 'terminal'</Filter>
       &maxscale_zoom14;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#330066</CssParameter>
-        <CssParameter name="stroke-width">0.2</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="#330066" stroke-width="0.2"/>
     </Rule>
 </Style>
 

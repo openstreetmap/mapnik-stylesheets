@@ -2,10 +2,7 @@
     <Rule>
       &maxscale_zoom1;
       &minscale_zoom3;
-      <LineSymbolizer>
-        <CssParameter name="stroke">grey</CssParameter>
-        <CssParameter name="stroke-width">0.5</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="grey" stroke-width="0.5"/>
     </Rule>
 </Style>
 <Style name="nepopulated">
@@ -13,24 +10,20 @@
       &maxscale_zoom3;
       &minscale_zoom4;
      <Filter>[SCALERANK]=1</Filter>
-     <TextSymbolizer name="NAMEASCII" fontset_name="book-fonts" size="8" dy="2" fill="grey" halo_radius="1" />
+     <TextSymbolizer size="8" dy="2" fill="grey" fontset-name="book-fonts" halo-radius="1">[NAMEASCII]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="world">
     <Rule>
       &maxscale_zoom0;
       &minscale_zoom9;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f2efe9</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#f2efe9"/>
     </Rule>
 </Style>
 <Style name="coast-poly">
     <Rule>
       &maxscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#f2efe9</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#f2efe9"/>
     </Rule>
 </Style>
   <!-- BUILTUP VMAP0 -->
@@ -38,9 +31,7 @@
     <Rule>
       &maxscale_zoom8;
       &minscale_zoom10;
-      <PolygonSymbolizer>
-        <CssParameter name="fill">#ddd</CssParameter>
-      </PolygonSymbolizer>
+      <PolygonSymbolizer fill="#ddd"/>
     </Rule>
 </Style>
 <Layer name="world" status="on" srs="&srs900913;">

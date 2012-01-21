@@ -1,28 +1,24 @@
 <Style name="interpolation">
     <Rule>
       &maxscale_zoom17;
-      <LineSymbolizer>
-        <CssParameter name="stroke">#888</CssParameter>
-        <CssParameter name="stroke-width">1</CssParameter>
-        <CssParameter name="stroke-dasharray">2,4</CssParameter>
-      </LineSymbolizer>
+      <LineSymbolizer stroke="#888" stroke-width="1" stroke-dasharray="2,4"/>
     </Rule>
 </Style>
 <Style name="housenumbers">
     <Rule>
       &maxscale_zoom17;
-      <TextSymbolizer name="addr:housenumber" fontset_name="book-fonts" size="9" fill="#444" dy="0" wrap_width="0"/>
+      <TextSymbolizer size="9" fill="#444" dy="0" fontset-name="book-fonts" wrap-width="0">[addr:housenumber]</TextSymbolizer>
     </Rule>
 </Style>
 <Style name="housenames">
     <Rule>
       &maxscale_zoom17;
       &minscale_zoom17;
-      <TextSymbolizer name="addr:housename" fontset_name="book-fonts" size="8" fill="#444" dy="0" wrap_width="20"/>
+      <TextSymbolizer size="8" fill="#444" dy="0" fontset-name="book-fonts" wrap-width="20">[addr:housename]</TextSymbolizer>
     </Rule>
     <Rule>
       &maxscale_zoom18;
-      <TextSymbolizer name="addr:housename" fontset_name="book-fonts" size="9" fill="#444" dy="0" wrap_width="20"/>
+      <TextSymbolizer size="9" fill="#444" dy="0" fontset-name="book-fonts" wrap-width="20">[addr:housename]</TextSymbolizer>
     </Rule>
 </Style>
 <Layer name="interpolation_lines" status="on" srs="&osm2pgsql_projection;">
