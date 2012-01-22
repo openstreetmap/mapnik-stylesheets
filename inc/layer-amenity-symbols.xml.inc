@@ -71,12 +71,12 @@
       &maxscale_zoom16;
       &minscale_zoom16;
       <Filter>[natural]='tree'</Filter>
-      <PointSymbolizer file="&symbols;/tree.png"/>
+      <PointSymbolizer file="&symbols;/tree.png" ignore-placement="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
       <Filter>[natural]='tree'</Filter>
-      <PointSymbolizer file="&symbols;/tree2.png"/>
+      <PointSymbolizer file="&symbols;/tree2.png" ignore-placement="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
