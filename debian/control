@@ -7,7 +7,7 @@ Standards-Version: 3.9.2
 
 Package: openstreetmap-mapnik-stylesheet-data
 Architecture: all
-Depends: ${misc:Depends}, libmapnik0.7, ttf-dejavu, debconf
+Depends: ${misc:Depends}, libmapnik2-2.0, ttf-dejavu, debconf, tar, unzip, wget, bzip2
 Recommends: openstreetmap-postgis-db-setup
 Suggests: libapache2-mod-tile, osm2pgsql
 Description: Provides a stylesheet and costline data for rendering OpenStreetMap with Mapnik

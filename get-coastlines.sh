@@ -39,6 +39,10 @@ if [ ! -x $WGET ]; then
     exit
 fi
 
+if [ ! -e $OUTDIR ]; then
+    mkdir $OUTDIR
+fi
+
 $WGET http://tile.openstreetmap.org/world_boundaries-spherical.tgz -O $OUTDIR/world_boundaries-spherical.tgz
 $WGET http://tile.openstreetmap.org/processed_p.tar.bz2 -O $OUTDIR/processed_p.tar.bz2
 $WGET http://tile.openstreetmap.org/shoreline_300.tar.bz2 -O $OUTDIR/shoreline_300.tar.bz2
@@ -64,13 +68,13 @@ if [ -d $OUTDIR/world_boundaries ]; then
 	fi
 
 	if [ -f $OUTDIR/10m-populated-places.zip ]; then
-		$UNZIP $OUTDIR/10m-populated-places.zip -d $OUTDIR/world_boundaries
+		$UNZIP -o $OUTDIR/10m-populated-places.zip -d $OUTDIR/world_boundaries
 	else
 		echo '10m-populated-places.zip not present'
 	fi
 
 	if [ -f $OUTDIR/110m-admin-0-boundary-lines.zip ]; then
-		$UNZIP $OUTDIR/110m-admin-0-boundary-lines.zip -d $OUTDIR/world_boundaries
+		$UNZIP -o $OUTDIR/110m-admin-0-boundary-lines.zip -d $OUTDIR/world_boundaries
 	else
 		echo '110m-admin-0-boundary-lines.zip not present'
 	fi

@@ -14,7 +14,7 @@ case "$1" in
 	    DLOAD_COAST=$RET
         
         if [ "x$DLOAD_COAST" = "xtrue" ] ; then
-	        /usr/bin/get-coastlines.sh /etc/mapnik-osm-data || true
+	        /usr/bin/get-coastlines.sh /usr/share/mapnik-osm-data || true
 	    fi
 	    true
         ;;
