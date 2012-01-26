@@ -3056,19 +3056,19 @@
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/mot_shield7.png" spacing="750" minimum-distance="30" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk' and [length] != ''</Filter>
+      <Filter>[highway] = 'trunk'</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/tru_shield[length].png" spacing="750" minimum-distance="30" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and [length] != ''</Filter>
+      <Filter>[highway] = 'primary'</Filter>
       &maxscale_zoom11;
       &minscale_zoom12;
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/pri_shield[length].png" spacing="750" minimum-distance="30" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] != ''</Filter>
+      <Filter>[highway] = 'secondary'</Filter>
       &maxscale_zoom12;
       &minscale_zoom12;
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/sec_shield[length].png" spacing="750" minimum-distance="40" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
@@ -3094,25 +3094,25 @@
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/mot_shield7.png" spacing="750" minimum-distance="30" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'trunk' and [length] != ''</Filter>
+      <Filter>[highway] = 'trunk'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/tru_shield[length].png" spacing="750" minimum-distance="30" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'primary' and [length] != ''</Filter>
+      <Filter>[highway] = 'primary'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/pri_shield[length].png" spacing="750" minimum-distance="30" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'secondary' and [length] != '' and not [bridge]='yes'</Filter>
+      <Filter>[highway] = 'secondary' and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/sec_shield[length].png" spacing="750" minimum-distance="40" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[highway] = 'tertiary' and [length] != '' and not [bridge]='yes'</Filter>
+      <Filter>[highway] = 'tertiary' and not [bridge]='yes'</Filter>
       &maxscale_zoom13;
       &minscale_zoom18;
       <ShieldSymbolizer size="10" fill="#fff" placement="line" file="&symbols;/ter_shield[length].png" spacing="750" minimum-distance="40" fontset-name="bold-fonts">[ref]</ShieldSymbolizer>
@@ -3914,7 +3914,7 @@
       <Parameter name="table">
       (select way,highway,ref,char_length(ref) as length
        from &prefix;_roads
-       where highway in ('motorway','trunk','primary')
+       where highway in ('motorway','trunk','primary','secondary')
          and ref is not null
          and char_length(ref) between 1 and 8
       ) as roads
