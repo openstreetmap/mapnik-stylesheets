@@ -244,6 +244,11 @@
       <PolygonSymbolizer fill="#d6d99f"/>
     </Rule>
     <Rule>
+      <Filter>[natural] = 'grassland'</Filter>
+      &maxscale_zoom10;
+      <PolygonSymbolizer fill="#c6e4b4"/>
+    </Rule>
+    <Rule>
       <Filter>[natural] = 'scrub'</Filter>
       &maxscale_zoom10;
       &minscale_zoom13;
@@ -339,7 +344,7 @@
           or aeroway in ('apron','aerodrome')
           or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard')
           or military in ('barracks','danger_area')
-          or "natural" in ('field','beach','desert','heath','mud','wood','sand','scrub')
+          or "natural" in ('field','beach','desert','heath','mud','grassland','wood','sand','scrub')
           or power in ('station','sub_station','generator')
           or tourism in ('attraction','camp_site','caravan_site','picnic_site','zoo')
           or highway in ('services','rest_area')
