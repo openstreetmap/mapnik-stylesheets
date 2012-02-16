@@ -80,7 +80,7 @@
     </Rule>
     <Rule>
       &maxscale_zoom15;
-      <Filter>[man_made]='power_wind' or ([power]='generator' and [power_source] = 'wind')</Filter>
+      <Filter>([power]='generator' and ([generator:source] = 'wind' or [power_source] = 'wind')) or [man_made]='power_wind'</Filter>
       <PointSymbolizer file="&symbols;/power_wind.png" placement="interior"/>
     </Rule>
     <Rule>
@@ -125,7 +125,7 @@
          or barrier in ('bollard','gate','lift_gate','block')
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
-         or (power='generator' and power_source='wind')
+         or (power='generator' and ("generator:source"='wind' or power_source='wind'))
          or "natural" in ('peak','volcano','spring','tree','cave_entrance')
          or railway='level_crossing'
       ) as symbols</Parameter>
@@ -142,7 +142,7 @@
          or barrier in ('bollard','gate','lift_gate','block')
          or highway in ('mini_roundabout','gate')
          or man_made in ('lighthouse','power_wind','windmill','mast')
-         or (power='generator' and power_source='wind')
+         or (power='generator' and ("generator:source"='wind' or power_source='wind'))
          or "natural" in ('peak','volcano','spring','tree')
          or railway='level_crossing'
       ) as symbols</Parameter>
