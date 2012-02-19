@@ -1411,9 +1411,16 @@
     <Rule>
       &maxscale_zoom13;
       &minscale_zoom15;
-      <Filter>([highway] = 'proposed' or [highway]='construction') and ([construction]='residential' or [construction]='unclassified' or [construction]='living_street' or [construction]='service')</Filter>
-      <LineSymbolizer stroke="#aaa" stroke-width="4"/>
-      <LineSymbolizer stroke="white" stroke-width="3.5" stroke-dasharray="6,4"/>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and ([construction]='residential' or [construction]='unclassified' or [construction]='living_street')</Filter>
+      <LineSymbolizer stroke-linejoin="round" stroke="#aaa" stroke-width="4"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="3.5" stroke-dasharray="6,4"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom14;
+      &minscale_zoom15;
+      <Filter>([highway] = 'proposed' or [highway]='construction') and [construction]='service'</Filter>
+      <LineSymbolizer stroke-linejoin="round" stroke="#aaa" stroke-width="2.5"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="2" stroke-dasharray="6,4"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
@@ -1460,9 +1467,16 @@
     <Rule>
       &maxscale_zoom16;
       &minscale_zoom18;
-      <Filter>([highway] = 'proposed' or [highway]='construction') and ([construction]='residential' or [construction]='unclassified' or [construction]='living_street' or [construction]='service')</Filter>
-      <LineSymbolizer stroke="#aaa" stroke-width="8"/>
-      <LineSymbolizer stroke="white" stroke-width="7" stroke-dasharray="8,6"/>
+      <Filter>([highway] = 'proposed' or [highway]='construction') and ([construction]='residential' or [construction]='unclassified' or [construction]='living_street')</Filter>
+      <LineSymbolizer stroke-linejoin="round" stroke="#aaa" stroke-width="8"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="7" stroke-dasharray="8,6"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom16;
+      &minscale_zoom18;
+      <Filter>([highway] = 'proposed' or [highway]='construction') and [construction]='service'</Filter>
+      <LineSymbolizer stroke-linejoin="round" stroke="#aaa" stroke-width="7"/>
+      <LineSymbolizer stroke-linejoin="round" stroke="white" stroke-width="6" stroke-dasharray="8,6"/>
     </Rule>
     <Rule>
       &maxscale_zoom14;
