@@ -79,7 +79,7 @@
         end as building
        from &prefix;_polygon
        where (building is not null
-         and building not in ('no','station','supermarket')
+         and building not in ('no','station','supermarket','planned')
          and (railway is null or railway != 'station')
          and (amenity is null or amenity != 'place_of_worship'))
           or aeroway = 'terminal'
