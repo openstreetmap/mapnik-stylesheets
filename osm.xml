@@ -1868,6 +1868,11 @@
        <LineSymbolizer stroke-linejoin="round" stroke="grey" stroke-width="6" stroke-linecap="round"/>
     </Rule>
     <Rule>
+      <Filter>[railway] = 'turntable'</Filter>
+      &maxscale_zoom16;
+      <LineSymbolizer stroke="#999" stroke-width="1.5"/>
+    </Rule>
+    <Rule>
       <Filter>[highway] = 'steps'</Filter>
       &maxscale_zoom15;
       <LineSymbolizer stroke="salmon" stroke-width="5.0" stroke-dasharray="2,1"/>
@@ -3519,7 +3524,7 @@
        from &prefix;_line
        where highway is not null
           or aeroway in ('runway','taxiway')
-          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction','miniature')
+          or railway in ('light_rail','narrow_gauge','funicular','rail','subway','tram','spur','siding','platform','disused','abandoned','construction','miniature','turntable')
        order by z_order) as roads
       </Parameter>
       &datasource-settings;
