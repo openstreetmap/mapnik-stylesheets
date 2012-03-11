@@ -16,13 +16,13 @@
       &maxscale_zoom15;
       &minscale_zoom15;
       <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
-      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.16.png" allow-overlap="true" ignore-placement="true"/>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-casing.14.png" allow-overlap="true" ignore-placement="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       &minscale_zoom15;
       <Filter>[int_tc_type]='living_street'</Filter>
-      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.16.png" allow-overlap="true" ignore-placement="true"/>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.14.png" allow-overlap="true" ignore-placement="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
@@ -74,13 +74,13 @@
       &maxscale_zoom15;
       &minscale_zoom15;
       <Filter>[int_tc_type]='residential' or [int_tc_type]='unclassified'</Filter>
-      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.14.png" allow-overlap="true" ignore-placement="true"/>
+      <PointSymbolizer file="&symbols;/turning_circle-uncl-fill.12.png" allow-overlap="true" ignore-placement="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom15;
       &minscale_zoom15;
       <Filter>[int_tc_type]='living_street'</Filter>
-      <PointSymbolizer file="&symbols;/turning_circle-livs-fill.14.png" allow-overlap="true" ignore-placement="true"/>
+      <PointSymbolizer file="&symbols;/turning_circle-livs-fill.12.png" allow-overlap="true" ignore-placement="true"/>
     </Rule>
     <Rule>
       &maxscale_zoom16;
