@@ -110,9 +110,10 @@ sub process_statement
 {
     my ($stmt, $dur) = @_;
     $stmt =~ s/\s+/ /g;
-    if ($stmt =~ /SELECT.*from (\(.*\) as \S+) WHERE \S+ && SetSRID\('BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*(4326|900913)\)/)
+
+    if ($stmt =~ /(SELECT.*from.*)(st_)?SetSRID\('(st_)?BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*(4326|900913)\)(.*)/i)
     {
-        my ($datasource, $left, $bottom, $right, $top, $proj) = ($1, $2, $3, $4, $5, $6);
+        my ($datasource, $left, $bottom, $right, $top, $proj) = ("${1}<bbox>$9", $4, $5, $6, $7, $8);
         my $zoom = guessZoomLevel($left, $bottom, $right, $top, $proj);
         $timings->{$datasource}->{$zoom}->{count} ++;
         $timings->{$datasource}->{$zoom}->{sum} += $dur;
@@ -139,30 +140,36 @@ sub process_statement
 sub guessZoomLevel
 {
     my ($left, $bottom, $right, $top, $proj) = @_;
-    if ($proj == 4326)
+    my ($left_tile, $bottom_tile) = getTileNumber($bottom, $left, 18, $proj);
+    my ($right_tile, $top_tile) = getTileNumber($top, $right, 18, $proj);
+    my $width = $right_tile - $left_tile;
+    my $height = $top_tile - $bottom_tile;
+    my $extent = $width;
+    $extent = $height if ($height < $extent);
+    my $zoom = 18;
+    while ($extent >= 16)
     {
-        my ($left_tile, $bottom_tile) = getTileNumber($bottom, $left, 18);
-        my ($right_tile, $top_tile) = getTileNumber($top, $right, 18);
-        my $width = $right_tile - $left_tile;
-        my $zoom = 18;
-        while ($width >= 16)
-        {
-            $width /= 2;
-            $zoom--;
-        }
-        return $zoom;
-    } elsif ($proj == 900913)
-    {
-        return 99;
+        $extent /= 2;
+        $zoom--;
     }
+    return $zoom;
 }
 
 sub getTileNumber
 {
-    my ($lat,$lon,$zoom) = @_;
-    my $xtile = int(($lon+180)/360 *2**$zoom);
-    my $ytile = int((1 - log(tan($lat*pi/180) + sec($lat*pi/180))/pi)/2 *2**$zoom);
-    return(($xtile, $ytile));
+    my ($lat,$lon,$zoom,$proj) = @_;
+    if ($proj == 4326)
+    {
+        my $xtile = int(($lon+180)/360 *2**$zoom);
+        my $ytile = int((1 - log(tan($lat*pi/180) + sec($lat*pi/180))/pi)/2 *2**$zoom);
+        return(($xtile, $ytile));
+    }
+    elsif ($proj == 900913 or $proj == 3857)
+    {
+        my $xtile = int(($lon + 20037508.34) / 40075016.68 * 2**$zoom);
+        my $ytile = int(($lat + 20037508.34) / 40075016.68 * 2**$zoom);
+        return(($xtile, $ytile));
+    }
 }
 
 # parses the style file to find out which layers use which statements
