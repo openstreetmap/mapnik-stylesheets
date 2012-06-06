@@ -111,9 +111,14 @@ sub process_statement
     my ($stmt, $dur) = @_;
     $stmt =~ s/\s+/ /g;
 
-    if ($stmt =~ /(SELECT.*from.*)(st_)?SetSRID\('(st_)?BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*(4326|900913)\)(.*)/i)
+    if ($stmt =~ /(SELECT.*from.*?)(st_)?SetSRID\('(st_)?BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*(4326|900913)\)(.*)/i)
     {
         my ($datasource, $left, $bottom, $right, $top, $proj) = ("${1}<bbox>$9", $4, $5, $6, $7, $8);
+        while ($datasource =~ /^(SELECT.*from.*?)(st_)?SetSRID\('(st_)?BOX3D\((\S+) (\S+),(\S+) (\S+)\)'::box3d,\s*(4326|900913)\)(.*)/i)
+        {
+            $datasource = "${1}<bbox>$9";
+        }
+
         my $zoom = guessZoomLevel($left, $bottom, $right, $top, $proj);
         $timings->{$datasource}->{$zoom}->{count} ++;
         $timings->{$datasource}->{$zoom}->{sum} += $dur;
@@ -187,9 +192,9 @@ sub findStatements
     while(<STYLE>)
     {
         chomp;
-        if (/<Style name="(.*)"/)
+        if (/<Style\s+(.*\s)?name="(.*)"/)
         {
-            $styles->{$1} = { name => $1 };
+            $styles->{$2} = { name => $2 };
         }
         elsif (/<Layer\s.*name="([^"]+)"/)
         {
@@ -211,7 +216,7 @@ sub findStatements
             {
                 $_ = <STYLE>;
                 chomp;
-                $table .= $_;
+                $table .= " ".$_;
             }
             if ($table !~ /^\s*(\(.*\)\s+as\s+\S+)\s*<\/Parameter>$/i)
             {
@@ -219,7 +224,7 @@ sub findStatements
             }
             $table = $1;
             $table =~ s/\s+/ /g;
-            $table =~ /(\(select (.*) from (.*) where (.*)\) as \S+)/ or die $table;
+            $table =~ /(\(\s*select (.*) from (.*)( where (.*))?\) as \S+)/i or die $table;
             $where = $1;
         }
         elsif (/<\/Layer>/)
