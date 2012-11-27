@@ -46,8 +46,8 @@ fi
 $WGET http://tile.openstreetmap.org/world_boundaries-spherical.tgz -O $OUTDIR/world_boundaries-spherical.tgz
 $WGET http://tile.openstreetmap.org/processed_p.tar.bz2 -O $OUTDIR/processed_p.tar.bz2
 $WGET http://tile.openstreetmap.org/shoreline_300.tar.bz2 -O $OUTDIR/shoreline_300.tar.bz2
-$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places.zip -O $OUTDIR/10m-populated-places.zip
-$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/110m-admin-0-boundary-lines.zip -O $OUTDIR/110m-admin-0-boundary-lines.zip
+$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip -O $OUTDIR/ne_10m_populated_places.zip
+$WGET http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_boundary_lines_land.zip -O $OUTDIR/ne_110m_admin_0_boundary_lines_land.zip
 
 $TAR xvf $OUTDIR/world_boundaries-spherical.tgz -C $OUTDIR
 
@@ -67,16 +67,16 @@ if [ -d $OUTDIR/world_boundaries ]; then
 		echo 'shoreline_300.tar.bz2 not present'
 	fi
 
-	if [ -f $OUTDIR/10m-populated-places.zip ]; then
-		$UNZIP -o $OUTDIR/10m-populated-places.zip -d $OUTDIR/world_boundaries
+	if [ -f $OUTDIR/ne_10m_populated_places.zip ]; then
+		$UNZIP -o $OUTDIR/ne_10m_populated_places.zip -d $OUTDIR/world_boundaries
 	else
-		echo '10m-populated-places.zip not present'
+		echo 'ne_10m_populated_places.zip not present'
 	fi
 
-	if [ -f $OUTDIR/110m-admin-0-boundary-lines.zip ]; then
-		$UNZIP -o $OUTDIR/110m-admin-0-boundary-lines.zip -d $OUTDIR/world_boundaries
+	if [ -f $OUTDIR/ne_110m_admin_0_boundary_lines_land.zip ]; then
+		$UNZIP -o $OUTDIR/ne_110m_admin_0_boundary_lines_land.zip -d $OUTDIR/world_boundaries
 	else
-		echo '110m-admin-0-boundary-lines.zip not present'
+		echo 'ne_110m_admin_0_boundary_lines_land.zip not present'
 	fi
 
 fi
