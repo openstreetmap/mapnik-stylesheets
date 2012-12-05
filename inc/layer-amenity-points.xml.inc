@@ -277,6 +277,21 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[amenity]='veterinary'</Filter>
+      <PointSymbolizer file="&symbols;/amenity_veterinary.p.16.png" placement="interior"/>
+    </Rule>
+    <Rule> 
+      &maxscale_zoom18; 
+      <Filter>[amenity]='bench'</Filter> 
+      <PointSymbolizer file="&symbols;/amenity_bench.p.8.png" placement="interior"/>
+    </Rule> 
+    <Rule> 
+      &maxscale_zoom18; 
+      <Filter>[amenity]='waste_basket'</Filter> 
+      <PointSymbolizer file="&symbols;/amenity_waste_basket.p.8.png" placement="interior"/>
+    </Rule> 
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[man_made]='water_tower'</Filter>
       <PointSymbolizer file="&symbols;/tower_water.p.20.png" placement="interior"/>
     </Rule>
