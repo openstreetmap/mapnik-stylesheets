@@ -280,6 +280,12 @@
       <LineSymbolizer stroke="#eeeed1" stroke-width="0.3"/>
     </Rule>
     <Rule>
+      <Filter>[amenity] = 'prison'</Filter>
+      &maxscale_zoom14;
+      <PolygonPatternSymbolizer file="&symbols;/amenity_prison.png" />
+      <LineSymbolizer stroke="#555" stroke-width="0.3"/>
+    </Rule>
+    <Rule>
       <Filter>[aeroway] = 'apron'</Filter>
       &maxscale_zoom12;
       <PolygonSymbolizer fill="#e9d1ff"/>
@@ -342,7 +348,7 @@
        where landuse is not null
           or leisure is not null
           or aeroway in ('apron','aerodrome')
-          or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard')
+          or amenity in ('parking','university','college','school','hospital','kindergarten','grave_yard','prison')
           or military in ('barracks','danger_area')
           or "natural" in ('field','beach','desert','heath','mud','grassland','wood','sand','scrub')
           or power in ('station','sub_station','generator')
