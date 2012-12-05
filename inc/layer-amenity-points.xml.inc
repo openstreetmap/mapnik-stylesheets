@@ -302,13 +302,39 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[shop]='bicycle'</Filter>
+      <PointSymbolizer file="&symbols;/shopping_bicycle.p.16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='books'</Filter>
+      <PointSymbolizer file="&symbols;/shop_books.p_16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[shop]='butcher'</Filter>
       <PointSymbolizer file="&symbols;/shop_butcher.png" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[shop]='car'</Filter>
+      <PointSymbolizer file="&symbols;/shopping_car.p.16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='car_repair'</Filter>
+      <PointSymbolizer file="&symbols;/shopping_car_repair.p.16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[shop]='clothes' or [shop]='fashion'</Filter>
       <PointSymbolizer file="&symbols;/shop_clothes.p.16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='computer'</Filter>
+      <PointSymbolizer file="&symbols;/shop_computer.p_16.png" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
@@ -327,8 +353,23 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[shop]='dry_cleaning'</Filter>
+      <PointSymbolizer file="&symbols;/shop_dry_cleaning.p_16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[shop]='florist'</Filter>
       <PointSymbolizer file="&symbols;/florist.p.16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='gift'</Filter>
+      <PointSymbolizer file="&symbols;/shop_gift.p_16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='greengrocer'</Filter>
+      <PointSymbolizer file="&symbols;/shop_greengrocer.p_16.png" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
@@ -337,18 +378,23 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[shop]='car'</Filter>
-      <PointSymbolizer file="&symbols;/shopping_car.p.16.png" placement="interior"/>
+      <Filter>[shop]='jewelry'</Filter>
+      <PointSymbolizer file="&symbols;/shop_jewelry.p_16.png" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[shop]='car_repair'</Filter>
-      <PointSymbolizer file="&symbols;/shopping_car_repair.p.16.png" placement="interior"/>
+      <Filter>[shop]='mobile_phone'</Filter>
+      <PointSymbolizer file="&symbols;/shop_mobile_phone.p_16.png" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
-      <Filter>[shop]='bicycle'</Filter>
-      <PointSymbolizer file="&symbols;/shopping_bicycle.p.16.png" placement="interior"/>
+      <Filter>[shop]='optician'</Filter>
+      <PointSymbolizer file="&symbols;/shop_optician.p_16.png" placement="interior"/>
+    </Rule>
+    <Rule>
+      &maxscale_zoom17;
+      <Filter>[shop]='pet'</Filter>
+      <PointSymbolizer file="&symbols;/shop_pet.p_16.png" placement="interior"/>
     </Rule>
     <Rule>
       &maxscale_zoom17;
