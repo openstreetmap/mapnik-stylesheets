@@ -34,7 +34,7 @@ If you are looking for an old file that used to be here see the 'archive' direct
 Required
 --------
 
-Mapnik >= 0.7.1 | The rendering library
+Mapnik >= 2.0.0 | The rendering library
  * Built with the PostGIS plugin
  * http://trac.mapnik.org/wiki/Mapnik-Installation
 
@@ -53,13 +53,6 @@ Planet.osm data in PostGIS
  * Import this into PostGIS with osm2pgsql
 
 
-Mapnik 2.x compatibility
-------------------------
-
-Currently these stylesheets need to be upgraded to work with versions of
-Mapnik >= 2.0.0. Mapnik 2.x provides a python script to automatically upgrade
-the XML styles called "upgrade_map_xml.py'. See the Quickstart below for usage.
-
 
 Quickstart
 ----------
@@ -74,11 +67,6 @@ http://wiki.openstreetmap.org/wiki/Mapnik for more info.
 Then customize the xml entities (the files in the inc/ directory) which are
 used by the 'osm.xml' to your setup. You can either use the 'generate_xml.py' 
 script or manually edit a few files inside the 'inc' directory.
-
-Once your inc/ files are customized, if rendering with >= Mapnik 2.0.0 then you need
-to upgrade your osm.xml, making a copy that Mapnik 2 can read:
-
-    upgrade_map_xml.py osm.xml osm-mapnik2.xml
 
 Finally try rendering a few maps using either 'generate_image.py',
 'generate_tiles.py' or 'nik2img.py'.
@@ -152,6 +140,20 @@ Copy them to a new file and strip off the '.template' extension.
 Then edit the settings variables (e.g. '%(value)s') in those files to match your configuration.
 Details can be found in each file. Stick with the recommended defaults unless you know better.
 
+Troubleshooting
+---------------
+
+If trying to read the XML with Mapnik (or any of the python scripts included here that use Mapnik)
+fails with an error like `XML document not well formed` or `Entity 'foo' not defined`, then try running
+xmllint, which may provide a more detailed error to help you find the syntax problem in the XML (or its
+referenced includes):
+
+    xmllint osm.xml --noout
+
+Not output from the above command indicates the stylesheet should be working fine.
+
+If you see an error like: `warning: failed to load external entity "inc/datasource-settings.xml.inc"` then this
+likely indicates that an include file is missing, which means that you forgot to follow the steps above to generate the needed includes on the fly either by using `generate_xml.py` or manually creating your inc files.
 
 
 Testing rendering
