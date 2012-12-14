@@ -326,7 +326,6 @@
       <PointSymbolizer file="&symbols;/shop_books.p_16.png" placement="interior"/>
     </Rule>
     <Rule>
-    <Rule>
       &maxscale_zoom17;
       <Filter>[shop]='butcher'</Filter>
       <PointSymbolizer file="&symbols;/shop_butcher.png" placement="interior"/>
