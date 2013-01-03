@@ -90,7 +90,8 @@ class RenderThread:
         render_size = 256
         self.m.resize(render_size, render_size)
         self.m.zoom_to_box(bbox)
-        self.m.buffer_size = 128
+        if(self.m.buffer_size < 128):
+            self.m.buffer_size = 128
 
         # Render image with default Agg renderer
         im = mapnik.Image(render_size, render_size)
