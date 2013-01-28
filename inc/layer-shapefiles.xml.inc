@@ -59,7 +59,7 @@
     <StyleName>necountries</StyleName>
     <Datasource>
       <Parameter name="type">shape</Parameter>
-      <Parameter name="file">&world_boundaries;/110m_admin_0_boundary_lines_land.shp</Parameter>
+      <Parameter name="file">&world_boundaries;/ne_110m_admin_0_boundary_lines_land.shp</Parameter>
     </Datasource>
 </Layer>
 <Layer name="nepopulated" status="on" srs="&srs4326;">
