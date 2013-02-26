@@ -78,17 +78,17 @@ Downloading the Coastlines Shapefiles
  
     All these actions are regrouped in the script file get-coastlines.sh in this directory
 
-    wget http://tile.openstreetmap.org/world_boundaries-spherical.tgz # (50M)
-    wget http://tile.openstreetmap.org/processed_p.tar.bz2 # (227M)
-    wget http://tile.openstreetmap.org/shoreline_300.tar.bz2 # (46M)
-    wget http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/10m-populated-places.zip # (1.5 MB)
-    wget http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/110m-admin-0-boundary-lines.zip # (38 KB)
+    wget http://tile.openstreetmap.org/world_boundaries-spherical.tgz # (51M)
+    wget http://tile.openstreetmap.org/processed_p.tar.bz2 # (391M)
+    wget http://tile.openstreetmap.org/shoreline_300.tar.bz2 # (42M)
+    wget http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_populated_places.zip # (1.5 MB)
+    wget http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_boundary_lines_land.zip # (44 KB)
 
     tar xzf world_boundaries-spherical.tgz # creates a 'world_boundaries' folder
     tar xjf processed_p.tar.bz2 -C world_boundaries
     tar xjf shoreline_300.tar.bz2 -C world_boundaries
-    unzip -q 10m-populated-places.zip -d world_boundaries
-    unzip -q 110m-admin-0-boundary-lines.zip -d world_boundaries
+    unzip -q ne_10m_populated_places.zip -d world_boundaries
+    unzip -q ne_110m_admin_0_boundary_lines_land.zip -d world_boundaries
 
 
 Using generate_xml.py
