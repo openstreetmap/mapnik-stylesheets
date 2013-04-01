@@ -177,14 +177,14 @@
       <LineSymbolizer stroke="#b5d0d0" stroke-width="1"/>
     </Rule>
     <Rule>
-      <Filter>[waterway]='river' and [tunnel] = 'yes'</Filter>
+      <Filter>[waterway]='river' and ([tunnel] = 'yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom14;
       &minscale_zoom14;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="6" stroke-dasharray="4,2"/>
       <LineSymbolizer stroke="white" stroke-width="4"/>
       <TextSymbolizer size="10" fill="#6699cc" placement="line" minimum-distance="200" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule><Rule>
-      <Filter>[waterway]='river' and [tunnel] = 'yes'</Filter>
+      <Filter>[waterway]='river' and ([tunnel] = 'yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom15;
       &minscale_zoom16;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="7" stroke-dasharray="4,2"/>
@@ -192,7 +192,7 @@
       <TextSymbolizer size="10" fill="#6699cc" placement="line" minimum-distance="200" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='river' and [tunnel] = 'yes'</Filter>
+      <Filter>[waterway]='river' and ([tunnel] = 'yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom17;
       &minscale_zoom17;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="11" stroke-dasharray="4,2"/>
@@ -200,14 +200,14 @@
       <TextSymbolizer size="10" fill="#6699cc" placement="line" minimum-distance="200" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='river' and [tunnel] = 'yes'</Filter>
+      <Filter>[waterway]='river' and ([tunnel] = 'yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom18;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="13" stroke-dasharray="4,2"/>
       <LineSymbolizer stroke="white" stroke-width="9"/>
       <TextSymbolizer size="10" fill="#6699cc" placement="line" minimum-distance="200" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and [tunnel] = 'yes'</Filter>
+      <Filter>[waterway]='canal' and ([tunnel] = 'yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom14;
       &minscale_zoom16;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="7" stroke-dasharray="4,2"/>
@@ -215,14 +215,14 @@
       <TextSymbolizer size="9" fill="#6699cc" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [disused]='yes')</Filter>
+      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [tunnel] = 'culvert' or [disused]='yes')</Filter>
       &maxscale_zoom14;
       &minscale_zoom16;
       <LineSymbolizer stroke-linejoin="round" stroke="#b5d0d0" stroke-width="7" stroke-linecap="round"/>
       <TextSymbolizer size="9" fill="#6699cc" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and [tunnel] = 'yes'</Filter>
+      <Filter>[waterway]='canal' and ([tunnel] = 'yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="11" stroke-dasharray="4,2"/>
@@ -230,14 +230,14 @@
       <TextSymbolizer size="9" fill="#6699cc" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [disused]='yes' or [lock]='yes')</Filter>
+      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [tunnel] = 'culvert' or [disused]='yes' or [lock]='yes')</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer stroke-linejoin="round" stroke="#b5d0d0" stroke-width="11" stroke-linecap="round"/>
       <TextSymbolizer size="9" fill="#6699cc" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [disused]='yes') and [lock]='yes'</Filter>
+      <Filter>[waterway]='canal' and not ([tunnel] = 'yes' or [tunnel] = 'culvert' or [disused]='yes') and [lock]='yes'</Filter>
       &maxscale_zoom17;
       &minscale_zoom18;
       <LineSymbolizer stroke-linejoin="round" stroke="#b5d0d0" stroke-width="7" stroke-linecap="round"/>
