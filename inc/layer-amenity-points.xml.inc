@@ -87,6 +87,11 @@
     </Rule>
     <Rule>
       &maxscale_zoom17;
+      <Filter>[amenity]='doctors'</Filter>
+      <PointSymbolizer file="&symbols;/doctors.p.16.png" placement="interior"/>
+    </Rule>    
+    <Rule>
+      &maxscale_zoom17;
       <Filter>[amenity]='fire_station'</Filter>
       <PointSymbolizer file="&symbols;/firestation.p.16.png" placement="interior"/>
     </Rule>
