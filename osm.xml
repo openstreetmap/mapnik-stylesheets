@@ -3492,7 +3492,7 @@
       <Parameter name="table">
       (select way,highway,horse,bicycle,foot,construction,aeroway,
        case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel,
-       case when bridge in ('yes','true','1','viaduct') then 'yes'::text else bridge end as bridge,
+       case when bridge in ('yes','true','1','viaduct','swing','lift') then 'yes'::text else bridge end as bridge,
        case when railway in ('spur','siding')
               or (railway='rail' and service in ('spur','siding','yard'))
             then 'spur-siding-yard'::text else railway end as railway,
@@ -3551,7 +3551,13 @@
 <Layer name="waterway-bridges" status="on" srs="&osm2pgsql_projection;">
     <StyleName>waterway-bridges</StyleName>
     <Datasource>
-      <Parameter name="table">(select way,name from &prefix;_line where waterway='canal' and bridge in ('yes','true','1','aqueduct') order by z_order) as water</Parameter>
+      <Parameter name="table">
+      (select way,name
+       from &prefix;_line
+       where waterway='canal'
+         and bridge in ('yes','true','1','aqueduct','swing','lift')
+       order by z_order
+      ) as water</Parameter>
       &datasource-settings;
     </Datasource>
 </Layer>
@@ -3563,7 +3569,7 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
-         and (bridge is null or bridge not in ('yes','true','1','viaduct'))
+         and (bridge is null or bridge not in ('yes','true','1','viaduct','swing','lift'))
       ) as access
       </Parameter>
       &datasource-settings;
@@ -3578,7 +3584,7 @@
        from &prefix;_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and (bridge is null or bridge not in ('yes','true','1','viaduct'))
+         and (bridge is null or bridge not in ('yes','true','1','viaduct','swing','lift'))
       ) as directions
       </Parameter>
       &datasource-settings;
@@ -3598,7 +3604,7 @@
        where (highway is not null
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway','narrow_gauge','rail','spur','siding','disused','abandoned','construction'))
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and (layer is null or layer = '0')
        order by z_order
       ) as roads
@@ -3614,7 +3620,7 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and (layer is null or layer in ('-5','-4','-3','-2','-1','0'))
       ) as access
       </Parameter>
@@ -3630,7 +3636,7 @@
        from &prefix;_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and (layer is null or layer in ('-5','-4','-3','-2','-1','0'))
       ) as directions
       </Parameter>
@@ -3651,7 +3657,7 @@
        where (highway is not null
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway','narrow_gauge','rail','spur','siding','disused','abandoned','construction'))
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '1'
        order by z_order
       ) as roads
@@ -3667,7 +3673,7 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '1'
       ) as access
       </Parameter>
@@ -3683,7 +3689,7 @@
        from &prefix;_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '1'
       ) as directions
       </Parameter>
@@ -3704,7 +3710,7 @@
        where (highway is not null
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway','narrow_gauge','rail','spur','siding','disused','abandoned','construction'))
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '2'
        order by z_order
       ) as roads
@@ -3720,7 +3726,7 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '2'
       ) as access
       </Parameter>
@@ -3736,7 +3742,7 @@
        from &prefix;_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '2'
       ) as directions
       </Parameter>
@@ -3757,7 +3763,7 @@
        where (highway is not null
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway','narrow_gauge','rail','spur','siding','disused','abandoned','construction'))
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '3'
        order by z_order
       ) as roads
@@ -3773,7 +3779,7 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '3'
       ) as access
       </Parameter>
@@ -3789,7 +3795,7 @@
        from &prefix;_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '3'
       ) as directions
       </Parameter>
@@ -3810,7 +3816,7 @@
        where (highway is not null
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway','narrow_gauge','rail','spur','siding','disused','abandoned','construction'))
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '4'
        order by z_order
       ) as roads
@@ -3826,7 +3832,7 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '4'
       ) as access
       </Parameter>
@@ -3842,7 +3848,7 @@
        from &prefix;_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '4'
       ) as directions
       </Parameter>
@@ -3863,7 +3869,7 @@
        where (highway is not null
               or aeroway in ('runway','taxiway')
               or railway in ('light_rail','subway','narrow_gauge','rail','spur','siding','disused','abandoned','construction'))
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '5'
        order by z_order
       ) as roads
@@ -3879,7 +3885,7 @@
        case when service in ('parking_aisle','drive-through','driveway') then 'INT-minor'::text end as service
        from &prefix;_line
        where access is not null and highway is not null
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '5'
       ) as access
       </Parameter>
@@ -3895,7 +3901,7 @@
        from &prefix;_line
        where oneway is not null
          and (highway is not null or railway is not null or waterway is not null)
-         and bridge in ('yes','true','1','viaduct')
+         and bridge in ('yes','true','1','viaduct','swing','lift')
          and layer = '5'
       ) as directions
       </Parameter>
@@ -3957,7 +3963,7 @@
      <Datasource>
       <Parameter name="table">
       (select way,highway,aeroway,ref,char_length(ref) as length,
-       case when bridge in ('yes','true','1') then 'yes'::text else bridge end as bridge
+       case when bridge in ('yes','true','1','viaduct','swing','lift') then 'yes'::text else bridge end as bridge
        from &prefix;_line
        where (highway is not null or aeroway is not null)
          and ref is not null
