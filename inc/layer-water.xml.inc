@@ -264,28 +264,28 @@
       <TextSymbolizer size="10" fill="#80d1ae" spacing="600" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>[waterway]='stream' and [tunnel]='yes'</Filter>
+      <Filter>[waterway]='stream' and ([tunnel]='yes' or [tunnel]='culvert')</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="2.4" stroke-dasharray="4,2"/>
       <LineSymbolizer stroke="#f3f7f7" stroke-width="1.2"/>
     </Rule>
     <Rule>
-      <Filter>[waterway]='stream' and not [tunnel]='yes'</Filter>
+      <Filter>[waterway]='stream' and not ([tunnel]='yes' or [tunnel]='culvert')</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="2"/>
       <TextSymbolizer size="8" fill="#6699cc" spacing="600" placement="line" fontset-name="book-fonts" halo-radius="1">[name]</TextSymbolizer>
     </Rule>
     <Rule>
-      <Filter>([waterway]='drain' or [waterway]='ditch') and [tunnel]='yes'</Filter>
+      <Filter>([waterway]='drain' or [waterway]='ditch') and ([tunnel]='yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="2" stroke-dasharray="4,2"/>
       <LineSymbolizer stroke="#f3f7f7" stroke-width="1"/>
     </Rule>
     <Rule>
-      <Filter>([waterway]='drain' or [waterway]='ditch') and not [tunnel]='yes'</Filter>
+      <Filter>([waterway]='drain' or [waterway]='ditch') and not ([tunnel]='yes' or [tunnel] = 'culvert')</Filter>
       &maxscale_zoom15;
       &minscale_zoom18;
       <LineSymbolizer stroke="#b5d0d0" stroke-width="1"/>
@@ -300,7 +300,7 @@
       (select way,waterway
       from &prefix;_line
       where waterway in ('stream','drain','ditch')
-        and (tunnel is null or tunnel != 'yes')
+        and (tunnel is null or (tunnel != 'yes' and tunnel != 'culvert'))
       ) as water_lines</Parameter>
       &datasource-settings;
     </Datasource>
@@ -363,7 +363,7 @@
     <Datasource>
       <Parameter name="table">
       (select way,waterway,disused,lock,name,
-      case when tunnel in ('yes','true','1') then 'yes'::text else tunnel end as tunnel
+      case when tunnel in ('yes','true','1','culvert') then 'yes'::text else tunnel end as tunnel
       from &prefix;_line
       where waterway in ('weir','river','canal','derelict_canal','stream','drain','ditch','wadi')
         and (bridge is null or bridge not in ('yes','true','1','aqueduct'))
