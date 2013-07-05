@@ -202,6 +202,11 @@
      </Rule>
      <Rule>
       &maxscale_zoom16;
+      <Filter>[amenity]='place_of_worship' and [religion] = 'buddhist'</Filter>
+      <PointSymbolizer file="&symbols;/buddhist3.p.16.png" allow-overlap="false" placement="interior"/>
+     </Rule>
+     <Rule>
+      &maxscale_zoom16;
       <Filter>[amenity]='place_of_worship'</Filter>
       <PointSymbolizer file="&symbols;/place_of_worship3.p.16.png" allow-overlap="false" placement="interior"/>
      </Rule>
