@@ -7,10 +7,10 @@
 # the Free Software Foundation; either version 2 of the License, or
 # (at your option) any later version.
 
-UNZIP=/usr/bin/unzip
-TAR=/bin/tar
-BUNZIP2=/bin/bunzip2
-WGET=/usr/bin/wget
+UNZIP=$(which unzip)
+TAR=$(which tar)
+BUNZIP2=$(which bunzip2)
+WGET=$(which wget)
 
 if [ -z $1 ] ; then
 OUTDIR=`pwd`
