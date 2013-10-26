@@ -1,17 +1,19 @@
 
-Rendering OpenStreetMap with Mapnik
------------------------------------
+Old XML format Mapnik stylesheets for OpenStreetMap 'standard' style
+--------------------------------------------------------------------
 
-Welcome, if you have Mapnik and osm2pgsql installed and you want
-to render your own OSM tiles, you've come to the right place.
+This used to be the development location of the Mapnik stylesheets
+powering tile.openstreetmap.org however these XML format stylesheets
+have since be superceded by new CartoCSS format stylesheets which
+can be found here:
+https://github.com/gravitystorm/openstreetmap-carto
 
-This is the development location of the Mapnik XML stylesheets powering
-tile.openstreetmap.org.
+These old XML stylesheets are still used on some other tile servers.
 
 This directory also holds an assortment of helpful utility scripts for
 working with Mapnik and the OSM Mapnik XML stylesheets.
 
-The serving of the official tiles is done using mod_tile
+Scalable large-area serving is typically done using mod_tile
  * Code is located at http://svn.openstreetmap.org/applications/utils/mod_tile.
  * Rendering is done by the 'renderd' daemon (both a python and C++ version are available).
 
