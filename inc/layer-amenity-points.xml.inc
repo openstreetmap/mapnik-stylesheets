@@ -163,12 +163,12 @@
     <Rule>
       &maxscale_zoom15;
       <Filter>[amenity] = 'parking' and ([access] = 'public' or [access] = 'yes' or not [access] != '')</Filter>
-      <PointSymbolizer file="&symbols;/parking.p.16.png" allow-overlap="false" placement="interior"/>
+      <PolygonPatternSymbolizer file="&symbols;/parking.p.16.png" />
     </Rule>
     <Rule>
       &maxscale_zoom15;
       <Filter>[amenity] = 'parking' and ([access] != '' and not [access] = 'public' and not [access] = 'yes')</Filter>
-      <PointSymbolizer file="&symbols;/parking_private.p.16.png" allow-overlap="false" placement="interior"/>
+      <PolygonPatternSymbolizer file="&symbols;/parking_private.p.16.png" />
     </Rule>
     <Rule>
       &maxscale_zoom17;
