@@ -51,8 +51,13 @@
       <LineSymbolizer stroke="purple" stroke-width="2" stroke-dasharray="6,3,2,3" stroke-opacity="0.3"/>
     </Rule>
     <Rule>
-      <Filter>[admin_level]='8' or [admin_level]='7'</Filter>
+      <Filter>[admin_level]='7'</Filter>
       &maxscale_zoom12;
+      <LineSymbolizer stroke="purple" stroke-width="1.5" stroke-dasharray="5,2" stroke-opacity="0.3"/>
+    </Rule>
+    <Rule>
+      <Filter>[admin_level]='8'</Filter>
+      &maxscale_zoom13;
       <LineSymbolizer stroke="purple" stroke-width="1.5" stroke-dasharray="5,2" stroke-opacity="0.3"/>
     </Rule>
 </Style>
