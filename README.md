@@ -215,84 +215,102 @@ run this script without any.
 ##Files and Directories
 ---------------------
 
-```html
+
 all_tiles
-	<dd>???</dd>
+
+* ???
 
 convert
-    <dd>OBSOLETE. Use customize-mapnik-map instead.</dd>
+
+* OBSOLETE. Use customize-mapnik-map instead.
 
 customize-mapnik-map
-    <dd>Run this script to convert osm-template.xml into osm.xml with your
-    settings.</dd>
+
+* Run this script to convert osm-template.xml into osm.xml with your
+    settings.
     
 generate_xml.py
-<dd>A script to help customize the osm.xml. Will read parameters from the
+
+* A script to help customize the osm.xml. Will read parameters from the
     users environment or via command line flags. Run ./generate_xml.py -h
-    for usage and help.</dd>
+    for usage and help.
     
 generate_image.py
-    <dd>A script to generate a map image from OSM data using Mapnik. Will
+
+* A script to generate a map image from OSM data using Mapnik. Will
     read mapping instructions from $MAPNIK_MAP_FILE (or 'osm.xml') and
     write the finished map to 'image.png'. You have to change the script
-    to change the bounding box or image size.</dd>
+    to change the bounding box or image size.
 
 generate_tiles.py
-    <dd>A script to generate map tiles from OSM data using Mapnik. Will
+
+* A script to generate map tiles from OSM data using Mapnik. Will
     read mapping instructions from $MAPNIK_MAP_FILE (or 'osm.xml') and
     write the finished maps to the $MAPNIK_TILE_DIR directory. You have
     to change the script to change the bounding boxes or zoom levels
-    for which tiles are created.</dd>
+    for which tiles are created.
 
 polytiles.py
-    <dd>An advanced script to generate map tiles with Mapnik. Can produce
+
+* An advanced script to generate map tiles with Mapnik. Can produce
     png files, .mbtiles or just a list. Supports not only bboxes,
     but PostGIS polygons, .poly files and tile lists. Run the script
-    without parameters to see the full list of options.</dd>
+    without parameters to see the full list of options.
 
 install.txt
-    <dd>An almost cut-and-paste documentation on how to use all this.</dd>
+
+* An almost cut-and-paste documentation on how to use all this.
 
 legend.py
-    <dd>Script for generating a simple legend from osm-template.xml, useful
-    for visualizing existing styles and changes.</dd>
+
+* Script for generating a simple legend from osm-template.xml, useful
+    for visualizing existing styles and changes.
 
 mkshield.pl
-    <dd>Perl script to generate highway shield images. You normally don't
+
+* Perl script to generate highway shield images. You normally don't
     have to run this because prerendered images are already stored in
-    the 'symbols' directory.</dd>
+    the 'symbols' directory.
 
 openstreetmap-mapnik-data
 
 openstreetmap-mapnik-world-boundaries
-    <dd>These directories contain the things needed to create Debian packages
-    for OSM Mapnik stuff.</dd>
+
+* These directories contain the things needed to create Debian packages
+    for OSM Mapnik stuff.
 
 osm-template.xml
-    <dd>A template for the osm.xml file which contains the rules on how
-    Mapnik should render data.</dd>
+
+* A template for the osm.xml file which contains the rules on how
+    Mapnik should render data.
 
 osm.xml
-    <dd>The file which contains the rules on how Mapnik should render data.
-    You should generate your own version from the osm-template.xml file.</dd>
+
+* The file which contains the rules on how Mapnik should render data.
+    You should generate your own version from the osm-template.xml file.
 
 osm2pgsl.py
-    <dd>Older script to read OSM data into a PostgreSQL/PostGIS database. Use
-    the newer C version in ../../utils/export/osm2pgsql instead!</dd>
+
+* Older script to read OSM data into a PostgreSQL/PostGIS database. Use
+    the newer C version in ../../utils/export/osm2pgsql instead!
 
 set-mapnik-env
-    <dd>Used to customize the environment needed by the other Mapnik OSM
-    scripts.</dd>
+
+* Used to customize the environment needed by the other Mapnik OSM
+    scripts.
 
 setup_z_order.sql
-    <dd>SQL commands to set up Z order for rendering. This is included in
+
+* SQL commands to set up Z order for rendering. This is included in
     the C version of osm2pgsql in ../../utils/export/osm2pgsql, so you
-    don't need this any more.</dd>
+    don't need this any more.
 
 symbols
-    <dd>Directory with icons and highway shield images.</dd>
+
+* Directory with icons and highway shield images.
 
 zoom-to-scale.txt
-    <dd>Comparison between zoom levels and the scale denominator numbers needed
-    for the Mapnik Map file.</dd>
-```
+
+* Comparison between zoom levels and the scale denominator numbers needed
+    for the Mapnik Map file.
+
