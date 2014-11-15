@@ -215,6 +215,7 @@ run this script without any.
 ##Files and Directories
 ---------------------
 
+```html
 all_tiles
 	<dd>???</dd>
 
@@ -294,3 +295,4 @@ symbols
 zoom-to-scale.txt
     <dd>Comparison between zoom levels and the scale denominator numbers needed
     for the Mapnik Map file.</dd>
+```
