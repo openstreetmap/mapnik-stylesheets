@@ -18,7 +18,6 @@ REASONABLE_DEFAULTS = {
         'extent':'-20037508,-19929239,20037508,19929239', # world in merc
         'inc':'inc/*.template', # search path for inc templates to parse
         'estimate_extent':'false',   
-        'extent':'-20037508,-19929239,20037508,19929239',   
         }
 
 def color_text(color, text):
