@@ -1,7 +1,7 @@
 <!--
 Settings for your postgres setup.
 
-Note: feel free to leave password, host, port, or use blank
+Note: feel free to leave password, host, port, or user blank
 -->
 
 <Parameter name="type">postgis</Parameter>
